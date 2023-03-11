@@ -1,0 +1,25 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 16
+VisualStudioVersion = 16.0.32929.386
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SigaApi", "SigaApi\SigaApi.csproj", "{3430EE0F-1653-4FAE-8609-6E28941B467C}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{3430EE0F-1653-4FAE-8609-6E28941B467C}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{3430EE0F-1653-4FAE-8609-6E28941B467C}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{3430EE0F-1653-4FAE-8609-6E28941B467C}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{3430EE0F-1653-4FAE-8609-6E28941B467C}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {9A73B94E-6619-4537-99C0-9D5F4BE35E65}
+	EndGlobalSection
+EndGlobal

@@ -1,0 +1,110 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Schema Namespace="SigaAdminModel.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2008" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+  <EntityType Name="__MigrationHistory">
+    <Key>
+      <PropertyRef Name="MigrationId" />
+      <PropertyRef Name="ContextKey" />
+    </Key>
+    <Property Name="MigrationId" Type="nvarchar" MaxLength="150" Nullable="false" />
+    <Property Name="ContextKey" Type="nvarchar" MaxLength="300" Nullable="false" />
+    <Property Name="Model" Type="varbinary(max)" Nullable="false" />
+    <Property Name="ProductVersion" Type="nvarchar" MaxLength="32" Nullable="false" />
+  </EntityType>
+  <EntityType Name="Customers">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="CustomerCode" Type="nvarchar(max)" />
+    <Property Name="CustomerName" Type="nvarchar(max)" />
+    <Property Name="Clase" Type="nvarchar(max)" />
+    <Property Name="CustomerDir" Type="nvarchar(max)" />
+    <Property Name="ShippingMth" Type="nvarchar(max)" />
+    <Property Name="Street" Type="nvarchar(max)" />
+    <Property Name="Country" Type="nvarchar(max)" />
+    <Property Name="City" Type="nvarchar(max)" />
+    <Property Name="Phone1" Type="nvarchar(max)" />
+    <Property Name="Phone2" Type="nvarchar(max)" />
+    <Property Name="Phone3" Type="nvarchar(max)" />
+    <Property Name="Fax" Type="nvarchar(max)" />
+    <Property Name="Comment1" Type="nvarchar(max)" />
+    <Property Name="Comment2" Type="nvarchar(max)" />
+    <Property Name="VendorCode" Type="nvarchar(max)" />
+    <Property Name="IsNew" Type="bit" Nullable="false" />
+    <Property Name="IsInAx" Type="bit" Nullable="false" />
+    <Property Name="IntegrationDate" Type="datetime" />
+  </EntityType>
+  <EntityType Name="InvoiceLines">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="Qty" Type="int" />
+    <Property Name="ProductID" Type="int" />
+    <Property Name="ProductCode" Type="nvarchar(max)" />
+    <Property Name="Price" Type="decimal" Precision="18" Scale="2" Nullable="false" />
+    <Property Name="InvoiceID" Type="int" />
+    <Property Name="IsNew" Type="bit" Nullable="false" />
+    <Property Name="IsInAx" Type="bit" Nullable="false" />
+    <Property Name="IntegrationDate" Type="datetime" />
+  </EntityType>
+  <EntityType Name="Invoices">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="GPID" Type="nvarchar(max)" />
+    <Property Name="Date" Type="datetime" Nullable="false" />
+    <Property Name="CustomerID" Type="int" Nullable="false" />
+    <Property Name="Totals" Type="decimal" Precision="18" Scale="2" Nullable="false" />
+    <Property Name="VAT" Type="decimal" Precision="18" Scale="2" Nullable="false" />
+    <Property Name="Cash" Type="decimal" Precision="18" Scale="2" Nullable="false" />
+    <Property Name="Change" Type="decimal" Precision="18" Scale="2" Nullable="false" />
+    <Property Name="Status" Type="int" Nullable="false" />
+    <Property Name="IDSaled" Type="int" />
+    <Property Name="IsNew" Type="bit" Nullable="false" />
+    <Property Name="IsInAx" Type="bit" Nullable="false" />
+    <Property Name="IntegrationDate" Type="datetime" />
+    <Property Name="VendorCode" Type="nvarchar(max)" />
+  </EntityType>
+  <Association Name="FK_dbo_InvoiceLines_dbo_Invoices_InvoiceID">
+    <End Role="Invoices" Type="Self.Invoices" Multiplicity="0..1" />
+    <End Role="InvoiceLines" Type="Self.InvoiceLines" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Invoices">
+        <PropertyRef Name="ID" />
+      </Principal>
+      <Dependent Role="InvoiceLines">
+        <PropertyRef Name="InvoiceID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_dbo_Invoices_dbo_Customers_CustomerID">
+    <End Role="Customers" Type="Self.Customers" Multiplicity="1">
+      <OnDelete Action="Cascade" />
+    </End>
+    <End Role="Invoices" Type="Self.Invoices" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Customers">
+        <PropertyRef Name="ID" />
+      </Principal>
+      <Dependent Role="Invoices">
+        <PropertyRef Name="CustomerID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <EntityContainer Name="SigaAdminModelStoreContainer">
+    <EntitySet Name="__MigrationHistory" EntityType="Self.__MigrationHistory" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Customers" EntityType="Self.Customers" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="InvoiceLines" EntityType="Self.InvoiceLines" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Invoices" EntityType="Self.Invoices" Schema="dbo" store:Type="Tables" />
+    <AssociationSet Name="FK_dbo_InvoiceLines_dbo_Invoices_InvoiceID" Association="Self.FK_dbo_InvoiceLines_dbo_Invoices_InvoiceID">
+      <End Role="Invoices" EntitySet="Invoices" />
+      <End Role="InvoiceLines" EntitySet="InvoiceLines" />
+    </AssociationSet>
+    <AssociationSet Name="FK_dbo_Invoices_dbo_Customers_CustomerID" Association="Self.FK_dbo_Invoices_dbo_Customers_CustomerID">
+      <End Role="Customers" EntitySet="Customers" />
+      <End Role="Invoices" EntitySet="Invoices" />
+    </AssociationSet>
+  </EntityContainer>
+</Schema>

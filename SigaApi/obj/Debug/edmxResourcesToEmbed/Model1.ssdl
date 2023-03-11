@@ -1,0 +1,23 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Schema Namespace="SigaModel.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2008" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+  <EntityType Name="Cliente">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="comentario" Type="nvarchar" MaxLength="200" />
+    <Property Name="codigo" Type="nvarchar" MaxLength="200" />
+    <Property Name="codigoVendedor" Type="nvarchar" MaxLength="200" />
+    <Property Name="direccion" Type="nvarchar" MaxLength="200" />
+    <Property Name="nombre" Type="nvarchar" MaxLength="200" />
+    <Property Name="telefono1" Type="nvarchar" MaxLength="200" />
+    <Property Name="telefono2" Type="nvarchar" MaxLength="200" />
+    <Property Name="compagnia" Type="nchar" MaxLength="10" />
+    <Property Name="activo" Type="nchar" MaxLength="10" />
+    <Property Name="sincronizado" Type="nchar" MaxLength="10" />
+    <Property Name="ID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="FechaCreacion" Type="datetime" Nullable="false" />
+  </EntityType>
+  <EntityContainer Name="SigaModelStoreContainer">
+    <EntitySet Name="Cliente" EntityType="Self.Cliente" Schema="dbo" store:Type="Tables" />
+  </EntityContainer>
+</Schema>

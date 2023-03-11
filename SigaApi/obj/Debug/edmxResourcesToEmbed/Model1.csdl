@@ -1,0 +1,23 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Schema Namespace="SigaModel" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
+  <EntityType Name="Cliente">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="comentario" Type="String" MaxLength="200" FixedLength="false" Unicode="true" />
+    <Property Name="codigo" Type="String" MaxLength="200" FixedLength="false" Unicode="true" />
+    <Property Name="codigoVendedor" Type="String" MaxLength="200" FixedLength="false" Unicode="true" />
+    <Property Name="direccion" Type="String" MaxLength="200" FixedLength="false" Unicode="true" />
+    <Property Name="nombre" Type="String" MaxLength="200" FixedLength="false" Unicode="true" />
+    <Property Name="telefono1" Type="String" MaxLength="200" FixedLength="false" Unicode="true" />
+    <Property Name="telefono2" Type="String" MaxLength="200" FixedLength="false" Unicode="true" />
+    <Property Name="compagnia" Type="String" MaxLength="10" FixedLength="true" Unicode="true" />
+    <Property Name="activo" Type="String" MaxLength="10" FixedLength="true" Unicode="true" />
+    <Property Name="sincronizado" Type="String" MaxLength="10" FixedLength="true" Unicode="true" />
+    <Property Name="ID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="FechaCreacion" Type="DateTime" Nullable="false" Precision="3" />
+  </EntityType>
+  <EntityContainer Name="SigaEntities" annotation:LazyLoadingEnabled="true">
+    <EntitySet Name="Clientes" EntityType="Self.Cliente" />
+  </EntityContainer>
+</Schema>

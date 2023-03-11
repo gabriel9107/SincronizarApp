@@ -1,0 +1,23 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
+  <EntityContainerMapping StorageEntityContainer="SigaModelStoreContainer" CdmEntityContainer="SigaEntities">
+    <EntitySetMapping Name="Clientes">
+      <EntityTypeMapping TypeName="SigaModel.Cliente">
+        <MappingFragment StoreEntitySet="Cliente">
+          <ScalarProperty Name="comentario" ColumnName="comentario" />
+          <ScalarProperty Name="codigo" ColumnName="codigo" />
+          <ScalarProperty Name="codigoVendedor" ColumnName="codigoVendedor" />
+          <ScalarProperty Name="direccion" ColumnName="direccion" />
+          <ScalarProperty Name="nombre" ColumnName="nombre" />
+          <ScalarProperty Name="telefono1" ColumnName="telefono1" />
+          <ScalarProperty Name="telefono2" ColumnName="telefono2" />
+          <ScalarProperty Name="compagnia" ColumnName="compagnia" />
+          <ScalarProperty Name="activo" ColumnName="activo" />
+          <ScalarProperty Name="sincronizado" ColumnName="sincronizado" />
+          <ScalarProperty Name="ID" ColumnName="ID" />
+          <ScalarProperty Name="FechaCreacion" ColumnName="FechaCreacion" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+  </EntityContainerMapping>
+</Mapping>
