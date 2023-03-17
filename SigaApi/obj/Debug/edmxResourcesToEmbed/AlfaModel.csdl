@@ -34,6 +34,9 @@
     <Property Name="IsInAx" Type="Boolean" Nullable="false" />
     <Property Name="IntegrationDate" Type="DateTime" Precision="3" />
     <NavigationProperty Name="Invoices" Relationship="Self.FK_dbo_Invoices_dbo_Customers_CustomerID" FromRole="Customers" ToRole="Invoices" />
+    <Property Name="CreateAt" Type="DateTime" Precision="7" />
+    <Property Name="CreateBy" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <Property Name="IsDelete" Type="Boolean" Nullable="false" />
   </EntityType>
   <EntityType Name="InvoiceLine">
     <Key>
@@ -49,6 +52,13 @@
     <Property Name="IsInAx" Type="Boolean" Nullable="false" />
     <Property Name="IntegrationDate" Type="DateTime" Precision="3" />
     <NavigationProperty Name="Invoice" Relationship="Self.FK_dbo_InvoiceLines_dbo_Invoices_InvoiceID" FromRole="InvoiceLines" ToRole="Invoices" />
+    <Property Name="INVOICEID" Type="String" MaxLength="20" FixedLength="false" Unicode="true" />
+    <Property Name="LINENUM" Type="Decimal" Precision="18" Scale="2" />
+    <Property Name="ITEMID" Type="String" MaxLength="20" FixedLength="false" Unicode="true" />
+    <Property Name="NAME" Type="String" MaxLength="1000" FixedLength="false" Unicode="true" />
+    <Property Name="QTY" Type="Decimal" Precision="18" Scale="2" />
+    <Property Name="SALESPRICE" Type="Decimal" Precision="18" Scale="2" />
+    <Property Name="LINEAMOUNT" Type="Decimal" Precision="18" Scale="2" />
   </EntityType>
   <EntityType Name="Invoice">
     <Key>
@@ -110,5 +120,65 @@
       <End Role="Invoices" EntitySet="Invoices" />
       <End Role="InvoiceLines" EntitySet="InvoiceLines" />
     </AssociationSet>
+    <EntitySet Name="Facturas" EntityType="SigaAdminModel.Factura" />
+    <EntitySet Name="FacturaDetalles" EntityType="SigaAdminModel.FacturaDetalle" />
   </EntityContainer>
+  <EntityType Name="Factura">
+    <Key>
+      <PropertyRef Name="FacturaId" />
+      <PropertyRef Name="FacturaFecha" />
+      <PropertyRef Name="FacturaVencimiento" />
+      <PropertyRef Name="Id" />
+      <PropertyRef Name="IsDelete" />
+      <PropertyRef Name="MetodoDePago" />
+      <PropertyRef Name="MontoFactura" />
+      <PropertyRef Name="MontoPendiente" />
+      <PropertyRef Name="PedidoId" />
+      <PropertyRef Name="Sincronizado" />
+      <PropertyRef Name="clienteId" />
+      <PropertyRef Name="clienteNombre" />
+      <PropertyRef Name="totalPagado" />
+      <PropertyRef Name="vendedorId" />
+    </Key>
+    <Property Name="FacturaId" Type="String" Nullable="false" MaxLength="20" FixedLength="false" Unicode="true" />
+    <Property Name="FacturaFecha" Type="DateTime" Nullable="false" Precision="3" />
+    <Property Name="FacturaVencimiento" Type="DateTime" Nullable="false" Precision="3" />
+    <Property Name="Id" Type="Int32" Nullable="false" />
+    <Property Name="IsDelete" Type="Int32" Nullable="false" />
+    <Property Name="MetodoDePago" Type="String" Nullable="false" MaxLength="10" FixedLength="false" Unicode="true" />
+    <Property Name="MontoFactura" Type="Decimal" Nullable="false" Precision="32" Scale="16" />
+    <Property Name="MontoPendiente" Type="Decimal" Nullable="false" Precision="32" Scale="16" />
+    <Property Name="PedidoId" Type="String" Nullable="false" MaxLength="20" FixedLength="false" Unicode="true" />
+    <Property Name="Sincronizado" Type="Int32" Nullable="false" />
+    <Property Name="clienteId" Type="String" Nullable="false" MaxLength="20" FixedLength="false" Unicode="true" />
+    <Property Name="clienteNombre" Type="String" Nullable="false" MaxLength="100" FixedLength="false" Unicode="true" />
+    <Property Name="totalPagado" Type="Int32" Nullable="false" />
+    <Property Name="vendedorId" Type="String" Nullable="false" MaxLength="40" FixedLength="false" Unicode="true" />
+  </EntityType>
+  <EntityType Name="FacturaDetalle">
+    <Key>
+      <PropertyRef Name="ID" />
+      <PropertyRef Name="LineaNumero" />
+      <PropertyRef Name="ProductoCodigo" />
+      <PropertyRef Name="Nombre" />
+      <PropertyRef Name="Qty" />
+      <PropertyRef Name="PrecioVenta" />
+      <PropertyRef Name="montoLinea" />
+      <PropertyRef Name="FacturaId" />
+      <PropertyRef Name="Sincronizado" />
+      <PropertyRef Name="IsDelete" />
+      <PropertyRef Name="Compagnia" />
+    </Key>
+    <Property Name="ID" Type="Int64" Nullable="false" />
+    <Property Name="LineaNumero" Type="Decimal" Nullable="false" Precision="32" Scale="16" />
+    <Property Name="ProductoCodigo" Type="String" Nullable="false" MaxLength="20" FixedLength="false" Unicode="true" />
+    <Property Name="Nombre" Type="String" Nullable="false" MaxLength="1000" FixedLength="false" Unicode="true" />
+    <Property Name="Qty" Type="Decimal" Nullable="false" Precision="32" Scale="16" />
+    <Property Name="PrecioVenta" Type="Decimal" Nullable="false" Precision="32" Scale="16" />
+    <Property Name="montoLinea" Type="Decimal" Nullable="false" Precision="32" Scale="16" />
+    <Property Name="FacturaId" Type="String" Nullable="false" MaxLength="20" FixedLength="false" Unicode="true" />
+    <Property Name="Sincronizado" Type="Int32" Nullable="false" />
+    <Property Name="IsDelete" Type="Int32" Nullable="false" />
+    <Property Name="Compagnia" Type="Int32" Nullable="false" />
+  </EntityType>
 </Schema>

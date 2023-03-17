@@ -16,7 +16,7 @@ namespace SigaApi
 {
     class Program
     {
-        SigaEntities context = new SigaEntities();
+        
         SigaAdminEntities context2 = new SigaAdminEntities();
 
         static void Main(string[] args)
@@ -29,9 +29,17 @@ namespace SigaApi
                 BasePath = "https://sigaapp-127c4-default-rtdb.firebaseio.com/"
             };
 
-            IFirebaseClient client;
+            //Obtener CLientes 
+            obtenerClientes(ifc);
+            //Obtener Pedidos y Detalle
+            //obtenerPedido(ifc);
+            //Subir Factura y Detalle 
+            //SincronizarFacturas(ifc);
+            //Obtener Pago 
+            //Actualizar Pago y Factura 
+
             //obtenerClientes(ifc);
-            obtenerPedido(ifc);
+            //obtenerPedido(ifc);
             //obtenerPedidoDetalle(ifc);
         }
        
@@ -40,7 +48,7 @@ namespace SigaApi
         private static void obtenerClientes(IFirebaseConfig confi)
         {
             //Lista de Clientes 
-            List<Cliente> clientes = new List<Cliente>();
+            List<Clientes> clientes = new List<Clientes>();
 
 
             IFirebaseClient client = new FireSharp.FirebaseClient(confi);
@@ -56,8 +64,22 @@ namespace SigaApi
 
             foreach (var get in obtenerClientes)
             {
+                clientesList.Add(new Clientes
+                {ID = get.Key, 
+                activo = get.Value.activo, 
+                codigo = get.Value.codigo, 
+                codigoVendedor = get.Value.codigoVendedor, 
+                comentario = get.Value.comentario, 
+                compagnia = get.Value.compagnia, 
+                direccion = get.Value.direccion, 
+                nombre = get.Value.direccion, 
+                sincronizado = get.Value.sincronizado, 
+                 telefono1 = get.Value.telefono1, 
+                 telefono2 = get.Value.telefono2
+                });
                 //Console.WriteLine(get.Value.nombre);value 1 to type 'SigaApi.Clientes'. Path 'ID', line 1, position 7.'
-                clientesList.Add(get.Value);
+                //clientesList.Add(get.Value);
+
 
             };
 
@@ -290,24 +312,98 @@ namespace SigaApi
             Console.WriteLine("Pedido Sincronizado" + pedido.id);
         }
 
+        private static void SincronizarFacturas(IFirebaseConfig confi)
+        {
+            SigaAdminEntities context2 = new SigaAdminEntities();
+            IFirebaseClient client = new FireSharp.FirebaseClient(confi);
+            if (client != null)
+            {
+                Console.WriteLine("connection esta estabilizada");
+            }
+
+            var facturas = from a in context2.Facturas
+                           where a.Sincronizado == 1
+                           select a;
+
+            foreach (Factura factura in facturas)
+            {
+                client.Set("Factura/" + factura.FacturaId, factura);
+                updateFacturas(factura.FacturaId);
+
+            }
+            Console.WriteLine("Sincronizado");
+            SincronizarFacturaDetalles(confi);
+        }
+        private static void updateFacturas(string facturaid)
+        {
+            using (var context = new SigaAdminEntities())
+            {
+                var resultado = context.Facturas.SingleOrDefault(b => b.FacturaId == facturaid);
+                if (resultado != null)
+                {
+                    resultado.Sincronizado = 0;
+                    context.SaveChanges();
+                }
+            }
+
+        }
+
+        private static void SincronizarFacturaDetalles(IFirebaseConfig confi)
+        {
+            SigaAdminEntities context2 = new SigaAdminEntities();
+            IFirebaseClient client = new FireSharp.FirebaseClient(confi);
+            if (client != null)
+            {
+                Console.WriteLine("connection esta estabilizada");
+            }
+
+            var detalles = from a in context2.FacturaDetalles
+                           where a.Sincronizado == 1
+                           select a;
+
+            foreach (FacturaDetalle factura in detalles)
+            {
+                client.Set("FacturaDetalle/" + factura.ID, factura);
+                updateFacturas(factura.FacturaId);
+
+            }
+            Console.WriteLine("Sincronizado");
+        }
+
+        private static void updateFacturaDetalles(string facturaid)
+        {
+            using (var context = new SigaAdminEntities())
+            {
+                var resultado = context.FacturaDetalles.SingleOrDefault(b => b.FacturaId == facturaid);
+                if (resultado != null)
+                {
+                    resultado.Sincronizado = 0;
+                    context.SaveChanges();
+                }
+            }
+        }
+
         private static void AgregarClienteSigaAdmin(Clientes cliente)
         {
 
             SigaAdminEntities context2 = new SigaAdminEntities();
+            //SigaAppEntities context 
+
             var t = new Customer //Make sure you have a table called test in DB
             {
                 CustomerCode = cliente.codigo,
                 CustomerName = cliente.nombre,
                 CustomerDir = cliente.direccion,
-                Phone1 = cliente.Teleftelefono1ono1,
-                //ShippingMth = cliente.
+                Phone1 = cliente.telefono1,
+                Phone2 = cliente.telefono2,
+                ShippingMth = cliente.descuento,
                 VendorCode = cliente.codigoVendedor,
                 Comment1 = cliente.comentario,
                 IsNew = true,
                 IsInAx = false
             };
-            context2.Customers.Add(t);
-            context2.SaveChanges();
+            context.Customers.Add(t);
+            context.SaveChanges();
 
             ActualizarCliente(cliente);
         }
@@ -335,7 +431,8 @@ namespace SigaApi
                 activo = clientes.activo,
                 nombre = clientes.nombre,
                 comentario = clientes.comentario,
-                Teleftelefono1ono1 = clientes.Teleftelefono1ono1,
+                telefono1 = clientes.telefono1,
+                telefono2 = clientes.telefono2,
                 sincronizado = "0"
             };
 

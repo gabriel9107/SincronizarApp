@@ -12,18 +12,18 @@ namespace SigaApi
     using System;
     using System.Collections.Generic;
     
-    public partial class Pedido
+    public partial class FacturaDetalle
     {
-        public int Id { get; set; }
-        public string NumeroOrden { get; set; }
-        public string ClienteId { get; set; }
-        public System.DateTime FechaOrden { get; set; }
-        public decimal Impuestos { get; set; }
-        public decimal TotalAPagar { get; set; }
-        public string CreadoPor { get; set; }
+        public long ID { get; set; }
+        public decimal LineaNumero { get; set; }
+        public string ProductoCodigo { get; set; }
+        public string Nombre { get; set; }
+        public decimal Qty { get; set; }
+        public decimal PrecioVenta { get; set; }
+        public decimal montoLinea { get; set; }
+        public string FacturaId { get; set; }
         public int Sincronizado { get; set; }
-        public int Compagnia { get; set; }
-        public string Estado { get; set; }
         public int IsDelete { get; set; }
+        public int Compagnia { get; set; }
     }
 }

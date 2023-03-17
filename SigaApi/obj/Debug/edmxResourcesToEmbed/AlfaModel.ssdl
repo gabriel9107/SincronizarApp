@@ -15,96 +15,136 @@
       <PropertyRef Name="ID" />
     </Key>
     <Property Name="ID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
-    <Property Name="CustomerCode" Type="nvarchar(max)" />
-    <Property Name="CustomerName" Type="nvarchar(max)" />
-    <Property Name="Clase" Type="nvarchar(max)" />
-    <Property Name="CustomerDir" Type="nvarchar(max)" />
-    <Property Name="ShippingMth" Type="nvarchar(max)" />
-    <Property Name="Street" Type="nvarchar(max)" />
-    <Property Name="Country" Type="nvarchar(max)" />
     <Property Name="City" Type="nvarchar(max)" />
+    <Property Name="Clase" Type="nvarchar(max)" />
+    <Property Name="Comment1" Type="nvarchar(max)" />
+    <Property Name="Comment2" Type="nvarchar(max)" />
+    <Property Name="Country" Type="nvarchar(max)" />
+    <Property Name="CreateAt" Type="datetime2" Precision="7" />
+    <Property Name="CreateBy" Type="nvarchar(max)" />
+    <Property Name="CustomerCode" Type="nvarchar(max)" />
+    <Property Name="CustomerDir" Type="nvarchar(max)" />
+    <Property Name="CustomerName" Type="nvarchar(max)" />
+    <Property Name="Fax" Type="nvarchar(max)" />
+    <Property Name="IsDelete" Type="bit" Nullable="false" />
     <Property Name="Phone1" Type="nvarchar(max)" />
     <Property Name="Phone2" Type="nvarchar(max)" />
     <Property Name="Phone3" Type="nvarchar(max)" />
-    <Property Name="Fax" Type="nvarchar(max)" />
-    <Property Name="Comment1" Type="nvarchar(max)" />
-    <Property Name="Comment2" Type="nvarchar(max)" />
+    <Property Name="ShippingMth" Type="nvarchar(max)" />
+    <Property Name="Street" Type="nvarchar(max)" />
     <Property Name="VendorCode" Type="nvarchar(max)" />
-    <Property Name="IsNew" Type="bit" Nullable="false" />
-    <Property Name="IsInAx" Type="bit" Nullable="false" />
-    <Property Name="IntegrationDate" Type="datetime" />
+  </EntityType>
+  <!--Errores durante la generación:
+advertencia 6002: La tabla o vista 'SigaApp.dbo.Factura' no tiene definida ninguna clave principal. Se ha inferido la clave y la definición se creado como una vista o tabla de solo lectura.-->
+  <EntityType Name="Factura">
+    <Key>
+      <PropertyRef Name="FacturaId" />
+      <PropertyRef Name="FacturaFecha" />
+      <PropertyRef Name="FacturaVencimiento" />
+      <PropertyRef Name="Id" />
+      <PropertyRef Name="IsDelete" />
+      <PropertyRef Name="MetodoDePago" />
+      <PropertyRef Name="MontoFactura" />
+      <PropertyRef Name="MontoPendiente" />
+      <PropertyRef Name="PedidoId" />
+      <PropertyRef Name="Sincronizado" />
+      <PropertyRef Name="clienteId" />
+      <PropertyRef Name="clienteNombre" />
+      <PropertyRef Name="totalPagado" />
+      <PropertyRef Name="vendedorId" />
+    </Key>
+    <Property Name="FacturaId" Type="nvarchar" MaxLength="20" Nullable="false" />
+    <Property Name="FacturaFecha" Type="datetime" Nullable="false" />
+    <Property Name="FacturaVencimiento" Type="datetime" Nullable="false" />
+    <Property Name="Id" Type="int" Nullable="false" />
+    <Property Name="IsDelete" Type="int" Nullable="false" />
+    <Property Name="MetodoDePago" Type="nvarchar" MaxLength="10" Nullable="false" />
+    <Property Name="MontoFactura" Type="numeric" Precision="32" Scale="16" Nullable="false" />
+    <Property Name="MontoPendiente" Type="numeric" Precision="32" Scale="16" Nullable="false" />
+    <Property Name="PedidoId" Type="nvarchar" MaxLength="20" Nullable="false" />
+    <Property Name="Sincronizado" Type="int" Nullable="false" />
+    <Property Name="clienteId" Type="nvarchar" MaxLength="20" Nullable="false" />
+    <Property Name="clienteNombre" Type="nvarchar" MaxLength="100" Nullable="false" />
+    <Property Name="totalPagado" Type="int" Nullable="false" />
+    <Property Name="vendedorId" Type="nvarchar" MaxLength="40" Nullable="false" />
+  </EntityType>
+  <!--Errores durante la generación:
+advertencia 6002: La tabla o vista 'SigaApp.dbo.FacturaDetalle' no tiene definida ninguna clave principal. Se ha inferido la clave y la definición se creado como una vista o tabla de solo lectura.-->
+  <EntityType Name="FacturaDetalle">
+    <Key>
+      <PropertyRef Name="ID" />
+      <PropertyRef Name="LineaNumero" />
+      <PropertyRef Name="ProductoCodigo" />
+      <PropertyRef Name="Nombre" />
+      <PropertyRef Name="Qty" />
+      <PropertyRef Name="PrecioVenta" />
+      <PropertyRef Name="montoLinea" />
+      <PropertyRef Name="FacturaId" />
+      <PropertyRef Name="Sincronizado" />
+      <PropertyRef Name="IsDelete" />
+      <PropertyRef Name="Compagnia" />
+    </Key>
+    <Property Name="ID" Type="bigint" Nullable="false" />
+    <Property Name="LineaNumero" Type="numeric" Precision="32" Scale="16" Nullable="false" />
+    <Property Name="ProductoCodigo" Type="nvarchar" MaxLength="20" Nullable="false" />
+    <Property Name="Nombre" Type="nvarchar" MaxLength="1000" Nullable="false" />
+    <Property Name="Qty" Type="numeric" Precision="32" Scale="16" Nullable="false" />
+    <Property Name="PrecioVenta" Type="numeric" Precision="32" Scale="16" Nullable="false" />
+    <Property Name="montoLinea" Type="numeric" Precision="32" Scale="16" Nullable="false" />
+    <Property Name="FacturaId" Type="nvarchar" MaxLength="20" Nullable="false" />
+    <Property Name="Sincronizado" Type="int" Nullable="false" />
+    <Property Name="IsDelete" Type="int" Nullable="false" />
+    <Property Name="Compagnia" Type="int" Nullable="false" />
   </EntityType>
   <EntityType Name="InvoiceLines">
     <Key>
       <PropertyRef Name="ID" />
     </Key>
     <Property Name="ID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
-    <Property Name="Qty" Type="int" />
-    <Property Name="ProductID" Type="int" />
-    <Property Name="ProductCode" Type="nvarchar(max)" />
-    <Property Name="Price" Type="decimal" Precision="18" Scale="2" Nullable="false" />
-    <Property Name="InvoiceID" Type="int" />
-    <Property Name="IsNew" Type="bit" Nullable="false" />
-    <Property Name="IsInAx" Type="bit" Nullable="false" />
-    <Property Name="IntegrationDate" Type="datetime" />
+    <Property Name="INVOICEID" Type="nvarchar" MaxLength="20" />
+    <Property Name="LINENUM" Type="decimal" Precision="18" Scale="2" />
+    <Property Name="ITEMID" Type="nvarchar" MaxLength="20" />
+    <Property Name="NAME" Type="nvarchar" MaxLength="1000" />
+    <Property Name="QTY" Type="decimal" Precision="18" Scale="2" />
+    <Property Name="SALESPRICE" Type="decimal" Precision="18" Scale="2" />
+    <Property Name="LINEAMOUNT" Type="decimal" Precision="18" Scale="2" />
   </EntityType>
-  <EntityType Name="Invoices">
-    <Key>
-      <PropertyRef Name="ID" />
-    </Key>
-    <Property Name="ID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
-    <Property Name="GPID" Type="nvarchar(max)" />
-    <Property Name="Date" Type="datetime" Nullable="false" />
-    <Property Name="CustomerID" Type="int" Nullable="false" />
-    <Property Name="Totals" Type="decimal" Precision="18" Scale="2" Nullable="false" />
-    <Property Name="VAT" Type="decimal" Precision="18" Scale="2" Nullable="false" />
-    <Property Name="Cash" Type="decimal" Precision="18" Scale="2" Nullable="false" />
-    <Property Name="Change" Type="decimal" Precision="18" Scale="2" Nullable="false" />
-    <Property Name="Status" Type="int" Nullable="false" />
-    <Property Name="IDSaled" Type="int" />
-    <Property Name="IsNew" Type="bit" Nullable="false" />
-    <Property Name="IsInAx" Type="bit" Nullable="false" />
-    <Property Name="IntegrationDate" Type="datetime" />
-    <Property Name="VendorCode" Type="nvarchar(max)" />
-  </EntityType>
-  <Association Name="FK_dbo_InvoiceLines_dbo_Invoices_InvoiceID">
-    <End Role="Invoices" Type="Self.Invoices" Multiplicity="0..1" />
-    <End Role="InvoiceLines" Type="Self.InvoiceLines" Multiplicity="*" />
-    <ReferentialConstraint>
-      <Principal Role="Invoices">
-        <PropertyRef Name="ID" />
-      </Principal>
-      <Dependent Role="InvoiceLines">
-        <PropertyRef Name="InvoiceID" />
-      </Dependent>
-    </ReferentialConstraint>
-  </Association>
-  <Association Name="FK_dbo_Invoices_dbo_Customers_CustomerID">
-    <End Role="Customers" Type="Self.Customers" Multiplicity="1">
-      <OnDelete Action="Cascade" />
-    </End>
-    <End Role="Invoices" Type="Self.Invoices" Multiplicity="*" />
-    <ReferentialConstraint>
-      <Principal Role="Customers">
-        <PropertyRef Name="ID" />
-      </Principal>
-      <Dependent Role="Invoices">
-        <PropertyRef Name="CustomerID" />
-      </Dependent>
-    </ReferentialConstraint>
-  </Association>
   <EntityContainer Name="SigaAdminModelStoreContainer">
     <EntitySet Name="__MigrationHistory" EntityType="Self.__MigrationHistory" Schema="dbo" store:Type="Tables" />
     <EntitySet Name="Customers" EntityType="Self.Customers" Schema="dbo" store:Type="Tables" />
     <EntitySet Name="InvoiceLines" EntityType="Self.InvoiceLines" Schema="dbo" store:Type="Tables" />
-    <EntitySet Name="Invoices" EntityType="Self.Invoices" Schema="dbo" store:Type="Tables" />
-    <AssociationSet Name="FK_dbo_InvoiceLines_dbo_Invoices_InvoiceID" Association="Self.FK_dbo_InvoiceLines_dbo_Invoices_InvoiceID">
-      <End Role="Invoices" EntitySet="Invoices" />
-      <End Role="InvoiceLines" EntitySet="InvoiceLines" />
-    </AssociationSet>
-    <AssociationSet Name="FK_dbo_Invoices_dbo_Customers_CustomerID" Association="Self.FK_dbo_Invoices_dbo_Customers_CustomerID">
-      <End Role="Customers" EntitySet="Customers" />
-      <End Role="Invoices" EntitySet="Invoices" />
-    </AssociationSet>
+    <EntitySet Name="Factura" EntityType="Self.Factura" store:Type="Tables" store:Schema="dbo">
+      <DefiningQuery>SELECT 
+[Factura].[FacturaId] AS [FacturaId], 
+[Factura].[FacturaFecha] AS [FacturaFecha], 
+[Factura].[FacturaVencimiento] AS [FacturaVencimiento], 
+[Factura].[Id] AS [Id], 
+[Factura].[IsDelete] AS [IsDelete], 
+[Factura].[MetodoDePago] AS [MetodoDePago], 
+[Factura].[MontoFactura] AS [MontoFactura], 
+[Factura].[MontoPendiente] AS [MontoPendiente], 
+[Factura].[PedidoId] AS [PedidoId], 
+[Factura].[Sincronizado] AS [Sincronizado], 
+[Factura].[clienteId] AS [clienteId], 
+[Factura].[clienteNombre] AS [clienteNombre], 
+[Factura].[totalPagado] AS [totalPagado], 
+[Factura].[vendedorId] AS [vendedorId]
+FROM [dbo].[Factura] AS [Factura]</DefiningQuery>
+    </EntitySet>
+    <EntitySet Name="FacturaDetalle" EntityType="Self.FacturaDetalle" store:Type="Tables" store:Schema="dbo">
+      <DefiningQuery>SELECT 
+[FacturaDetalle].[ID] AS [ID], 
+[FacturaDetalle].[LineaNumero] AS [LineaNumero], 
+[FacturaDetalle].[ProductoCodigo] AS [ProductoCodigo], 
+[FacturaDetalle].[Nombre] AS [Nombre], 
+[FacturaDetalle].[Qty] AS [Qty], 
+[FacturaDetalle].[PrecioVenta] AS [PrecioVenta], 
+[FacturaDetalle].[montoLinea] AS [montoLinea], 
+[FacturaDetalle].[FacturaId] AS [FacturaId], 
+[FacturaDetalle].[Sincronizado] AS [Sincronizado], 
+[FacturaDetalle].[IsDelete] AS [IsDelete], 
+[FacturaDetalle].[Compagnia] AS [Compagnia]
+FROM [dbo].[FacturaDetalle] AS [FacturaDetalle]</DefiningQuery>
+    </EntitySet>
   </EntityContainer>
 </Schema>

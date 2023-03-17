@@ -9,7 +9,7 @@ namespace SigaApi
     class Clientes
     {
         
-        public long ID { get; set; }
+        public string ID { get; set; }
 
         
         public string activo { get; set; }
@@ -29,6 +29,7 @@ namespace SigaApi
         public string direccion
         { get; set; }
 
+        public string descuento { get; set; }
 
         public string nombre { get; set; }
 
@@ -36,6 +37,7 @@ namespace SigaApi
         public string sincronizado { get; set; }
 
         
-        public string Teleftelefono1ono1 { get; set; }
+        public string telefono1 { get; set; }
+        public string telefono2 { get; set; }
     }
 }

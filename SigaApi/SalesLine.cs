@@ -12,19 +12,17 @@ namespace SigaApi
     using System;
     using System.Collections.Generic;
     
-    public partial class Cliente
+    public partial class SalesLine
     {
         public int ID { get; set; }
-        public string activo { get; set; }
-        public string codigo { get; set; }
-        public string codigoVendedor { get; set; }
-        public string direccion { get; set; }
-        public string comentario { get; set; }
-        public string nombre { get; set; }
-        public string telefono1 { get; set; }
-        public string telefono2 { get; set; }
-        public string compagnia { get; set; }
-        public string sincronizado { get; set; }
-        public System.DateTime FechaCreacion { get; set; }
+        public decimal Price { get; set; }
+        public int Qty { get; set; }
+        public int ProductID { get; set; }
+        public string ProductCode { get; set; }
+        public Nullable<int> Products_ID { get; set; }
+        public Nullable<int> SalesOrdersID { get; set; }
+        public string ProductName { get; set; }
+    
+        public virtual SalesOrder SalesOrder { get; set; }
     }
 }
