@@ -12,31 +12,29 @@ namespace SigaApi
     using System;
     using System.Collections.Generic;
     
-    public partial class SalesOrder
+    public partial class Invoice
     {
-        public SalesOrder()
+        public Invoice()
         {
-            this.SalesLines = new HashSet<SalesLine>();
+            this.InvoiceLines = new HashSet<InvoiceLine>();
         }
     
         public int ID { get; set; }
-        public decimal Cash { get; set; }
-        public decimal Change { get; set; }
-        public Nullable<System.DateTime> CreateAt { get; set; }
-        public string CreateBy { get; set; }
-        public System.DateTime Date { get; set; }
         public string GPID { get; set; }
-        public bool IsDelete { get; set; }
+        public System.DateTime Date { get; set; }
+        public int CustomerID { get; set; }
         public decimal Totals { get; set; }
         public decimal VAT { get; set; }
-        public string UserName { get; set; }
-        public string UserCode { get; set; }
-        public Nullable<int> UserID { get; set; }
+        public decimal Cash { get; set; }
+        public decimal Change { get; set; }
         public int Status { get; set; }
-        public string Commets { get; set; }
-        public Nullable<int> CustomerID { get; set; }
+        public Nullable<int> IDSaled { get; set; }
+        public bool IsNew { get; set; }
+        public bool IsInAx { get; set; }
+        public Nullable<System.DateTime> IntegrationDate { get; set; }
+        public string VendorCode { get; set; }
     
         public virtual Customer Customer { get; set; }
-        public virtual ICollection<SalesLine> SalesLines { get; set; }
+        public virtual ICollection<InvoiceLine> InvoiceLines { get; set; }
     }
 }

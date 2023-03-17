@@ -13,10 +13,10 @@ namespace SigaApi
     using System.Data.Entity;
     using System.Data.Entity.Infrastructure;
     
-    public partial class SigaAppEntities : DbContext
+    public partial class SigaAdminEntities : DbContext
     {
-        public SigaAppEntities()
-            : base("name=SigaAppEntities")
+        public SigaAdminEntities()
+            : base("name=SigaAdminEntities")
         {
         }
     
@@ -26,10 +26,7 @@ namespace SigaApi
         }
     
         public DbSet<Customer> Customers { get; set; }
-        public DbSet<Pedido> Pedidos { get; set; }
-        public DbSet<SalesLine> SalesLines { get; set; }
-        public DbSet<SalesOrder> SalesOrders { get; set; }
-        public DbSet<Factura> Facturas { get; set; }
-        public DbSet<FacturaDetalle> FacturaDetalles { get; set; }
+        public DbSet<InvoiceLine> InvoiceLines { get; set; }
+        public DbSet<Invoice> Invoices { get; set; }
     }
 }

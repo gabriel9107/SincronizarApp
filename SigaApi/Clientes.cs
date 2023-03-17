@@ -12,7 +12,7 @@ namespace SigaApi
         public string ID { get; set; }
 
         
-        public string activo { get; set; }
+        public int activo { get; set; }
 
         
         public string codigo { get; set; }
@@ -24,7 +24,7 @@ namespace SigaApi
         public string comentario { get; set; }
 
         
-        public long compagnia { get; set; }
+        public int compagnia { get; set; }
 
         public string direccion
         { get; set; }
@@ -34,7 +34,7 @@ namespace SigaApi
         public string nombre { get; set; }
 
         
-        public string sincronizado { get; set; }
+        public int sincronizado { get; set; }
 
         
         public string telefono1 { get; set; }
