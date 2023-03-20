@@ -11,6 +11,7 @@ using System.Data.SqlTypes;
 using static System.Net.Mime.MediaTypeNames;
 using System.Runtime.CompilerServices;
 using System.Diagnostics.Eventing.Reader;
+using System.Linq.Expressions;
 
 namespace SigaApi
 {
@@ -30,12 +31,14 @@ namespace SigaApi
             };
 
             //Obtener CLientes 
-            //obtenerClientes(ifc);
-            //Obtener Pedidos y Detalle
+            obtenerClientes(ifc);
+            ////Obtener Pedidos y Detalle
             obtenerPedido(ifc);
             //Subir Factura y Detalle 
-            //SincronizarFacturas(ifc);
+            SincronizarFacturas(ifc);
+            SincronizarFacturaDetalles(ifc);
             //Obtener Pago 
+            obtenerPago(ifc);
             //Actualizar Pago y Factura 
 
             //obtenerClientes(ifc);
@@ -94,12 +97,7 @@ namespace SigaApi
                 Console.WriteLine(cliente.nombre);
             }
 
-
-
-
-
-            Console.ReadLine();
-            Console.Read();
+              
         }
         private static void AgregarClienteSigaAdmin(Clientes cliente)
         {
@@ -107,7 +105,7 @@ namespace SigaApi
             SigaAdminEntities context = new SigaAdminEntities();
             //SigaAppEntities context 
 
-            var t = new Customer //Make sure you have a table called test in DB
+            var t = new Customers //Make sure you have a table called test in DB
             {
                 CustomerName = cliente.nombre,
                 CustomerCode = cliente.codigo,
@@ -182,6 +180,7 @@ namespace SigaApi
 
                 pedidoLista.Add(new Pedido
                 {
+                    
                     ClienteId = get.Value.ClienteId,
                     Compagnia = get.Value.Compagnia,
                     CreadoPor = get.Value.CreadoPor,
@@ -189,7 +188,7 @@ namespace SigaApi
                     Impuestos = get.Value.Impuestos,
                     IsDelete = get.Value.IsDelete,
                     //id = get.Value.
-                    NumeroOrden = get.Value.NumeroOrden,
+                    NumeroOrden = int.Parse(get.Value.id),
                     Sincronizado = get.Value.Sincronizado,
                     totalAPagar = get.Value.totalAPagar,
                     id = get.Key
@@ -217,9 +216,6 @@ namespace SigaApi
 
 
 
-
-            Console.ReadLine();
-            Console.Read();
         }
 
         private static void AgregarPedidosSigaAdmin(Pedido pedido)
@@ -229,13 +225,14 @@ namespace SigaApi
 
             var id = context2.Customers
                    .Where(s => s.CustomerCode == pedido.ClienteId)
-                    .FirstOrDefault<Customer>();
+                    .FirstOrDefault<Customers>();
 
 
-            var t = new Invoice //Make sure you have a table called test in DB
+            var t = new Invoices //Make sure you have a table called test in DB
             {
                 Date = (DateTime)pedido.FechaOrden,
                 CustomerID = id.ID,
+                IDSaled = pedido.NumeroOrden,
                 //CustomerID = pedido.ClienteId,
                 Totals = pedido.totalAPagar,
                 VAT = pedido.Impuestos,
@@ -256,7 +253,7 @@ namespace SigaApi
             //Console.WriteLine("Get Id " + t.ID);
         }
 
-        private static void obtenerPedidoDetalle(Invoice pedido)
+        private static void obtenerPedidoDetalle(Invoices pedido)
         {
             List<PedidoDetalle> pedidos = new List<PedidoDetalle>();
             IFirebaseConfig confi = new FirebaseConfig()
@@ -321,7 +318,7 @@ namespace SigaApi
             //        .FirstOrDefault<Customer>();
 
 
-            var t = new InvoiceLine //Make sure you have a table called test in DB
+            var t = new InvoiceLines //Make sure you have a table called test in DB
             {
                 Qty = pedido.Cantidad,
                 InvoiceID = pedido.PedidoId,
@@ -392,7 +389,187 @@ namespace SigaApi
             var setter = client.Update("Pedidos/" + pedido.id, toUpdate);
             Console.WriteLine("Pedido Sincronizado" + pedido.id);
         }
+        private static void SincronizarFacturas(IFirebaseConfig confi)
+        {
+            SigaAdminEntities context2 = new SigaAdminEntities();
+            IFirebaseClient client = new FireSharp.FirebaseClient(confi);
+            if (client != null)
+            {
+                Console.WriteLine("connection esta estabilizada");
+            }
+
+            var facturas = from a in context2.Facturas
+                           where a.Sincronizado == 1
+                           select a;
+
+            foreach (Factura factura in facturas)
+            {
+                client.Set("Factura/" + factura.FacturaId, factura);
+                updateFacturas(factura.FacturaId);
+
+            }
+            Console.WriteLine("Sincronizado");
+            SincronizarFacturaDetalles(confi);
+        }
+        private static void updateFacturas(string facturaid)
+        {
+            using (var context = new SigaAdminEntities())
+            {
+                var resultado = context.Facturas.SingleOrDefault(b => b.FacturaId == facturaid);
+                if (resultado != null)
+                {
+                    resultado.Sincronizado = 0;
+                    context.SaveChanges();
+                }
+            }
+
+        }
+
+        private static void SincronizarFacturaDetalles(IFirebaseConfig confi)
+        {
+            SigaAdminEntities context2 = new SigaAdminEntities();
+            IFirebaseClient client = new FireSharp.FirebaseClient(confi);
+            if (client != null)
+            {
+                Console.WriteLine("connection esta estabilizada");
+            }
+
+            var detalles = from a in context2.FacturaDetalles
+                           //where a.Sincronizado == 1
+                           select a;
+
+            foreach (FacturaDetalle detalle in detalles)
+            {
+                client.Set("FacturaDetalle/" + detalle.ID+'-'+ detalle.FacturaId, detalle);
+                updateFacturaDetalles(detalle.ID);
+
+            }
+            Console.WriteLine("Sincronizado");
+        }
+        private static void updateFacturaDetalles(int id)
+        {
+            using (var context = new SigaAdminEntities())
+            {
+                var resultado = context.FacturaDetalles.SingleOrDefault(b => b.ID == id);
+                if (resultado != null)
+                {
+                    resultado.Sincronizado = 0;
+                    context.SaveChanges();
+                }
+            }
+
+        }
+        private static void obtenerPago(IFirebaseConfig confi)
+        {
+            //Lista de Clientes 
+            List<Pago> pago = new List<Pago>();
+
+
+            IFirebaseClient client = new FireSharp.FirebaseClient(confi);
+            if (client != null)
+            {
+                Console.WriteLine("connection esta estabilizada");
+            }
+
+            var pagoList = new List<Pago>();
+            var respuesta = client.Get(@"Pago/");
+
+            Dictionary<string, Pago> obtenerPagos = respuesta.ResultAs<Dictionary<string, Pago>>();
+
+            foreach (var get in obtenerPagos)
+            {
+                pagoList.Add(new Pago
+                {
+
+                    ID = get.Key,
+                    Banco = get.Value.Banco, 
+                   
+                    ClienteId = get.Value.ClienteId, 
+                    Compagni = get.Value.Compagni, 
+                    FechaDeCheque = get.Value.FechaDeCheque , 
+                    FechaPago = get.Value.FechaPago , 
+                    IsDelete = get.Value.IsDelete, 
+                    MetodoDePago = get.Value.MetodoDePago, 
+                    MontoPagado = get.Value.MontoPagado, 
+                    NumeroDeCheque = get.Value.NumeroDeCheque, 
+                    Pendiente = get.Value.Pendiente, 
+                    Sincronizado = get.Value.Sincronizado, 
+                    VendorId = get.Value.VendorId
+                    
+                });  
+                
+
+
+            };
+
+            var pagosAsincronizar = pagoList.Where(x => x.Sincronizado == 1);
+
+            foreach (var pagos in pagosAsincronizar)
+            {
+
+                agregarApagos(pagos);
+
+                Console.WriteLine(pagos.ClienteId);
+            }
+
+
+        }
+        private static void agregarApagos(Pago pago)
+        {
+
+            SigaAdminEntities context = new SigaAdminEntities();
+            //SigaAppEntities context 
+
+            var t = new PaymentOrder //Make sure you have a table called test in DB
+            {
+              VendorID = pago.VendorId, 
+              CheckDate= DateTime.Now,
+                Datetime = DateTime.Now,  
+              Amount = pago.MontoPagado, 
+              Method = pago.MetodoDePago, 
+              BankName = pago.Banco, 
+              CheckNumber = pago.NumeroDeCheque, 
+              IsEnabled = true, 
+              Customer_Code = pago.ClienteId, 
+              IsOpen = true, 
+              Imported = false
+               
+               
+            };
+            context.PaymentOrders.Add(t);
+            context.SaveChanges();
+
+            //ActualizarCliente(pago);
+        }
+        private static void ActualizarPagoFire(Pago detalle)
+        {
+            IFirebaseConfig ifc = new FirebaseConfig()
+            {
+                AuthSecret = "ryja3YG6bf0hAcJNXVpvUDdY66j0LiBFtfvRKMKK",
+                BasePath = "https://sigaapp-127c4-default-rtdb.firebaseio.com/"
+
+            };
+            IFirebaseClient client = new FireSharp.FirebaseClient(ifc);
+            if (client != null)
+            {
+                Console.WriteLine("connection esta estabilizada");
+            }
+
+
+            Pago toUpdate = new Pago()
+            {
+                Sincronizado = 0
+            };
+
+
+            var setter = client.Update("Pago/" + detalle.ID, toUpdate);
+            Console.WriteLine("Pago Sincronizado" + detalle.ID);
+
+        }
+
+
     }
+
 }
 
 //private static void obtenerPedidoDetalle(Invoice pedido)
@@ -536,41 +713,6 @@ namespace SigaApi
 //    }
 
 
-//private static void SincronizarFacturas(IFirebaseConfig confi)
-//{
-//    SigaAdminEntities context2 = new SigaAdminEntities();
-//    IFirebaseClient client = new FireSharp.FirebaseClient(confi);
-//    if (client != null)
-//    {
-//        Console.WriteLine("connection esta estabilizada");
-//    }
-
-//    var facturas = from a in context2.Facturas
-//                   where a.Sincronizado == 1
-//                   select a;
-
-//    foreach (Factura factura in facturas)
-//    {
-//        client.Set("Factura/" + factura.FacturaId, factura);
-//        updateFacturas(factura.FacturaId);
-
-//    }
-//    Console.WriteLine("Sincronizado");
-//    SincronizarFacturaDetalles(confi);
-//}
-//private static void updateFacturas(string facturaid)
-//{
-//    using (var context = new SigaAdminEntities())
-//    {
-//        var resultado = context.Facturas.SingleOrDefault(b => b.FacturaId == facturaid);
-//        if (resultado != null)
-//        {
-//            resultado.Sincronizado = 0;
-//            context.SaveChanges();
-//        }
-//    }
-
-//}
 
 //private static void SincronizarFacturaDetalles(IFirebaseConfig confi)
 //{

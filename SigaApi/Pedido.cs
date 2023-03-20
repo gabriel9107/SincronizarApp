@@ -10,7 +10,7 @@ namespace SigaApi
     {
         public string id { get; set; }
         public String ClienteId { get; set; }
-        public string NumeroOrden { get; set; }
+        public int NumeroOrden { get; set; }
         public Nullable<System.DateTime> FechaOrden { get; set; }
         public decimal totalAPagar { get; set; }
         public decimal Impuestos { get; set; }

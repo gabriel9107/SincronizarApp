@@ -1,0 +1,542 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="3.0" xmlns:edmx="http://schemas.microsoft.com/ado/2009/11/edmx">
+  <!-- EF Runtime content -->
+  <edmx:Runtime>
+    <!-- SSDL content -->
+    <edmx:StorageModels>
+    <Schema Namespace="SigaAdminModel.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2008" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+        <EntityType Name="Customers">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="CustomerCode" Type="nvarchar(max)" />
+          <Property Name="CustomerName" Type="nvarchar(max)" />
+          <Property Name="Clase" Type="nvarchar(max)" />
+          <Property Name="CustomerDir" Type="nvarchar(max)" />
+          <Property Name="ShippingMth" Type="nvarchar(max)" />
+          <Property Name="Street" Type="nvarchar(max)" />
+          <Property Name="Country" Type="nvarchar(max)" />
+          <Property Name="City" Type="nvarchar(max)" />
+          <Property Name="Phone1" Type="nvarchar(max)" />
+          <Property Name="Phone2" Type="nvarchar(max)" />
+          <Property Name="Phone3" Type="nvarchar(max)" />
+          <Property Name="Fax" Type="nvarchar(max)" />
+          <Property Name="Comment1" Type="nvarchar(max)" />
+          <Property Name="Comment2" Type="nvarchar(max)" />
+          <Property Name="VendorCode" Type="nvarchar(max)" />
+          <Property Name="IsNew" Type="bit" Nullable="false" />
+          <Property Name="IsInAx" Type="bit" Nullable="false" />
+          <Property Name="IntegrationDate" Type="datetime" />
+        </EntityType>
+        <EntityType Name="Factura">
+          <Key>
+            <PropertyRef Name="id" />
+          </Key>
+          <Property Name="id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="Compagnia" Type="int" Nullable="false" />
+          <Property Name="FacturaFecha" Type="datetime" Nullable="false" />
+          <Property Name="FacturaId" Type="nvarchar" MaxLength="20" Nullable="false" />
+          <Property Name="FacturaVencimiento" Type="datetime" Nullable="false" />
+          <Property Name="IsDelete" Type="int" Nullable="false" />
+          <Property Name="MetodoDePago" Type="nvarchar" MaxLength="10" Nullable="false" />
+          <Property Name="MontoFactura" Type="numeric" Precision="32" Scale="16" Nullable="false" />
+          <Property Name="PedidoId" Type="nvarchar" MaxLength="20" Nullable="false" />
+          <Property Name="sincronizad" Type="int" Nullable="false" />
+          <Property Name="MontoPendiente" Type="numeric" Precision="32" Scale="16" Nullable="false" />
+          <Property Name="clienteId" Type="nvarchar" MaxLength="20" Nullable="false" />
+          <Property Name="clienteNombre" Type="nvarchar" MaxLength="100" Nullable="false" />
+          <Property Name="totalPagado" Type="int" Nullable="false" />
+          <Property Name="vendedorId" Type="nvarchar" MaxLength="40" Nullable="false" />
+          <Property Name="Sincronizado" Type="int" />
+        </EntityType>
+        <EntityType Name="FacturaDetalle">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="Compagnia" Type="int" Nullable="false" />
+          <Property Name="FacturaId" Type="nvarchar" MaxLength="20" Nullable="false" />
+          <Property Name="isDelete" Type="int" Nullable="false" />
+          <Property Name="LineaNumero" Type="numeric" Precision="32" Scale="16" Nullable="false" />
+          <Property Name="ProductoCodigo" Type="nvarchar" MaxLength="20" Nullable="false" />
+          <Property Name="Nombre" Type="nvarchar" MaxLength="1000" Nullable="false" />
+          <Property Name="Qty" Type="int" Nullable="false" />
+          <Property Name="PrecioVenta" Type="decimal" Precision="18" Scale="2" Nullable="false" />
+          <Property Name="MontoLinea" Type="decimal" Precision="18" Scale="2" Nullable="false" />
+          <Property Name="Sincronizado" Type="int" Nullable="false" />
+        </EntityType>
+        <EntityType Name="InvoiceLines">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="Qty" Type="int" />
+          <Property Name="ProductID" Type="int" />
+          <Property Name="ProductCode" Type="nvarchar(max)" />
+          <Property Name="Price" Type="decimal" Precision="18" Scale="2" Nullable="false" />
+          <Property Name="InvoiceID" Type="int" />
+          <Property Name="IsNew" Type="bit" Nullable="false" />
+          <Property Name="IsInAx" Type="bit" Nullable="false" />
+          <Property Name="IntegrationDate" Type="datetime" />
+        </EntityType>
+        <EntityType Name="Invoices">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="GPID" Type="nvarchar(max)" />
+          <Property Name="Date" Type="datetime" Nullable="false" />
+          <Property Name="CustomerID" Type="int" Nullable="false" />
+          <Property Name="Totals" Type="decimal" Precision="18" Scale="2" Nullable="false" />
+          <Property Name="VAT" Type="decimal" Precision="18" Scale="2" Nullable="false" />
+          <Property Name="Cash" Type="decimal" Precision="18" Scale="2" Nullable="false" />
+          <Property Name="Change" Type="decimal" Precision="18" Scale="2" Nullable="false" />
+          <Property Name="Status" Type="int" Nullable="false" />
+          <Property Name="IDSaled" Type="int" />
+          <Property Name="IsNew" Type="bit" Nullable="false" />
+          <Property Name="IsInAx" Type="bit" Nullable="false" />
+          <Property Name="IntegrationDate" Type="datetime" />
+          <Property Name="VendorCode" Type="nvarchar(max)" />
+        </EntityType>
+        <EntityType Name="PaymentItems">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="PaymentOrderId" Type="int" Nullable="false" />
+          <Property Name="InvoiceNumber" Type="nvarchar(max)" />
+          <Property Name="AmountApply" Type="decimal" Precision="18" Scale="2" Nullable="false" />
+          <Property Name="InvoiveAmountAtMoment" Type="decimal" Precision="18" Scale="2" Nullable="false" />
+          <Property Name="IsEnabled" Type="bit" Nullable="false" />
+        </EntityType>
+        <EntityType Name="PaymentOrders">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="VendorID" Type="nvarchar" MaxLength="128" />
+          <Property Name="Datetime" Type="datetime" Nullable="false" />
+          <Property Name="Amount" Type="decimal" Precision="18" Scale="2" Nullable="false" />
+          <Property Name="Method" Type="nvarchar(max)" />
+          <Property Name="BankName" Type="nvarchar(max)" />
+          <Property Name="CheckNumber" Type="nvarchar(max)" />
+          <Property Name="CheckDate" Type="datetime" />
+          <Property Name="IsEnabled" Type="bit" Nullable="false" />
+          <Property Name="Customer_Code" Type="nvarchar" MaxLength="20" />
+          <Property Name="IsOpen" Type="bit" Nullable="false" />
+          <Property Name="Imported" Type="bit" Nullable="false" />
+        </EntityType>
+        <Association Name="FK_dbo_InvoiceLines_dbo_Invoices_InvoiceID">
+          <End Role="Invoices" Type="Self.Invoices" Multiplicity="0..1" />
+          <End Role="InvoiceLines" Type="Self.InvoiceLines" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Invoices">
+              <PropertyRef Name="ID" />
+            </Principal>
+            <Dependent Role="InvoiceLines">
+              <PropertyRef Name="InvoiceID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_dbo_Invoices_dbo_Customers_CustomerID">
+          <End Role="Customers" Type="Self.Customers" Multiplicity="1">
+            <OnDelete Action="Cascade" />
+          </End>
+          <End Role="Invoices" Type="Self.Invoices" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Customers">
+              <PropertyRef Name="ID" />
+            </Principal>
+            <Dependent Role="Invoices">
+              <PropertyRef Name="CustomerID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_dbo_PaymentItems_dbo_PaymentOrders_PaymentOrderId">
+          <End Role="PaymentOrders" Type="Self.PaymentOrders" Multiplicity="1">
+            <OnDelete Action="Cascade" />
+          </End>
+          <End Role="PaymentItems" Type="Self.PaymentItems" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="PaymentOrders">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="PaymentItems">
+              <PropertyRef Name="PaymentOrderId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <EntityContainer Name="SigaAdminModelStoreContainer">
+          <EntitySet Name="Customers" EntityType="Self.Customers" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="Factura" EntityType="Self.Factura" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="FacturaDetalle" EntityType="Self.FacturaDetalle" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="InvoiceLines" EntityType="Self.InvoiceLines" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="Invoices" EntityType="Self.Invoices" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="PaymentItems" EntityType="Self.PaymentItems" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="PaymentOrders" EntityType="Self.PaymentOrders" Schema="dbo" store:Type="Tables" />
+          <AssociationSet Name="FK_dbo_InvoiceLines_dbo_Invoices_InvoiceID" Association="Self.FK_dbo_InvoiceLines_dbo_Invoices_InvoiceID">
+            <End Role="Invoices" EntitySet="Invoices" />
+            <End Role="InvoiceLines" EntitySet="InvoiceLines" />
+          </AssociationSet>
+          <AssociationSet Name="FK_dbo_Invoices_dbo_Customers_CustomerID" Association="Self.FK_dbo_Invoices_dbo_Customers_CustomerID">
+            <End Role="Customers" EntitySet="Customers" />
+            <End Role="Invoices" EntitySet="Invoices" />
+          </AssociationSet>
+          <AssociationSet Name="FK_dbo_PaymentItems_dbo_PaymentOrders_PaymentOrderId" Association="Self.FK_dbo_PaymentItems_dbo_PaymentOrders_PaymentOrderId">
+            <End Role="PaymentOrders" EntitySet="PaymentOrders" />
+            <End Role="PaymentItems" EntitySet="PaymentItems" />
+          </AssociationSet>
+        </EntityContainer>
+      </Schema></edmx:StorageModels>
+    <!-- CSDL content -->
+    <edmx:ConceptualModels>
+      <Schema Namespace="SigaAdminModel" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
+        <EntityType Name="Customers">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="CustomerCode" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="CustomerName" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="Clase" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="CustomerDir" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="ShippingMth" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="Street" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="Country" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="City" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="Phone1" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="Phone2" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="Phone3" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="Fax" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="Comment1" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="Comment2" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="VendorCode" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="IsNew" Type="Boolean" Nullable="false" />
+          <Property Name="IsInAx" Type="Boolean" Nullable="false" />
+          <Property Name="IntegrationDate" Type="DateTime" Precision="3" />
+          <NavigationProperty Name="Invoices" Relationship="Self.FK_dbo_Invoices_dbo_Customers_CustomerID" FromRole="Customers" ToRole="Invoices" />
+        </EntityType>
+        <EntityType Name="InvoiceLines">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="Qty" Type="Int32" />
+          <Property Name="ProductID" Type="Int32" />
+          <Property Name="ProductCode" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="Price" Type="Decimal" Precision="18" Scale="2" Nullable="false" />
+          <Property Name="InvoiceID" Type="Int32" />
+          <Property Name="IsNew" Type="Boolean" Nullable="false" />
+          <Property Name="IsInAx" Type="Boolean" Nullable="false" />
+          <Property Name="IntegrationDate" Type="DateTime" Precision="3" />
+          <NavigationProperty Name="Invoices" Relationship="Self.FK_dbo_InvoiceLines_dbo_Invoices_InvoiceID" FromRole="InvoiceLines" ToRole="Invoices" />
+        </EntityType>
+        <EntityType Name="Invoices">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="GPID" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="Date" Type="DateTime" Nullable="false" Precision="3" />
+          <Property Name="CustomerID" Type="Int32" Nullable="false" />
+          <Property Name="Totals" Type="Decimal" Precision="18" Scale="2" Nullable="false" />
+          <Property Name="VAT" Type="Decimal" Precision="18" Scale="2" Nullable="false" />
+          <Property Name="Cash" Type="Decimal" Precision="18" Scale="2" Nullable="false" />
+          <Property Name="Change" Type="Decimal" Precision="18" Scale="2" Nullable="false" />
+          <Property Name="Status" Type="Int32" Nullable="false" />
+          <Property Name="IDSaled" Type="Int32" />
+          <Property Name="IsNew" Type="Boolean" Nullable="false" />
+          <Property Name="IsInAx" Type="Boolean" Nullable="false" />
+          <Property Name="IntegrationDate" Type="DateTime" Precision="3" />
+          <Property Name="VendorCode" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <NavigationProperty Name="Customers" Relationship="Self.FK_dbo_Invoices_dbo_Customers_CustomerID" FromRole="Invoices" ToRole="Customers" />
+          <NavigationProperty Name="InvoiceLines" Relationship="Self.FK_dbo_InvoiceLines_dbo_Invoices_InvoiceID" FromRole="Invoices" ToRole="InvoiceLines" />
+        </EntityType>
+        <Association Name="FK_dbo_Invoices_dbo_Customers_CustomerID">
+          <End Role="Customers" Type="Self.Customers" Multiplicity="1">
+            <OnDelete Action="Cascade" />
+          </End>
+          <End Role="Invoices" Type="Self.Invoices" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Customers">
+              <PropertyRef Name="ID" />
+            </Principal>
+            <Dependent Role="Invoices">
+              <PropertyRef Name="CustomerID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_dbo_InvoiceLines_dbo_Invoices_InvoiceID">
+          <End Role="Invoices" Type="Self.Invoices" Multiplicity="0..1" />
+          <End Role="InvoiceLines" Type="Self.InvoiceLines" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Invoices">
+              <PropertyRef Name="ID" />
+            </Principal>
+            <Dependent Role="InvoiceLines">
+              <PropertyRef Name="InvoiceID" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <EntityContainer Name="SigaAdminEntities" annotation:LazyLoadingEnabled="true">
+          <EntitySet Name="Customers" EntityType="Self.Customers" />
+          <EntitySet Name="InvoiceLines" EntityType="Self.InvoiceLines" />
+          <EntitySet Name="Invoices" EntityType="Self.Invoices" />
+          <AssociationSet Name="FK_dbo_Invoices_dbo_Customers_CustomerID" Association="Self.FK_dbo_Invoices_dbo_Customers_CustomerID">
+            <End Role="Customers" EntitySet="Customers" />
+            <End Role="Invoices" EntitySet="Invoices" />
+          </AssociationSet>
+          <AssociationSet Name="FK_dbo_InvoiceLines_dbo_Invoices_InvoiceID" Association="Self.FK_dbo_InvoiceLines_dbo_Invoices_InvoiceID">
+            <End Role="Invoices" EntitySet="Invoices" />
+            <End Role="InvoiceLines" EntitySet="InvoiceLines" />
+          </AssociationSet>
+          <EntitySet Name="Facturas" EntityType="SigaAdminModel.Factura" />
+          <EntitySet Name="FacturaDetalles" EntityType="SigaAdminModel.FacturaDetalle" />
+          <EntitySet Name="PaymentItems" EntityType="SigaAdminModel.PaymentItem" />
+          <EntitySet Name="PaymentOrders" EntityType="SigaAdminModel.PaymentOrder" />
+          <AssociationSet Name="FK_dbo_PaymentItems_dbo_PaymentOrders_PaymentOrderId" Association="SigaAdminModel.FK_dbo_PaymentItems_dbo_PaymentOrders_PaymentOrderId">
+            <End Role="PaymentOrder" EntitySet="PaymentOrders" />
+            <End Role="PaymentItem" EntitySet="PaymentItems" />
+          </AssociationSet>
+        </EntityContainer>
+        <EntityType Name="Factura">
+          <Key>
+            <PropertyRef Name="id" />
+          </Key>
+          <Property Name="id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="Compagnia" Type="Int32" Nullable="false" />
+          <Property Name="FacturaFecha" Type="DateTime" Nullable="false" Precision="3" />
+          <Property Name="FacturaId" Type="String" Nullable="false" MaxLength="20" FixedLength="false" Unicode="true" />
+          <Property Name="FacturaVencimiento" Type="DateTime" Nullable="false" Precision="3" />
+          <Property Name="IsDelete" Type="Int32" Nullable="false" />
+          <Property Name="MetodoDePago" Type="String" Nullable="false" MaxLength="10" FixedLength="false" Unicode="true" />
+          <Property Name="MontoFactura" Type="Decimal" Nullable="false" Precision="32" Scale="16" />
+          <Property Name="PedidoId" Type="String" Nullable="false" MaxLength="20" FixedLength="false" Unicode="true" />
+          <Property Name="sincronizad" Type="Int32" Nullable="false" />
+          <Property Name="MontoPendiente" Type="Decimal" Nullable="false" Precision="32" Scale="16" />
+          <Property Name="clienteId" Type="String" Nullable="false" MaxLength="20" FixedLength="false" Unicode="true" />
+          <Property Name="clienteNombre" Type="String" Nullable="false" MaxLength="100" FixedLength="false" Unicode="true" />
+          <Property Name="totalPagado" Type="Int32" Nullable="false" />
+          <Property Name="vendedorId" Type="String" Nullable="false" MaxLength="40" FixedLength="false" Unicode="true" />
+          <Property Name="Sincronizado" Type="Int32" />
+        </EntityType>
+        <EntityType Name="FacturaDetalle">
+          <Key>
+            <PropertyRef Name="ID" />
+          </Key>
+          <Property Name="ID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="Compagnia" Type="Int32" Nullable="false" />
+          <Property Name="FacturaId" Type="String" Nullable="false" MaxLength="20" FixedLength="false" Unicode="true" />
+          <Property Name="isDelete" Type="Int32" Nullable="false" />
+          <Property Name="LineaNumero" Type="Decimal" Nullable="false" Precision="32" Scale="16" />
+          <Property Name="ProductoCodigo" Type="String" Nullable="false" MaxLength="20" FixedLength="false" Unicode="true" />
+          <Property Name="Nombre" Type="String" Nullable="false" MaxLength="1000" FixedLength="false" Unicode="true" />
+          <Property Name="Qty" Type="Int16" Nullable="false" />
+          <Property Name="PrecioVenta" Type="Decimal" Precision="18" Scale="2" Nullable="false" />
+          <Property Name="MontoLinea" Type="Decimal" Precision="18" Scale="2" Nullable="false" />
+          <Property Name="Sincronizado" Type="Int32" Nullable="false" />
+        </EntityType>
+        <EntityType Name="PaymentItem">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="PaymentOrderId" Type="Int32" Nullable="false" />
+          <Property Name="InvoiceNumber" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="AmountApply" Type="Decimal" Nullable="false" Precision="18" Scale="2" />
+          <Property Name="InvoiveAmountAtMoment" Type="Decimal" Nullable="false" Precision="18" Scale="2" />
+          <Property Name="IsEnabled" Type="Boolean" Nullable="false" />
+          <NavigationProperty Name="PaymentOrder" Relationship="SigaAdminModel.FK_dbo_PaymentItems_dbo_PaymentOrders_PaymentOrderId" FromRole="PaymentItem" ToRole="PaymentOrder" />
+        </EntityType>
+        <EntityType Name="PaymentOrder">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="VendorID" Type="String" MaxLength="128" FixedLength="false" Unicode="true" />
+          <Property Name="Datetime" Type="DateTime" Nullable="false" Precision="3" />
+          <Property Name="Amount" Type="Decimal" Nullable="false" Precision="18" Scale="2" />
+          <Property Name="Method" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="BankName" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="CheckNumber" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+          <Property Name="CheckDate" Type="DateTime" Precision="3" />
+          <Property Name="IsEnabled" Type="Boolean" Nullable="false" />
+          <Property Name="Customer_Code" Type="String" MaxLength="20" FixedLength="false" Unicode="true" />
+          <Property Name="IsOpen" Type="Boolean" Nullable="false" />
+          <Property Name="Imported" Type="Boolean" Nullable="false" />
+          <NavigationProperty Name="PaymentItems" Relationship="SigaAdminModel.FK_dbo_PaymentItems_dbo_PaymentOrders_PaymentOrderId" FromRole="PaymentOrder" ToRole="PaymentItem" />
+        </EntityType>
+        <Association Name="FK_dbo_PaymentItems_dbo_PaymentOrders_PaymentOrderId">
+          <End Type="SigaAdminModel.PaymentOrder" Role="PaymentOrder" Multiplicity="1">
+            <OnDelete Action="Cascade" />
+          </End>
+          <End Type="SigaAdminModel.PaymentItem" Role="PaymentItem" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="PaymentOrder">
+              <PropertyRef Name="Id" />
+            </Principal>
+            <Dependent Role="PaymentItem">
+              <PropertyRef Name="PaymentOrderId" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+      </Schema>
+    </edmx:ConceptualModels>
+    <!-- C-S mapping content -->
+    <edmx:Mappings>
+      <Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
+        <EntityContainerMapping StorageEntityContainer="SigaAdminModelStoreContainer" CdmEntityContainer="SigaAdminEntities">
+          <EntitySetMapping Name="Customers">
+            <EntityTypeMapping TypeName="SigaAdminModel.Customers">
+              <MappingFragment StoreEntitySet="Customers">
+                <ScalarProperty Name="ID" ColumnName="ID" />
+                <ScalarProperty Name="CustomerCode" ColumnName="CustomerCode" />
+                <ScalarProperty Name="CustomerName" ColumnName="CustomerName" />
+                <ScalarProperty Name="Clase" ColumnName="Clase" />
+                <ScalarProperty Name="CustomerDir" ColumnName="CustomerDir" />
+                <ScalarProperty Name="ShippingMth" ColumnName="ShippingMth" />
+                <ScalarProperty Name="Street" ColumnName="Street" />
+                <ScalarProperty Name="Country" ColumnName="Country" />
+                <ScalarProperty Name="City" ColumnName="City" />
+                <ScalarProperty Name="Phone1" ColumnName="Phone1" />
+                <ScalarProperty Name="Phone2" ColumnName="Phone2" />
+                <ScalarProperty Name="Phone3" ColumnName="Phone3" />
+                <ScalarProperty Name="Fax" ColumnName="Fax" />
+                <ScalarProperty Name="Comment1" ColumnName="Comment1" />
+                <ScalarProperty Name="Comment2" ColumnName="Comment2" />
+                <ScalarProperty Name="VendorCode" ColumnName="VendorCode" />
+                <ScalarProperty Name="IsNew" ColumnName="IsNew" />
+                <ScalarProperty Name="IsInAx" ColumnName="IsInAx" />
+                <ScalarProperty Name="IntegrationDate" ColumnName="IntegrationDate" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="InvoiceLines">
+            <EntityTypeMapping TypeName="SigaAdminModel.InvoiceLines">
+              <MappingFragment StoreEntitySet="InvoiceLines">
+                <ScalarProperty Name="ID" ColumnName="ID" />
+                <ScalarProperty Name="Qty" ColumnName="Qty" />
+                <ScalarProperty Name="ProductID" ColumnName="ProductID" />
+                <ScalarProperty Name="ProductCode" ColumnName="ProductCode" />
+                <ScalarProperty Name="Price" ColumnName="Price" />
+                <ScalarProperty Name="InvoiceID" ColumnName="InvoiceID" />
+                <ScalarProperty Name="IsNew" ColumnName="IsNew" />
+                <ScalarProperty Name="IsInAx" ColumnName="IsInAx" />
+                <ScalarProperty Name="IntegrationDate" ColumnName="IntegrationDate" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Invoices">
+            <EntityTypeMapping TypeName="SigaAdminModel.Invoices">
+              <MappingFragment StoreEntitySet="Invoices">
+                <ScalarProperty Name="ID" ColumnName="ID" />
+                <ScalarProperty Name="GPID" ColumnName="GPID" />
+                <ScalarProperty Name="Date" ColumnName="Date" />
+                <ScalarProperty Name="CustomerID" ColumnName="CustomerID" />
+                <ScalarProperty Name="Totals" ColumnName="Totals" />
+                <ScalarProperty Name="VAT" ColumnName="VAT" />
+                <ScalarProperty Name="Cash" ColumnName="Cash" />
+                <ScalarProperty Name="Change" ColumnName="Change" />
+                <ScalarProperty Name="Status" ColumnName="Status" />
+                <ScalarProperty Name="IDSaled" ColumnName="IDSaled" />
+                <ScalarProperty Name="IsNew" ColumnName="IsNew" />
+                <ScalarProperty Name="IsInAx" ColumnName="IsInAx" />
+                <ScalarProperty Name="IntegrationDate" ColumnName="IntegrationDate" />
+                <ScalarProperty Name="VendorCode" ColumnName="VendorCode" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Facturas">
+            <EntityTypeMapping TypeName="SigaAdminModel.Factura">
+              <MappingFragment StoreEntitySet="Factura">
+                <ScalarProperty Name="Sincronizado" ColumnName="Sincronizado" />
+                <ScalarProperty Name="vendedorId" ColumnName="vendedorId" />
+                <ScalarProperty Name="totalPagado" ColumnName="totalPagado" />
+                <ScalarProperty Name="clienteNombre" ColumnName="clienteNombre" />
+                <ScalarProperty Name="clienteId" ColumnName="clienteId" />
+                <ScalarProperty Name="MontoPendiente" ColumnName="MontoPendiente" />
+                <ScalarProperty Name="sincronizad" ColumnName="sincronizad" />
+                <ScalarProperty Name="PedidoId" ColumnName="PedidoId" />
+                <ScalarProperty Name="MontoFactura" ColumnName="MontoFactura" />
+                <ScalarProperty Name="MetodoDePago" ColumnName="MetodoDePago" />
+                <ScalarProperty Name="IsDelete" ColumnName="IsDelete" />
+                <ScalarProperty Name="FacturaVencimiento" ColumnName="FacturaVencimiento" />
+                <ScalarProperty Name="FacturaId" ColumnName="FacturaId" />
+                <ScalarProperty Name="FacturaFecha" ColumnName="FacturaFecha" />
+                <ScalarProperty Name="Compagnia" ColumnName="Compagnia" />
+                <ScalarProperty Name="id" ColumnName="id" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="FacturaDetalles">
+            <EntityTypeMapping TypeName="SigaAdminModel.FacturaDetalle">
+              <MappingFragment StoreEntitySet="FacturaDetalle">
+                <ScalarProperty Name="Sincronizado" ColumnName="Sincronizado" />
+                <ScalarProperty Name="MontoLinea" ColumnName="MontoLinea" />
+                <ScalarProperty Name="PrecioVenta" ColumnName="PrecioVenta" />
+                <ScalarProperty Name="Qty" ColumnName="Qty" />
+                <ScalarProperty Name="Nombre" ColumnName="Nombre" />
+                <ScalarProperty Name="ProductoCodigo" ColumnName="ProductoCodigo" />
+                <ScalarProperty Name="LineaNumero" ColumnName="LineaNumero" />
+                <ScalarProperty Name="isDelete" ColumnName="isDelete" />
+                <ScalarProperty Name="FacturaId" ColumnName="FacturaId" />
+                <ScalarProperty Name="Compagnia" ColumnName="Compagnia" />
+                <ScalarProperty Name="ID" ColumnName="ID" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="PaymentItems">
+            <EntityTypeMapping TypeName="SigaAdminModel.PaymentItem">
+              <MappingFragment StoreEntitySet="PaymentItems">
+                <ScalarProperty Name="IsEnabled" ColumnName="IsEnabled" />
+                <ScalarProperty Name="InvoiveAmountAtMoment" ColumnName="InvoiveAmountAtMoment" />
+                <ScalarProperty Name="AmountApply" ColumnName="AmountApply" />
+                <ScalarProperty Name="InvoiceNumber" ColumnName="InvoiceNumber" />
+                <ScalarProperty Name="PaymentOrderId" ColumnName="PaymentOrderId" />
+                <ScalarProperty Name="Id" ColumnName="Id" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="PaymentOrders">
+            <EntityTypeMapping TypeName="SigaAdminModel.PaymentOrder">
+              <MappingFragment StoreEntitySet="PaymentOrders">
+                <ScalarProperty Name="Imported" ColumnName="Imported" />
+                <ScalarProperty Name="IsOpen" ColumnName="IsOpen" />
+                <ScalarProperty Name="Customer_Code" ColumnName="Customer_Code" />
+                <ScalarProperty Name="IsEnabled" ColumnName="IsEnabled" />
+                <ScalarProperty Name="CheckDate" ColumnName="CheckDate" />
+                <ScalarProperty Name="CheckNumber" ColumnName="CheckNumber" />
+                <ScalarProperty Name="BankName" ColumnName="BankName" />
+                <ScalarProperty Name="Method" ColumnName="Method" />
+                <ScalarProperty Name="Amount" ColumnName="Amount" />
+                <ScalarProperty Name="Datetime" ColumnName="Datetime" />
+                <ScalarProperty Name="VendorID" ColumnName="VendorID" />
+                <ScalarProperty Name="Id" ColumnName="Id" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+        </EntityContainerMapping>
+      </Mapping>
+    </edmx:Mappings>
+  </edmx:Runtime>
+  <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
+    <Connection>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="MetadataArtifactProcessing" Value="EmbedInOutputAssembly" />
+      </DesignerInfoPropertySet>
+    </Connection>
+    <Options>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="ValidateOnBuild" Value="true" />
+        <DesignerProperty Name="EnablePluralization" Value="True" />
+        <DesignerProperty Name="IncludeForeignKeysInModel" Value="true" />
+        <DesignerProperty Name="UseLegacyProvider" Value="true" />
+        <DesignerProperty Name="CodeGenerationStrategy" Value="None" />
+      </DesignerInfoPropertySet>
+    </Options>
+    <!-- Diagram content (shape and connector positions) -->
+    <Diagrams></Diagrams>
+  </Designer>
+</edmx:Edmx>

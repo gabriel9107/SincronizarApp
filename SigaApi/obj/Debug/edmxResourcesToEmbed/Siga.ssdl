@@ -1,0 +1,186 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Schema Namespace="SigaAdminModel.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2008" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+  <EntityType Name="Customers">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="CustomerCode" Type="nvarchar(max)" />
+    <Property Name="CustomerName" Type="nvarchar(max)" />
+    <Property Name="Clase" Type="nvarchar(max)" />
+    <Property Name="CustomerDir" Type="nvarchar(max)" />
+    <Property Name="ShippingMth" Type="nvarchar(max)" />
+    <Property Name="Street" Type="nvarchar(max)" />
+    <Property Name="Country" Type="nvarchar(max)" />
+    <Property Name="City" Type="nvarchar(max)" />
+    <Property Name="Phone1" Type="nvarchar(max)" />
+    <Property Name="Phone2" Type="nvarchar(max)" />
+    <Property Name="Phone3" Type="nvarchar(max)" />
+    <Property Name="Fax" Type="nvarchar(max)" />
+    <Property Name="Comment1" Type="nvarchar(max)" />
+    <Property Name="Comment2" Type="nvarchar(max)" />
+    <Property Name="VendorCode" Type="nvarchar(max)" />
+    <Property Name="IsNew" Type="bit" Nullable="false" />
+    <Property Name="IsInAx" Type="bit" Nullable="false" />
+    <Property Name="IntegrationDate" Type="datetime" />
+  </EntityType>
+  <EntityType Name="Factura">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="Compagnia" Type="int" Nullable="false" />
+    <Property Name="FacturaFecha" Type="datetime" Nullable="false" />
+    <Property Name="FacturaId" Type="nvarchar" MaxLength="20" Nullable="false" />
+    <Property Name="FacturaVencimiento" Type="datetime" Nullable="false" />
+    <Property Name="IsDelete" Type="int" Nullable="false" />
+    <Property Name="MetodoDePago" Type="nvarchar" MaxLength="10" Nullable="false" />
+    <Property Name="MontoFactura" Type="numeric" Precision="32" Scale="16" Nullable="false" />
+    <Property Name="PedidoId" Type="nvarchar" MaxLength="20" Nullable="false" />
+    <Property Name="sincronizad" Type="int" Nullable="false" />
+    <Property Name="MontoPendiente" Type="numeric" Precision="32" Scale="16" Nullable="false" />
+    <Property Name="clienteId" Type="nvarchar" MaxLength="20" Nullable="false" />
+    <Property Name="clienteNombre" Type="nvarchar" MaxLength="100" Nullable="false" />
+    <Property Name="totalPagado" Type="int" Nullable="false" />
+    <Property Name="vendedorId" Type="nvarchar" MaxLength="40" Nullable="false" />
+    <Property Name="Sincronizado" Type="int" />
+  </EntityType>
+  <EntityType Name="FacturaDetalle">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="Compagnia" Type="int" Nullable="false" />
+    <Property Name="FacturaId" Type="nvarchar" MaxLength="20" Nullable="false" />
+    <Property Name="isDelete" Type="int" Nullable="false" />
+    <Property Name="LineaNumero" Type="numeric" Precision="32" Scale="16" Nullable="false" />
+    <Property Name="ProductoCodigo" Type="nvarchar" MaxLength="20" Nullable="false" />
+    <Property Name="Nombre" Type="nvarchar" MaxLength="1000" Nullable="false" />
+    <Property Name="Qty" Type="int" Nullable="false" />
+    <Property Name="PrecioVenta" Type="decimal" Precision="18" Scale="2" Nullable="false" />
+    <Property Name="MontoLinea" Type="decimal" Precision="18" Scale="2" Nullable="false" />
+    <Property Name="Sincronizado" Type="int" Nullable="false" />
+  </EntityType>
+  <EntityType Name="InvoiceLines">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="Qty" Type="int" />
+    <Property Name="ProductID" Type="int" />
+    <Property Name="ProductCode" Type="nvarchar(max)" />
+    <Property Name="Price" Type="decimal" Precision="18" Scale="2" Nullable="false" />
+    <Property Name="InvoiceID" Type="int" />
+    <Property Name="IsNew" Type="bit" Nullable="false" />
+    <Property Name="IsInAx" Type="bit" Nullable="false" />
+    <Property Name="IntegrationDate" Type="datetime" />
+  </EntityType>
+  <EntityType Name="Invoices">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="GPID" Type="nvarchar(max)" />
+    <Property Name="Date" Type="datetime" Nullable="false" />
+    <Property Name="CustomerID" Type="int" Nullable="false" />
+    <Property Name="Totals" Type="decimal" Precision="18" Scale="2" Nullable="false" />
+    <Property Name="VAT" Type="decimal" Precision="18" Scale="2" Nullable="false" />
+    <Property Name="Cash" Type="decimal" Precision="18" Scale="2" Nullable="false" />
+    <Property Name="Change" Type="decimal" Precision="18" Scale="2" Nullable="false" />
+    <Property Name="Status" Type="int" Nullable="false" />
+    <Property Name="IDSaled" Type="int" />
+    <Property Name="IsNew" Type="bit" Nullable="false" />
+    <Property Name="IsInAx" Type="bit" Nullable="false" />
+    <Property Name="IntegrationDate" Type="datetime" />
+    <Property Name="VendorCode" Type="nvarchar(max)" />
+  </EntityType>
+  <EntityType Name="PaymentItems">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="PaymentOrderId" Type="int" Nullable="false" />
+    <Property Name="InvoiceNumber" Type="nvarchar(max)" />
+    <Property Name="AmountApply" Type="decimal" Precision="18" Scale="2" Nullable="false" />
+    <Property Name="InvoiveAmountAtMoment" Type="decimal" Precision="18" Scale="2" Nullable="false" />
+    <Property Name="IsEnabled" Type="bit" Nullable="false" />
+  </EntityType>
+  <EntityType Name="PaymentOrders">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="VendorID" Type="nvarchar" MaxLength="128" />
+    <Property Name="Datetime" Type="datetime" Nullable="false" />
+    <Property Name="Amount" Type="decimal" Precision="18" Scale="2" Nullable="false" />
+    <Property Name="Method" Type="nvarchar(max)" />
+    <Property Name="BankName" Type="nvarchar(max)" />
+    <Property Name="CheckNumber" Type="nvarchar(max)" />
+    <Property Name="CheckDate" Type="datetime" />
+    <Property Name="IsEnabled" Type="bit" Nullable="false" />
+    <Property Name="Customer_Code" Type="nvarchar" MaxLength="20" />
+    <Property Name="IsOpen" Type="bit" Nullable="false" />
+    <Property Name="Imported" Type="bit" Nullable="false" />
+  </EntityType>
+  <Association Name="FK_dbo_InvoiceLines_dbo_Invoices_InvoiceID">
+    <End Role="Invoices" Type="Self.Invoices" Multiplicity="0..1" />
+    <End Role="InvoiceLines" Type="Self.InvoiceLines" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Invoices">
+        <PropertyRef Name="ID" />
+      </Principal>
+      <Dependent Role="InvoiceLines">
+        <PropertyRef Name="InvoiceID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_dbo_Invoices_dbo_Customers_CustomerID">
+    <End Role="Customers" Type="Self.Customers" Multiplicity="1">
+      <OnDelete Action="Cascade" />
+    </End>
+    <End Role="Invoices" Type="Self.Invoices" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="Customers">
+        <PropertyRef Name="ID" />
+      </Principal>
+      <Dependent Role="Invoices">
+        <PropertyRef Name="CustomerID" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_dbo_PaymentItems_dbo_PaymentOrders_PaymentOrderId">
+    <End Role="PaymentOrders" Type="Self.PaymentOrders" Multiplicity="1">
+      <OnDelete Action="Cascade" />
+    </End>
+    <End Role="PaymentItems" Type="Self.PaymentItems" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="PaymentOrders">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="PaymentItems">
+        <PropertyRef Name="PaymentOrderId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <EntityContainer Name="SigaAdminModelStoreContainer">
+    <EntitySet Name="Customers" EntityType="Self.Customers" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Factura" EntityType="Self.Factura" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="FacturaDetalle" EntityType="Self.FacturaDetalle" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="InvoiceLines" EntityType="Self.InvoiceLines" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Invoices" EntityType="Self.Invoices" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="PaymentItems" EntityType="Self.PaymentItems" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="PaymentOrders" EntityType="Self.PaymentOrders" Schema="dbo" store:Type="Tables" />
+    <AssociationSet Name="FK_dbo_InvoiceLines_dbo_Invoices_InvoiceID" Association="Self.FK_dbo_InvoiceLines_dbo_Invoices_InvoiceID">
+      <End Role="Invoices" EntitySet="Invoices" />
+      <End Role="InvoiceLines" EntitySet="InvoiceLines" />
+    </AssociationSet>
+    <AssociationSet Name="FK_dbo_Invoices_dbo_Customers_CustomerID" Association="Self.FK_dbo_Invoices_dbo_Customers_CustomerID">
+      <End Role="Customers" EntitySet="Customers" />
+      <End Role="Invoices" EntitySet="Invoices" />
+    </AssociationSet>
+    <AssociationSet Name="FK_dbo_PaymentItems_dbo_PaymentOrders_PaymentOrderId" Association="Self.FK_dbo_PaymentItems_dbo_PaymentOrders_PaymentOrderId">
+      <End Role="PaymentOrders" EntitySet="PaymentOrders" />
+      <End Role="PaymentItems" EntitySet="PaymentItems" />
+    </AssociationSet>
+  </EntityContainer>
+</Schema>
