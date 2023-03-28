@@ -1,0 +1,35 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
+  <EntityContainerMapping StorageEntityContainer="SigaAppDB02ModelStoreContainer" CdmEntityContainer="SigaAppDB02Entities">
+    <EntitySetMapping Name="Facturas">
+      <EntityTypeMapping TypeName="SigaAppDB02Model.Factura">
+        <MappingFragment StoreEntitySet="Factura">
+          <ScalarProperty Name="Id" ColumnName="Id" />
+          <ScalarProperty Name="FacturaId" ColumnName="FacturaId" />
+          <ScalarProperty Name="FacturaFecha" ColumnName="FacturaFecha" />
+          <ScalarProperty Name="FacturaVencimiento" ColumnName="FacturaVencimiento" />
+          <ScalarProperty Name="MetodoDePago" ColumnName="MetodoDePago" />
+          <ScalarProperty Name="MontoFactura" ColumnName="MontoFactura" />
+          <ScalarProperty Name="PedidoId" ColumnName="PedidoId" />
+          <ScalarProperty Name="totalPagado" ColumnName="totalPagado" />
+          <ScalarProperty Name="Sincronizado" ColumnName="Sincronizado" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="FaturaDetalles">
+      <EntityTypeMapping TypeName="SigaAppDB02Model.FaturaDetalle">
+        <MappingFragment StoreEntitySet="FaturaDetalle">
+          <ScalarProperty Name="Id" ColumnName="Id" />
+          <ScalarProperty Name="FacturaNumero" ColumnName="FacturaNumero" />
+          <ScalarProperty Name="LineaNumero" ColumnName="LineaNumero" />
+          <ScalarProperty Name="Nombre" ColumnName="Nombre" />
+          <ScalarProperty Name="Precio" ColumnName="Precio" />
+          <ScalarProperty Name="ProductoCodigo" ColumnName="ProductoCodigo" />
+          <ScalarProperty Name="Qty" ColumnName="Qty" />
+          <ScalarProperty Name="MontoLinea" ColumnName="MontoLinea" />
+          <ScalarProperty Name="Sincronizado" ColumnName="Sincronizado" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+  </EntityContainerMapping>
+</Mapping>

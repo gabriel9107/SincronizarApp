@@ -7,16 +7,16 @@
 // </auto-generated>
 //------------------------------------------------------------------------------
 
-namespace SigaApi
+namespace SigaApi.Properties
 {
     using System;
     using System.Data.Entity;
     using System.Data.Entity.Infrastructure;
     
-    public partial class SigaAdminEntities : DbContext
+    public partial class SigaAppDB02Entities : DbContext
     {
-        public SigaAdminEntities()
-            : base("name=SigaAdminEntities")
+        public SigaAppDB02Entities()
+            : base("name=SigaAppDB02Entities")
         {
         }
     
@@ -25,15 +25,7 @@ namespace SigaApi
             throw new UnintentionalCodeFirstException();
         }
     
-        public DbSet<Customers> Customers { get; set; }
-        public DbSet<InvoiceLines> InvoiceLines { get; set; }
-        public DbSet<Invoices> Invoices { get; set; }
-        public DbSet<PaymentItem> PaymentItems { get; set; }
-        public DbSet<PaymentOrder> PaymentOrders { get; set; }
-        public DbSet<FacturaDetalle> FacturaDetalles { get; set; }
         public DbSet<Factura> Facturas { get; set; }
-        public DbSet<CUSTTABLE> CUSTTABLEs { get; set; }
-        public DbSet<pedidoAx> pedidoAxes { get; set; }
-        public DbSet<PedidoDetalleAx> PedidoDetalleAxes { get; set; }
+        public DbSet<FaturaDetalle> FaturaDetalles { get; set; }
     }
 }

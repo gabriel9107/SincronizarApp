@@ -77,6 +77,9 @@
     <Compile Include="Customers.cs">
       <DependentUpon>Siga.tt</DependentUpon>
     </Compile>
+    <Compile Include="CUSTTABLE.cs">
+      <DependentUpon>Siga.tt</DependentUpon>
+    </Compile>
     <Compile Include="Factura.cs">
       <DependentUpon>Siga.tt</DependentUpon>
     </Compile>
@@ -98,9 +101,36 @@
       <DependentUpon>Siga.tt</DependentUpon>
     </Compile>
     <Compile Include="Pedido.cs" />
+    <Compile Include="pedidoAx.cs">
+      <DependentUpon>Siga.tt</DependentUpon>
+    </Compile>
     <Compile Include="PedidoDetalle.cs" />
+    <Compile Include="PedidoDetalleAx.cs">
+      <DependentUpon>Siga.tt</DependentUpon>
+    </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Properties\Factura.cs">
+      <DependentUpon>Siga.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Properties\FaturaDetalle.cs">
+      <DependentUpon>Siga.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Properties\Siga.Context.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Siga.Context.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Properties\Siga.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Siga.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Properties\Siga.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Siga.edmx</DependentUpon>
+    </Compile>
     <Compile Include="Siga.Context.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
@@ -124,6 +154,13 @@
       <Generator>EntityModelCodeGenerator</Generator>
       <LastGenOutput>Siga.Designer.cs</LastGenOutput>
     </EntityDeploy>
+    <EntityDeploy Include="Properties\Siga.edmx">
+      <Generator>EntityModelCodeGenerator</Generator>
+      <LastGenOutput>Siga.Designer.cs</LastGenOutput>
+    </EntityDeploy>
+    <None Include="Properties\Siga.edmx.diagram">
+      <DependentUpon>Siga.edmx</DependentUpon>
+    </None>
     <None Include="Siga.edmx.diagram">
       <DependentUpon>Siga.edmx</DependentUpon>
     </None>
@@ -132,6 +169,16 @@
     <Service Include="{508349B6-6B84-4DF5-91F0-309BEEBAD82D}" />
   </ItemGroup>
   <ItemGroup>
+    <Content Include="Properties\Siga.Context.tt">
+      <Generator>TextTemplatingFileGenerator</Generator>
+      <DependentUpon>Siga.edmx</DependentUpon>
+      <LastGenOutput>Siga.Context.cs</LastGenOutput>
+    </Content>
+    <Content Include="Properties\Siga.tt">
+      <Generator>TextTemplatingFileGenerator</Generator>
+      <DependentUpon>Siga.edmx</DependentUpon>
+      <LastGenOutput>Siga.cs</LastGenOutput>
+    </Content>
     <Content Include="Siga.Context.tt">
       <Generator>TextTemplatingFileGenerator</Generator>
       <DependentUpon>Siga.edmx</DependentUpon>

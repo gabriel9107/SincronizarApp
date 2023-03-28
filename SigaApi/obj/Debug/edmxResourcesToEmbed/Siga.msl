@@ -4,6 +4,8 @@
     <EntitySetMapping Name="Customers">
       <EntityTypeMapping TypeName="SigaAdminModel.Customers">
         <MappingFragment StoreEntitySet="Customers">
+          <ScalarProperty Name="idFire" ColumnName="idFire" />
+          <ScalarProperty Name="subir" ColumnName="subir" />
           <ScalarProperty Name="ID" ColumnName="ID" />
           <ScalarProperty Name="CustomerCode" ColumnName="CustomerCode" />
           <ScalarProperty Name="CustomerName" ColumnName="CustomerName" />
@@ -44,6 +46,8 @@
     <EntitySetMapping Name="Invoices">
       <EntityTypeMapping TypeName="SigaAdminModel.Invoices">
         <MappingFragment StoreEntitySet="Invoices">
+          <ScalarProperty Name="Updatefire" ColumnName="Updatefire" />
+          <ScalarProperty Name="ifFire" ColumnName="ifFire" />
           <ScalarProperty Name="ID" ColumnName="ID" />
           <ScalarProperty Name="GPID" ColumnName="GPID" />
           <ScalarProperty Name="Date" ColumnName="Date" />
@@ -58,45 +62,6 @@
           <ScalarProperty Name="IsInAx" ColumnName="IsInAx" />
           <ScalarProperty Name="IntegrationDate" ColumnName="IntegrationDate" />
           <ScalarProperty Name="VendorCode" ColumnName="VendorCode" />
-        </MappingFragment>
-      </EntityTypeMapping>
-    </EntitySetMapping>
-    <EntitySetMapping Name="Facturas">
-      <EntityTypeMapping TypeName="SigaAdminModel.Factura">
-        <MappingFragment StoreEntitySet="Factura">
-          <ScalarProperty Name="Sincronizado" ColumnName="Sincronizado" />
-          <ScalarProperty Name="vendedorId" ColumnName="vendedorId" />
-          <ScalarProperty Name="totalPagado" ColumnName="totalPagado" />
-          <ScalarProperty Name="clienteNombre" ColumnName="clienteNombre" />
-          <ScalarProperty Name="clienteId" ColumnName="clienteId" />
-          <ScalarProperty Name="MontoPendiente" ColumnName="MontoPendiente" />
-          <ScalarProperty Name="sincronizad" ColumnName="sincronizad" />
-          <ScalarProperty Name="PedidoId" ColumnName="PedidoId" />
-          <ScalarProperty Name="MontoFactura" ColumnName="MontoFactura" />
-          <ScalarProperty Name="MetodoDePago" ColumnName="MetodoDePago" />
-          <ScalarProperty Name="IsDelete" ColumnName="IsDelete" />
-          <ScalarProperty Name="FacturaVencimiento" ColumnName="FacturaVencimiento" />
-          <ScalarProperty Name="FacturaId" ColumnName="FacturaId" />
-          <ScalarProperty Name="FacturaFecha" ColumnName="FacturaFecha" />
-          <ScalarProperty Name="Compagnia" ColumnName="Compagnia" />
-          <ScalarProperty Name="id" ColumnName="id" />
-        </MappingFragment>
-      </EntityTypeMapping>
-    </EntitySetMapping>
-    <EntitySetMapping Name="FacturaDetalles">
-      <EntityTypeMapping TypeName="SigaAdminModel.FacturaDetalle">
-        <MappingFragment StoreEntitySet="FacturaDetalle">
-          <ScalarProperty Name="Sincronizado" ColumnName="Sincronizado" />
-          <ScalarProperty Name="MontoLinea" ColumnName="MontoLinea" />
-          <ScalarProperty Name="PrecioVenta" ColumnName="PrecioVenta" />
-          <ScalarProperty Name="Qty" ColumnName="Qty" />
-          <ScalarProperty Name="Nombre" ColumnName="Nombre" />
-          <ScalarProperty Name="ProductoCodigo" ColumnName="ProductoCodigo" />
-          <ScalarProperty Name="LineaNumero" ColumnName="LineaNumero" />
-          <ScalarProperty Name="isDelete" ColumnName="isDelete" />
-          <ScalarProperty Name="FacturaId" ColumnName="FacturaId" />
-          <ScalarProperty Name="Compagnia" ColumnName="Compagnia" />
-          <ScalarProperty Name="ID" ColumnName="ID" />
         </MappingFragment>
       </EntityTypeMapping>
     </EntitySetMapping>
@@ -127,6 +92,173 @@
           <ScalarProperty Name="Datetime" ColumnName="Datetime" />
           <ScalarProperty Name="VendorID" ColumnName="VendorID" />
           <ScalarProperty Name="Id" ColumnName="Id" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="FacturaDetalles">
+      <EntityTypeMapping TypeName="SigaAdminModel.FacturaDetalle">
+        <MappingFragment StoreEntitySet="FacturaDetalle">
+          <ScalarProperty Name="Sincronizado" ColumnName="Sincronizado" />
+          <ScalarProperty Name="MontoLinea" ColumnName="MontoLinea" />
+          <ScalarProperty Name="PrecioVenta" ColumnName="PrecioVenta" />
+          <ScalarProperty Name="Qty" ColumnName="Qty" />
+          <ScalarProperty Name="Nombre" ColumnName="Nombre" />
+          <ScalarProperty Name="ProductoCodigo" ColumnName="ProductoCodigo" />
+          <ScalarProperty Name="LineaNumero" ColumnName="LineaNumero" />
+          <ScalarProperty Name="isDelete" ColumnName="isDelete" />
+          <ScalarProperty Name="FacturaId" ColumnName="FacturaId" />
+          <ScalarProperty Name="Compagnia" ColumnName="Compagnia" />
+          <ScalarProperty Name="ID" ColumnName="ID" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="Facturas">
+      <EntityTypeMapping TypeName="SigaAdminModel.Factura">
+        <MappingFragment StoreEntitySet="Factura">
+          <ScalarProperty Name="vendedorId" ColumnName="vendedorId" />
+          <ScalarProperty Name="totalPagado" ColumnName="totalPagado" />
+          <ScalarProperty Name="clienteNombre" ColumnName="clienteNombre" />
+          <ScalarProperty Name="clienteId" ColumnName="clienteId" />
+          <ScalarProperty Name="MontoPendiente" ColumnName="MontoPendiente" />
+          <ScalarProperty Name="Sincronizado" ColumnName="Sincronizado" />
+          <ScalarProperty Name="PedidoId" ColumnName="PedidoId" />
+          <ScalarProperty Name="MontoFactura" ColumnName="MontoFactura" />
+          <ScalarProperty Name="MetodoDePago" ColumnName="MetodoDePago" />
+          <ScalarProperty Name="IsDelete" ColumnName="IsDelete" />
+          <ScalarProperty Name="FacturaVencimiento" ColumnName="FacturaVencimiento" />
+          <ScalarProperty Name="FacturaId" ColumnName="FacturaId" />
+          <ScalarProperty Name="FacturaFecha" ColumnName="FacturaFecha" />
+          <ScalarProperty Name="Compagnia" ColumnName="Compagnia" />
+          <ScalarProperty Name="id" ColumnName="id" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="CUSTTABLEs">
+      <EntityTypeMapping TypeName="SigaAdminModel.CUSTTABLE">
+        <MappingFragment StoreEntitySet="CUSTTABLE">
+          <ScalarProperty Name="Codigo" ColumnName="Codigo" />
+          <ScalarProperty Name="DEX_ROW_ID" ColumnName="DEX_ROW_ID" />
+          <ScalarProperty Name="DEX_ROW_TS" ColumnName="DEX_ROW_TS" />
+          <ScalarProperty Name="INCLUDEINDP" ColumnName="INCLUDEINDP" />
+          <ScalarProperty Name="CBVAT" ColumnName="CBVAT" />
+          <ScalarProperty Name="SHIPCOMPLETE" ColumnName="SHIPCOMPLETE" />
+          <ScalarProperty Name="RMOvrpymtWrtoffAcctIdx" ColumnName="RMOvrpymtWrtoffAcctIdx" />
+          <ScalarProperty Name="DECLID" ColumnName="DECLID" />
+          <ScalarProperty Name="CCode" ColumnName="CCode" />
+          <ScalarProperty Name="CUSTPRIORITY" ColumnName="CUSTPRIORITY" />
+          <ScalarProperty Name="ORDERFULFILLDEFAULT" ColumnName="ORDERFULFILLDEFAULT" />
+          <ScalarProperty Name="INTEGRATIONID" ColumnName="INTEGRATIONID" />
+          <ScalarProperty Name="INTEGRATIONSOURCE" ColumnName="INTEGRATIONSOURCE" />
+          <ScalarProperty Name="GPSFOINTEGRATIONID" ColumnName="GPSFOINTEGRATIONID" />
+          <ScalarProperty Name="USERLANG" ColumnName="USERLANG" />
+          <ScalarProperty Name="Send_Email_Statements" ColumnName="Send_Email_Statements" />
+          <ScalarProperty Name="DOCFMTID" ColumnName="DOCFMTID" />
+          <ScalarProperty Name="DUEGRPER" ColumnName="DUEGRPER" />
+          <ScalarProperty Name="DISGRPER" ColumnName="DISGRPER" />
+          <ScalarProperty Name="GOVINDID" ColumnName="GOVINDID" />
+          <ScalarProperty Name="GOVCRPID" ColumnName="GOVCRPID" />
+          <ScalarProperty Name="FINCHID" ColumnName="FINCHID" />
+          <ScalarProperty Name="Post_Results_To" ColumnName="Post_Results_To" />
+          <ScalarProperty Name="Revalue_Customer" ColumnName="Revalue_Customer" />
+          <ScalarProperty Name="MODIFDT" ColumnName="MODIFDT" />
+          <ScalarProperty Name="CREATDDT" ColumnName="CREATDDT" />
+          <ScalarProperty Name="NOTEINDX" ColumnName="NOTEINDX" />
+          <ScalarProperty Name="KPTRXHST" ColumnName="KPTRXHST" />
+          <ScalarProperty Name="KPERHIST" ColumnName="KPERHIST" />
+          <ScalarProperty Name="KPCALHST" ColumnName="KPCALHST" />
+          <ScalarProperty Name="KPDSTHST" ColumnName="KPDSTHST" />
+          <ScalarProperty Name="CCRDXPDT" ColumnName="CCRDXPDT" />
+          <ScalarProperty Name="CRCRDNUM" ColumnName="CRCRDNUM" />
+          <ScalarProperty Name="CRCARDID" ColumnName="CRCARDID" />
+          <ScalarProperty Name="HOLD" ColumnName="HOLD" />
+          <ScalarProperty Name="INACTIVE" ColumnName="INACTIVE" />
+          <ScalarProperty Name="FRSTINDT" ColumnName="FRSTINDT" />
+          <ScalarProperty Name="RMSORACC" ColumnName="RMSORACC" />
+          <ScalarProperty Name="RMWRACC" ColumnName="RMWRACC" />
+          <ScalarProperty Name="RMFCGACC" ColumnName="RMFCGACC" />
+          <ScalarProperty Name="RMAVACC" ColumnName="RMAVACC" />
+          <ScalarProperty Name="RMTAKACC" ColumnName="RMTAKACC" />
+          <ScalarProperty Name="RMCOSACC" ColumnName="RMCOSACC" />
+          <ScalarProperty Name="RMIVACC" ColumnName="RMIVACC" />
+          <ScalarProperty Name="RMSLSACC" ColumnName="RMSLSACC" />
+          <ScalarProperty Name="RMARACC" ColumnName="RMARACC" />
+          <ScalarProperty Name="RMCSHACC" ColumnName="RMCSHACC" />
+          <ScalarProperty Name="DEFCACTY" ColumnName="DEFCACTY" />
+          <ScalarProperty Name="SALSTERR" ColumnName="SALSTERR" />
+          <ScalarProperty Name="BNKBRNCH" ColumnName="BNKBRNCH" />
+          <ScalarProperty Name="BANKNAME" ColumnName="BANKNAME" />
+          <ScalarProperty Name="STMTCYCL" ColumnName="STMTCYCL" />
+          <ScalarProperty Name="BALNCTYP" ColumnName="BALNCTYP" />
+          <ScalarProperty Name="TXRGNNUM" ColumnName="TXRGNNUM" />
+          <ScalarProperty Name="TAXEXMT2" ColumnName="TAXEXMT2" />
+          <ScalarProperty Name="TAXEXMT1" ColumnName="TAXEXMT1" />
+          <ScalarProperty Name="USERDEF2" ColumnName="USERDEF2" />
+          <ScalarProperty Name="USERDEF1" ColumnName="USERDEF1" />
+          <ScalarProperty Name="COMMENT2" ColumnName="COMMENT2" />
+          <ScalarProperty Name="COMMENT1" ColumnName="COMMENT1" />
+          <ScalarProperty Name="MXWROFAM" ColumnName="MXWROFAM" />
+          <ScalarProperty Name="MXWOFTYP" ColumnName="MXWOFTYP" />
+          <ScalarProperty Name="FINCHDLR" ColumnName="FINCHDLR" />
+          <ScalarProperty Name="FNCHPCNT" ColumnName="FNCHPCNT" />
+          <ScalarProperty Name="FNCHATYP" ColumnName="FNCHATYP" />
+          <ScalarProperty Name="MINPYPCT" ColumnName="MINPYPCT" />
+          <ScalarProperty Name="MINPYDLR" ColumnName="MINPYDLR" />
+          <ScalarProperty Name="MINPYTYP" ColumnName="MINPYTYP" />
+          <ScalarProperty Name="PRCLEVEL" ColumnName="PRCLEVEL" />
+          <ScalarProperty Name="CUSTDISC" ColumnName="CUSTDISC" />
+          <ScalarProperty Name="RATETPID" ColumnName="RATETPID" />
+          <ScalarProperty Name="CURNCYID" ColumnName="CURNCYID" />
+          <ScalarProperty Name="CRLMTPAM" ColumnName="CRLMTPAM" />
+          <ScalarProperty Name="CRLMTPER" ColumnName="CRLMTPER" />
+          <ScalarProperty Name="CRLMTAMT" ColumnName="CRLMTAMT" />
+          <ScalarProperty Name="CRLMTTYP" ColumnName="CRLMTTYP" />
+          <ScalarProperty Name="PYMTRMID" ColumnName="PYMTRMID" />
+          <ScalarProperty Name="CHEKBKID" ColumnName="CHEKBKID" />
+          <ScalarProperty Name="SLPRSNID" ColumnName="SLPRSNID" />
+          <ScalarProperty Name="STADDRCD" ColumnName="STADDRCD" />
+          <ScalarProperty Name="PRSTADCD" ColumnName="PRSTADCD" />
+          <ScalarProperty Name="PRBTADCD" ColumnName="PRBTADCD" />
+          <ScalarProperty Name="FAX" ColumnName="FAX" />
+          <ScalarProperty Name="PHONE3" ColumnName="PHONE3" />
+          <ScalarProperty Name="PHONE2" ColumnName="PHONE2" />
+          <ScalarProperty Name="PHONE1" ColumnName="PHONE1" />
+          <ScalarProperty Name="ZIP" ColumnName="ZIP" />
+          <ScalarProperty Name="STATE" ColumnName="STATE" />
+          <ScalarProperty Name="CITY" ColumnName="CITY" />
+          <ScalarProperty Name="COUNTRY" ColumnName="COUNTRY" />
+          <ScalarProperty Name="ADDRESS3" ColumnName="ADDRESS3" />
+          <ScalarProperty Name="ADDRESS2" ColumnName="ADDRESS2" />
+          <ScalarProperty Name="ADDRESS1" ColumnName="ADDRESS1" />
+          <ScalarProperty Name="TAXSCHID" ColumnName="TAXSCHID" />
+          <ScalarProperty Name="SHIPMTHD" ColumnName="SHIPMTHD" />
+          <ScalarProperty Name="UPSZONE" ColumnName="UPSZONE" />
+          <ScalarProperty Name="ADRSCODE" ColumnName="ADRSCODE" />
+          <ScalarProperty Name="SHRTNAME" ColumnName="SHRTNAME" />
+          <ScalarProperty Name="STMTNAME" ColumnName="STMTNAME" />
+          <ScalarProperty Name="CNTCPRSN" ColumnName="CNTCPRSN" />
+          <ScalarProperty Name="CPRCSTNM" ColumnName="CPRCSTNM" />
+          <ScalarProperty Name="CUSTCLAS" ColumnName="CUSTCLAS" />
+          <ScalarProperty Name="CUSTNAME" ColumnName="CUSTNAME" />
+          <ScalarProperty Name="CUSTNMBR" ColumnName="CUSTNMBR" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="pedidoAxes">
+      <EntityTypeMapping TypeName="SigaAdminModel.pedidoAx">
+        <MappingFragment StoreEntitySet="pedidoAx">
+          <ScalarProperty Name="clienteNuevo" ColumnName="clienteNuevo" />
+          <ScalarProperty Name="id" ColumnName="id" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="PedidoDetalleAxes">
+      <EntityTypeMapping TypeName="SigaAdminModel.PedidoDetalleAx">
+        <MappingFragment StoreEntitySet="PedidoDetalleAx">
+          <ScalarProperty Name="Cantidad" ColumnName="Cantidad" />
+          <ScalarProperty Name="Precio" ColumnName="Precio" />
+          <ScalarProperty Name="Codigo" ColumnName="Codigo" />
+          <ScalarProperty Name="PedidoSigaId" ColumnName="PedidoSigaId" />
+          <ScalarProperty Name="id" ColumnName="id" />
         </MappingFragment>
       </EntityTypeMapping>
     </EntitySetMapping>

@@ -1,0 +1,35 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Schema Namespace="SigaAppDB02Model" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
+  <EntityType Name="Factura">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="FacturaId" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="FacturaFecha" Type="DateTime" Precision="3" />
+    <Property Name="FacturaVencimiento" Type="DateTime" Precision="3" />
+    <Property Name="MetodoDePago" Type="String" MaxLength="10" FixedLength="true" Unicode="true" />
+    <Property Name="MontoFactura" Type="Decimal" Precision="18" Scale="2" />
+    <Property Name="PedidoId" Type="String" MaxLength="10" FixedLength="true" Unicode="true" />
+    <Property Name="totalPagado" Type="Int32" />
+    <Property Name="Sincronizado" Type="String" MaxLength="2" FixedLength="true" Unicode="false" />
+  </EntityType>
+  <EntityType Name="FaturaDetalle">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="FacturaNumero" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="LineaNumero" Type="String" MaxLength="10" FixedLength="true" Unicode="true" />
+    <Property Name="Nombre" Type="String" MaxLength="150" FixedLength="false" Unicode="true" />
+    <Property Name="Precio" Type="Decimal" Precision="18" Scale="2" />
+    <Property Name="ProductoCodigo" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="Qty" Type="Int32" />
+    <Property Name="MontoLinea" Type="Decimal" Precision="18" Scale="2" />
+    <Property Name="Sincronizado" Type="String" MaxLength="2" FixedLength="true" Unicode="true" />
+  </EntityType>
+  <EntityContainer Name="SigaAppDB02Entities" annotation:LazyLoadingEnabled="true">
+    <EntitySet Name="Facturas" EntityType="Self.Factura" />
+    <EntitySet Name="FaturaDetalles" EntityType="Self.FaturaDetalle" />
+  </EntityContainer>
+</Schema>

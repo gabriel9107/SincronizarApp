@@ -7,23 +7,21 @@
 // </auto-generated>
 //------------------------------------------------------------------------------
 
-namespace SigaApi
+namespace SigaApi.Properties
 {
     using System;
     using System.Collections.Generic;
     
-    public partial class FacturaDetalle
+    public partial class Factura
     {
-        public int ID { get; set; }
-        public int Compagnia { get; set; }
+        public int Id { get; set; }
         public string FacturaId { get; set; }
-        public int isDelete { get; set; }
-        public decimal LineaNumero { get; set; }
-        public string ProductoCodigo { get; set; }
-        public string Nombre { get; set; }
-        public int Qty { get; set; }
-        public decimal PrecioVenta { get; set; }
-        public decimal MontoLinea { get; set; }
-        public int Sincronizado { get; set; }
+        public Nullable<System.DateTime> FacturaFecha { get; set; }
+        public Nullable<System.DateTime> FacturaVencimiento { get; set; }
+        public string MetodoDePago { get; set; }
+        public Nullable<decimal> MontoFactura { get; set; }
+        public string PedidoId { get; set; }
+        public Nullable<int> totalPagado { get; set; }
+        public string Sincronizado { get; set; }
     }
 }

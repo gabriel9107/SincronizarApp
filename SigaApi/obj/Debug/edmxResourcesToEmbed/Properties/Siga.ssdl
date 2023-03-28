@@ -1,0 +1,35 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Schema Namespace="SigaAppDB02Model.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2008" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+  <EntityType Name="Factura">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="FacturaId" Type="nvarchar" MaxLength="50" />
+    <Property Name="FacturaFecha" Type="datetime" />
+    <Property Name="FacturaVencimiento" Type="datetime" />
+    <Property Name="MetodoDePago" Type="nchar" MaxLength="10" />
+    <Property Name="MontoFactura" Type="decimal" Precision="18" Scale="2" />
+    <Property Name="PedidoId" Type="nchar" MaxLength="10" />
+    <Property Name="totalPagado" Type="int" />
+    <Property Name="Sincronizado" Type="char" MaxLength="2" />
+  </EntityType>
+  <EntityType Name="FaturaDetalle">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="FacturaNumero" Type="nvarchar" MaxLength="50" />
+    <Property Name="LineaNumero" Type="nchar" MaxLength="10" />
+    <Property Name="Nombre" Type="nvarchar" MaxLength="150" />
+    <Property Name="Precio" Type="decimal" Precision="18" Scale="2" />
+    <Property Name="ProductoCodigo" Type="nvarchar" MaxLength="50" />
+    <Property Name="Qty" Type="int" />
+    <Property Name="MontoLinea" Type="decimal" Precision="18" Scale="2" />
+    <Property Name="Sincronizado" Type="nchar" MaxLength="2" />
+  </EntityType>
+  <EntityContainer Name="SigaAppDB02ModelStoreContainer">
+    <EntitySet Name="Factura" EntityType="Self.Factura" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="FaturaDetalle" EntityType="Self.FaturaDetalle" Schema="dbo" store:Type="Tables" />
+  </EntityContainer>
+</Schema>

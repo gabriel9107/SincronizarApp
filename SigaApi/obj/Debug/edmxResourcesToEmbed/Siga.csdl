@@ -24,6 +24,8 @@
     <Property Name="IsInAx" Type="Boolean" Nullable="false" />
     <Property Name="IntegrationDate" Type="DateTime" Precision="3" />
     <NavigationProperty Name="Invoices" Relationship="Self.FK_dbo_Invoices_dbo_Customers_CustomerID" FromRole="Customers" ToRole="Invoices" />
+    <Property Name="subir" Type="Int32" />
+    <Property Name="idFire" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
   </EntityType>
   <EntityType Name="InvoiceLines">
     <Key>
@@ -60,6 +62,8 @@
     <Property Name="VendorCode" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
     <NavigationProperty Name="Customers" Relationship="Self.FK_dbo_Invoices_dbo_Customers_CustomerID" FromRole="Invoices" ToRole="Customers" />
     <NavigationProperty Name="InvoiceLines" Relationship="Self.FK_dbo_InvoiceLines_dbo_Invoices_InvoiceID" FromRole="Invoices" ToRole="InvoiceLines" />
+    <Property Name="ifFire" Type="String" MaxLength="100" FixedLength="false" Unicode="true" />
+    <Property Name="Updatefire" Type="Int32" />
   </EntityType>
   <Association Name="FK_dbo_Invoices_dbo_Customers_CustomerID">
     <End Role="Customers" Type="Self.Customers" Multiplicity="1">
@@ -99,52 +103,18 @@
       <End Role="Invoices" EntitySet="Invoices" />
       <End Role="InvoiceLines" EntitySet="InvoiceLines" />
     </AssociationSet>
-    <EntitySet Name="Facturas" EntityType="SigaAdminModel.Factura" />
-    <EntitySet Name="FacturaDetalles" EntityType="SigaAdminModel.FacturaDetalle" />
     <EntitySet Name="PaymentItems" EntityType="SigaAdminModel.PaymentItem" />
     <EntitySet Name="PaymentOrders" EntityType="SigaAdminModel.PaymentOrder" />
     <AssociationSet Name="FK_dbo_PaymentItems_dbo_PaymentOrders_PaymentOrderId" Association="SigaAdminModel.FK_dbo_PaymentItems_dbo_PaymentOrders_PaymentOrderId">
       <End Role="PaymentOrder" EntitySet="PaymentOrders" />
       <End Role="PaymentItem" EntitySet="PaymentItems" />
     </AssociationSet>
+    <EntitySet Name="FacturaDetalles" EntityType="SigaAdminModel.FacturaDetalle" />
+    <EntitySet Name="Facturas" EntityType="SigaAdminModel.Factura" />
+    <EntitySet Name="CUSTTABLEs" EntityType="SigaAdminModel.CUSTTABLE" />
+    <EntitySet Name="pedidoAxes" EntityType="SigaAdminModel.pedidoAx" />
+    <EntitySet Name="PedidoDetalleAxes" EntityType="SigaAdminModel.PedidoDetalleAx" />
   </EntityContainer>
-  <EntityType Name="Factura">
-    <Key>
-      <PropertyRef Name="id" />
-    </Key>
-    <Property Name="id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
-    <Property Name="Compagnia" Type="Int32" Nullable="false" />
-    <Property Name="FacturaFecha" Type="DateTime" Nullable="false" Precision="3" />
-    <Property Name="FacturaId" Type="String" Nullable="false" MaxLength="20" FixedLength="false" Unicode="true" />
-    <Property Name="FacturaVencimiento" Type="DateTime" Nullable="false" Precision="3" />
-    <Property Name="IsDelete" Type="Int32" Nullable="false" />
-    <Property Name="MetodoDePago" Type="String" Nullable="false" MaxLength="10" FixedLength="false" Unicode="true" />
-    <Property Name="MontoFactura" Type="Decimal" Nullable="false" Precision="32" Scale="16" />
-    <Property Name="PedidoId" Type="String" Nullable="false" MaxLength="20" FixedLength="false" Unicode="true" />
-    <Property Name="sincronizad" Type="Int32" Nullable="false" />
-    <Property Name="MontoPendiente" Type="Decimal" Nullable="false" Precision="32" Scale="16" />
-    <Property Name="clienteId" Type="String" Nullable="false" MaxLength="20" FixedLength="false" Unicode="true" />
-    <Property Name="clienteNombre" Type="String" Nullable="false" MaxLength="100" FixedLength="false" Unicode="true" />
-    <Property Name="totalPagado" Type="Int32" Nullable="false" />
-    <Property Name="vendedorId" Type="String" Nullable="false" MaxLength="40" FixedLength="false" Unicode="true" />
-    <Property Name="Sincronizado" Type="Int32" />
-  </EntityType>
-  <EntityType Name="FacturaDetalle">
-    <Key>
-      <PropertyRef Name="ID" />
-    </Key>
-    <Property Name="ID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
-    <Property Name="Compagnia" Type="Int32" Nullable="false" />
-    <Property Name="FacturaId" Type="String" Nullable="false" MaxLength="20" FixedLength="false" Unicode="true" />
-    <Property Name="isDelete" Type="Int32" Nullable="false" />
-    <Property Name="LineaNumero" Type="Decimal" Nullable="false" Precision="32" Scale="16" />
-    <Property Name="ProductoCodigo" Type="String" Nullable="false" MaxLength="20" FixedLength="false" Unicode="true" />
-    <Property Name="Nombre" Type="String" Nullable="false" MaxLength="1000" FixedLength="false" Unicode="true" />
-    <Property Name="Qty" Type="Int16" Nullable="false" />
-    <Property Name="PrecioVenta" Type="Decimal" Precision="18" Scale="2" Nullable="false" />
-    <Property Name="MontoLinea" Type="Decimal" Precision="18" Scale="2" Nullable="false" />
-    <Property Name="Sincronizado" Type="Int32" Nullable="false" />
-  </EntityType>
   <EntityType Name="PaymentItem">
     <Key>
       <PropertyRef Name="Id" />
@@ -189,4 +159,166 @@
       </Dependent>
     </ReferentialConstraint>
   </Association>
+  <EntityType Name="FacturaDetalle">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="Compagnia" Type="Int32" Nullable="false" />
+    <Property Name="FacturaId" Type="String" Nullable="false" MaxLength="20" FixedLength="false" Unicode="true" />
+    <Property Name="isDelete" Type="Int32" Nullable="false" />
+    <Property Name="LineaNumero" Type="Decimal" Nullable="false" Precision="32" Scale="16" />
+    <Property Name="ProductoCodigo" Type="String" Nullable="false" MaxLength="20" FixedLength="false" Unicode="true" />
+    <Property Name="Nombre" Type="String" Nullable="false" MaxLength="1000" FixedLength="false" Unicode="true" />
+    <Property Name="Qty" Type="Int32" Nullable="false" />
+    <Property Name="PrecioVenta" Type="Decimal" Nullable="false" Precision="18" Scale="2" />
+    <Property Name="MontoLinea" Type="Decimal" Nullable="false" Precision="18" Scale="2" />
+    <Property Name="Sincronizado" Type="Int32" Nullable="false" />
+  </EntityType>
+  <EntityType Name="Factura">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="Compagnia" Type="Int32" Nullable="false" />
+    <Property Name="FacturaFecha" Type="DateTime" Nullable="false" Precision="3" />
+    <Property Name="FacturaId" Type="String" Nullable="false" MaxLength="20" FixedLength="false" Unicode="true" />
+    <Property Name="FacturaVencimiento" Type="DateTime" Nullable="false" Precision="3" />
+    <Property Name="IsDelete" Type="Int32" Nullable="false" />
+    <Property Name="MetodoDePago" Type="String" Nullable="false" MaxLength="10" FixedLength="false" Unicode="true" />
+    <Property Name="MontoFactura" Type="Decimal" Nullable="false" Precision="32" Scale="16" />
+    <Property Name="PedidoId" Type="String" Nullable="false" MaxLength="20" FixedLength="false" Unicode="true" />
+    <Property Name="Sincronizado" Type="Int32" Nullable="false" />
+    <Property Name="MontoPendiente" Type="Decimal" Nullable="false" Precision="32" Scale="16" />
+    <Property Name="clienteId" Type="String" Nullable="false" MaxLength="20" FixedLength="false" Unicode="true" />
+    <Property Name="clienteNombre" Type="String" Nullable="false" MaxLength="100" FixedLength="false" Unicode="true" />
+    <Property Name="totalPagado" Type="Int32" Nullable="false" />
+    <Property Name="vendedorId" Type="String" Nullable="false" MaxLength="40" FixedLength="false" Unicode="true" />
+  </EntityType>
+  <EntityType Name="CUSTTABLE">
+    <Key>
+      <PropertyRef Name="CUSTNMBR" />
+    </Key>
+    <Property Name="CUSTNMBR" Type="Double" Nullable="false" />
+    <Property Name="CUSTNAME" Type="String" MaxLength="255" FixedLength="false" Unicode="true" />
+    <Property Name="CUSTCLAS" Type="String" MaxLength="255" FixedLength="false" Unicode="true" />
+    <Property Name="CPRCSTNM" Type="String" MaxLength="255" FixedLength="false" Unicode="true" />
+    <Property Name="CNTCPRSN" Type="String" MaxLength="255" FixedLength="false" Unicode="true" />
+    <Property Name="STMTNAME" Type="String" MaxLength="255" FixedLength="false" Unicode="true" />
+    <Property Name="SHRTNAME" Type="String" MaxLength="255" FixedLength="false" Unicode="true" />
+    <Property Name="ADRSCODE" Type="String" MaxLength="255" FixedLength="false" Unicode="true" />
+    <Property Name="UPSZONE" Type="String" MaxLength="255" FixedLength="false" Unicode="true" />
+    <Property Name="SHIPMTHD" Type="String" MaxLength="255" FixedLength="false" Unicode="true" />
+    <Property Name="TAXSCHID" Type="String" MaxLength="255" FixedLength="false" Unicode="true" />
+    <Property Name="ADDRESS1" Type="String" MaxLength="255" FixedLength="false" Unicode="true" />
+    <Property Name="ADDRESS2" Type="String" MaxLength="255" FixedLength="false" Unicode="true" />
+    <Property Name="ADDRESS3" Type="String" MaxLength="255" FixedLength="false" Unicode="true" />
+    <Property Name="COUNTRY" Type="String" MaxLength="255" FixedLength="false" Unicode="true" />
+    <Property Name="CITY" Type="String" MaxLength="255" FixedLength="false" Unicode="true" />
+    <Property Name="STATE" Type="String" MaxLength="255" FixedLength="false" Unicode="true" />
+    <Property Name="ZIP" Type="String" MaxLength="255" FixedLength="false" Unicode="true" />
+    <Property Name="PHONE1" Type="Double" />
+    <Property Name="PHONE2" Type="Double" />
+    <Property Name="PHONE3" Type="String" MaxLength="255" FixedLength="false" Unicode="true" />
+    <Property Name="FAX" Type="String" MaxLength="255" FixedLength="false" Unicode="true" />
+    <Property Name="PRBTADCD" Type="String" MaxLength="255" FixedLength="false" Unicode="true" />
+    <Property Name="PRSTADCD" Type="String" MaxLength="255" FixedLength="false" Unicode="true" />
+    <Property Name="STADDRCD" Type="String" MaxLength="255" FixedLength="false" Unicode="true" />
+    <Property Name="SLPRSNID" Type="Double" />
+    <Property Name="CHEKBKID" Type="String" MaxLength="255" FixedLength="false" Unicode="true" />
+    <Property Name="PYMTRMID" Type="String" MaxLength="255" FixedLength="false" Unicode="true" />
+    <Property Name="CRLMTTYP" Type="Double" />
+    <Property Name="CRLMTAMT" Type="Double" />
+    <Property Name="CRLMTPER" Type="Double" />
+    <Property Name="CRLMTPAM" Type="Double" />
+    <Property Name="CURNCYID" Type="String" MaxLength="255" FixedLength="false" Unicode="true" />
+    <Property Name="RATETPID" Type="String" MaxLength="255" FixedLength="false" Unicode="true" />
+    <Property Name="CUSTDISC" Type="Double" />
+    <Property Name="PRCLEVEL" Type="String" MaxLength="255" FixedLength="false" Unicode="true" />
+    <Property Name="MINPYTYP" Type="Double" />
+    <Property Name="MINPYDLR" Type="Double" />
+    <Property Name="MINPYPCT" Type="Double" />
+    <Property Name="FNCHATYP" Type="Double" />
+    <Property Name="FNCHPCNT" Type="Double" />
+    <Property Name="FINCHDLR" Type="Double" />
+    <Property Name="MXWOFTYP" Type="Double" />
+    <Property Name="MXWROFAM" Type="Double" />
+    <Property Name="COMMENT1" Type="String" MaxLength="255" FixedLength="false" Unicode="true" />
+    <Property Name="COMMENT2" Type="String" MaxLength="255" FixedLength="false" Unicode="true" />
+    <Property Name="USERDEF1" Type="String" MaxLength="255" FixedLength="false" Unicode="true" />
+    <Property Name="USERDEF2" Type="String" MaxLength="255" FixedLength="false" Unicode="true" />
+    <Property Name="TAXEXMT1" Type="String" MaxLength="255" FixedLength="false" Unicode="true" />
+    <Property Name="TAXEXMT2" Type="String" MaxLength="255" FixedLength="false" Unicode="true" />
+    <Property Name="TXRGNNUM" Type="String" MaxLength="255" FixedLength="false" Unicode="true" />
+    <Property Name="BALNCTYP" Type="Double" />
+    <Property Name="STMTCYCL" Type="Double" />
+    <Property Name="BANKNAME" Type="String" MaxLength="255" FixedLength="false" Unicode="true" />
+    <Property Name="BNKBRNCH" Type="String" MaxLength="255" FixedLength="false" Unicode="true" />
+    <Property Name="SALSTERR" Type="String" MaxLength="255" FixedLength="false" Unicode="true" />
+    <Property Name="DEFCACTY" Type="Double" />
+    <Property Name="RMCSHACC" Type="Double" />
+    <Property Name="RMARACC" Type="Double" />
+    <Property Name="RMSLSACC" Type="Double" />
+    <Property Name="RMIVACC" Type="Double" />
+    <Property Name="RMCOSACC" Type="Double" />
+    <Property Name="RMTAKACC" Type="Double" />
+    <Property Name="RMAVACC" Type="Double" />
+    <Property Name="RMFCGACC" Type="Double" />
+    <Property Name="RMWRACC" Type="Double" />
+    <Property Name="RMSORACC" Type="Double" />
+    <Property Name="FRSTINDT" Type="DateTime" Precision="3" />
+    <Property Name="INACTIVE" Type="Double" />
+    <Property Name="HOLD" Type="Double" />
+    <Property Name="CRCARDID" Type="String" MaxLength="255" FixedLength="false" Unicode="true" />
+    <Property Name="CRCRDNUM" Type="String" MaxLength="255" FixedLength="false" Unicode="true" />
+    <Property Name="CCRDXPDT" Type="DateTime" Precision="3" />
+    <Property Name="KPDSTHST" Type="Double" />
+    <Property Name="KPCALHST" Type="Double" />
+    <Property Name="KPERHIST" Type="Double" />
+    <Property Name="KPTRXHST" Type="Double" />
+    <Property Name="NOTEINDX" Type="Double" />
+    <Property Name="CREATDDT" Type="DateTime" Precision="3" />
+    <Property Name="MODIFDT" Type="DateTime" Precision="3" />
+    <Property Name="Revalue_Customer" Type="Double" />
+    <Property Name="Post_Results_To" Type="Double" />
+    <Property Name="FINCHID" Type="String" MaxLength="255" FixedLength="false" Unicode="true" />
+    <Property Name="GOVCRPID" Type="String" MaxLength="255" FixedLength="false" Unicode="true" />
+    <Property Name="GOVINDID" Type="String" MaxLength="255" FixedLength="false" Unicode="true" />
+    <Property Name="DISGRPER" Type="Double" />
+    <Property Name="DUEGRPER" Type="Double" />
+    <Property Name="DOCFMTID" Type="String" MaxLength="255" FixedLength="false" Unicode="true" />
+    <Property Name="Send_Email_Statements" Type="Double" />
+    <Property Name="USERLANG" Type="Double" />
+    <Property Name="GPSFOINTEGRATIONID" Type="String" MaxLength="255" FixedLength="false" Unicode="true" />
+    <Property Name="INTEGRATIONSOURCE" Type="Double" />
+    <Property Name="INTEGRATIONID" Type="String" MaxLength="255" FixedLength="false" Unicode="true" />
+    <Property Name="ORDERFULFILLDEFAULT" Type="Double" />
+    <Property Name="CUSTPRIORITY" Type="Double" />
+    <Property Name="CCode" Type="String" MaxLength="255" FixedLength="false" Unicode="true" />
+    <Property Name="DECLID" Type="String" MaxLength="255" FixedLength="false" Unicode="true" />
+    <Property Name="RMOvrpymtWrtoffAcctIdx" Type="Double" />
+    <Property Name="SHIPCOMPLETE" Type="Double" />
+    <Property Name="CBVAT" Type="Double" />
+    <Property Name="INCLUDEINDP" Type="Double" />
+    <Property Name="DEX_ROW_TS" Type="DateTime" Precision="3" />
+    <Property Name="DEX_ROW_ID" Type="Double" />
+    <Property Name="Codigo" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+  </EntityType>
+  <EntityType Name="pedidoAx">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="clienteNuevo" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+  </EntityType>
+  <EntityType Name="PedidoDetalleAx">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="PedidoSigaId" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="Codigo" Type="String" MaxLength="10" FixedLength="true" Unicode="true" />
+    <Property Name="Precio" Type="Decimal" Precision="18" Scale="2" />
+    <Property Name="Cantidad" Type="Int32" />
+  </EntityType>
 </Schema>

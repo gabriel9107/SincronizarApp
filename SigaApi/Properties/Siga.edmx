@@ -1,0 +1,136 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="3.0" xmlns:edmx="http://schemas.microsoft.com/ado/2009/11/edmx">
+  <!-- EF Runtime content -->
+  <edmx:Runtime>
+    <!-- SSDL content -->
+    <edmx:StorageModels>
+      <Schema Namespace="SigaAppDB02Model.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2008" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+        <EntityType Name="Factura">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="FacturaId" Type="nvarchar" MaxLength="50" />
+          <Property Name="FacturaFecha" Type="datetime" />
+          <Property Name="FacturaVencimiento" Type="datetime" />
+          <Property Name="MetodoDePago" Type="nchar" MaxLength="10" />
+          <Property Name="MontoFactura" Type="decimal" Precision="18" Scale="2" />
+          <Property Name="PedidoId" Type="nchar" MaxLength="10" />
+          <Property Name="totalPagado" Type="int" />
+          <Property Name="Sincronizado" Type="char" MaxLength="2" />
+        </EntityType>
+        <EntityType Name="FaturaDetalle">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="FacturaNumero" Type="nvarchar" MaxLength="50" />
+          <Property Name="LineaNumero" Type="nchar" MaxLength="10" />
+          <Property Name="Nombre" Type="nvarchar" MaxLength="150" />
+          <Property Name="Precio" Type="decimal" Precision="18" Scale="2" />
+          <Property Name="ProductoCodigo" Type="nvarchar" MaxLength="50" />
+          <Property Name="Qty" Type="int" />
+          <Property Name="MontoLinea" Type="decimal" Precision="18" Scale="2" />
+          <Property Name="Sincronizado" Type="nchar" MaxLength="2" />
+        </EntityType>
+        <EntityContainer Name="SigaAppDB02ModelStoreContainer">
+          <EntitySet Name="Factura" EntityType="Self.Factura" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="FaturaDetalle" EntityType="Self.FaturaDetalle" Schema="dbo" store:Type="Tables" />
+        </EntityContainer>
+      </Schema>
+    </edmx:StorageModels>
+    <!-- CSDL content -->
+    <edmx:ConceptualModels>
+      <Schema Namespace="SigaAppDB02Model" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
+        <EntityType Name="Factura">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="FacturaId" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="FacturaFecha" Type="DateTime" Precision="3" />
+          <Property Name="FacturaVencimiento" Type="DateTime" Precision="3" />
+          <Property Name="MetodoDePago" Type="String" MaxLength="10" FixedLength="true" Unicode="true" />
+          <Property Name="MontoFactura" Type="Decimal" Precision="18" Scale="2" />
+          <Property Name="PedidoId" Type="String" MaxLength="10" FixedLength="true" Unicode="true" />
+          <Property Name="totalPagado" Type="Int32" />
+          <Property Name="Sincronizado" Type="String" MaxLength="2" FixedLength="true" Unicode="false" />
+        </EntityType>
+        <EntityType Name="FaturaDetalle">
+          <Key>
+            <PropertyRef Name="Id" />
+          </Key>
+          <Property Name="Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="FacturaNumero" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="LineaNumero" Type="String" MaxLength="10" FixedLength="true" Unicode="true" />
+          <Property Name="Nombre" Type="String" MaxLength="150" FixedLength="false" Unicode="true" />
+          <Property Name="Precio" Type="Decimal" Precision="18" Scale="2" />
+          <Property Name="ProductoCodigo" Type="String" MaxLength="50" FixedLength="false" Unicode="true" />
+          <Property Name="Qty" Type="Int32" />
+          <Property Name="MontoLinea" Type="Decimal" Precision="18" Scale="2" />
+          <Property Name="Sincronizado" Type="String" MaxLength="2" FixedLength="true" Unicode="true" />
+        </EntityType>
+        <EntityContainer Name="SigaAppDB02Entities" annotation:LazyLoadingEnabled="true">
+          <EntitySet Name="Facturas" EntityType="Self.Factura" />
+          <EntitySet Name="FaturaDetalles" EntityType="Self.FaturaDetalle" />
+        </EntityContainer>
+      </Schema>
+    </edmx:ConceptualModels>
+    <!-- C-S mapping content -->
+    <edmx:Mappings>
+      <Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
+        <EntityContainerMapping StorageEntityContainer="SigaAppDB02ModelStoreContainer" CdmEntityContainer="SigaAppDB02Entities">
+          <EntitySetMapping Name="Facturas">
+            <EntityTypeMapping TypeName="SigaAppDB02Model.Factura">
+              <MappingFragment StoreEntitySet="Factura">
+                <ScalarProperty Name="Id" ColumnName="Id" />
+                <ScalarProperty Name="FacturaId" ColumnName="FacturaId" />
+                <ScalarProperty Name="FacturaFecha" ColumnName="FacturaFecha" />
+                <ScalarProperty Name="FacturaVencimiento" ColumnName="FacturaVencimiento" />
+                <ScalarProperty Name="MetodoDePago" ColumnName="MetodoDePago" />
+                <ScalarProperty Name="MontoFactura" ColumnName="MontoFactura" />
+                <ScalarProperty Name="PedidoId" ColumnName="PedidoId" />
+                <ScalarProperty Name="totalPagado" ColumnName="totalPagado" />
+                <ScalarProperty Name="Sincronizado" ColumnName="Sincronizado" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="FaturaDetalles">
+            <EntityTypeMapping TypeName="SigaAppDB02Model.FaturaDetalle">
+              <MappingFragment StoreEntitySet="FaturaDetalle">
+                <ScalarProperty Name="Id" ColumnName="Id" />
+                <ScalarProperty Name="FacturaNumero" ColumnName="FacturaNumero" />
+                <ScalarProperty Name="LineaNumero" ColumnName="LineaNumero" />
+                <ScalarProperty Name="Nombre" ColumnName="Nombre" />
+                <ScalarProperty Name="Precio" ColumnName="Precio" />
+                <ScalarProperty Name="ProductoCodigo" ColumnName="ProductoCodigo" />
+                <ScalarProperty Name="Qty" ColumnName="Qty" />
+                <ScalarProperty Name="MontoLinea" ColumnName="MontoLinea" />
+                <ScalarProperty Name="Sincronizado" ColumnName="Sincronizado" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+        </EntityContainerMapping>
+      </Mapping>
+    </edmx:Mappings>
+  </edmx:Runtime>
+  <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
+    <Connection>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="MetadataArtifactProcessing" Value="EmbedInOutputAssembly" />
+      </DesignerInfoPropertySet>
+    </Connection>
+    <Options>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="ValidateOnBuild" Value="true" />
+        <DesignerProperty Name="EnablePluralization" Value="true" />
+        <DesignerProperty Name="IncludeForeignKeysInModel" Value="true" />
+        <DesignerProperty Name="UseLegacyProvider" Value="true" />
+        <DesignerProperty Name="CodeGenerationStrategy" Value="Ninguno" />
+      </DesignerInfoPropertySet>
+    </Options>
+    <!-- Diagram content (shape and connector positions) -->
+    <Diagrams></Diagrams>
+  </Designer>
+</edmx:Edmx>

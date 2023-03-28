@@ -39,5 +39,7 @@ namespace SigaApi
         
         public string telefono1 { get; set; }
         public string telefono2 { get; set; }
+
+        public string idFire { get; set; }
     }
 }
