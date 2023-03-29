@@ -8,7 +8,7 @@ namespace SigaApi
 {
     class Pedido
     {
-        public int id { get; set; }
+        public int Id { get; set; }
         public String ClienteId { get; set; }
         public String NumeroOrden { get; set; }
         public Nullable<System.DateTime> FechaOrden { get; set; }

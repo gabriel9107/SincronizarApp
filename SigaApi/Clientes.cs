@@ -9,7 +9,7 @@ namespace SigaApi
     class Clientes
     {
         
-        public string ID { get; set; }
+        public int ID { get; set; }
 
         
         public int activo { get; set; }

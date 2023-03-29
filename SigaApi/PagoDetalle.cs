@@ -15,5 +15,6 @@ namespace SigaApi
         public double montoDeFacturaAlMomento         { get; set; }
         public  int pagoId { get; set; }
         public int sincronizado { get; set; }
+        public string PagoIdFirebase { get; set; }
     }
 }
