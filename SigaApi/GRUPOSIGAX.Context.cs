@@ -13,10 +13,10 @@ namespace SigaApi
     using System.Data.Entity;
     using System.Data.Entity.Infrastructure;
     
-    public partial class SigaAdminEntities : DbContext
+    public partial class GRUPOSIGAXEntities : DbContext
     {
-        public SigaAdminEntities()
-            : base("name=SigaAdminEntities")
+        public GRUPOSIGAXEntities()
+            : base("name=GRUPOSIGAXEntities")
         {
         }
     
@@ -25,15 +25,14 @@ namespace SigaApi
             throw new UnintentionalCodeFirstException();
         }
     
-        public DbSet<Customers> Customers { get; set; }
-        public DbSet<InvoiceLines> InvoiceLines { get; set; }
-        public DbSet<Invoices> Invoices { get; set; }
-        public DbSet<PaymentItem> PaymentItems { get; set; }
-        public DbSet<PaymentOrder> PaymentOrders { get; set; }
-        public DbSet<FacturaDetalle> FacturaDetalles { get; set; }
-        public DbSet<Factura> Facturas { get; set; }
+        public DbSet<CustInvoiceJour> CustInvoiceJours { get; set; }
+        public DbSet<CUSTINVOICETRAN> CUSTINVOICETRANS { get; set; }
+        public DbSet<CUSTTRAN> CUSTTRANS { get; set; }
+        public DbSet<CUSTTRANSOPEN> CUSTTRANSOPENs { get; set; }
+        public DbSet<ECORESPRODUCT> ECORESPRODUCTs { get; set; }
+        public DbSet<ECORESPRODUCTTRANSLATION> ECORESPRODUCTTRANSLATIONs { get; set; }
+        public DbSet<INVENTMODELGROUPITEM> INVENTMODELGROUPITEMs { get; set; }
+        public DbSet<INVENTTABLEMODULE> INVENTTABLEMODULEs { get; set; }
         public DbSet<CUSTTABLE> CUSTTABLEs { get; set; }
-        public DbSet<pedidoAx> pedidoAxes { get; set; }
-        public DbSet<PedidoDetalleAx> PedidoDetalleAxes { get; set; }
     }
 }

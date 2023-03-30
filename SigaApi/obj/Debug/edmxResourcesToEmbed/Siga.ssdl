@@ -154,6 +154,7 @@
     <Property Name="clienteNombre" Type="nvarchar" MaxLength="100" Nullable="false" />
     <Property Name="totalPagado" Type="int" Nullable="false" />
     <Property Name="vendedorId" Type="nvarchar" MaxLength="40" Nullable="false" />
+    <Property Name="Actualizar" Type="int" />
   </EntityType>
   <EntityType Name="FacturaDetalle">
     <Key>
@@ -251,6 +252,34 @@
     <Property Name="Precio" Type="decimal" Precision="18" Scale="2" />
     <Property Name="Cantidad" Type="int" />
   </EntityType>
+  <!--Errores durante la generación:
+advertencia 6002: La tabla o vista 'SigaAdmin.dbo.productos' no tiene definida ninguna clave principal. Se ha inferido la clave y la definición se creado como una vista o tabla de solo lectura.-->
+  <EntityType Name="productos">
+    <Key>
+      <PropertyRef Name="Cantidad" />
+      <PropertyRef Name="Codigo" />
+      <PropertyRef Name="Compagnia" />
+      <PropertyRef Name="Id" />
+      <PropertyRef Name="IsDelete" />
+      <PropertyRef Name="Nombre" />
+      <PropertyRef Name="OuM" />
+      <PropertyRef Name="Precio" />
+      <PropertyRef Name="Sincronizado" />
+      <PropertyRef Name="actualizar" />
+      <PropertyRef Name="TipodeVenta" />
+    </Key>
+    <Property Name="Cantidad" Type="int" Nullable="false" />
+    <Property Name="Codigo" Type="nvarchar" MaxLength="20" Nullable="false" />
+    <Property Name="Compagnia" Type="int" Nullable="false" />
+    <Property Name="Id" Type="bigint" Nullable="false" />
+    <Property Name="IsDelete" Type="int" Nullable="false" />
+    <Property Name="Nombre" Type="nvarchar" MaxLength="1000" Nullable="false" />
+    <Property Name="OuM" Type="nvarchar" MaxLength="10" Nullable="false" />
+    <Property Name="Precio" Type="numeric" Precision="32" Scale="16" Nullable="false" />
+    <Property Name="Sincronizado" Type="int" Nullable="false" />
+    <Property Name="actualizar" Type="int" Nullable="false" />
+    <Property Name="TipodeVenta" Type="varchar" MaxLength="1" Nullable="false" />
+  </EntityType>
   <Association Name="FK_dbo_InvoiceLines_dbo_Invoices_InvoiceID">
     <End Role="Invoices" Type="Self.Invoices" Multiplicity="0..1" />
     <End Role="InvoiceLines" Type="Self.InvoiceLines" Multiplicity="*" />
@@ -302,6 +331,21 @@
     <EntitySet Name="PaymentOrders" EntityType="Self.PaymentOrders" Schema="dbo" store:Type="Tables" />
     <EntitySet Name="pedidoAx" EntityType="Self.pedidoAx" Schema="dbo" store:Type="Tables" />
     <EntitySet Name="PedidoDetalleAx" EntityType="Self.PedidoDetalleAx" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="productos" EntityType="Self.productos" store:Type="Tables" store:Schema="dbo">
+      <DefiningQuery>SELECT 
+[productos].[Cantidad] AS [Cantidad], 
+[productos].[Codigo] AS [Codigo], 
+[productos].[Compagnia] AS [Compagnia], 
+[productos].[Id] AS [Id], 
+[productos].[IsDelete] AS [IsDelete], 
+[productos].[Nombre] AS [Nombre], 
+[productos].[OuM] AS [OuM], 
+[productos].[Precio] AS [Precio], 
+[productos].[Sincronizado] AS [Sincronizado], 
+[productos].[actualizar] AS [actualizar], 
+[productos].[TipodeVenta] AS [TipodeVenta]
+FROM [dbo].[productos] AS [productos]</DefiningQuery>
+    </EntitySet>
     <AssociationSet Name="FK_dbo_InvoiceLines_dbo_Invoices_InvoiceID" Association="Self.FK_dbo_InvoiceLines_dbo_Invoices_InvoiceID">
       <End Role="Invoices" EntitySet="Invoices" />
       <End Role="InvoiceLines" EntitySet="InvoiceLines" />

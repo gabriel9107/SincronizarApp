@@ -120,3 +120,4 @@ C:\Siga\SincronizarApp\SigaApi\obj\Debug\SigaApi.csproj.CoreCompileInputs.cache
 C:\Siga\SincronizarApp\SigaApi\obj\Debug\SigaApi.csproj.CopyComplete
 C:\Siga\SincronizarApp\SigaApi\obj\Debug\SigaApi.exe
 C:\Siga\SincronizarApp\SigaApi\obj\Debug\SigaApi.pdb
+C:\Siga\SincronizarApp\SigaApi\obj\Debug\SigaApi.csproj.SuggestedBindingRedirects.cache

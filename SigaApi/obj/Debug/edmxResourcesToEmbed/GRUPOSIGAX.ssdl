@@ -1,0 +1,1533 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Schema Namespace="GRUPOSIGAXModel.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2008" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+  <!--Errores durante la generación:
+advertencia 6002: La tabla o vista 'GRUPOSIGAX.dbo.CustInvoiceJour' no tiene definida ninguna clave principal. Se ha inferido la clave y la definición se creado como una vista o tabla de solo lectura.-->
+  <EntityType Name="CustInvoiceJour">
+    <Key>
+      <PropertyRef Name="CUSTGROUP" />
+      <PropertyRef Name="REFNUM" />
+      <PropertyRef Name="SALESID" />
+      <PropertyRef Name="ORDERACCOUNT" />
+      <PropertyRef Name="INVOICEACCOUNT" />
+      <PropertyRef Name="INVOICEDATE" />
+      <PropertyRef Name="DUEDATE" />
+      <PropertyRef Name="CASHDISC" />
+      <PropertyRef Name="CASHDISCDATE" />
+      <PropertyRef Name="QTY" />
+      <PropertyRef Name="VOLUME" />
+      <PropertyRef Name="WEIGHT" />
+      <PropertyRef Name="SUMLINEDISC" />
+      <PropertyRef Name="SALESBALANCE" />
+      <PropertyRef Name="ENDDISC" />
+      <PropertyRef Name="INVOICEAMOUNT" />
+      <PropertyRef Name="CURRENCYCODE" />
+      <PropertyRef Name="EXCHRATE" />
+      <PropertyRef Name="INVOICEID" />
+      <PropertyRef Name="LEDGERVOUCHER" />
+      <PropertyRef Name="UPDATED" />
+      <PropertyRef Name="ONACCOUNTAMOUNT" />
+      <PropertyRef Name="TAXPRINTONINVOICE" />
+      <PropertyRef Name="LISTCODE" />
+      <PropertyRef Name="DOCUMENTNUM" />
+      <PropertyRef Name="DOCUMENTDATE" />
+      <PropertyRef Name="CASHDISCPERCENT" />
+      <PropertyRef Name="INTRASTATDISPATCH" />
+      <PropertyRef Name="DELIVERYNAME" />
+      <PropertyRef Name="ENTERPRISENUMBER" />
+      <PropertyRef Name="PURCHASEORDER" />
+      <PropertyRef Name="DLVTERM" />
+      <PropertyRef Name="DLVMODE" />
+      <PropertyRef Name="PAYMENT" />
+      <PropertyRef Name="CASHDISCCODE" />
+      <PropertyRef Name="INVOICEROUNDOFF" />
+      <PropertyRef Name="SUMMARKUP" />
+      <PropertyRef Name="COVSTATUS" />
+      <PropertyRef Name="RETURNITEMNUM" />
+      <PropertyRef Name="POSTINGPROFILE" />
+      <PropertyRef Name="BACKORDER" />
+      <PropertyRef Name="PREPAYMENT" />
+      <PropertyRef Name="TAXGROUP" />
+      <PropertyRef Name="TAXITEMGROUP" />
+      <PropertyRef Name="TAXSPECIFYBYLINE" />
+      <PropertyRef Name="EINVOICELINESPECIFIC" />
+      <PropertyRef Name="ONETIMECUSTOMER" />
+      <PropertyRef Name="PAYMENTSCHED" />
+      <PropertyRef Name="SUMTAX" />
+      <PropertyRef Name="SALESTYPE" />
+      <PropertyRef Name="EINVOICEACCOUNTCODE" />
+      <PropertyRef Name="INTERCOMPANYPOSTED" />
+      <PropertyRef Name="PARMID" />
+      <PropertyRef Name="RETURNREASONCODEID" />
+      <PropertyRef Name="EUSALESLIST" />
+      <PropertyRef Name="EXCHRATESECONDARY" />
+      <PropertyRef Name="TRIANGULATION" />
+      <PropertyRef Name="CUSTOMERREF" />
+      <PropertyRef Name="VATNUM" />
+      <PropertyRef Name="NUMBERSEQUENCEGROUP" />
+      <PropertyRef Name="LANGUAGEID" />
+      <PropertyRef Name="INCLTAX" />
+      <PropertyRef Name="LOG" />
+      <PropertyRef Name="PAYMDAYID" />
+      <PropertyRef Name="INVOICINGNAME" />
+      <PropertyRef Name="GIROTYPE" />
+      <PropertyRef Name="CONTACTPERSONID" />
+      <PropertyRef Name="SALESORIGINID" />
+      <PropertyRef Name="BILLOFLADINGID" />
+      <PropertyRef Name="INVENTLOCATIONID" />
+      <PropertyRef Name="FIXEDDUEDATE" />
+      <PropertyRef Name="INVOICEAMOUNTMST" />
+      <PropertyRef Name="INVOICEROUNDOFFMST" />
+      <PropertyRef Name="SUMMARKUPMST" />
+      <PropertyRef Name="SUMLINEDISCMST" />
+      <PropertyRef Name="ENDDISCMST" />
+      <PropertyRef Name="SALESBALANCEMST" />
+      <PropertyRef Name="SUMTAXMST" />
+      <PropertyRef Name="PRINTMGMTSITEID" />
+      <PropertyRef Name="RETURNSTATUS" />
+      <PropertyRef Name="INTERCOMPANYCOMPANYID" />
+      <PropertyRef Name="INTERCOMPANYPURCHID" />
+      <PropertyRef Name="PRINTEDORIGINALS" />
+      <PropertyRef Name="PROFORMA" />
+      <PropertyRef Name="RCSALESLIST_UK" />
+      <PropertyRef Name="REVERSECHARGE_UK" />
+      <PropertyRef Name="DELIVERYPOSTALADDRESS" />
+      <PropertyRef Name="INVOICEPOSTALADDRESS" />
+      <PropertyRef Name="SOURCEDOCUMENTHEADER" />
+      <PropertyRef Name="DEFAULTDIMENSION" />
+      <PropertyRef Name="BANKLCEXPORTLINE" />
+      <PropertyRef Name="WORKERSALESTAKER" />
+      <PropertyRef Name="REVERSEDRECID" />
+      <PropertyRef Name="RECEIPTDATECONFIRMED_ES" />
+      <PropertyRef Name="PAYMID" />
+      <PropertyRef Name="TAXINVOICESALESID" />
+      <PropertyRef Name="INTRASTATFULFILLMENTDATE_HU" />
+      <PropertyRef Name="MCREMAIL" />
+      <PropertyRef Name="MCRPAYMAMOUNT" />
+      <PropertyRef Name="MCRDUEAMOUNT" />
+      <PropertyRef Name="CASHDISCBASEDATE" />
+      <PropertyRef Name="DIRECTDEBITMANDATE" />
+      <PropertyRef Name="ISCORRECTION" />
+      <PropertyRef Name="REASONTABLEREF" />
+      <PropertyRef Name="SOURCEDOCUMENTLINE" />
+      <PropertyRef Name="TRANSPORTATIONDOCUMENT" />
+      <PropertyRef Name="MODIFIEDDATETIME" />
+      <PropertyRef Name="CREATEDDATETIME" />
+      <PropertyRef Name="DEL_CREATEDTIME" />
+      <PropertyRef Name="CREATEDBY" />
+      <PropertyRef Name="DATAAREAID" />
+      <PropertyRef Name="RECVERSION" />
+      <PropertyRef Name="PARTITION" />
+      <PropertyRef Name="RECID" />
+      <PropertyRef Name="NCF" />
+      <PropertyRef Name="TIPO" />
+      <PropertyRef Name="RNC_CEDULA" />
+      <PropertyRef Name="CLIENTEDIRECCION" />
+      <PropertyRef Name="VENDEDORNOMBRE" />
+      <PropertyRef Name="VENDEDORTELEFONO" />
+      <PropertyRef Name="TELEFONO" />
+      <PropertyRef Name="CALLE" />
+      <PropertyRef Name="CITY" />
+      <PropertyRef Name="STATE" />
+      <PropertyRef Name="COUNTRY" />
+    </Key>
+    <Property Name="CUSTGROUP" Type="nvarchar" MaxLength="10" Nullable="false" />
+    <Property Name="REFNUM" Type="int" Nullable="false" />
+    <Property Name="SALESID" Type="nvarchar" MaxLength="20" Nullable="false" />
+    <Property Name="ORDERACCOUNT" Type="nvarchar" MaxLength="20" Nullable="false" />
+    <Property Name="INVOICEACCOUNT" Type="nvarchar" MaxLength="20" Nullable="false" />
+    <Property Name="INVOICEDATE" Type="datetime" Nullable="false" />
+    <Property Name="DUEDATE" Type="datetime" Nullable="false" />
+    <Property Name="CASHDISC" Type="numeric" Precision="32" Scale="16" Nullable="false" />
+    <Property Name="CASHDISCDATE" Type="datetime" Nullable="false" />
+    <Property Name="QTY" Type="numeric" Precision="32" Scale="16" Nullable="false" />
+    <Property Name="VOLUME" Type="numeric" Precision="32" Scale="16" Nullable="false" />
+    <Property Name="WEIGHT" Type="numeric" Precision="32" Scale="16" Nullable="false" />
+    <Property Name="SUMLINEDISC" Type="numeric" Precision="32" Scale="16" Nullable="false" />
+    <Property Name="SALESBALANCE" Type="numeric" Precision="32" Scale="16" Nullable="false" />
+    <Property Name="ENDDISC" Type="numeric" Precision="32" Scale="16" Nullable="false" />
+    <Property Name="INVOICEAMOUNT" Type="numeric" Precision="32" Scale="16" Nullable="false" />
+    <Property Name="CURRENCYCODE" Type="nvarchar" MaxLength="3" Nullable="false" />
+    <Property Name="EXCHRATE" Type="numeric" Precision="32" Scale="16" Nullable="false" />
+    <Property Name="INVOICEID" Type="nvarchar" MaxLength="20" Nullable="false" />
+    <Property Name="LEDGERVOUCHER" Type="nvarchar" MaxLength="20" Nullable="false" />
+    <Property Name="UPDATED" Type="int" Nullable="false" />
+    <Property Name="ONACCOUNTAMOUNT" Type="numeric" Precision="32" Scale="16" Nullable="false" />
+    <Property Name="TAXPRINTONINVOICE" Type="int" Nullable="false" />
+    <Property Name="LISTCODE" Type="int" Nullable="false" />
+    <Property Name="DOCUMENTNUM" Type="nvarchar" MaxLength="20" Nullable="false" />
+    <Property Name="DOCUMENTDATE" Type="datetime" Nullable="false" />
+    <Property Name="CASHDISCPERCENT" Type="numeric" Precision="32" Scale="16" Nullable="false" />
+    <Property Name="INTRASTATDISPATCH" Type="nvarchar" MaxLength="20" Nullable="false" />
+    <Property Name="DELIVERYNAME" Type="nvarchar" MaxLength="100" Nullable="false" />
+    <Property Name="ENTERPRISENUMBER" Type="nvarchar" MaxLength="50" Nullable="false" />
+    <Property Name="PURCHASEORDER" Type="nvarchar" MaxLength="20" Nullable="false" />
+    <Property Name="DLVTERM" Type="nvarchar" MaxLength="10" Nullable="false" />
+    <Property Name="DLVMODE" Type="nvarchar" MaxLength="10" Nullable="false" />
+    <Property Name="PAYMENT" Type="nvarchar" MaxLength="10" Nullable="false" />
+    <Property Name="CASHDISCCODE" Type="nvarchar" MaxLength="10" Nullable="false" />
+    <Property Name="INVOICEROUNDOFF" Type="numeric" Precision="32" Scale="16" Nullable="false" />
+    <Property Name="SUMMARKUP" Type="numeric" Precision="32" Scale="16" Nullable="false" />
+    <Property Name="COVSTATUS" Type="int" Nullable="false" />
+    <Property Name="RETURNITEMNUM" Type="nvarchar" MaxLength="10" Nullable="false" />
+    <Property Name="POSTINGPROFILE" Type="nvarchar" MaxLength="10" Nullable="false" />
+    <Property Name="BACKORDER" Type="int" Nullable="false" />
+    <Property Name="PREPAYMENT" Type="int" Nullable="false" />
+    <Property Name="TAXGROUP" Type="nvarchar" MaxLength="10" Nullable="false" />
+    <Property Name="TAXITEMGROUP" Type="nvarchar" MaxLength="10" Nullable="false" />
+    <Property Name="TAXSPECIFYBYLINE" Type="int" Nullable="false" />
+    <Property Name="EINVOICELINESPECIFIC" Type="int" Nullable="false" />
+    <Property Name="ONETIMECUSTOMER" Type="int" Nullable="false" />
+    <Property Name="PAYMENTSCHED" Type="nvarchar" MaxLength="30" Nullable="false" />
+    <Property Name="SUMTAX" Type="numeric" Precision="32" Scale="16" Nullable="false" />
+    <Property Name="SALESTYPE" Type="int" Nullable="false" />
+    <Property Name="EINVOICEACCOUNTCODE" Type="nvarchar" MaxLength="35" Nullable="false" />
+    <Property Name="INTERCOMPANYPOSTED" Type="int" Nullable="false" />
+    <Property Name="PARMID" Type="nvarchar" MaxLength="20" Nullable="false" />
+    <Property Name="RETURNREASONCODEID" Type="nvarchar" MaxLength="10" Nullable="false" />
+    <Property Name="EUSALESLIST" Type="nvarchar" MaxLength="20" Nullable="false" />
+    <Property Name="EXCHRATESECONDARY" Type="numeric" Precision="32" Scale="16" Nullable="false" />
+    <Property Name="TRIANGULATION" Type="int" Nullable="false" />
+    <Property Name="CUSTOMERREF" Type="nvarchar" MaxLength="60" Nullable="false" />
+    <Property Name="VATNUM" Type="nvarchar" MaxLength="20" Nullable="false" />
+    <Property Name="NUMBERSEQUENCEGROUP" Type="nvarchar" MaxLength="10" Nullable="false" />
+    <Property Name="LANGUAGEID" Type="nvarchar" MaxLength="7" Nullable="false" />
+    <Property Name="INCLTAX" Type="int" Nullable="false" />
+    <Property Name="LOG" Type="nvarchar" MaxLength="255" Nullable="false" />
+    <Property Name="PAYMDAYID" Type="nvarchar" MaxLength="10" Nullable="false" />
+    <Property Name="INVOICINGNAME" Type="nvarchar" MaxLength="100" Nullable="false" />
+    <Property Name="GIROTYPE" Type="int" Nullable="false" />
+    <Property Name="CONTACTPERSONID" Type="nvarchar" MaxLength="20" Nullable="false" />
+    <Property Name="SALESORIGINID" Type="nvarchar" MaxLength="10" Nullable="false" />
+    <Property Name="BILLOFLADINGID" Type="nvarchar" MaxLength="17" Nullable="false" />
+    <Property Name="INVENTLOCATIONID" Type="nvarchar" MaxLength="10" Nullable="false" />
+    <Property Name="FIXEDDUEDATE" Type="datetime" Nullable="false" />
+    <Property Name="INVOICEAMOUNTMST" Type="numeric" Precision="32" Scale="16" Nullable="false" />
+    <Property Name="INVOICEROUNDOFFMST" Type="numeric" Precision="32" Scale="16" Nullable="false" />
+    <Property Name="SUMMARKUPMST" Type="numeric" Precision="32" Scale="16" Nullable="false" />
+    <Property Name="SUMLINEDISCMST" Type="numeric" Precision="32" Scale="16" Nullable="false" />
+    <Property Name="ENDDISCMST" Type="numeric" Precision="32" Scale="16" Nullable="false" />
+    <Property Name="SALESBALANCEMST" Type="numeric" Precision="32" Scale="16" Nullable="false" />
+    <Property Name="SUMTAXMST" Type="numeric" Precision="32" Scale="16" Nullable="false" />
+    <Property Name="PRINTMGMTSITEID" Type="nvarchar" MaxLength="10" Nullable="false" />
+    <Property Name="RETURNSTATUS" Type="int" Nullable="false" />
+    <Property Name="INTERCOMPANYCOMPANYID" Type="nvarchar" MaxLength="4" Nullable="false" />
+    <Property Name="INTERCOMPANYPURCHID" Type="nvarchar" MaxLength="20" Nullable="false" />
+    <Property Name="PRINTEDORIGINALS" Type="int" Nullable="false" />
+    <Property Name="PROFORMA" Type="int" Nullable="false" />
+    <Property Name="RCSALESLIST_UK" Type="nvarchar" MaxLength="20" Nullable="false" />
+    <Property Name="REVERSECHARGE_UK" Type="numeric" Precision="32" Scale="16" Nullable="false" />
+    <Property Name="DELIVERYPOSTALADDRESS" Type="bigint" Nullable="false" />
+    <Property Name="INVOICEPOSTALADDRESS" Type="bigint" Nullable="false" />
+    <Property Name="SOURCEDOCUMENTHEADER" Type="bigint" Nullable="false" />
+    <Property Name="DEFAULTDIMENSION" Type="bigint" Nullable="false" />
+    <Property Name="BANKLCEXPORTLINE" Type="bigint" Nullable="false" />
+    <Property Name="WORKERSALESTAKER" Type="bigint" Nullable="false" />
+    <Property Name="REVERSEDRECID" Type="bigint" Nullable="false" />
+    <Property Name="RECEIPTDATECONFIRMED_ES" Type="datetime" Nullable="false" />
+    <Property Name="PAYMID" Type="nvarchar" MaxLength="200" Nullable="false" />
+    <Property Name="TAXINVOICESALESID" Type="nvarchar" MaxLength="20" Nullable="false" />
+    <Property Name="INTRASTATFULFILLMENTDATE_HU" Type="datetime" Nullable="false" />
+    <Property Name="MCREMAIL" Type="nvarchar" MaxLength="80" Nullable="false" />
+    <Property Name="MCRPAYMAMOUNT" Type="numeric" Precision="32" Scale="16" Nullable="false" />
+    <Property Name="MCRDUEAMOUNT" Type="numeric" Precision="32" Scale="16" Nullable="false" />
+    <Property Name="CASHDISCBASEDATE" Type="datetime" Nullable="false" />
+    <Property Name="DIRECTDEBITMANDATE" Type="bigint" Nullable="false" />
+    <Property Name="ISCORRECTION" Type="int" Nullable="false" />
+    <Property Name="REASONTABLEREF" Type="bigint" Nullable="false" />
+    <Property Name="SOURCEDOCUMENTLINE" Type="bigint" Nullable="false" />
+    <Property Name="TRANSPORTATIONDOCUMENT" Type="bigint" Nullable="false" />
+    <Property Name="MODIFIEDDATETIME" Type="datetime" Nullable="false" />
+    <Property Name="CREATEDDATETIME" Type="datetime" Nullable="false" />
+    <Property Name="DEL_CREATEDTIME" Type="int" Nullable="false" />
+    <Property Name="CREATEDBY" Type="nvarchar" MaxLength="8" Nullable="false" />
+    <Property Name="DATAAREAID" Type="nvarchar" MaxLength="4" Nullable="false" />
+    <Property Name="RECVERSION" Type="int" Nullable="false" />
+    <Property Name="PARTITION" Type="bigint" Nullable="false" />
+    <Property Name="RECID" Type="bigint" Nullable="false" />
+    <Property Name="NCF" Type="nvarchar" MaxLength="15" Nullable="false" />
+    <Property Name="TIPO" Type="nvarchar" MaxLength="80" Nullable="false" />
+    <Property Name="RNC_CEDULA" Type="nvarchar" MaxLength="25" Nullable="false" />
+    <Property Name="CLIENTEDIRECCION" Type="nvarchar" MaxLength="100" Nullable="false" />
+    <Property Name="VENDEDORNOMBRE" Type="nvarchar" MaxLength="40" Nullable="false" />
+    <Property Name="VENDEDORTELEFONO" Type="nvarchar" MaxLength="15" Nullable="false" />
+    <Property Name="TELEFONO" Type="nvarchar" MaxLength="25" Nullable="false" />
+    <Property Name="CALLE" Type="nvarchar" MaxLength="110" Nullable="false" />
+    <Property Name="CITY" Type="nvarchar" MaxLength="50" Nullable="false" />
+    <Property Name="STATE" Type="nvarchar" MaxLength="50" Nullable="false" />
+    <Property Name="COUNTRY" Type="nvarchar" MaxLength="50" Nullable="false" />
+    <Property Name="NCF_ANTERIOR" Type="nvarchar" MaxLength="30" />
+    <Property Name="NO_FACTURA_ANTERIOR" Type="nvarchar" MaxLength="30" />
+  </EntityType>
+  <!--Errores durante la generación:
+advertencia 6002: La tabla o vista 'GRUPOSIGAX.dbo.CUSTINVOICETRANS' no tiene definida ninguna clave principal. Se ha inferido la clave y la definición se creado como una vista o tabla de solo lectura.-->
+  <EntityType Name="CUSTINVOICETRANS">
+    <Key>
+      <PropertyRef Name="INVOICEID" />
+      <PropertyRef Name="INVOICEDATE" />
+      <PropertyRef Name="LINENUM" />
+      <PropertyRef Name="INVENTTRANSID" />
+      <PropertyRef Name="INVENTREFID" />
+      <PropertyRef Name="ITEMID" />
+      <PropertyRef Name="EXTERNALITEMID" />
+      <PropertyRef Name="NAME" />
+      <PropertyRef Name="TAXGROUP" />
+      <PropertyRef Name="CURRENCYCODE" />
+      <PropertyRef Name="PRICEUNIT" />
+      <PropertyRef Name="QTY" />
+      <PropertyRef Name="SALESPRICE" />
+      <PropertyRef Name="DISCPERCENT" />
+      <PropertyRef Name="DISCAMOUNT" />
+      <PropertyRef Name="LINEAMOUNT" />
+      <PropertyRef Name="SALESGROUP" />
+      <PropertyRef Name="QTYPHYSICAL" />
+      <PropertyRef Name="PARTDELIVERY" />
+      <PropertyRef Name="REMAIN" />
+      <PropertyRef Name="SALESID" />
+      <PropertyRef Name="SALESUNIT" />
+      <PropertyRef Name="SALESMARKUP" />
+      <PropertyRef Name="COMMISSCALC" />
+      <PropertyRef Name="COMMISSAMOUNTCUR" />
+      <PropertyRef Name="TRANSACTIONCODE" />
+      <PropertyRef Name="DELIVERYTYPE" />
+      <PropertyRef Name="COUNTRYREGIONOFSHIPMENT" />
+      <PropertyRef Name="ITEMCODEID" />
+      <PropertyRef Name="TAXAUTOGENERATED" />
+      <PropertyRef Name="TAXITEMGROUP" />
+      <PropertyRef Name="TAXAMOUNT" />
+      <PropertyRef Name="TAXWRITECODE" />
+      <PropertyRef Name="MULTILNDISC" />
+      <PropertyRef Name="MULTILNPERCENT" />
+      <PropertyRef Name="LINEDISC" />
+      <PropertyRef Name="LINEPERCENT" />
+      <PropertyRef Name="ORIGSALESID" />
+      <PropertyRef Name="LINEHEADER" />
+      <PropertyRef Name="TRANSPORT" />
+      <PropertyRef Name="INVENTDIMID" />
+      <PropertyRef Name="ORIGCOUNTRYREGIONID" />
+      <PropertyRef Name="NUMBERSEQUENCEGROUP" />
+      <PropertyRef Name="STATPROCID" />
+      <PropertyRef Name="DLVDATE" />
+      <PropertyRef Name="LINEAMOUNTTAX" />
+      <PropertyRef Name="PORT" />
+      <PropertyRef Name="ASSETID" />
+      <PropertyRef Name="CUSTOMERLINENUM" />
+      <PropertyRef Name="ASSETBOOKID" />
+      <PropertyRef Name="LINEAMOUNTMST" />
+      <PropertyRef Name="TAXAMOUNTMST" />
+      <PropertyRef Name="LINEAMOUNTTAXMST" />
+      <PropertyRef Name="COMMISSAMOUNTMST" />
+      <PropertyRef Name="SUMLINEDISC" />
+      <PropertyRef Name="SUMLINEDISCMST" />
+      <PropertyRef Name="INTERCOMPANYINVENTTRANSID" />
+      <PropertyRef Name="OLAPCOSTVALUE" />
+      <PropertyRef Name="EINVOICEACCOUNTCODE" />
+      <PropertyRef Name="RETURNDISPOSITIONCODEID" />
+      <PropertyRef Name="STATLINEAMOUNTMST" />
+      <PropertyRef Name="INTRASTATDISPATCHID" />
+      <PropertyRef Name="INVENTQTY" />
+      <PropertyRef Name="ORIGSTATE" />
+      <PropertyRef Name="INVENTREFTYPE" />
+      <PropertyRef Name="INVENTREFTRANSID" />
+      <PropertyRef Name="WEIGHT" />
+      <PropertyRef Name="RETURNARRIVALDATE" />
+      <PropertyRef Name="RETURNCLOSEDDATE" />
+      <PropertyRef Name="REVERSECHARGEAPPLIES_UK" />
+      <PropertyRef Name="REASONREFRECID" />
+      <PropertyRef Name="REMAINBEFORE" />
+      <PropertyRef Name="SALESCATEGORY" />
+      <PropertyRef Name="CUSTINVOICELINEIDREF" />
+      <PropertyRef Name="SOURCEDOCUMENTLINE" />
+      <PropertyRef Name="DELIVERYPOSTALADDRESS" />
+      <PropertyRef Name="LEDGERDIMENSION" />
+      <PropertyRef Name="DEFAULTDIMENSION" />
+      <PropertyRef Name="TAXWITHHOLDITEMGROUPHEADING_TH" />
+      <PropertyRef Name="STOCKEDPRODUCT" />
+      <PropertyRef Name="REVERSEDRECID" />
+      <PropertyRef Name="NGPCODESTABLE_FR" />
+      <PropertyRef Name="PARENTRECID" />
+      <PropertyRef Name="TAXWITHHOLDGROUP_TH" />
+      <PropertyRef Name="INTRASTATFULFILLMENTDATE_HU" />
+      <PropertyRef Name="BILLINGCODE" />
+      <PropertyRef Name="MCRDELIVERYNAME" />
+      <PropertyRef Name="MCRDLVMODE" />
+      <PropertyRef Name="PDSCWQTY" />
+      <PropertyRef Name="PDSCWQTYPHYSICAL" />
+      <PropertyRef Name="PDSCWREMAIN" />
+      <PropertyRef Name="RETAILCATEGORY" />
+      <PropertyRef Name="MODIFIEDDATETIME" />
+      <PropertyRef Name="CREATEDDATETIME" />
+      <PropertyRef Name="DEL_CREATEDTIME" />
+      <PropertyRef Name="CREATEDBY" />
+      <PropertyRef Name="DATAAREAID" />
+      <PropertyRef Name="RECVERSION" />
+      <PropertyRef Name="PARTITION" />
+      <PropertyRef Name="RECID" />
+    </Key>
+    <Property Name="INVOICEID" Type="nvarchar" MaxLength="20" Nullable="false" />
+    <Property Name="INVOICEDATE" Type="datetime" Nullable="false" />
+    <Property Name="LINENUM" Type="numeric" Precision="32" Scale="16" Nullable="false" />
+    <Property Name="INVENTTRANSID" Type="nvarchar" MaxLength="20" Nullable="false" />
+    <Property Name="INVENTREFID" Type="nvarchar" MaxLength="20" Nullable="false" />
+    <Property Name="ITEMID" Type="nvarchar" MaxLength="20" Nullable="false" />
+    <Property Name="EXTERNALITEMID" Type="nvarchar" MaxLength="20" Nullable="false" />
+    <Property Name="NAME" Type="nvarchar" MaxLength="1000" Nullable="false" />
+    <Property Name="TAXGROUP" Type="nvarchar" MaxLength="10" Nullable="false" />
+    <Property Name="CURRENCYCODE" Type="nvarchar" MaxLength="3" Nullable="false" />
+    <Property Name="PRICEUNIT" Type="numeric" Precision="32" Scale="16" Nullable="false" />
+    <Property Name="QTY" Type="numeric" Precision="32" Scale="16" Nullable="false" />
+    <Property Name="SALESPRICE" Type="numeric" Precision="32" Scale="16" Nullable="false" />
+    <Property Name="DISCPERCENT" Type="numeric" Precision="32" Scale="16" Nullable="false" />
+    <Property Name="DISCAMOUNT" Type="numeric" Precision="32" Scale="16" Nullable="false" />
+    <Property Name="LINEAMOUNT" Type="numeric" Precision="32" Scale="16" Nullable="false" />
+    <Property Name="SALESGROUP" Type="nvarchar" MaxLength="10" Nullable="false" />
+    <Property Name="QTYPHYSICAL" Type="numeric" Precision="32" Scale="16" Nullable="false" />
+    <Property Name="PARTDELIVERY" Type="int" Nullable="false" />
+    <Property Name="REMAIN" Type="numeric" Precision="32" Scale="16" Nullable="false" />
+    <Property Name="SALESID" Type="nvarchar" MaxLength="20" Nullable="false" />
+    <Property Name="SALESUNIT" Type="nvarchar" MaxLength="10" Nullable="false" />
+    <Property Name="SALESMARKUP" Type="numeric" Precision="32" Scale="16" Nullable="false" />
+    <Property Name="COMMISSCALC" Type="int" Nullable="false" />
+    <Property Name="COMMISSAMOUNTCUR" Type="numeric" Precision="32" Scale="16" Nullable="false" />
+    <Property Name="TRANSACTIONCODE" Type="nvarchar" MaxLength="10" Nullable="false" />
+    <Property Name="DELIVERYTYPE" Type="int" Nullable="false" />
+    <Property Name="COUNTRYREGIONOFSHIPMENT" Type="nvarchar" MaxLength="10" Nullable="false" />
+    <Property Name="ITEMCODEID" Type="nvarchar" MaxLength="10" Nullable="false" />
+    <Property Name="TAXAUTOGENERATED" Type="int" Nullable="false" />
+    <Property Name="TAXITEMGROUP" Type="nvarchar" MaxLength="10" Nullable="false" />
+    <Property Name="TAXAMOUNT" Type="numeric" Precision="32" Scale="16" Nullable="false" />
+    <Property Name="TAXWRITECODE" Type="nvarchar" MaxLength="10" Nullable="false" />
+    <Property Name="MULTILNDISC" Type="numeric" Precision="32" Scale="16" Nullable="false" />
+    <Property Name="MULTILNPERCENT" Type="numeric" Precision="32" Scale="16" Nullable="false" />
+    <Property Name="LINEDISC" Type="numeric" Precision="32" Scale="16" Nullable="false" />
+    <Property Name="LINEPERCENT" Type="numeric" Precision="32" Scale="16" Nullable="false" />
+    <Property Name="ORIGSALESID" Type="nvarchar" MaxLength="20" Nullable="false" />
+    <Property Name="LINEHEADER" Type="nvarchar" MaxLength="80" Nullable="false" />
+    <Property Name="TRANSPORT" Type="nvarchar" MaxLength="10" Nullable="false" />
+    <Property Name="INVENTDIMID" Type="nvarchar" MaxLength="20" Nullable="false" />
+    <Property Name="ORIGCOUNTRYREGIONID" Type="nvarchar" MaxLength="10" Nullable="false" />
+    <Property Name="NUMBERSEQUENCEGROUP" Type="nvarchar" MaxLength="10" Nullable="false" />
+    <Property Name="STATPROCID" Type="nvarchar" MaxLength="10" Nullable="false" />
+    <Property Name="DLVDATE" Type="datetime" Nullable="false" />
+    <Property Name="LINEAMOUNTTAX" Type="numeric" Precision="32" Scale="16" Nullable="false" />
+    <Property Name="PORT" Type="nvarchar" MaxLength="10" Nullable="false" />
+    <Property Name="ASSETID" Type="nvarchar" MaxLength="20" Nullable="false" />
+    <Property Name="CUSTOMERLINENUM" Type="int" Nullable="false" />
+    <Property Name="ASSETBOOKID" Type="nvarchar" MaxLength="10" Nullable="false" />
+    <Property Name="LINEAMOUNTMST" Type="numeric" Precision="32" Scale="16" Nullable="false" />
+    <Property Name="TAXAMOUNTMST" Type="numeric" Precision="32" Scale="16" Nullable="false" />
+    <Property Name="LINEAMOUNTTAXMST" Type="numeric" Precision="32" Scale="16" Nullable="false" />
+    <Property Name="COMMISSAMOUNTMST" Type="numeric" Precision="32" Scale="16" Nullable="false" />
+    <Property Name="SUMLINEDISC" Type="numeric" Precision="32" Scale="16" Nullable="false" />
+    <Property Name="SUMLINEDISCMST" Type="numeric" Precision="32" Scale="16" Nullable="false" />
+    <Property Name="INTERCOMPANYINVENTTRANSID" Type="nvarchar" MaxLength="20" Nullable="false" />
+    <Property Name="OLAPCOSTVALUE" Type="numeric" Precision="32" Scale="16" Nullable="false" />
+    <Property Name="EINVOICEACCOUNTCODE" Type="nvarchar" MaxLength="35" Nullable="false" />
+    <Property Name="RETURNDISPOSITIONCODEID" Type="nvarchar" MaxLength="10" Nullable="false" />
+    <Property Name="STATLINEAMOUNTMST" Type="numeric" Precision="32" Scale="16" Nullable="false" />
+    <Property Name="INTRASTATDISPATCHID" Type="nvarchar" MaxLength="20" Nullable="false" />
+    <Property Name="INVENTQTY" Type="numeric" Precision="32" Scale="16" Nullable="false" />
+    <Property Name="ORIGSTATE" Type="nvarchar" MaxLength="10" Nullable="false" />
+    <Property Name="INVENTREFTYPE" Type="int" Nullable="false" />
+    <Property Name="INVENTREFTRANSID" Type="nvarchar" MaxLength="20" Nullable="false" />
+    <Property Name="WEIGHT" Type="numeric" Precision="32" Scale="16" Nullable="false" />
+    <Property Name="RETURNARRIVALDATE" Type="datetime" Nullable="false" />
+    <Property Name="RETURNCLOSEDDATE" Type="datetime" Nullable="false" />
+    <Property Name="REVERSECHARGEAPPLIES_UK" Type="int" Nullable="false" />
+    <Property Name="REASONREFRECID" Type="bigint" Nullable="false" />
+    <Property Name="REMAINBEFORE" Type="numeric" Precision="32" Scale="16" Nullable="false" />
+    <Property Name="SALESCATEGORY" Type="bigint" Nullable="false" />
+    <Property Name="CUSTINVOICELINEIDREF" Type="bigint" Nullable="false" />
+    <Property Name="SOURCEDOCUMENTLINE" Type="bigint" Nullable="false" />
+    <Property Name="DELIVERYPOSTALADDRESS" Type="bigint" Nullable="false" />
+    <Property Name="LEDGERDIMENSION" Type="bigint" Nullable="false" />
+    <Property Name="DEFAULTDIMENSION" Type="bigint" Nullable="false" />
+    <Property Name="TAXWITHHOLDITEMGROUPHEADING_TH" Type="bigint" Nullable="false" />
+    <Property Name="STOCKEDPRODUCT" Type="int" Nullable="false" />
+    <Property Name="REVERSEDRECID" Type="bigint" Nullable="false" />
+    <Property Name="NGPCODESTABLE_FR" Type="bigint" Nullable="false" />
+    <Property Name="PARENTRECID" Type="bigint" Nullable="false" />
+    <Property Name="TAXWITHHOLDGROUP_TH" Type="nvarchar" MaxLength="10" Nullable="false" />
+    <Property Name="INTRASTATFULFILLMENTDATE_HU" Type="datetime" Nullable="false" />
+    <Property Name="BILLINGCODE" Type="nvarchar" MaxLength="10" Nullable="false" />
+    <Property Name="MCRDELIVERYNAME" Type="nvarchar" MaxLength="100" Nullable="false" />
+    <Property Name="MCRDLVMODE" Type="nvarchar" MaxLength="10" Nullable="false" />
+    <Property Name="PDSCWQTY" Type="numeric" Precision="32" Scale="16" Nullable="false" />
+    <Property Name="PDSCWQTYPHYSICAL" Type="numeric" Precision="32" Scale="16" Nullable="false" />
+    <Property Name="PDSCWREMAIN" Type="numeric" Precision="32" Scale="16" Nullable="false" />
+    <Property Name="RETAILCATEGORY" Type="bigint" Nullable="false" />
+    <Property Name="MODIFIEDDATETIME" Type="datetime" Nullable="false" />
+    <Property Name="CREATEDDATETIME" Type="datetime" Nullable="false" />
+    <Property Name="DEL_CREATEDTIME" Type="int" Nullable="false" />
+    <Property Name="CREATEDBY" Type="nvarchar" MaxLength="8" Nullable="false" />
+    <Property Name="DATAAREAID" Type="nvarchar" MaxLength="4" Nullable="false" />
+    <Property Name="RECVERSION" Type="int" Nullable="false" />
+    <Property Name="PARTITION" Type="bigint" Nullable="false" />
+    <Property Name="RECID" Type="bigint" Nullable="false" />
+  </EntityType>
+  <EntityType Name="CUSTTABLE">
+    <Key>
+      <PropertyRef Name="ACCOUNTNUM" />
+      <PropertyRef Name="DATAAREAID" />
+      <PropertyRef Name="PARTITION" />
+    </Key>
+    <Property Name="ACCOUNTNUM" Type="nvarchar" MaxLength="20" Nullable="false" />
+    <Property Name="INVOICEACCOUNT" Type="nvarchar" MaxLength="20" Nullable="false" />
+    <Property Name="CUSTGROUP" Type="nvarchar" MaxLength="10" Nullable="false" />
+    <Property Name="LINEDISC" Type="nvarchar" MaxLength="10" Nullable="false" />
+    <Property Name="PAYMTERMID" Type="nvarchar" MaxLength="10" Nullable="false" />
+    <Property Name="CASHDISC" Type="nvarchar" MaxLength="10" Nullable="false" />
+    <Property Name="CURRENCY" Type="nvarchar" MaxLength="3" Nullable="false" />
+    <Property Name="INTERCOMPANYAUTOCREATEORDERS" Type="int" Nullable="false" />
+    <Property Name="SALESGROUP" Type="nvarchar" MaxLength="10" Nullable="false" />
+    <Property Name="BLOCKED" Type="int" Nullable="false" />
+    <Property Name="ONETIMECUSTOMER" Type="int" Nullable="false" />
+    <Property Name="ACCOUNTSTATEMENT" Type="int" Nullable="false" />
+    <Property Name="CREDITMAX" Type="numeric" Precision="32" Scale="16" Nullable="false" />
+    <Property Name="MANDATORYCREDITLIMIT" Type="int" Nullable="false" />
+    <Property Name="VENDACCOUNT" Type="nvarchar" MaxLength="20" Nullable="false" />
+    <Property Name="PRICEGROUP" Type="nvarchar" MaxLength="10" Nullable="false" />
+    <Property Name="MULTILINEDISC" Type="nvarchar" MaxLength="10" Nullable="false" />
+    <Property Name="ENDDISC" Type="nvarchar" MaxLength="10" Nullable="false" />
+    <Property Name="VATNUM" Type="nvarchar" MaxLength="20" Nullable="false" />
+    <Property Name="INVENTLOCATION" Type="nvarchar" MaxLength="10" Nullable="false" />
+    <Property Name="DLVTERM" Type="nvarchar" MaxLength="10" Nullable="false" />
+    <Property Name="DLVMODE" Type="nvarchar" MaxLength="10" Nullable="false" />
+    <Property Name="MARKUPGROUP" Type="nvarchar" MaxLength="10" Nullable="false" />
+    <Property Name="CLEARINGPERIOD" Type="nvarchar" MaxLength="10" Nullable="false" />
+    <Property Name="FREIGHTZONE" Type="nvarchar" MaxLength="10" Nullable="false" />
+    <Property Name="CREDITRATING" Type="nvarchar" MaxLength="10" Nullable="false" />
+    <Property Name="TAXGROUP" Type="nvarchar" MaxLength="10" Nullable="false" />
+    <Property Name="STATISTICSGROUP" Type="nvarchar" MaxLength="10" Nullable="false" />
+    <Property Name="PAYMMODE" Type="nvarchar" MaxLength="10" Nullable="false" />
+    <Property Name="COMMISSIONGROUP" Type="nvarchar" MaxLength="10" Nullable="false" />
+    <Property Name="BANKACCOUNT" Type="nvarchar" MaxLength="10" Nullable="false" />
+    <Property Name="PAYMSCHED" Type="nvarchar" MaxLength="30" Nullable="false" />
+    <Property Name="CONTACTPERSONID" Type="nvarchar" MaxLength="20" Nullable="false" />
+    <Property Name="INVOICEADDRESS" Type="int" Nullable="false" />
+    <Property Name="OURACCOUNTNUM" Type="nvarchar" MaxLength="20" Nullable="false" />
+    <Property Name="SALESPOOLID" Type="nvarchar" MaxLength="10" Nullable="false" />
+    <Property Name="INCLTAX" Type="int" Nullable="false" />
+    <Property Name="CUSTITEMGROUPID" Type="nvarchar" MaxLength="10" Nullable="false" />
+    <Property Name="NUMBERSEQUENCEGROUP" Type="nvarchar" MaxLength="10" Nullable="false" />
+    <Property Name="PAYMDAYID" Type="nvarchar" MaxLength="10" Nullable="false" />
+    <Property Name="LINEOFBUSINESSID" Type="nvarchar" MaxLength="10" Nullable="false" />
+    <Property Name="DESTINATIONCODEID" Type="nvarchar" MaxLength="10" Nullable="false" />
+    <Property Name="GIROTYPE" Type="int" Nullable="false" />
+    <Property Name="SUPPITEMGROUPID" Type="nvarchar" MaxLength="10" Nullable="false" />
+    <Property Name="GIROTYPEINTERESTNOTE" Type="int" Nullable="false" />
+    <Property Name="TAXLICENSENUM" Type="nvarchar" MaxLength="20" Nullable="false" />
+    <Property Name="WEBSALESORDERDISPLAY" Type="int" Nullable="false" />
+    <Property Name="PAYMSPEC" Type="nvarchar" MaxLength="10" Nullable="false" />
+    <Property Name="BANKCENTRALBANKPURPOSETEXT" Type="nvarchar" MaxLength="140" Nullable="false" />
+    <Property Name="BANKCENTRALBANKPURPOSECODE" Type="nvarchar" MaxLength="10" Nullable="false" />
+    <Property Name="INTERCOMPANYALLOWINDIRECTCREATION" Type="int" Nullable="false" />
+    <Property Name="PACKMATERIALFEELICENSENUM" Type="nvarchar" MaxLength="20" Nullable="false" />
+    <Property Name="TAXBORDERNUMBER_FI" Type="nvarchar" MaxLength="10" Nullable="false" />
+    <Property Name="EINVOICEEANNUM" Type="nvarchar" MaxLength="13" Nullable="false" />
+    <Property Name="FISCALCODE" Type="nvarchar" MaxLength="16" Nullable="false" />
+    <Property Name="DLVREASON" Type="nvarchar" MaxLength="10" Nullable="false" />
+    <Property Name="FORECASTDMPINCLUDE" Type="int" Nullable="false" />
+    <Property Name="GIROTYPECOLLECTIONLETTER" Type="int" Nullable="false" />
+    <Property Name="SALESCALENDARID" Type="nvarchar" MaxLength="10" Nullable="false" />
+    <Property Name="CUSTCLASSIFICATIONID" Type="nvarchar" MaxLength="10" Nullable="false" />
+    <Property Name="INTERCOMPANYDIRECTDELIVERY" Type="int" Nullable="false" />
+    <Property Name="ENTERPRISENUMBER" Type="nvarchar" MaxLength="50" Nullable="false" />
+    <Property Name="SHIPCARRIERACCOUNT" Type="nvarchar" MaxLength="25" Nullable="false" />
+    <Property Name="GIROTYPEPROJINVOICE" Type="int" Nullable="false" />
+    <Property Name="INVENTSITEID" Type="nvarchar" MaxLength="10" Nullable="false" />
+    <Property Name="ORDERENTRYDEADLINEGROUPID" Type="nvarchar" MaxLength="10" Nullable="false" />
+    <Property Name="SHIPCARRIERID" Type="nvarchar" MaxLength="10" Nullable="false" />
+    <Property Name="SHIPCARRIERFUELSURCHARGE" Type="int" Nullable="false" />
+    <Property Name="SHIPCARRIERBLINDSHIPMENT" Type="int" Nullable="false" />
+    <Property Name="SHIPCARRIERACCOUNTCODE" Type="nvarchar" MaxLength="20" Nullable="false" />
+    <Property Name="GIROTYPEFREETEXTINVOICE" Type="int" Nullable="false" />
+    <Property Name="SYNCENTITYID" Type="uniqueidentifier" Nullable="false" />
+    <Property Name="SYNCVERSION" Type="bigint" Nullable="false" />
+    <Property Name="MEMO" Type="nvarchar(max)" />
+    <Property Name="SALESDISTRICTID" Type="nvarchar" MaxLength="20" Nullable="false" />
+    <Property Name="SEGMENTID" Type="nvarchar" MaxLength="20" Nullable="false" />
+    <Property Name="SUBSEGMENTID" Type="nvarchar" MaxLength="20" Nullable="false" />
+    <Property Name="RFIDITEMTAGGING" Type="int" Nullable="false" />
+    <Property Name="RFIDCASETAGGING" Type="int" Nullable="false" />
+    <Property Name="RFIDPALLETTAGGING" Type="int" Nullable="false" />
+    <Property Name="COMPANYCHAINID" Type="nvarchar" MaxLength="20" Nullable="false" />
+    <Property Name="COMPANYIDSIRET" Type="nvarchar" MaxLength="14" Nullable="false" />
+    <Property Name="PARTY" Type="bigint" Nullable="false" />
+    <Property Name="IDENTIFICATIONNUMBER" Type="nvarchar" MaxLength="50" Nullable="false" />
+    <Property Name="PARTYCOUNTRY" Type="nvarchar" MaxLength="10" Nullable="false" />
+    <Property Name="PARTYSTATE" Type="nvarchar" MaxLength="10" Nullable="false" />
+    <Property Name="ORGID" Type="nvarchar" MaxLength="10" Nullable="false" />
+    <Property Name="PAYMIDTYPE" Type="nvarchar" MaxLength="10" Nullable="false" />
+    <Property Name="FACTORINGACCOUNT" Type="nvarchar" MaxLength="20" Nullable="false" />
+    <Property Name="DEFAULTDIMENSION" Type="bigint" Nullable="false" />
+    <Property Name="CUSTEXCLUDECOLLECTIONFEE" Type="int" Nullable="false" />
+    <Property Name="CUSTEXCLUDEINTERESTCHARGES" Type="int" Nullable="false" />
+    <Property Name="COMPANYNAFCODE" Type="bigint" Nullable="false" />
+    <Property Name="BANKCUSTPAYMIDTABLE" Type="bigint" Nullable="false" />
+    <Property Name="GIROTYPEACCOUNTSTATEMENT" Type="int" Nullable="false" />
+    <Property Name="MAINCONTACTWORKER" Type="bigint" Nullable="false" />
+    <Property Name="CREDITCARDADDRESSVERIFICATION" Type="int" Nullable="false" />
+    <Property Name="CREDITCARDCVC" Type="int" Nullable="false" />
+    <Property Name="CREDITCARDADDRESSVERIFICATIONVOID" Type="int" Nullable="false" />
+    <Property Name="CREDITCARDADDRESSVERIFICATIONLEVEL" Type="int" Nullable="false" />
+    <Property Name="COMPANYTYPE_MX" Type="int" Nullable="false" />
+    <Property Name="RFC_MX" Type="nvarchar" MaxLength="13" Nullable="false" />
+    <Property Name="CURP_MX" Type="nvarchar" MaxLength="18" Nullable="false" />
+    <Property Name="STATEINSCRIPTION_MX" Type="nvarchar" MaxLength="30" Nullable="false" />
+    <Property Name="RESIDENCEFOREIGNCOUNTRYREGIONID_IT" Type="nvarchar" MaxLength="10" Nullable="false" />
+    <Property Name="BIRTHCOUNTYCODE_IT" Type="nvarchar" MaxLength="2" Nullable="false" />
+    <Property Name="BIRTHDATE_IT" Type="datetime" Nullable="false" />
+    <Property Name="BIRTHPLACE_IT" Type="nvarchar" MaxLength="60" Nullable="false" />
+    <Property Name="EINVOICE" Type="int" Nullable="false" />
+    <Property Name="CCMNUM_BR" Type="nvarchar" MaxLength="20" Nullable="false" />
+    <Property Name="CNPJCPFNUM_BR" Type="nvarchar" MaxLength="20" Nullable="false" />
+    <Property Name="PBACUSTGROUPID" Type="nvarchar" MaxLength="10" Nullable="false" />
+    <Property Name="IENUM_BR" Type="nvarchar" MaxLength="20" Nullable="false" />
+    <Property Name="SUFRAMANUMBER_BR" Type="nvarchar" MaxLength="10" Nullable="false" />
+    <Property Name="SUFRAMA_BR" Type="int" Nullable="false" />
+    <Property Name="CUSTFINALUSER_BR" Type="int" Nullable="false" />
+    <Property Name="INTERESTCODE_BR" Type="nvarchar" MaxLength="10" Nullable="false" />
+    <Property Name="FINECODE_BR" Type="nvarchar" MaxLength="10" Nullable="false" />
+    <Property Name="SUFRAMAPISCOFINS_BR" Type="int" Nullable="false" />
+    <Property Name="TAXWITHHOLDCALCULATE_TH" Type="int" Nullable="false" />
+    <Property Name="TAXWITHHOLDGROUP_TH" Type="nvarchar" MaxLength="10" Nullable="false" />
+    <Property Name="CONSDAY_JP" Type="int" Nullable="false" />
+    <Property Name="NIT_BR" Type="nvarchar" MaxLength="14" Nullable="false" />
+    <Property Name="INSSCEI_BR" Type="nvarchar" MaxLength="15" Nullable="false" />
+    <Property Name="CNAE_BR" Type="nvarchar" MaxLength="10" Nullable="false" />
+    <Property Name="ICMSCONTRIBUTOR_BR" Type="int" Nullable="false" />
+    <Property Name="SERVICECODEONDLVADDRESS_BR" Type="int" Nullable="false" />
+    <Property Name="INVENTPROFILETYPE_RU" Type="int" Nullable="false" />
+    <Property Name="INVENTPROFILEID_RU" Type="nvarchar" MaxLength="10" Nullable="false" />
+    <Property Name="TAXWITHHOLDCALCULATE_IN" Type="int" Nullable="false" />
+    <Property Name="UNITEDVATINVOICE_LT" Type="int" Nullable="false" />
+    <Property Name="ENTERPRISECODE" Type="nvarchar" MaxLength="50" Nullable="false" />
+    <Property Name="COMMERCIALREGISTERSECTION" Type="nvarchar" MaxLength="10" Nullable="false" />
+    <Property Name="COMMERCIALREGISTERINSETNUMBER" Type="nvarchar" MaxLength="10" Nullable="false" />
+    <Property Name="COMMERCIALREGISTER" Type="nvarchar" MaxLength="40" Nullable="false" />
+    <Property Name="REGNUM_W" Type="nvarchar" MaxLength="15" Nullable="false" />
+    <Property Name="ISRESIDENT_LV" Type="int" Nullable="false" />
+    <Property Name="INTBANK_LV" Type="nvarchar" MaxLength="10" Nullable="false" />
+    <Property Name="PAYMENTREFERENCE_EE" Type="nvarchar" MaxLength="20" Nullable="false" />
+    <Property Name="PACKAGEDEPOSITEXCEMPT_PL" Type="int" Nullable="false" />
+    <Property Name="FEDNONFEDINDICATOR" Type="int" Nullable="false" />
+    <Property Name="IRS1099CINDICATOR" Type="int" Nullable="false" />
+    <Property Name="AGENCYLOCATIONCODE" Type="nvarchar" MaxLength="12" Nullable="false" />
+    <Property Name="FEDERALCOMMENTS" Type="nvarchar" MaxLength="60" Nullable="false" />
+    <Property Name="USEPURCHREQUEST" Type="int" Nullable="false" />
+    <Property Name="MCRMERGEDPARENT" Type="nvarchar" MaxLength="20" Nullable="false" />
+    <Property Name="MCRMERGEDROOT" Type="nvarchar" MaxLength="20" Nullable="false" />
+    <Property Name="AFFILIATED_RU" Type="int" Nullable="false" />
+    <Property Name="CASHDISCBASEDAYS" Type="int" Nullable="false" />
+    <Property Name="CUSTTRADINGPARTNERCODE" Type="bigint" Nullable="false" />
+    <Property Name="CUSTWHTCONTRIBUTIONTYPE_BR" Type="int" Nullable="false" />
+    <Property Name="DAXINTEGRATIONID" Type="uniqueidentifier" Nullable="false" />
+    <Property Name="DEFAULTDIRECTDEBITMANDATE" Type="bigint" Nullable="false" />
+    <Property Name="DEFAULTINVENTSTATUSID" Type="nvarchar" MaxLength="10" Nullable="false" />
+    <Property Name="ENTRYCERTIFICATEREQUIRED_W" Type="int" Nullable="false" />
+    <Property Name="EXPORTSALES_PL" Type="int" Nullable="false" />
+    <Property Name="EXPRESSBILLOFLADING" Type="int" Nullable="false" />
+    <Property Name="FISCALDOCTYPE_PL" Type="int" Nullable="false" />
+    <Property Name="FOREIGNRESIDENT_RU" Type="int" Nullable="false" />
+    <Property Name="GENERATEINCOMINGFISCALDOCUMENT_BR" Type="int" Nullable="false" />
+    <Property Name="INVOICEPOSTINGTYPE_RU" Type="int" Nullable="false" />
+    <Property Name="ISSUEOWNENTRYCERTIFICATE_W" Type="int" Nullable="false" />
+    <Property Name="ISSUERCOUNTRY_HU" Type="nvarchar" MaxLength="10" Nullable="false" />
+    <Property Name="LVPAYMTRANSCODES" Type="bigint" Nullable="false" />
+    <Property Name="MANDATORYVATDATE_PL" Type="int" Nullable="false" />
+    <Property Name="PASSPORTNO_HU" Type="nvarchar" MaxLength="13" Nullable="false" />
+    <Property Name="PDSCUSTREBATEGROUPID" Type="nvarchar" MaxLength="20" Nullable="false" />
+    <Property Name="PDSFREIGHTACCRUED" Type="int" Nullable="false" />
+    <Property Name="PDSREBATETMAGROUP" Type="nvarchar" MaxLength="10" Nullable="false" />
+    <Property Name="TAXPERIODPAYMENTCODE_PL" Type="nvarchar" MaxLength="10" Nullable="false" />
+    <Property Name="USECASHDISC" Type="int" Nullable="false" />
+    <Property Name="MODIFIEDDATETIME" Type="datetime" Nullable="false" />
+    <Property Name="DEL_MODIFIEDTIME" Type="int" Nullable="false" />
+    <Property Name="MODIFIEDBY" Type="nvarchar" MaxLength="8" Nullable="false" />
+    <Property Name="CREATEDDATETIME" Type="datetime" Nullable="false" />
+    <Property Name="DEL_CREATEDTIME" Type="int" Nullable="false" />
+    <Property Name="DATAAREAID" Type="nvarchar" MaxLength="4" Nullable="false" />
+    <Property Name="RECVERSION" Type="int" Nullable="false" />
+    <Property Name="PARTITION" Type="bigint" Nullable="false" />
+    <Property Name="RECID" Type="bigint" Nullable="false" />
+    <Property Name="TIPO" Type="int" Nullable="false" />
+    <Property Name="RNC_CEDULA" Type="nvarchar" MaxLength="25" Nullable="false" />
+  </EntityType>
+  <!--Errores durante la generación:
+advertencia 6002: La tabla o vista 'GRUPOSIGAX.dbo.CUSTTRANS' no tiene definida ninguna clave principal. Se ha inferido la clave y la definición se creado como una vista o tabla de solo lectura.-->
+  <EntityType Name="CUSTTRANS">
+    <Key>
+      <PropertyRef Name="ACCOUNTNUM" />
+      <PropertyRef Name="TRANSDATE" />
+      <PropertyRef Name="VOUCHER" />
+      <PropertyRef Name="INVOICE" />
+      <PropertyRef Name="TXT" />
+      <PropertyRef Name="AMOUNTCUR" />
+      <PropertyRef Name="SETTLEAMOUNTCUR" />
+      <PropertyRef Name="AMOUNTMST" />
+      <PropertyRef Name="SETTLEAMOUNTMST" />
+      <PropertyRef Name="CURRENCYCODE" />
+      <PropertyRef Name="DUEDATE" />
+      <PropertyRef Name="LASTSETTLEVOUCHER" />
+      <PropertyRef Name="LASTSETTLEDATE" />
+      <PropertyRef Name="LASTEXCHADJVOUCHER" />
+      <PropertyRef Name="CLOSED" />
+      <PropertyRef Name="TRANSTYPE" />
+      <PropertyRef Name="APPROVED" />
+      <PropertyRef Name="EXCHADJUSTMENT" />
+      <PropertyRef Name="DOCUMENTNUM" />
+      <PropertyRef Name="DOCUMENTDATE" />
+      <PropertyRef Name="LASTEXCHADJRATE" />
+      <PropertyRef Name="FIXEDEXCHRATE" />
+      <PropertyRef Name="LASTEXCHADJ" />
+      <PropertyRef Name="CORRECT" />
+      <PropertyRef Name="BANKCENTRALBANKPURPOSECODE" />
+      <PropertyRef Name="BANKCENTRALBANKPURPOSETEXT" />
+      <PropertyRef Name="SETTLEMENT" />
+      <PropertyRef Name="INTEREST" />
+      <PropertyRef Name="COLLECTIONLETTER" />
+      <PropertyRef Name="DEFAULTDIMENSION" />
+      <PropertyRef Name="POSTINGPROFILECLOSE" />
+      <PropertyRef Name="EXCHRATESECOND" />
+      <PropertyRef Name="BANKLCEXPORTLINE" />
+      <PropertyRef Name="ACCOUNTINGEVENT" />
+      <PropertyRef Name="EXCHRATE" />
+      <PropertyRef Name="LASTSETTLEACCOUNTNUM" />
+      <PropertyRef Name="COMPANYBANKACCOUNTID" />
+      <PropertyRef Name="THIRDPARTYBANKACCOUNTID" />
+      <PropertyRef Name="PAYMMODE" />
+      <PropertyRef Name="PAYMREFERENCE" />
+      <PropertyRef Name="PAYMMETHOD" />
+      <PropertyRef Name="CASHPAYMENT" />
+      <PropertyRef Name="CONTROLNUM" />
+      <PropertyRef Name="DELIVERYMODE" />
+      <PropertyRef Name="POSTINGPROFILE" />
+      <PropertyRef Name="OFFSETRECID" />
+      <PropertyRef Name="EUROTRIANGULATION" />
+      <PropertyRef Name="ORDERACCOUNT" />
+      <PropertyRef Name="CASHDISCCODE" />
+      <PropertyRef Name="PREPAYMENT" />
+      <PropertyRef Name="PAYMSPEC" />
+      <PropertyRef Name="CUSTEXCHADJUSTMENTREALIZED" />
+      <PropertyRef Name="CUSTEXCHADJUSTMENTUNREALIZED" />
+      <PropertyRef Name="PAYMMANLACKDATE" />
+      <PropertyRef Name="PAYMMANBATCH" />
+      <PropertyRef Name="PAYMID" />
+      <PropertyRef Name="BILLOFEXCHANGEID" />
+      <PropertyRef Name="BILLOFEXCHANGESTATUS" />
+      <PropertyRef Name="BILLOFEXCHANGESEQNUM" />
+      <PropertyRef Name="BANKREMITTANCEFILEID" />
+      <PropertyRef Name="COLLECTIONLETTERCODE" />
+      <PropertyRef Name="INVOICEPROJECT" />
+      <PropertyRef Name="LASTSETTLECOMPANY" />
+      <PropertyRef Name="CANCELLEDPAYMENT" />
+      <PropertyRef Name="REASONREFRECID" />
+      <PropertyRef Name="REPORTINGCURRENCYAMOUNT" />
+      <PropertyRef Name="REPORTINGEXCHADJUSTMENTREALIZED" />
+      <PropertyRef Name="REPORTINGEXCHADJUSTMENTUNREALIZED" />
+      <PropertyRef Name="LASTEXCHADJRATEREPORTING" />
+      <PropertyRef Name="REPORTINGCURRENCYCROSSRATE" />
+      <PropertyRef Name="EXCHADJUSTMENTREPORTING" />
+      <PropertyRef Name="SETTLEAMOUNTREPORTING" />
+      <PropertyRef Name="APPROVER" />
+      <PropertyRef Name="TAXINVOICESALESID" />
+      <PropertyRef Name="CONCESSIONCONTRACTID" />
+      <PropertyRef Name="CONCESSIONSETTLEMENTID" />
+      <PropertyRef Name="RETAILCUSTTRANS" />
+      <PropertyRef Name="RETAILSTOREID" />
+      <PropertyRef Name="RETAILTERMINALID" />
+      <PropertyRef Name="RETAILTRANSACTIONID" />
+      <PropertyRef Name="CUSTBILLINGCLASSIFICATION" />
+      <PropertyRef Name="MCRPAYMORDERID" />
+      <PropertyRef Name="DIRECTDEBITMANDATE" />
+      <PropertyRef Name="MODIFIEDDATETIME" />
+      <PropertyRef Name="DEL_MODIFIEDTIME" />
+      <PropertyRef Name="MODIFIEDBY" />
+      <PropertyRef Name="MODIFIEDTRANSACTIONID" />
+      <PropertyRef Name="CREATEDDATETIME" />
+      <PropertyRef Name="DEL_CREATEDTIME" />
+      <PropertyRef Name="CREATEDBY" />
+      <PropertyRef Name="CREATEDTRANSACTIONID" />
+      <PropertyRef Name="DATAAREAID" />
+      <PropertyRef Name="RECVERSION" />
+      <PropertyRef Name="PARTITION" />
+      <PropertyRef Name="RECID" />
+      <PropertyRef Name="NCF" />
+      <PropertyRef Name="NFC_ANTERIOR" />
+      <PropertyRef Name="NO_FACTURA_ANTERIOR" />
+    </Key>
+    <Property Name="ACCOUNTNUM" Type="nvarchar" MaxLength="20" Nullable="false" />
+    <Property Name="TRANSDATE" Type="datetime" Nullable="false" />
+    <Property Name="VOUCHER" Type="nvarchar" MaxLength="20" Nullable="false" />
+    <Property Name="INVOICE" Type="nvarchar" MaxLength="20" Nullable="false" />
+    <Property Name="TXT" Type="nvarchar" MaxLength="60" Nullable="false" />
+    <Property Name="AMOUNTCUR" Type="numeric" Precision="32" Scale="16" Nullable="false" />
+    <Property Name="SETTLEAMOUNTCUR" Type="numeric" Precision="32" Scale="16" Nullable="false" />
+    <Property Name="AMOUNTMST" Type="numeric" Precision="32" Scale="16" Nullable="false" />
+    <Property Name="SETTLEAMOUNTMST" Type="numeric" Precision="32" Scale="16" Nullable="false" />
+    <Property Name="CURRENCYCODE" Type="nvarchar" MaxLength="3" Nullable="false" />
+    <Property Name="DUEDATE" Type="datetime" Nullable="false" />
+    <Property Name="LASTSETTLEVOUCHER" Type="nvarchar" MaxLength="20" Nullable="false" />
+    <Property Name="LASTSETTLEDATE" Type="datetime" Nullable="false" />
+    <Property Name="LASTEXCHADJVOUCHER" Type="nvarchar" MaxLength="20" Nullable="false" />
+    <Property Name="CLOSED" Type="datetime" Nullable="false" />
+    <Property Name="TRANSTYPE" Type="int" Nullable="false" />
+    <Property Name="APPROVED" Type="int" Nullable="false" />
+    <Property Name="EXCHADJUSTMENT" Type="numeric" Precision="32" Scale="16" Nullable="false" />
+    <Property Name="DOCUMENTNUM" Type="nvarchar" MaxLength="20" Nullable="false" />
+    <Property Name="DOCUMENTDATE" Type="datetime" Nullable="false" />
+    <Property Name="LASTEXCHADJRATE" Type="numeric" Precision="32" Scale="16" Nullable="false" />
+    <Property Name="FIXEDEXCHRATE" Type="int" Nullable="false" />
+    <Property Name="LASTEXCHADJ" Type="datetime" Nullable="false" />
+    <Property Name="CORRECT" Type="int" Nullable="false" />
+    <Property Name="BANKCENTRALBANKPURPOSECODE" Type="nvarchar" MaxLength="10" Nullable="false" />
+    <Property Name="BANKCENTRALBANKPURPOSETEXT" Type="nvarchar" MaxLength="140" Nullable="false" />
+    <Property Name="SETTLEMENT" Type="int" Nullable="false" />
+    <Property Name="INTEREST" Type="int" Nullable="false" />
+    <Property Name="COLLECTIONLETTER" Type="int" Nullable="false" />
+    <Property Name="DEFAULTDIMENSION" Type="bigint" Nullable="false" />
+    <Property Name="POSTINGPROFILECLOSE" Type="nvarchar" MaxLength="10" Nullable="false" />
+    <Property Name="EXCHRATESECOND" Type="numeric" Precision="32" Scale="16" Nullable="false" />
+    <Property Name="BANKLCEXPORTLINE" Type="bigint" Nullable="false" />
+    <Property Name="ACCOUNTINGEVENT" Type="bigint" Nullable="false" />
+    <Property Name="EXCHRATE" Type="numeric" Precision="32" Scale="16" Nullable="false" />
+    <Property Name="LASTSETTLEACCOUNTNUM" Type="nvarchar" MaxLength="20" Nullable="false" />
+    <Property Name="COMPANYBANKACCOUNTID" Type="nvarchar" MaxLength="10" Nullable="false" />
+    <Property Name="THIRDPARTYBANKACCOUNTID" Type="nvarchar" MaxLength="10" Nullable="false" />
+    <Property Name="PAYMMODE" Type="nvarchar" MaxLength="10" Nullable="false" />
+    <Property Name="PAYMREFERENCE" Type="nvarchar" MaxLength="20" Nullable="false" />
+    <Property Name="PAYMMETHOD" Type="int" Nullable="false" />
+    <Property Name="CASHPAYMENT" Type="int" Nullable="false" />
+    <Property Name="CONTROLNUM" Type="nvarchar" MaxLength="20" Nullable="false" />
+    <Property Name="DELIVERYMODE" Type="nvarchar" MaxLength="10" Nullable="false" />
+    <Property Name="POSTINGPROFILE" Type="nvarchar" MaxLength="10" Nullable="false" />
+    <Property Name="OFFSETRECID" Type="bigint" Nullable="false" />
+    <Property Name="EUROTRIANGULATION" Type="int" Nullable="false" />
+    <Property Name="ORDERACCOUNT" Type="nvarchar" MaxLength="20" Nullable="false" />
+    <Property Name="CASHDISCCODE" Type="nvarchar" MaxLength="10" Nullable="false" />
+    <Property Name="PREPAYMENT" Type="int" Nullable="false" />
+    <Property Name="PAYMSPEC" Type="nvarchar" MaxLength="10" Nullable="false" />
+    <Property Name="CUSTEXCHADJUSTMENTREALIZED" Type="numeric" Precision="32" Scale="16" Nullable="false" />
+    <Property Name="CUSTEXCHADJUSTMENTUNREALIZED" Type="numeric" Precision="32" Scale="16" Nullable="false" />
+    <Property Name="PAYMMANLACKDATE" Type="datetime" Nullable="false" />
+    <Property Name="PAYMMANBATCH" Type="nvarchar" MaxLength="20" Nullable="false" />
+    <Property Name="PAYMID" Type="nvarchar" MaxLength="200" Nullable="false" />
+    <Property Name="BILLOFEXCHANGEID" Type="nvarchar" MaxLength="20" Nullable="false" />
+    <Property Name="BILLOFEXCHANGESTATUS" Type="int" Nullable="false" />
+    <Property Name="BILLOFEXCHANGESEQNUM" Type="int" Nullable="false" />
+    <Property Name="BANKREMITTANCEFILEID" Type="nvarchar" MaxLength="10" Nullable="false" />
+    <Property Name="COLLECTIONLETTERCODE" Type="int" Nullable="false" />
+    <Property Name="INVOICEPROJECT" Type="int" Nullable="false" />
+    <Property Name="LASTSETTLECOMPANY" Type="nvarchar" MaxLength="4" Nullable="false" />
+    <Property Name="CANCELLEDPAYMENT" Type="int" Nullable="false" />
+    <Property Name="REASONREFRECID" Type="bigint" Nullable="false" />
+    <Property Name="REPORTINGCURRENCYAMOUNT" Type="numeric" Precision="32" Scale="16" Nullable="false" />
+    <Property Name="REPORTINGEXCHADJUSTMENTREALIZED" Type="numeric" Precision="32" Scale="16" Nullable="false" />
+    <Property Name="REPORTINGEXCHADJUSTMENTUNREALIZED" Type="numeric" Precision="32" Scale="16" Nullable="false" />
+    <Property Name="LASTEXCHADJRATEREPORTING" Type="numeric" Precision="32" Scale="16" Nullable="false" />
+    <Property Name="REPORTINGCURRENCYCROSSRATE" Type="numeric" Precision="32" Scale="16" Nullable="false" />
+    <Property Name="EXCHADJUSTMENTREPORTING" Type="numeric" Precision="32" Scale="16" Nullable="false" />
+    <Property Name="SETTLEAMOUNTREPORTING" Type="numeric" Precision="32" Scale="16" Nullable="false" />
+    <Property Name="APPROVER" Type="bigint" Nullable="false" />
+    <Property Name="TAXINVOICESALESID" Type="nvarchar" MaxLength="20" Nullable="false" />
+    <Property Name="CONCESSIONCONTRACTID" Type="nvarchar" MaxLength="10" Nullable="false" />
+    <Property Name="CONCESSIONSETTLEMENTID" Type="nvarchar" MaxLength="10" Nullable="false" />
+    <Property Name="RETAILCUSTTRANS" Type="int" Nullable="false" />
+    <Property Name="RETAILSTOREID" Type="nvarchar" MaxLength="10" Nullable="false" />
+    <Property Name="RETAILTERMINALID" Type="nvarchar" MaxLength="10" Nullable="false" />
+    <Property Name="RETAILTRANSACTIONID" Type="nvarchar" MaxLength="44" Nullable="false" />
+    <Property Name="CUSTBILLINGCLASSIFICATION" Type="bigint" Nullable="false" />
+    <Property Name="MCRPAYMORDERID" Type="nvarchar" MaxLength="20" Nullable="false" />
+    <Property Name="DIRECTDEBITMANDATE" Type="bigint" Nullable="false" />
+    <Property Name="MODIFIEDDATETIME" Type="datetime" Nullable="false" />
+    <Property Name="DEL_MODIFIEDTIME" Type="int" Nullable="false" />
+    <Property Name="MODIFIEDBY" Type="nvarchar" MaxLength="8" Nullable="false" />
+    <Property Name="MODIFIEDTRANSACTIONID" Type="bigint" Nullable="false" />
+    <Property Name="CREATEDDATETIME" Type="datetime" Nullable="false" />
+    <Property Name="DEL_CREATEDTIME" Type="int" Nullable="false" />
+    <Property Name="CREATEDBY" Type="nvarchar" MaxLength="8" Nullable="false" />
+    <Property Name="CREATEDTRANSACTIONID" Type="bigint" Nullable="false" />
+    <Property Name="DATAAREAID" Type="nvarchar" MaxLength="4" Nullable="false" />
+    <Property Name="RECVERSION" Type="int" Nullable="false" />
+    <Property Name="PARTITION" Type="bigint" Nullable="false" />
+    <Property Name="RECID" Type="bigint" Nullable="false" />
+    <Property Name="NCF" Type="nvarchar" MaxLength="25" Nullable="false" />
+    <Property Name="NFC_ANTERIOR" Type="nvarchar" MaxLength="13" Nullable="false" />
+    <Property Name="NO_FACTURA_ANTERIOR" Type="nvarchar" MaxLength="13" Nullable="false" />
+  </EntityType>
+  <!--Errores durante la generación:
+advertencia 6002: La tabla o vista 'GRUPOSIGAX.dbo.CUSTTRANSOPEN' no tiene definida ninguna clave principal. Se ha inferido la clave y la definición se creado como una vista o tabla de solo lectura.-->
+  <EntityType Name="CUSTTRANSOPEN">
+    <Key>
+      <PropertyRef Name="EXCHADJUNREALIZED" />
+      <PropertyRef Name="AMOUNTCUR" />
+      <PropertyRef Name="AMOUNTMST" />
+      <PropertyRef Name="DUEDATE" />
+      <PropertyRef Name="REFRECID" />
+      <PropertyRef Name="CASHDISCOUNTLEDGERDIMENSION" />
+      <PropertyRef Name="CASHDISCDATE" />
+      <PropertyRef Name="TRANSDATE" />
+      <PropertyRef Name="POSSIBLECASHDISC" />
+      <PropertyRef Name="ACCOUNTNUM" />
+      <PropertyRef Name="USECASHDISC" />
+      <PropertyRef Name="LASTINTERESTDATE" />
+      <PropertyRef Name="BANKDISCNOTICEDEADLINE" />
+      <PropertyRef Name="SETTLEMENTPRIORITYCASHDISCDATE" />
+      <PropertyRef Name="BANKLCEXPORTLINE" />
+      <PropertyRef Name="REPORTINGCURRENCYAMOUNT" />
+      <PropertyRef Name="EXCHADJUNREALIZEDREPORTING" />
+      <PropertyRef Name="TDSAMOUNT_IN" />
+      <PropertyRef Name="TCSAMOUNT_IN" />
+      <PropertyRef Name="INTERESTAMOUNT_BR" />
+      <PropertyRef Name="FINEAMOUNT_BR" />
+      <PropertyRef Name="INTERESTCODE_BR" />
+      <PropertyRef Name="FINECODE_BR" />
+      <PropertyRef Name="INTERESTAMOUNTPAYMCUR_BR" />
+      <PropertyRef Name="FINEAMOUNTPAYMCUR_BR" />
+      <PropertyRef Name="TAXWITHHOLDAMOUNTORIGIN_IN" />
+      <PropertyRef Name="SETTLEDLINEPERCENT_IN" />
+      <PropertyRef Name="SETTLEDTOTALAMOUNT_IN" />
+      <PropertyRef Name="DATAAREAID" />
+      <PropertyRef Name="RECVERSION" />
+      <PropertyRef Name="PARTITION" />
+      <PropertyRef Name="RECID" />
+    </Key>
+    <Property Name="EXCHADJUNREALIZED" Type="numeric" Precision="32" Scale="16" Nullable="false" />
+    <Property Name="AMOUNTCUR" Type="numeric" Precision="32" Scale="16" Nullable="false" />
+    <Property Name="AMOUNTMST" Type="numeric" Precision="32" Scale="16" Nullable="false" />
+    <Property Name="DUEDATE" Type="datetime" Nullable="false" />
+    <Property Name="REFRECID" Type="bigint" Nullable="false" />
+    <Property Name="CASHDISCOUNTLEDGERDIMENSION" Type="bigint" Nullable="false" />
+    <Property Name="CASHDISCDATE" Type="datetime" Nullable="false" />
+    <Property Name="TRANSDATE" Type="datetime" Nullable="false" />
+    <Property Name="POSSIBLECASHDISC" Type="numeric" Precision="32" Scale="16" Nullable="false" />
+    <Property Name="ACCOUNTNUM" Type="nvarchar" MaxLength="20" Nullable="false" />
+    <Property Name="USECASHDISC" Type="int" Nullable="false" />
+    <Property Name="LASTINTERESTDATE" Type="datetime" Nullable="false" />
+    <Property Name="BANKDISCNOTICEDEADLINE" Type="datetime" Nullable="false" />
+    <Property Name="SETTLEMENTPRIORITYCASHDISCDATE" Type="datetime" Nullable="false" />
+    <Property Name="BANKLCEXPORTLINE" Type="bigint" Nullable="false" />
+    <Property Name="REPORTINGCURRENCYAMOUNT" Type="numeric" Precision="32" Scale="16" Nullable="false" />
+    <Property Name="EXCHADJUNREALIZEDREPORTING" Type="numeric" Precision="32" Scale="16" Nullable="false" />
+    <Property Name="TDSAMOUNT_IN" Type="numeric" Precision="32" Scale="16" Nullable="false" />
+    <Property Name="TCSAMOUNT_IN" Type="numeric" Precision="32" Scale="16" Nullable="false" />
+    <Property Name="INTERESTAMOUNT_BR" Type="numeric" Precision="32" Scale="16" Nullable="false" />
+    <Property Name="FINEAMOUNT_BR" Type="numeric" Precision="32" Scale="16" Nullable="false" />
+    <Property Name="INTERESTCODE_BR" Type="nvarchar" MaxLength="10" Nullable="false" />
+    <Property Name="FINECODE_BR" Type="nvarchar" MaxLength="10" Nullable="false" />
+    <Property Name="INTERESTAMOUNTPAYMCUR_BR" Type="numeric" Precision="32" Scale="16" Nullable="false" />
+    <Property Name="FINEAMOUNTPAYMCUR_BR" Type="numeric" Precision="32" Scale="16" Nullable="false" />
+    <Property Name="TAXWITHHOLDAMOUNTORIGIN_IN" Type="numeric" Precision="32" Scale="16" Nullable="false" />
+    <Property Name="SETTLEDLINEPERCENT_IN" Type="numeric" Precision="32" Scale="16" Nullable="false" />
+    <Property Name="SETTLEDTOTALAMOUNT_IN" Type="numeric" Precision="32" Scale="16" Nullable="false" />
+    <Property Name="DATAAREAID" Type="nvarchar" MaxLength="4" Nullable="false" />
+    <Property Name="RECVERSION" Type="int" Nullable="false" />
+    <Property Name="PARTITION" Type="bigint" Nullable="false" />
+    <Property Name="RECID" Type="bigint" Nullable="false" />
+  </EntityType>
+  <!--Errores durante la generación:
+advertencia 6002: La tabla o vista 'GRUPOSIGAX.dbo.ECORESPRODUCT' no tiene definida ninguna clave principal. Se ha inferido la clave y la definición se creado como una vista o tabla de solo lectura.-->
+  <EntityType Name="ECORESPRODUCT">
+    <Key>
+      <PropertyRef Name="INSTANCERELATIONTYPE" />
+      <PropertyRef Name="DISPLAYPRODUCTNUMBER" />
+      <PropertyRef Name="SEARCHNAME" />
+      <PropertyRef Name="PRODUCTTYPE" />
+      <PropertyRef Name="PDSCWPRODUCT" />
+      <PropertyRef Name="MODIFIEDBY" />
+      <PropertyRef Name="RECVERSION" />
+      <PropertyRef Name="RELATIONTYPE" />
+      <PropertyRef Name="PARTITION" />
+      <PropertyRef Name="RECID" />
+    </Key>
+    <Property Name="PRODUCTMASTER" Type="bigint" />
+    <Property Name="RETAITOTALWEIGHT" Type="int" />
+    <Property Name="VARIANTCONFIGURATIONTECHNOLOGY" Type="int" />
+    <Property Name="RETAILCOLORGROUPID" Type="nvarchar" MaxLength="10" />
+    <Property Name="RETAILSIZEGROUPID" Type="nvarchar" MaxLength="10" />
+    <Property Name="RETAILSTYLEGROUPID" Type="nvarchar" MaxLength="10" />
+    <Property Name="INSTANCERELATIONTYPE" Type="bigint" Nullable="false" />
+    <Property Name="DISPLAYPRODUCTNUMBER" Type="nvarchar" MaxLength="70" Nullable="false" />
+    <Property Name="SEARCHNAME" Type="nvarchar" MaxLength="20" Nullable="false" />
+    <Property Name="PRODUCTTYPE" Type="int" Nullable="false" />
+    <Property Name="PDSCWPRODUCT" Type="int" Nullable="false" />
+    <Property Name="MODIFIEDBY" Type="nvarchar" MaxLength="8" Nullable="false" />
+    <Property Name="RECVERSION" Type="int" Nullable="false" />
+    <Property Name="RELATIONTYPE" Type="bigint" Nullable="false" />
+    <Property Name="PARTITION" Type="bigint" Nullable="false" />
+    <Property Name="RECID" Type="bigint" Nullable="false" />
+  </EntityType>
+  <!--Errores durante la generación:
+advertencia 6002: La tabla o vista 'GRUPOSIGAX.dbo.ECORESPRODUCTTRANSLATION' no tiene definida ninguna clave principal. Se ha inferido la clave y la definición se creado como una vista o tabla de solo lectura.-->
+  <EntityType Name="ECORESPRODUCTTRANSLATION">
+    <Key>
+      <PropertyRef Name="DESCRIPTION" />
+      <PropertyRef Name="NAME" />
+      <PropertyRef Name="PRODUCT" />
+      <PropertyRef Name="LANGUAGEID" />
+      <PropertyRef Name="MODIFIEDBY" />
+      <PropertyRef Name="RECVERSION" />
+      <PropertyRef Name="PARTITION" />
+      <PropertyRef Name="RECID" />
+    </Key>
+    <Property Name="DESCRIPTION" Type="nvarchar" MaxLength="1000" Nullable="false" />
+    <Property Name="NAME" Type="nvarchar" MaxLength="60" Nullable="false" />
+    <Property Name="PRODUCT" Type="bigint" Nullable="false" />
+    <Property Name="LANGUAGEID" Type="nvarchar" MaxLength="7" Nullable="false" />
+    <Property Name="MODIFIEDBY" Type="nvarchar" MaxLength="8" Nullable="false" />
+    <Property Name="RECVERSION" Type="int" Nullable="false" />
+    <Property Name="PARTITION" Type="bigint" Nullable="false" />
+    <Property Name="RECID" Type="bigint" Nullable="false" />
+  </EntityType>
+  <!--Errores durante la generación:
+advertencia 6002: La tabla o vista 'GRUPOSIGAX.dbo.INVENTMODELGROUPITEM' no tiene definida ninguna clave principal. Se ha inferido la clave y la definición se creado como una vista o tabla de solo lectura.-->
+  <EntityType Name="INVENTMODELGROUPITEM">
+    <Key>
+      <PropertyRef Name="ITEMDATAAREAID" />
+      <PropertyRef Name="MODELGROUPID" />
+      <PropertyRef Name="ITEMID" />
+      <PropertyRef Name="MODELGROUPDATAAREAID" />
+      <PropertyRef Name="RECVERSION" />
+      <PropertyRef Name="PARTITION" />
+      <PropertyRef Name="RECID" />
+    </Key>
+    <Property Name="ITEMDATAAREAID" Type="nvarchar" MaxLength="4" Nullable="false" />
+    <Property Name="MODELGROUPID" Type="nvarchar" MaxLength="10" Nullable="false" />
+    <Property Name="ITEMID" Type="nvarchar" MaxLength="20" Nullable="false" />
+    <Property Name="MODELGROUPDATAAREAID" Type="nvarchar" MaxLength="4" Nullable="false" />
+    <Property Name="RECVERSION" Type="int" Nullable="false" />
+    <Property Name="PARTITION" Type="bigint" Nullable="false" />
+    <Property Name="RECID" Type="bigint" Nullable="false" />
+  </EntityType>
+  <!--Errores durante la generación:
+advertencia 6002: La tabla o vista 'GRUPOSIGAX.dbo.INVENTTABLEMODULE' no tiene definida ninguna clave principal. Se ha inferido la clave y la definición se creado como una vista o tabla de solo lectura.-->
+  <EntityType Name="INVENTTABLEMODULE">
+    <Key>
+      <PropertyRef Name="ITEMID" />
+      <PropertyRef Name="MODULETYPE" />
+      <PropertyRef Name="UNITID" />
+      <PropertyRef Name="PRICE" />
+      <PropertyRef Name="PRICEUNIT" />
+      <PropertyRef Name="MARKUP" />
+      <PropertyRef Name="LINEDISC" />
+      <PropertyRef Name="MULTILINEDISC" />
+      <PropertyRef Name="ENDDISC" />
+      <PropertyRef Name="TAXITEMGROUPID" />
+      <PropertyRef Name="MARKUPGROUPID" />
+      <PropertyRef Name="PRICEDATE" />
+      <PropertyRef Name="PRICEQTY" />
+      <PropertyRef Name="ALLOCATEMARKUP" />
+      <PropertyRef Name="OVERDELIVERYPCT" />
+      <PropertyRef Name="UNDERDELIVERYPCT" />
+      <PropertyRef Name="SUPPITEMGROUPID" />
+      <PropertyRef Name="INTERCOMPANYBLOCKED" />
+      <PropertyRef Name="TAXWITHHOLDITEMGROUPHEADING_TH" />
+      <PropertyRef Name="TAXWITHHOLDCALCULATE_TH" />
+      <PropertyRef Name="MAXIMUMRETAILPRICE_IN" />
+      <PropertyRef Name="PRICESECCUR_RU" />
+      <PropertyRef Name="MARKUPSECCUR_RU" />
+      <PropertyRef Name="PDSPRICINGPRECISION" />
+      <PropertyRef Name="MODIFIEDDATETIME" />
+      <PropertyRef Name="DEL_MODIFIEDTIME" />
+      <PropertyRef Name="MODIFIEDBY" />
+      <PropertyRef Name="CREATEDDATETIME" />
+      <PropertyRef Name="DEL_CREATEDTIME" />
+      <PropertyRef Name="CREATEDBY" />
+      <PropertyRef Name="DATAAREAID" />
+      <PropertyRef Name="RECVERSION" />
+      <PropertyRef Name="PARTITION" />
+      <PropertyRef Name="RECID" />
+    </Key>
+    <Property Name="ITEMID" Type="nvarchar" MaxLength="20" Nullable="false" />
+    <Property Name="MODULETYPE" Type="int" Nullable="false" />
+    <Property Name="UNITID" Type="nvarchar" MaxLength="10" Nullable="false" />
+    <Property Name="PRICE" Type="numeric" Precision="32" Scale="16" Nullable="false" />
+    <Property Name="PRICEUNIT" Type="numeric" Precision="32" Scale="16" Nullable="false" />
+    <Property Name="MARKUP" Type="numeric" Precision="32" Scale="16" Nullable="false" />
+    <Property Name="LINEDISC" Type="nvarchar" MaxLength="10" Nullable="false" />
+    <Property Name="MULTILINEDISC" Type="nvarchar" MaxLength="10" Nullable="false" />
+    <Property Name="ENDDISC" Type="int" Nullable="false" />
+    <Property Name="TAXITEMGROUPID" Type="nvarchar" MaxLength="10" Nullable="false" />
+    <Property Name="MARKUPGROUPID" Type="nvarchar" MaxLength="10" Nullable="false" />
+    <Property Name="PRICEDATE" Type="datetime" Nullable="false" />
+    <Property Name="PRICEQTY" Type="numeric" Precision="32" Scale="16" Nullable="false" />
+    <Property Name="ALLOCATEMARKUP" Type="int" Nullable="false" />
+    <Property Name="OVERDELIVERYPCT" Type="numeric" Precision="32" Scale="16" Nullable="false" />
+    <Property Name="UNDERDELIVERYPCT" Type="numeric" Precision="32" Scale="16" Nullable="false" />
+    <Property Name="SUPPITEMGROUPID" Type="nvarchar" MaxLength="10" Nullable="false" />
+    <Property Name="INTERCOMPANYBLOCKED" Type="int" Nullable="false" />
+    <Property Name="TAXWITHHOLDITEMGROUPHEADING_TH" Type="bigint" Nullable="false" />
+    <Property Name="TAXWITHHOLDCALCULATE_TH" Type="int" Nullable="false" />
+    <Property Name="MAXIMUMRETAILPRICE_IN" Type="numeric" Precision="32" Scale="16" Nullable="false" />
+    <Property Name="PRICESECCUR_RU" Type="numeric" Precision="32" Scale="16" Nullable="false" />
+    <Property Name="MARKUPSECCUR_RU" Type="numeric" Precision="32" Scale="16" Nullable="false" />
+    <Property Name="PDSPRICINGPRECISION" Type="int" Nullable="false" />
+    <Property Name="MODIFIEDDATETIME" Type="datetime" Nullable="false" />
+    <Property Name="DEL_MODIFIEDTIME" Type="int" Nullable="false" />
+    <Property Name="MODIFIEDBY" Type="nvarchar" MaxLength="8" Nullable="false" />
+    <Property Name="CREATEDDATETIME" Type="datetime" Nullable="false" />
+    <Property Name="DEL_CREATEDTIME" Type="int" Nullable="false" />
+    <Property Name="CREATEDBY" Type="nvarchar" MaxLength="8" Nullable="false" />
+    <Property Name="DATAAREAID" Type="nvarchar" MaxLength="4" Nullable="false" />
+    <Property Name="RECVERSION" Type="int" Nullable="false" />
+    <Property Name="PARTITION" Type="bigint" Nullable="false" />
+    <Property Name="RECID" Type="bigint" Nullable="false" />
+  </EntityType>
+  <EntityContainer Name="GRUPOSIGAXModelStoreContainer">
+    <EntitySet Name="CUSTTABLE" EntityType="Self.CUSTTABLE" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="CustInvoiceJour" EntityType="Self.CustInvoiceJour" store:Type="Tables" store:Schema="dbo">
+      <DefiningQuery>SELECT 
+[CustInvoiceJour].[CUSTGROUP] AS [CUSTGROUP], 
+[CustInvoiceJour].[REFNUM] AS [REFNUM], 
+[CustInvoiceJour].[SALESID] AS [SALESID], 
+[CustInvoiceJour].[ORDERACCOUNT] AS [ORDERACCOUNT], 
+[CustInvoiceJour].[INVOICEACCOUNT] AS [INVOICEACCOUNT], 
+[CustInvoiceJour].[INVOICEDATE] AS [INVOICEDATE], 
+[CustInvoiceJour].[DUEDATE] AS [DUEDATE], 
+[CustInvoiceJour].[CASHDISC] AS [CASHDISC], 
+[CustInvoiceJour].[CASHDISCDATE] AS [CASHDISCDATE], 
+[CustInvoiceJour].[QTY] AS [QTY], 
+[CustInvoiceJour].[VOLUME] AS [VOLUME], 
+[CustInvoiceJour].[WEIGHT] AS [WEIGHT], 
+[CustInvoiceJour].[SUMLINEDISC] AS [SUMLINEDISC], 
+[CustInvoiceJour].[SALESBALANCE] AS [SALESBALANCE], 
+[CustInvoiceJour].[ENDDISC] AS [ENDDISC], 
+[CustInvoiceJour].[INVOICEAMOUNT] AS [INVOICEAMOUNT], 
+[CustInvoiceJour].[CURRENCYCODE] AS [CURRENCYCODE], 
+[CustInvoiceJour].[EXCHRATE] AS [EXCHRATE], 
+[CustInvoiceJour].[INVOICEID] AS [INVOICEID], 
+[CustInvoiceJour].[LEDGERVOUCHER] AS [LEDGERVOUCHER], 
+[CustInvoiceJour].[UPDATED] AS [UPDATED], 
+[CustInvoiceJour].[ONACCOUNTAMOUNT] AS [ONACCOUNTAMOUNT], 
+[CustInvoiceJour].[TAXPRINTONINVOICE] AS [TAXPRINTONINVOICE], 
+[CustInvoiceJour].[LISTCODE] AS [LISTCODE], 
+[CustInvoiceJour].[DOCUMENTNUM] AS [DOCUMENTNUM], 
+[CustInvoiceJour].[DOCUMENTDATE] AS [DOCUMENTDATE], 
+[CustInvoiceJour].[CASHDISCPERCENT] AS [CASHDISCPERCENT], 
+[CustInvoiceJour].[INTRASTATDISPATCH] AS [INTRASTATDISPATCH], 
+[CustInvoiceJour].[DELIVERYNAME] AS [DELIVERYNAME], 
+[CustInvoiceJour].[ENTERPRISENUMBER] AS [ENTERPRISENUMBER], 
+[CustInvoiceJour].[PURCHASEORDER] AS [PURCHASEORDER], 
+[CustInvoiceJour].[DLVTERM] AS [DLVTERM], 
+[CustInvoiceJour].[DLVMODE] AS [DLVMODE], 
+[CustInvoiceJour].[PAYMENT] AS [PAYMENT], 
+[CustInvoiceJour].[CASHDISCCODE] AS [CASHDISCCODE], 
+[CustInvoiceJour].[INVOICEROUNDOFF] AS [INVOICEROUNDOFF], 
+[CustInvoiceJour].[SUMMARKUP] AS [SUMMARKUP], 
+[CustInvoiceJour].[COVSTATUS] AS [COVSTATUS], 
+[CustInvoiceJour].[RETURNITEMNUM] AS [RETURNITEMNUM], 
+[CustInvoiceJour].[POSTINGPROFILE] AS [POSTINGPROFILE], 
+[CustInvoiceJour].[BACKORDER] AS [BACKORDER], 
+[CustInvoiceJour].[PREPAYMENT] AS [PREPAYMENT], 
+[CustInvoiceJour].[TAXGROUP] AS [TAXGROUP], 
+[CustInvoiceJour].[TAXITEMGROUP] AS [TAXITEMGROUP], 
+[CustInvoiceJour].[TAXSPECIFYBYLINE] AS [TAXSPECIFYBYLINE], 
+[CustInvoiceJour].[EINVOICELINESPECIFIC] AS [EINVOICELINESPECIFIC], 
+[CustInvoiceJour].[ONETIMECUSTOMER] AS [ONETIMECUSTOMER], 
+[CustInvoiceJour].[PAYMENTSCHED] AS [PAYMENTSCHED], 
+[CustInvoiceJour].[SUMTAX] AS [SUMTAX], 
+[CustInvoiceJour].[SALESTYPE] AS [SALESTYPE], 
+[CustInvoiceJour].[EINVOICEACCOUNTCODE] AS [EINVOICEACCOUNTCODE], 
+[CustInvoiceJour].[INTERCOMPANYPOSTED] AS [INTERCOMPANYPOSTED], 
+[CustInvoiceJour].[PARMID] AS [PARMID], 
+[CustInvoiceJour].[RETURNREASONCODEID] AS [RETURNREASONCODEID], 
+[CustInvoiceJour].[EUSALESLIST] AS [EUSALESLIST], 
+[CustInvoiceJour].[EXCHRATESECONDARY] AS [EXCHRATESECONDARY], 
+[CustInvoiceJour].[TRIANGULATION] AS [TRIANGULATION], 
+[CustInvoiceJour].[CUSTOMERREF] AS [CUSTOMERREF], 
+[CustInvoiceJour].[VATNUM] AS [VATNUM], 
+[CustInvoiceJour].[NUMBERSEQUENCEGROUP] AS [NUMBERSEQUENCEGROUP], 
+[CustInvoiceJour].[LANGUAGEID] AS [LANGUAGEID], 
+[CustInvoiceJour].[INCLTAX] AS [INCLTAX], 
+[CustInvoiceJour].[LOG] AS [LOG], 
+[CustInvoiceJour].[PAYMDAYID] AS [PAYMDAYID], 
+[CustInvoiceJour].[INVOICINGNAME] AS [INVOICINGNAME], 
+[CustInvoiceJour].[GIROTYPE] AS [GIROTYPE], 
+[CustInvoiceJour].[CONTACTPERSONID] AS [CONTACTPERSONID], 
+[CustInvoiceJour].[SALESORIGINID] AS [SALESORIGINID], 
+[CustInvoiceJour].[BILLOFLADINGID] AS [BILLOFLADINGID], 
+[CustInvoiceJour].[INVENTLOCATIONID] AS [INVENTLOCATIONID], 
+[CustInvoiceJour].[FIXEDDUEDATE] AS [FIXEDDUEDATE], 
+[CustInvoiceJour].[INVOICEAMOUNTMST] AS [INVOICEAMOUNTMST], 
+[CustInvoiceJour].[INVOICEROUNDOFFMST] AS [INVOICEROUNDOFFMST], 
+[CustInvoiceJour].[SUMMARKUPMST] AS [SUMMARKUPMST], 
+[CustInvoiceJour].[SUMLINEDISCMST] AS [SUMLINEDISCMST], 
+[CustInvoiceJour].[ENDDISCMST] AS [ENDDISCMST], 
+[CustInvoiceJour].[SALESBALANCEMST] AS [SALESBALANCEMST], 
+[CustInvoiceJour].[SUMTAXMST] AS [SUMTAXMST], 
+[CustInvoiceJour].[PRINTMGMTSITEID] AS [PRINTMGMTSITEID], 
+[CustInvoiceJour].[RETURNSTATUS] AS [RETURNSTATUS], 
+[CustInvoiceJour].[INTERCOMPANYCOMPANYID] AS [INTERCOMPANYCOMPANYID], 
+[CustInvoiceJour].[INTERCOMPANYPURCHID] AS [INTERCOMPANYPURCHID], 
+[CustInvoiceJour].[PRINTEDORIGINALS] AS [PRINTEDORIGINALS], 
+[CustInvoiceJour].[PROFORMA] AS [PROFORMA], 
+[CustInvoiceJour].[RCSALESLIST_UK] AS [RCSALESLIST_UK], 
+[CustInvoiceJour].[REVERSECHARGE_UK] AS [REVERSECHARGE_UK], 
+[CustInvoiceJour].[DELIVERYPOSTALADDRESS] AS [DELIVERYPOSTALADDRESS], 
+[CustInvoiceJour].[INVOICEPOSTALADDRESS] AS [INVOICEPOSTALADDRESS], 
+[CustInvoiceJour].[SOURCEDOCUMENTHEADER] AS [SOURCEDOCUMENTHEADER], 
+[CustInvoiceJour].[DEFAULTDIMENSION] AS [DEFAULTDIMENSION], 
+[CustInvoiceJour].[BANKLCEXPORTLINE] AS [BANKLCEXPORTLINE], 
+[CustInvoiceJour].[WORKERSALESTAKER] AS [WORKERSALESTAKER], 
+[CustInvoiceJour].[REVERSEDRECID] AS [REVERSEDRECID], 
+[CustInvoiceJour].[RECEIPTDATECONFIRMED_ES] AS [RECEIPTDATECONFIRMED_ES], 
+[CustInvoiceJour].[PAYMID] AS [PAYMID], 
+[CustInvoiceJour].[TAXINVOICESALESID] AS [TAXINVOICESALESID], 
+[CustInvoiceJour].[INTRASTATFULFILLMENTDATE_HU] AS [INTRASTATFULFILLMENTDATE_HU], 
+[CustInvoiceJour].[MCREMAIL] AS [MCREMAIL], 
+[CustInvoiceJour].[MCRPAYMAMOUNT] AS [MCRPAYMAMOUNT], 
+[CustInvoiceJour].[MCRDUEAMOUNT] AS [MCRDUEAMOUNT], 
+[CustInvoiceJour].[CASHDISCBASEDATE] AS [CASHDISCBASEDATE], 
+[CustInvoiceJour].[DIRECTDEBITMANDATE] AS [DIRECTDEBITMANDATE], 
+[CustInvoiceJour].[ISCORRECTION] AS [ISCORRECTION], 
+[CustInvoiceJour].[REASONTABLEREF] AS [REASONTABLEREF], 
+[CustInvoiceJour].[SOURCEDOCUMENTLINE] AS [SOURCEDOCUMENTLINE], 
+[CustInvoiceJour].[TRANSPORTATIONDOCUMENT] AS [TRANSPORTATIONDOCUMENT], 
+[CustInvoiceJour].[MODIFIEDDATETIME] AS [MODIFIEDDATETIME], 
+[CustInvoiceJour].[CREATEDDATETIME] AS [CREATEDDATETIME], 
+[CustInvoiceJour].[DEL_CREATEDTIME] AS [DEL_CREATEDTIME], 
+[CustInvoiceJour].[CREATEDBY] AS [CREATEDBY], 
+[CustInvoiceJour].[DATAAREAID] AS [DATAAREAID], 
+[CustInvoiceJour].[RECVERSION] AS [RECVERSION], 
+[CustInvoiceJour].[PARTITION] AS [PARTITION], 
+[CustInvoiceJour].[RECID] AS [RECID], 
+[CustInvoiceJour].[NCF] AS [NCF], 
+[CustInvoiceJour].[TIPO] AS [TIPO], 
+[CustInvoiceJour].[RNC_CEDULA] AS [RNC_CEDULA], 
+[CustInvoiceJour].[CLIENTEDIRECCION] AS [CLIENTEDIRECCION], 
+[CustInvoiceJour].[VENDEDORNOMBRE] AS [VENDEDORNOMBRE], 
+[CustInvoiceJour].[VENDEDORTELEFONO] AS [VENDEDORTELEFONO], 
+[CustInvoiceJour].[TELEFONO] AS [TELEFONO], 
+[CustInvoiceJour].[CALLE] AS [CALLE], 
+[CustInvoiceJour].[CITY] AS [CITY], 
+[CustInvoiceJour].[STATE] AS [STATE], 
+[CustInvoiceJour].[COUNTRY] AS [COUNTRY], 
+[CustInvoiceJour].[NCF_ANTERIOR] AS [NCF_ANTERIOR], 
+[CustInvoiceJour].[NO_FACTURA_ANTERIOR] AS [NO_FACTURA_ANTERIOR]
+FROM [dbo].[CustInvoiceJour] AS [CustInvoiceJour]</DefiningQuery>
+    </EntitySet>
+    <EntitySet Name="CUSTINVOICETRANS" EntityType="Self.CUSTINVOICETRANS" store:Type="Tables" store:Schema="dbo">
+      <DefiningQuery>SELECT 
+[CUSTINVOICETRANS].[INVOICEID] AS [INVOICEID], 
+[CUSTINVOICETRANS].[INVOICEDATE] AS [INVOICEDATE], 
+[CUSTINVOICETRANS].[LINENUM] AS [LINENUM], 
+[CUSTINVOICETRANS].[INVENTTRANSID] AS [INVENTTRANSID], 
+[CUSTINVOICETRANS].[INVENTREFID] AS [INVENTREFID], 
+[CUSTINVOICETRANS].[ITEMID] AS [ITEMID], 
+[CUSTINVOICETRANS].[EXTERNALITEMID] AS [EXTERNALITEMID], 
+[CUSTINVOICETRANS].[NAME] AS [NAME], 
+[CUSTINVOICETRANS].[TAXGROUP] AS [TAXGROUP], 
+[CUSTINVOICETRANS].[CURRENCYCODE] AS [CURRENCYCODE], 
+[CUSTINVOICETRANS].[PRICEUNIT] AS [PRICEUNIT], 
+[CUSTINVOICETRANS].[QTY] AS [QTY], 
+[CUSTINVOICETRANS].[SALESPRICE] AS [SALESPRICE], 
+[CUSTINVOICETRANS].[DISCPERCENT] AS [DISCPERCENT], 
+[CUSTINVOICETRANS].[DISCAMOUNT] AS [DISCAMOUNT], 
+[CUSTINVOICETRANS].[LINEAMOUNT] AS [LINEAMOUNT], 
+[CUSTINVOICETRANS].[SALESGROUP] AS [SALESGROUP], 
+[CUSTINVOICETRANS].[QTYPHYSICAL] AS [QTYPHYSICAL], 
+[CUSTINVOICETRANS].[PARTDELIVERY] AS [PARTDELIVERY], 
+[CUSTINVOICETRANS].[REMAIN] AS [REMAIN], 
+[CUSTINVOICETRANS].[SALESID] AS [SALESID], 
+[CUSTINVOICETRANS].[SALESUNIT] AS [SALESUNIT], 
+[CUSTINVOICETRANS].[SALESMARKUP] AS [SALESMARKUP], 
+[CUSTINVOICETRANS].[COMMISSCALC] AS [COMMISSCALC], 
+[CUSTINVOICETRANS].[COMMISSAMOUNTCUR] AS [COMMISSAMOUNTCUR], 
+[CUSTINVOICETRANS].[TRANSACTIONCODE] AS [TRANSACTIONCODE], 
+[CUSTINVOICETRANS].[DELIVERYTYPE] AS [DELIVERYTYPE], 
+[CUSTINVOICETRANS].[COUNTRYREGIONOFSHIPMENT] AS [COUNTRYREGIONOFSHIPMENT], 
+[CUSTINVOICETRANS].[ITEMCODEID] AS [ITEMCODEID], 
+[CUSTINVOICETRANS].[TAXAUTOGENERATED] AS [TAXAUTOGENERATED], 
+[CUSTINVOICETRANS].[TAXITEMGROUP] AS [TAXITEMGROUP], 
+[CUSTINVOICETRANS].[TAXAMOUNT] AS [TAXAMOUNT], 
+[CUSTINVOICETRANS].[TAXWRITECODE] AS [TAXWRITECODE], 
+[CUSTINVOICETRANS].[MULTILNDISC] AS [MULTILNDISC], 
+[CUSTINVOICETRANS].[MULTILNPERCENT] AS [MULTILNPERCENT], 
+[CUSTINVOICETRANS].[LINEDISC] AS [LINEDISC], 
+[CUSTINVOICETRANS].[LINEPERCENT] AS [LINEPERCENT], 
+[CUSTINVOICETRANS].[ORIGSALESID] AS [ORIGSALESID], 
+[CUSTINVOICETRANS].[LINEHEADER] AS [LINEHEADER], 
+[CUSTINVOICETRANS].[TRANSPORT] AS [TRANSPORT], 
+[CUSTINVOICETRANS].[INVENTDIMID] AS [INVENTDIMID], 
+[CUSTINVOICETRANS].[ORIGCOUNTRYREGIONID] AS [ORIGCOUNTRYREGIONID], 
+[CUSTINVOICETRANS].[NUMBERSEQUENCEGROUP] AS [NUMBERSEQUENCEGROUP], 
+[CUSTINVOICETRANS].[STATPROCID] AS [STATPROCID], 
+[CUSTINVOICETRANS].[DLVDATE] AS [DLVDATE], 
+[CUSTINVOICETRANS].[LINEAMOUNTTAX] AS [LINEAMOUNTTAX], 
+[CUSTINVOICETRANS].[PORT] AS [PORT], 
+[CUSTINVOICETRANS].[ASSETID] AS [ASSETID], 
+[CUSTINVOICETRANS].[CUSTOMERLINENUM] AS [CUSTOMERLINENUM], 
+[CUSTINVOICETRANS].[ASSETBOOKID] AS [ASSETBOOKID], 
+[CUSTINVOICETRANS].[LINEAMOUNTMST] AS [LINEAMOUNTMST], 
+[CUSTINVOICETRANS].[TAXAMOUNTMST] AS [TAXAMOUNTMST], 
+[CUSTINVOICETRANS].[LINEAMOUNTTAXMST] AS [LINEAMOUNTTAXMST], 
+[CUSTINVOICETRANS].[COMMISSAMOUNTMST] AS [COMMISSAMOUNTMST], 
+[CUSTINVOICETRANS].[SUMLINEDISC] AS [SUMLINEDISC], 
+[CUSTINVOICETRANS].[SUMLINEDISCMST] AS [SUMLINEDISCMST], 
+[CUSTINVOICETRANS].[INTERCOMPANYINVENTTRANSID] AS [INTERCOMPANYINVENTTRANSID], 
+[CUSTINVOICETRANS].[OLAPCOSTVALUE] AS [OLAPCOSTVALUE], 
+[CUSTINVOICETRANS].[EINVOICEACCOUNTCODE] AS [EINVOICEACCOUNTCODE], 
+[CUSTINVOICETRANS].[RETURNDISPOSITIONCODEID] AS [RETURNDISPOSITIONCODEID], 
+[CUSTINVOICETRANS].[STATLINEAMOUNTMST] AS [STATLINEAMOUNTMST], 
+[CUSTINVOICETRANS].[INTRASTATDISPATCHID] AS [INTRASTATDISPATCHID], 
+[CUSTINVOICETRANS].[INVENTQTY] AS [INVENTQTY], 
+[CUSTINVOICETRANS].[ORIGSTATE] AS [ORIGSTATE], 
+[CUSTINVOICETRANS].[INVENTREFTYPE] AS [INVENTREFTYPE], 
+[CUSTINVOICETRANS].[INVENTREFTRANSID] AS [INVENTREFTRANSID], 
+[CUSTINVOICETRANS].[WEIGHT] AS [WEIGHT], 
+[CUSTINVOICETRANS].[RETURNARRIVALDATE] AS [RETURNARRIVALDATE], 
+[CUSTINVOICETRANS].[RETURNCLOSEDDATE] AS [RETURNCLOSEDDATE], 
+[CUSTINVOICETRANS].[REVERSECHARGEAPPLIES_UK] AS [REVERSECHARGEAPPLIES_UK], 
+[CUSTINVOICETRANS].[REASONREFRECID] AS [REASONREFRECID], 
+[CUSTINVOICETRANS].[REMAINBEFORE] AS [REMAINBEFORE], 
+[CUSTINVOICETRANS].[SALESCATEGORY] AS [SALESCATEGORY], 
+[CUSTINVOICETRANS].[CUSTINVOICELINEIDREF] AS [CUSTINVOICELINEIDREF], 
+[CUSTINVOICETRANS].[SOURCEDOCUMENTLINE] AS [SOURCEDOCUMENTLINE], 
+[CUSTINVOICETRANS].[DELIVERYPOSTALADDRESS] AS [DELIVERYPOSTALADDRESS], 
+[CUSTINVOICETRANS].[LEDGERDIMENSION] AS [LEDGERDIMENSION], 
+[CUSTINVOICETRANS].[DEFAULTDIMENSION] AS [DEFAULTDIMENSION], 
+[CUSTINVOICETRANS].[TAXWITHHOLDITEMGROUPHEADING_TH] AS [TAXWITHHOLDITEMGROUPHEADING_TH], 
+[CUSTINVOICETRANS].[STOCKEDPRODUCT] AS [STOCKEDPRODUCT], 
+[CUSTINVOICETRANS].[REVERSEDRECID] AS [REVERSEDRECID], 
+[CUSTINVOICETRANS].[NGPCODESTABLE_FR] AS [NGPCODESTABLE_FR], 
+[CUSTINVOICETRANS].[PARENTRECID] AS [PARENTRECID], 
+[CUSTINVOICETRANS].[TAXWITHHOLDGROUP_TH] AS [TAXWITHHOLDGROUP_TH], 
+[CUSTINVOICETRANS].[INTRASTATFULFILLMENTDATE_HU] AS [INTRASTATFULFILLMENTDATE_HU], 
+[CUSTINVOICETRANS].[BILLINGCODE] AS [BILLINGCODE], 
+[CUSTINVOICETRANS].[MCRDELIVERYNAME] AS [MCRDELIVERYNAME], 
+[CUSTINVOICETRANS].[MCRDLVMODE] AS [MCRDLVMODE], 
+[CUSTINVOICETRANS].[PDSCWQTY] AS [PDSCWQTY], 
+[CUSTINVOICETRANS].[PDSCWQTYPHYSICAL] AS [PDSCWQTYPHYSICAL], 
+[CUSTINVOICETRANS].[PDSCWREMAIN] AS [PDSCWREMAIN], 
+[CUSTINVOICETRANS].[RETAILCATEGORY] AS [RETAILCATEGORY], 
+[CUSTINVOICETRANS].[MODIFIEDDATETIME] AS [MODIFIEDDATETIME], 
+[CUSTINVOICETRANS].[CREATEDDATETIME] AS [CREATEDDATETIME], 
+[CUSTINVOICETRANS].[DEL_CREATEDTIME] AS [DEL_CREATEDTIME], 
+[CUSTINVOICETRANS].[CREATEDBY] AS [CREATEDBY], 
+[CUSTINVOICETRANS].[DATAAREAID] AS [DATAAREAID], 
+[CUSTINVOICETRANS].[RECVERSION] AS [RECVERSION], 
+[CUSTINVOICETRANS].[PARTITION] AS [PARTITION], 
+[CUSTINVOICETRANS].[RECID] AS [RECID]
+FROM [dbo].[CUSTINVOICETRANS] AS [CUSTINVOICETRANS]</DefiningQuery>
+    </EntitySet>
+    <EntitySet Name="CUSTTRANS" EntityType="Self.CUSTTRANS" store:Type="Tables" store:Schema="dbo">
+      <DefiningQuery>SELECT 
+[CUSTTRANS].[ACCOUNTNUM] AS [ACCOUNTNUM], 
+[CUSTTRANS].[TRANSDATE] AS [TRANSDATE], 
+[CUSTTRANS].[VOUCHER] AS [VOUCHER], 
+[CUSTTRANS].[INVOICE] AS [INVOICE], 
+[CUSTTRANS].[TXT] AS [TXT], 
+[CUSTTRANS].[AMOUNTCUR] AS [AMOUNTCUR], 
+[CUSTTRANS].[SETTLEAMOUNTCUR] AS [SETTLEAMOUNTCUR], 
+[CUSTTRANS].[AMOUNTMST] AS [AMOUNTMST], 
+[CUSTTRANS].[SETTLEAMOUNTMST] AS [SETTLEAMOUNTMST], 
+[CUSTTRANS].[CURRENCYCODE] AS [CURRENCYCODE], 
+[CUSTTRANS].[DUEDATE] AS [DUEDATE], 
+[CUSTTRANS].[LASTSETTLEVOUCHER] AS [LASTSETTLEVOUCHER], 
+[CUSTTRANS].[LASTSETTLEDATE] AS [LASTSETTLEDATE], 
+[CUSTTRANS].[LASTEXCHADJVOUCHER] AS [LASTEXCHADJVOUCHER], 
+[CUSTTRANS].[CLOSED] AS [CLOSED], 
+[CUSTTRANS].[TRANSTYPE] AS [TRANSTYPE], 
+[CUSTTRANS].[APPROVED] AS [APPROVED], 
+[CUSTTRANS].[EXCHADJUSTMENT] AS [EXCHADJUSTMENT], 
+[CUSTTRANS].[DOCUMENTNUM] AS [DOCUMENTNUM], 
+[CUSTTRANS].[DOCUMENTDATE] AS [DOCUMENTDATE], 
+[CUSTTRANS].[LASTEXCHADJRATE] AS [LASTEXCHADJRATE], 
+[CUSTTRANS].[FIXEDEXCHRATE] AS [FIXEDEXCHRATE], 
+[CUSTTRANS].[LASTEXCHADJ] AS [LASTEXCHADJ], 
+[CUSTTRANS].[CORRECT] AS [CORRECT], 
+[CUSTTRANS].[BANKCENTRALBANKPURPOSECODE] AS [BANKCENTRALBANKPURPOSECODE], 
+[CUSTTRANS].[BANKCENTRALBANKPURPOSETEXT] AS [BANKCENTRALBANKPURPOSETEXT], 
+[CUSTTRANS].[SETTLEMENT] AS [SETTLEMENT], 
+[CUSTTRANS].[INTEREST] AS [INTEREST], 
+[CUSTTRANS].[COLLECTIONLETTER] AS [COLLECTIONLETTER], 
+[CUSTTRANS].[DEFAULTDIMENSION] AS [DEFAULTDIMENSION], 
+[CUSTTRANS].[POSTINGPROFILECLOSE] AS [POSTINGPROFILECLOSE], 
+[CUSTTRANS].[EXCHRATESECOND] AS [EXCHRATESECOND], 
+[CUSTTRANS].[BANKLCEXPORTLINE] AS [BANKLCEXPORTLINE], 
+[CUSTTRANS].[ACCOUNTINGEVENT] AS [ACCOUNTINGEVENT], 
+[CUSTTRANS].[EXCHRATE] AS [EXCHRATE], 
+[CUSTTRANS].[LASTSETTLEACCOUNTNUM] AS [LASTSETTLEACCOUNTNUM], 
+[CUSTTRANS].[COMPANYBANKACCOUNTID] AS [COMPANYBANKACCOUNTID], 
+[CUSTTRANS].[THIRDPARTYBANKACCOUNTID] AS [THIRDPARTYBANKACCOUNTID], 
+[CUSTTRANS].[PAYMMODE] AS [PAYMMODE], 
+[CUSTTRANS].[PAYMREFERENCE] AS [PAYMREFERENCE], 
+[CUSTTRANS].[PAYMMETHOD] AS [PAYMMETHOD], 
+[CUSTTRANS].[CASHPAYMENT] AS [CASHPAYMENT], 
+[CUSTTRANS].[CONTROLNUM] AS [CONTROLNUM], 
+[CUSTTRANS].[DELIVERYMODE] AS [DELIVERYMODE], 
+[CUSTTRANS].[POSTINGPROFILE] AS [POSTINGPROFILE], 
+[CUSTTRANS].[OFFSETRECID] AS [OFFSETRECID], 
+[CUSTTRANS].[EUROTRIANGULATION] AS [EUROTRIANGULATION], 
+[CUSTTRANS].[ORDERACCOUNT] AS [ORDERACCOUNT], 
+[CUSTTRANS].[CASHDISCCODE] AS [CASHDISCCODE], 
+[CUSTTRANS].[PREPAYMENT] AS [PREPAYMENT], 
+[CUSTTRANS].[PAYMSPEC] AS [PAYMSPEC], 
+[CUSTTRANS].[CUSTEXCHADJUSTMENTREALIZED] AS [CUSTEXCHADJUSTMENTREALIZED], 
+[CUSTTRANS].[CUSTEXCHADJUSTMENTUNREALIZED] AS [CUSTEXCHADJUSTMENTUNREALIZED], 
+[CUSTTRANS].[PAYMMANLACKDATE] AS [PAYMMANLACKDATE], 
+[CUSTTRANS].[PAYMMANBATCH] AS [PAYMMANBATCH], 
+[CUSTTRANS].[PAYMID] AS [PAYMID], 
+[CUSTTRANS].[BILLOFEXCHANGEID] AS [BILLOFEXCHANGEID], 
+[CUSTTRANS].[BILLOFEXCHANGESTATUS] AS [BILLOFEXCHANGESTATUS], 
+[CUSTTRANS].[BILLOFEXCHANGESEQNUM] AS [BILLOFEXCHANGESEQNUM], 
+[CUSTTRANS].[BANKREMITTANCEFILEID] AS [BANKREMITTANCEFILEID], 
+[CUSTTRANS].[COLLECTIONLETTERCODE] AS [COLLECTIONLETTERCODE], 
+[CUSTTRANS].[INVOICEPROJECT] AS [INVOICEPROJECT], 
+[CUSTTRANS].[LASTSETTLECOMPANY] AS [LASTSETTLECOMPANY], 
+[CUSTTRANS].[CANCELLEDPAYMENT] AS [CANCELLEDPAYMENT], 
+[CUSTTRANS].[REASONREFRECID] AS [REASONREFRECID], 
+[CUSTTRANS].[REPORTINGCURRENCYAMOUNT] AS [REPORTINGCURRENCYAMOUNT], 
+[CUSTTRANS].[REPORTINGEXCHADJUSTMENTREALIZED] AS [REPORTINGEXCHADJUSTMENTREALIZED], 
+[CUSTTRANS].[REPORTINGEXCHADJUSTMENTUNREALIZED] AS [REPORTINGEXCHADJUSTMENTUNREALIZED], 
+[CUSTTRANS].[LASTEXCHADJRATEREPORTING] AS [LASTEXCHADJRATEREPORTING], 
+[CUSTTRANS].[REPORTINGCURRENCYCROSSRATE] AS [REPORTINGCURRENCYCROSSRATE], 
+[CUSTTRANS].[EXCHADJUSTMENTREPORTING] AS [EXCHADJUSTMENTREPORTING], 
+[CUSTTRANS].[SETTLEAMOUNTREPORTING] AS [SETTLEAMOUNTREPORTING], 
+[CUSTTRANS].[APPROVER] AS [APPROVER], 
+[CUSTTRANS].[TAXINVOICESALESID] AS [TAXINVOICESALESID], 
+[CUSTTRANS].[CONCESSIONCONTRACTID] AS [CONCESSIONCONTRACTID], 
+[CUSTTRANS].[CONCESSIONSETTLEMENTID] AS [CONCESSIONSETTLEMENTID], 
+[CUSTTRANS].[RETAILCUSTTRANS] AS [RETAILCUSTTRANS], 
+[CUSTTRANS].[RETAILSTOREID] AS [RETAILSTOREID], 
+[CUSTTRANS].[RETAILTERMINALID] AS [RETAILTERMINALID], 
+[CUSTTRANS].[RETAILTRANSACTIONID] AS [RETAILTRANSACTIONID], 
+[CUSTTRANS].[CUSTBILLINGCLASSIFICATION] AS [CUSTBILLINGCLASSIFICATION], 
+[CUSTTRANS].[MCRPAYMORDERID] AS [MCRPAYMORDERID], 
+[CUSTTRANS].[DIRECTDEBITMANDATE] AS [DIRECTDEBITMANDATE], 
+[CUSTTRANS].[MODIFIEDDATETIME] AS [MODIFIEDDATETIME], 
+[CUSTTRANS].[DEL_MODIFIEDTIME] AS [DEL_MODIFIEDTIME], 
+[CUSTTRANS].[MODIFIEDBY] AS [MODIFIEDBY], 
+[CUSTTRANS].[MODIFIEDTRANSACTIONID] AS [MODIFIEDTRANSACTIONID], 
+[CUSTTRANS].[CREATEDDATETIME] AS [CREATEDDATETIME], 
+[CUSTTRANS].[DEL_CREATEDTIME] AS [DEL_CREATEDTIME], 
+[CUSTTRANS].[CREATEDBY] AS [CREATEDBY], 
+[CUSTTRANS].[CREATEDTRANSACTIONID] AS [CREATEDTRANSACTIONID], 
+[CUSTTRANS].[DATAAREAID] AS [DATAAREAID], 
+[CUSTTRANS].[RECVERSION] AS [RECVERSION], 
+[CUSTTRANS].[PARTITION] AS [PARTITION], 
+[CUSTTRANS].[RECID] AS [RECID], 
+[CUSTTRANS].[NCF] AS [NCF], 
+[CUSTTRANS].[NFC_ANTERIOR] AS [NFC_ANTERIOR], 
+[CUSTTRANS].[NO_FACTURA_ANTERIOR] AS [NO_FACTURA_ANTERIOR]
+FROM [dbo].[CUSTTRANS] AS [CUSTTRANS]</DefiningQuery>
+    </EntitySet>
+    <EntitySet Name="CUSTTRANSOPEN" EntityType="Self.CUSTTRANSOPEN" store:Type="Tables" store:Schema="dbo">
+      <DefiningQuery>SELECT 
+[CUSTTRANSOPEN].[EXCHADJUNREALIZED] AS [EXCHADJUNREALIZED], 
+[CUSTTRANSOPEN].[AMOUNTCUR] AS [AMOUNTCUR], 
+[CUSTTRANSOPEN].[AMOUNTMST] AS [AMOUNTMST], 
+[CUSTTRANSOPEN].[DUEDATE] AS [DUEDATE], 
+[CUSTTRANSOPEN].[REFRECID] AS [REFRECID], 
+[CUSTTRANSOPEN].[CASHDISCOUNTLEDGERDIMENSION] AS [CASHDISCOUNTLEDGERDIMENSION], 
+[CUSTTRANSOPEN].[CASHDISCDATE] AS [CASHDISCDATE], 
+[CUSTTRANSOPEN].[TRANSDATE] AS [TRANSDATE], 
+[CUSTTRANSOPEN].[POSSIBLECASHDISC] AS [POSSIBLECASHDISC], 
+[CUSTTRANSOPEN].[ACCOUNTNUM] AS [ACCOUNTNUM], 
+[CUSTTRANSOPEN].[USECASHDISC] AS [USECASHDISC], 
+[CUSTTRANSOPEN].[LASTINTERESTDATE] AS [LASTINTERESTDATE], 
+[CUSTTRANSOPEN].[BANKDISCNOTICEDEADLINE] AS [BANKDISCNOTICEDEADLINE], 
+[CUSTTRANSOPEN].[SETTLEMENTPRIORITYCASHDISCDATE] AS [SETTLEMENTPRIORITYCASHDISCDATE], 
+[CUSTTRANSOPEN].[BANKLCEXPORTLINE] AS [BANKLCEXPORTLINE], 
+[CUSTTRANSOPEN].[REPORTINGCURRENCYAMOUNT] AS [REPORTINGCURRENCYAMOUNT], 
+[CUSTTRANSOPEN].[EXCHADJUNREALIZEDREPORTING] AS [EXCHADJUNREALIZEDREPORTING], 
+[CUSTTRANSOPEN].[TDSAMOUNT_IN] AS [TDSAMOUNT_IN], 
+[CUSTTRANSOPEN].[TCSAMOUNT_IN] AS [TCSAMOUNT_IN], 
+[CUSTTRANSOPEN].[INTERESTAMOUNT_BR] AS [INTERESTAMOUNT_BR], 
+[CUSTTRANSOPEN].[FINEAMOUNT_BR] AS [FINEAMOUNT_BR], 
+[CUSTTRANSOPEN].[INTERESTCODE_BR] AS [INTERESTCODE_BR], 
+[CUSTTRANSOPEN].[FINECODE_BR] AS [FINECODE_BR], 
+[CUSTTRANSOPEN].[INTERESTAMOUNTPAYMCUR_BR] AS [INTERESTAMOUNTPAYMCUR_BR], 
+[CUSTTRANSOPEN].[FINEAMOUNTPAYMCUR_BR] AS [FINEAMOUNTPAYMCUR_BR], 
+[CUSTTRANSOPEN].[TAXWITHHOLDAMOUNTORIGIN_IN] AS [TAXWITHHOLDAMOUNTORIGIN_IN], 
+[CUSTTRANSOPEN].[SETTLEDLINEPERCENT_IN] AS [SETTLEDLINEPERCENT_IN], 
+[CUSTTRANSOPEN].[SETTLEDTOTALAMOUNT_IN] AS [SETTLEDTOTALAMOUNT_IN], 
+[CUSTTRANSOPEN].[DATAAREAID] AS [DATAAREAID], 
+[CUSTTRANSOPEN].[RECVERSION] AS [RECVERSION], 
+[CUSTTRANSOPEN].[PARTITION] AS [PARTITION], 
+[CUSTTRANSOPEN].[RECID] AS [RECID]
+FROM [dbo].[CUSTTRANSOPEN] AS [CUSTTRANSOPEN]</DefiningQuery>
+    </EntitySet>
+    <EntitySet Name="ECORESPRODUCT" EntityType="Self.ECORESPRODUCT" store:Type="Tables" store:Schema="dbo">
+      <DefiningQuery>SELECT 
+[ECORESPRODUCT].[PRODUCTMASTER] AS [PRODUCTMASTER], 
+[ECORESPRODUCT].[RETAITOTALWEIGHT] AS [RETAITOTALWEIGHT], 
+[ECORESPRODUCT].[VARIANTCONFIGURATIONTECHNOLOGY] AS [VARIANTCONFIGURATIONTECHNOLOGY], 
+[ECORESPRODUCT].[RETAILCOLORGROUPID] AS [RETAILCOLORGROUPID], 
+[ECORESPRODUCT].[RETAILSIZEGROUPID] AS [RETAILSIZEGROUPID], 
+[ECORESPRODUCT].[RETAILSTYLEGROUPID] AS [RETAILSTYLEGROUPID], 
+[ECORESPRODUCT].[INSTANCERELATIONTYPE] AS [INSTANCERELATIONTYPE], 
+[ECORESPRODUCT].[DISPLAYPRODUCTNUMBER] AS [DISPLAYPRODUCTNUMBER], 
+[ECORESPRODUCT].[SEARCHNAME] AS [SEARCHNAME], 
+[ECORESPRODUCT].[PRODUCTTYPE] AS [PRODUCTTYPE], 
+[ECORESPRODUCT].[PDSCWPRODUCT] AS [PDSCWPRODUCT], 
+[ECORESPRODUCT].[MODIFIEDBY] AS [MODIFIEDBY], 
+[ECORESPRODUCT].[RECVERSION] AS [RECVERSION], 
+[ECORESPRODUCT].[RELATIONTYPE] AS [RELATIONTYPE], 
+[ECORESPRODUCT].[PARTITION] AS [PARTITION], 
+[ECORESPRODUCT].[RECID] AS [RECID]
+FROM [dbo].[ECORESPRODUCT] AS [ECORESPRODUCT]</DefiningQuery>
+    </EntitySet>
+    <EntitySet Name="ECORESPRODUCTTRANSLATION" EntityType="Self.ECORESPRODUCTTRANSLATION" store:Type="Tables" store:Schema="dbo">
+      <DefiningQuery>SELECT 
+[ECORESPRODUCTTRANSLATION].[DESCRIPTION] AS [DESCRIPTION], 
+[ECORESPRODUCTTRANSLATION].[NAME] AS [NAME], 
+[ECORESPRODUCTTRANSLATION].[PRODUCT] AS [PRODUCT], 
+[ECORESPRODUCTTRANSLATION].[LANGUAGEID] AS [LANGUAGEID], 
+[ECORESPRODUCTTRANSLATION].[MODIFIEDBY] AS [MODIFIEDBY], 
+[ECORESPRODUCTTRANSLATION].[RECVERSION] AS [RECVERSION], 
+[ECORESPRODUCTTRANSLATION].[PARTITION] AS [PARTITION], 
+[ECORESPRODUCTTRANSLATION].[RECID] AS [RECID]
+FROM [dbo].[ECORESPRODUCTTRANSLATION] AS [ECORESPRODUCTTRANSLATION]</DefiningQuery>
+    </EntitySet>
+    <EntitySet Name="INVENTMODELGROUPITEM" EntityType="Self.INVENTMODELGROUPITEM" store:Type="Tables" store:Schema="dbo">
+      <DefiningQuery>SELECT 
+[INVENTMODELGROUPITEM].[ITEMDATAAREAID] AS [ITEMDATAAREAID], 
+[INVENTMODELGROUPITEM].[MODELGROUPID] AS [MODELGROUPID], 
+[INVENTMODELGROUPITEM].[ITEMID] AS [ITEMID], 
+[INVENTMODELGROUPITEM].[MODELGROUPDATAAREAID] AS [MODELGROUPDATAAREAID], 
+[INVENTMODELGROUPITEM].[RECVERSION] AS [RECVERSION], 
+[INVENTMODELGROUPITEM].[PARTITION] AS [PARTITION], 
+[INVENTMODELGROUPITEM].[RECID] AS [RECID]
+FROM [dbo].[INVENTMODELGROUPITEM] AS [INVENTMODELGROUPITEM]</DefiningQuery>
+    </EntitySet>
+    <EntitySet Name="INVENTTABLEMODULE" EntityType="Self.INVENTTABLEMODULE" store:Type="Tables" store:Schema="dbo">
+      <DefiningQuery>SELECT 
+[INVENTTABLEMODULE].[ITEMID] AS [ITEMID], 
+[INVENTTABLEMODULE].[MODULETYPE] AS [MODULETYPE], 
+[INVENTTABLEMODULE].[UNITID] AS [UNITID], 
+[INVENTTABLEMODULE].[PRICE] AS [PRICE], 
+[INVENTTABLEMODULE].[PRICEUNIT] AS [PRICEUNIT], 
+[INVENTTABLEMODULE].[MARKUP] AS [MARKUP], 
+[INVENTTABLEMODULE].[LINEDISC] AS [LINEDISC], 
+[INVENTTABLEMODULE].[MULTILINEDISC] AS [MULTILINEDISC], 
+[INVENTTABLEMODULE].[ENDDISC] AS [ENDDISC], 
+[INVENTTABLEMODULE].[TAXITEMGROUPID] AS [TAXITEMGROUPID], 
+[INVENTTABLEMODULE].[MARKUPGROUPID] AS [MARKUPGROUPID], 
+[INVENTTABLEMODULE].[PRICEDATE] AS [PRICEDATE], 
+[INVENTTABLEMODULE].[PRICEQTY] AS [PRICEQTY], 
+[INVENTTABLEMODULE].[ALLOCATEMARKUP] AS [ALLOCATEMARKUP], 
+[INVENTTABLEMODULE].[OVERDELIVERYPCT] AS [OVERDELIVERYPCT], 
+[INVENTTABLEMODULE].[UNDERDELIVERYPCT] AS [UNDERDELIVERYPCT], 
+[INVENTTABLEMODULE].[SUPPITEMGROUPID] AS [SUPPITEMGROUPID], 
+[INVENTTABLEMODULE].[INTERCOMPANYBLOCKED] AS [INTERCOMPANYBLOCKED], 
+[INVENTTABLEMODULE].[TAXWITHHOLDITEMGROUPHEADING_TH] AS [TAXWITHHOLDITEMGROUPHEADING_TH], 
+[INVENTTABLEMODULE].[TAXWITHHOLDCALCULATE_TH] AS [TAXWITHHOLDCALCULATE_TH], 
+[INVENTTABLEMODULE].[MAXIMUMRETAILPRICE_IN] AS [MAXIMUMRETAILPRICE_IN], 
+[INVENTTABLEMODULE].[PRICESECCUR_RU] AS [PRICESECCUR_RU], 
+[INVENTTABLEMODULE].[MARKUPSECCUR_RU] AS [MARKUPSECCUR_RU], 
+[INVENTTABLEMODULE].[PDSPRICINGPRECISION] AS [PDSPRICINGPRECISION], 
+[INVENTTABLEMODULE].[MODIFIEDDATETIME] AS [MODIFIEDDATETIME], 
+[INVENTTABLEMODULE].[DEL_MODIFIEDTIME] AS [DEL_MODIFIEDTIME], 
+[INVENTTABLEMODULE].[MODIFIEDBY] AS [MODIFIEDBY], 
+[INVENTTABLEMODULE].[CREATEDDATETIME] AS [CREATEDDATETIME], 
+[INVENTTABLEMODULE].[DEL_CREATEDTIME] AS [DEL_CREATEDTIME], 
+[INVENTTABLEMODULE].[CREATEDBY] AS [CREATEDBY], 
+[INVENTTABLEMODULE].[DATAAREAID] AS [DATAAREAID], 
+[INVENTTABLEMODULE].[RECVERSION] AS [RECVERSION], 
+[INVENTTABLEMODULE].[PARTITION] AS [PARTITION], 
+[INVENTTABLEMODULE].[RECID] AS [RECID]
+FROM [dbo].[INVENTTABLEMODULE] AS [INVENTTABLEMODULE]</DefiningQuery>
+    </EntitySet>
+  </EntityContainer>
+</Schema>

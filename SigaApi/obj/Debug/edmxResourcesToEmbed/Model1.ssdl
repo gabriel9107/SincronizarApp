@@ -23,6 +23,154 @@
     <Property Name="IsNew" Type="bit" Nullable="false" />
     <Property Name="IsInAx" Type="bit" Nullable="false" />
     <Property Name="IntegrationDate" Type="datetime" />
+    <Property Name="subir" Type="int" />
+    <Property Name="idFire" Type="nvarchar" MaxLength="100" />
+  </EntityType>
+  <EntityType Name="CUSTTABLE">
+    <Key>
+      <PropertyRef Name="CUSTNMBR" />
+    </Key>
+    <Property Name="CUSTNMBR" Type="float" Nullable="false" />
+    <Property Name="Codigo" Type="nvarchar" MaxLength="50" />
+    <Property Name="CUSTNAME" Type="nvarchar" MaxLength="255" />
+    <Property Name="CUSTCLAS" Type="nvarchar" MaxLength="255" />
+    <Property Name="CPRCSTNM" Type="nvarchar" MaxLength="255" />
+    <Property Name="CNTCPRSN" Type="nvarchar" MaxLength="255" />
+    <Property Name="STMTNAME" Type="nvarchar" MaxLength="255" />
+    <Property Name="SHRTNAME" Type="nvarchar" MaxLength="255" />
+    <Property Name="ADRSCODE" Type="nvarchar" MaxLength="255" />
+    <Property Name="UPSZONE" Type="nvarchar" MaxLength="255" />
+    <Property Name="SHIPMTHD" Type="nvarchar" MaxLength="255" />
+    <Property Name="TAXSCHID" Type="nvarchar" MaxLength="255" />
+    <Property Name="ADDRESS1" Type="nvarchar" MaxLength="255" />
+    <Property Name="ADDRESS2" Type="nvarchar" MaxLength="255" />
+    <Property Name="ADDRESS3" Type="nvarchar" MaxLength="255" />
+    <Property Name="COUNTRY" Type="nvarchar" MaxLength="255" />
+    <Property Name="CITY" Type="nvarchar" MaxLength="255" />
+    <Property Name="STATE" Type="nvarchar" MaxLength="255" />
+    <Property Name="ZIP" Type="nvarchar" MaxLength="255" />
+    <Property Name="PHONE1" Type="float" />
+    <Property Name="PHONE2" Type="float" />
+    <Property Name="PHONE3" Type="nvarchar" MaxLength="255" />
+    <Property Name="FAX" Type="nvarchar" MaxLength="255" />
+    <Property Name="PRBTADCD" Type="nvarchar" MaxLength="255" />
+    <Property Name="PRSTADCD" Type="nvarchar" MaxLength="255" />
+    <Property Name="STADDRCD" Type="nvarchar" MaxLength="255" />
+    <Property Name="SLPRSNID" Type="float" />
+    <Property Name="CHEKBKID" Type="nvarchar" MaxLength="255" />
+    <Property Name="PYMTRMID" Type="nvarchar" MaxLength="255" />
+    <Property Name="CRLMTTYP" Type="float" />
+    <Property Name="CRLMTAMT" Type="float" />
+    <Property Name="CRLMTPER" Type="float" />
+    <Property Name="CRLMTPAM" Type="float" />
+    <Property Name="CURNCYID" Type="nvarchar" MaxLength="255" />
+    <Property Name="RATETPID" Type="nvarchar" MaxLength="255" />
+    <Property Name="CUSTDISC" Type="float" />
+    <Property Name="PRCLEVEL" Type="nvarchar" MaxLength="255" />
+    <Property Name="MINPYTYP" Type="float" />
+    <Property Name="MINPYDLR" Type="float" />
+    <Property Name="MINPYPCT" Type="float" />
+    <Property Name="FNCHATYP" Type="float" />
+    <Property Name="FNCHPCNT" Type="float" />
+    <Property Name="FINCHDLR" Type="float" />
+    <Property Name="MXWOFTYP" Type="float" />
+    <Property Name="MXWROFAM" Type="float" />
+    <Property Name="COMMENT1" Type="nvarchar" MaxLength="255" />
+    <Property Name="COMMENT2" Type="nvarchar" MaxLength="255" />
+    <Property Name="USERDEF1" Type="nvarchar" MaxLength="255" />
+    <Property Name="USERDEF2" Type="nvarchar" MaxLength="255" />
+    <Property Name="TAXEXMT1" Type="nvarchar" MaxLength="255" />
+    <Property Name="TAXEXMT2" Type="nvarchar" MaxLength="255" />
+    <Property Name="TXRGNNUM" Type="nvarchar" MaxLength="255" />
+    <Property Name="BALNCTYP" Type="float" />
+    <Property Name="STMTCYCL" Type="float" />
+    <Property Name="BANKNAME" Type="nvarchar" MaxLength="255" />
+    <Property Name="BNKBRNCH" Type="nvarchar" MaxLength="255" />
+    <Property Name="SALSTERR" Type="nvarchar" MaxLength="255" />
+    <Property Name="DEFCACTY" Type="float" />
+    <Property Name="RMCSHACC" Type="float" />
+    <Property Name="RMARACC" Type="float" />
+    <Property Name="RMSLSACC" Type="float" />
+    <Property Name="RMIVACC" Type="float" />
+    <Property Name="RMCOSACC" Type="float" />
+    <Property Name="RMTAKACC" Type="float" />
+    <Property Name="RMAVACC" Type="float" />
+    <Property Name="RMFCGACC" Type="float" />
+    <Property Name="RMWRACC" Type="float" />
+    <Property Name="RMSORACC" Type="float" />
+    <Property Name="FRSTINDT" Type="datetime" />
+    <Property Name="INACTIVE" Type="float" />
+    <Property Name="HOLD" Type="float" />
+    <Property Name="CRCARDID" Type="nvarchar" MaxLength="255" />
+    <Property Name="CRCRDNUM" Type="nvarchar" MaxLength="255" />
+    <Property Name="CCRDXPDT" Type="datetime" />
+    <Property Name="KPDSTHST" Type="float" />
+    <Property Name="KPCALHST" Type="float" />
+    <Property Name="KPERHIST" Type="float" />
+    <Property Name="KPTRXHST" Type="float" />
+    <Property Name="NOTEINDX" Type="float" />
+    <Property Name="CREATDDT" Type="datetime" />
+    <Property Name="MODIFDT" Type="datetime" />
+    <Property Name="Revalue_Customer" Type="float" />
+    <Property Name="Post_Results_To" Type="float" />
+    <Property Name="FINCHID" Type="nvarchar" MaxLength="255" />
+    <Property Name="GOVCRPID" Type="nvarchar" MaxLength="255" />
+    <Property Name="GOVINDID" Type="nvarchar" MaxLength="255" />
+    <Property Name="DISGRPER" Type="float" />
+    <Property Name="DUEGRPER" Type="float" />
+    <Property Name="DOCFMTID" Type="nvarchar" MaxLength="255" />
+    <Property Name="Send_Email_Statements" Type="float" />
+    <Property Name="USERLANG" Type="float" />
+    <Property Name="GPSFOINTEGRATIONID" Type="nvarchar" MaxLength="255" />
+    <Property Name="INTEGRATIONSOURCE" Type="float" />
+    <Property Name="INTEGRATIONID" Type="nvarchar" MaxLength="255" />
+    <Property Name="ORDERFULFILLDEFAULT" Type="float" />
+    <Property Name="CUSTPRIORITY" Type="float" />
+    <Property Name="CCode" Type="nvarchar" MaxLength="255" />
+    <Property Name="DECLID" Type="nvarchar" MaxLength="255" />
+    <Property Name="RMOvrpymtWrtoffAcctIdx" Type="float" />
+    <Property Name="SHIPCOMPLETE" Type="float" />
+    <Property Name="CBVAT" Type="float" />
+    <Property Name="INCLUDEINDP" Type="float" />
+    <Property Name="DEX_ROW_TS" Type="datetime" />
+    <Property Name="DEX_ROW_ID" Type="float" />
+  </EntityType>
+  <EntityType Name="Factura">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="Compagnia" Type="int" Nullable="false" />
+    <Property Name="FacturaFecha" Type="datetime" Nullable="false" />
+    <Property Name="FacturaId" Type="nvarchar" MaxLength="20" Nullable="false" />
+    <Property Name="FacturaVencimiento" Type="datetime" Nullable="false" />
+    <Property Name="IsDelete" Type="int" Nullable="false" />
+    <Property Name="MetodoDePago" Type="nvarchar" MaxLength="10" Nullable="false" />
+    <Property Name="MontoFactura" Type="numeric" Precision="32" Scale="16" Nullable="false" />
+    <Property Name="PedidoId" Type="nvarchar" MaxLength="20" Nullable="false" />
+    <Property Name="Sincronizado" Type="int" Nullable="false" />
+    <Property Name="MontoPendiente" Type="numeric" Precision="32" Scale="16" Nullable="false" />
+    <Property Name="clienteId" Type="nvarchar" MaxLength="20" Nullable="false" />
+    <Property Name="clienteNombre" Type="nvarchar" MaxLength="100" Nullable="false" />
+    <Property Name="totalPagado" Type="int" Nullable="false" />
+    <Property Name="vendedorId" Type="nvarchar" MaxLength="40" Nullable="false" />
+    <Property Name="Actualizar" Type="int" />
+  </EntityType>
+  <EntityType Name="FacturaDetalle">
+    <Key>
+      <PropertyRef Name="ID" />
+    </Key>
+    <Property Name="ID" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="Compagnia" Type="int" Nullable="false" />
+    <Property Name="FacturaId" Type="nvarchar" MaxLength="20" Nullable="false" />
+    <Property Name="isDelete" Type="int" Nullable="false" />
+    <Property Name="LineaNumero" Type="numeric" Precision="32" Scale="16" Nullable="false" />
+    <Property Name="ProductoCodigo" Type="nvarchar" MaxLength="20" Nullable="false" />
+    <Property Name="Nombre" Type="nvarchar" MaxLength="1000" Nullable="false" />
+    <Property Name="Qty" Type="int" Nullable="false" />
+    <Property Name="PrecioVenta" Type="decimal" Precision="18" Scale="2" Nullable="false" />
+    <Property Name="MontoLinea" Type="decimal" Precision="18" Scale="2" Nullable="false" />
+    <Property Name="Sincronizado" Type="int" Nullable="false" />
   </EntityType>
   <EntityType Name="InvoiceLines">
     <Key>
@@ -56,6 +204,81 @@
     <Property Name="IsInAx" Type="bit" Nullable="false" />
     <Property Name="IntegrationDate" Type="datetime" />
     <Property Name="VendorCode" Type="nvarchar(max)" />
+    <Property Name="ifFire" Type="nvarchar" MaxLength="100" />
+    <Property Name="Updatefire" Type="int" />
+  </EntityType>
+  <EntityType Name="PaymentItems">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="PaymentOrderId" Type="int" Nullable="false" />
+    <Property Name="InvoiceNumber" Type="nvarchar(max)" />
+    <Property Name="AmountApply" Type="decimal" Precision="18" Scale="2" Nullable="false" />
+    <Property Name="InvoiveAmountAtMoment" Type="decimal" Precision="18" Scale="2" Nullable="false" />
+    <Property Name="IsEnabled" Type="bit" Nullable="false" />
+  </EntityType>
+  <EntityType Name="PaymentOrders">
+    <Key>
+      <PropertyRef Name="Id" />
+    </Key>
+    <Property Name="Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="VendorID" Type="nvarchar" MaxLength="128" />
+    <Property Name="Datetime" Type="datetime" Nullable="false" />
+    <Property Name="Amount" Type="decimal" Precision="18" Scale="2" Nullable="false" />
+    <Property Name="Method" Type="nvarchar(max)" />
+    <Property Name="BankName" Type="nvarchar(max)" />
+    <Property Name="CheckNumber" Type="nvarchar(max)" />
+    <Property Name="CheckDate" Type="datetime" />
+    <Property Name="IsEnabled" Type="bit" Nullable="false" />
+    <Property Name="Customer_Code" Type="nvarchar" MaxLength="20" />
+    <Property Name="IsOpen" Type="bit" Nullable="false" />
+    <Property Name="Imported" Type="bit" Nullable="false" />
+  </EntityType>
+  <EntityType Name="pedidoAx">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="clienteNuevo" Type="nvarchar" MaxLength="50" />
+  </EntityType>
+  <EntityType Name="PedidoDetalleAx">
+    <Key>
+      <PropertyRef Name="id" />
+    </Key>
+    <Property Name="id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="PedidoSigaId" Type="nvarchar" MaxLength="50" />
+    <Property Name="Codigo" Type="nchar" MaxLength="10" />
+    <Property Name="Precio" Type="decimal" Precision="18" Scale="2" />
+    <Property Name="Cantidad" Type="int" />
+  </EntityType>
+  <!--Errores durante la generación:
+advertencia 6002: La tabla o vista 'SigaAdmin.dbo.productos' no tiene definida ninguna clave principal. Se ha inferido la clave y la definición se creado como una vista o tabla de solo lectura.-->
+  <EntityType Name="productos">
+    <Key>
+      <PropertyRef Name="Cantidad" />
+      <PropertyRef Name="Codigo" />
+      <PropertyRef Name="Compagnia" />
+      <PropertyRef Name="Id" />
+      <PropertyRef Name="IsDelete" />
+      <PropertyRef Name="Nombre" />
+      <PropertyRef Name="OuM" />
+      <PropertyRef Name="Precio" />
+      <PropertyRef Name="Sincronizado" />
+      <PropertyRef Name="actualizar" />
+      <PropertyRef Name="TipodeVenta" />
+    </Key>
+    <Property Name="Cantidad" Type="int" Nullable="false" />
+    <Property Name="Codigo" Type="nvarchar" MaxLength="20" Nullable="false" />
+    <Property Name="Compagnia" Type="int" Nullable="false" />
+    <Property Name="Id" Type="bigint" Nullable="false" />
+    <Property Name="IsDelete" Type="int" Nullable="false" />
+    <Property Name="Nombre" Type="nvarchar" MaxLength="1000" Nullable="false" />
+    <Property Name="OuM" Type="nvarchar" MaxLength="10" Nullable="false" />
+    <Property Name="Precio" Type="numeric" Precision="32" Scale="16" Nullable="false" />
+    <Property Name="Sincronizado" Type="int" Nullable="false" />
+    <Property Name="actualizar" Type="int" Nullable="false" />
+    <Property Name="TipodeVenta" Type="varchar" MaxLength="1" Nullable="false" />
   </EntityType>
   <Association Name="FK_dbo_InvoiceLines_dbo_Invoices_InvoiceID">
     <End Role="Invoices" Type="Self.Invoices" Multiplicity="0..1" />
@@ -83,10 +306,46 @@
       </Dependent>
     </ReferentialConstraint>
   </Association>
+  <Association Name="FK_dbo_PaymentItems_dbo_PaymentOrders_PaymentOrderId">
+    <End Role="PaymentOrders" Type="Self.PaymentOrders" Multiplicity="1">
+      <OnDelete Action="Cascade" />
+    </End>
+    <End Role="PaymentItems" Type="Self.PaymentItems" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="PaymentOrders">
+        <PropertyRef Name="Id" />
+      </Principal>
+      <Dependent Role="PaymentItems">
+        <PropertyRef Name="PaymentOrderId" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
   <EntityContainer Name="SigaAdminModelStoreContainer">
     <EntitySet Name="Customers" EntityType="Self.Customers" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="CUSTTABLE" EntityType="Self.CUSTTABLE" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="Factura" EntityType="Self.Factura" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="FacturaDetalle" EntityType="Self.FacturaDetalle" Schema="dbo" store:Type="Tables" />
     <EntitySet Name="InvoiceLines" EntityType="Self.InvoiceLines" Schema="dbo" store:Type="Tables" />
     <EntitySet Name="Invoices" EntityType="Self.Invoices" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="PaymentItems" EntityType="Self.PaymentItems" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="PaymentOrders" EntityType="Self.PaymentOrders" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="pedidoAx" EntityType="Self.pedidoAx" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="PedidoDetalleAx" EntityType="Self.PedidoDetalleAx" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="productos" EntityType="Self.productos" store:Type="Tables" store:Schema="dbo">
+      <DefiningQuery>SELECT 
+[productos].[Cantidad] AS [Cantidad], 
+[productos].[Codigo] AS [Codigo], 
+[productos].[Compagnia] AS [Compagnia], 
+[productos].[Id] AS [Id], 
+[productos].[IsDelete] AS [IsDelete], 
+[productos].[Nombre] AS [Nombre], 
+[productos].[OuM] AS [OuM], 
+[productos].[Precio] AS [Precio], 
+[productos].[Sincronizado] AS [Sincronizado], 
+[productos].[actualizar] AS [actualizar], 
+[productos].[TipodeVenta] AS [TipodeVenta]
+FROM [dbo].[productos] AS [productos]</DefiningQuery>
+    </EntitySet>
     <AssociationSet Name="FK_dbo_InvoiceLines_dbo_Invoices_InvoiceID" Association="Self.FK_dbo_InvoiceLines_dbo_Invoices_InvoiceID">
       <End Role="Invoices" EntitySet="Invoices" />
       <End Role="InvoiceLines" EntitySet="InvoiceLines" />
@@ -94,6 +353,10 @@
     <AssociationSet Name="FK_dbo_Invoices_dbo_Customers_CustomerID" Association="Self.FK_dbo_Invoices_dbo_Customers_CustomerID">
       <End Role="Customers" EntitySet="Customers" />
       <End Role="Invoices" EntitySet="Invoices" />
+    </AssociationSet>
+    <AssociationSet Name="FK_dbo_PaymentItems_dbo_PaymentOrders_PaymentOrderId" Association="Self.FK_dbo_PaymentItems_dbo_PaymentOrders_PaymentOrderId">
+      <End Role="PaymentOrders" EntitySet="PaymentOrders" />
+      <End Role="PaymentItems" EntitySet="PaymentItems" />
     </AssociationSet>
   </EntityContainer>
 </Schema>

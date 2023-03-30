@@ -115,6 +115,7 @@
     <EntitySetMapping Name="Facturas">
       <EntityTypeMapping TypeName="SigaAdminModel.Factura">
         <MappingFragment StoreEntitySet="Factura">
+          <ScalarProperty Name="Actualizar" ColumnName="Actualizar" />
           <ScalarProperty Name="vendedorId" ColumnName="vendedorId" />
           <ScalarProperty Name="totalPagado" ColumnName="totalPagado" />
           <ScalarProperty Name="clienteNombre" ColumnName="clienteNombre" />
@@ -259,6 +260,23 @@
           <ScalarProperty Name="Codigo" ColumnName="Codigo" />
           <ScalarProperty Name="PedidoSigaId" ColumnName="PedidoSigaId" />
           <ScalarProperty Name="id" ColumnName="id" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="productos">
+      <EntityTypeMapping TypeName="SigaAdminModel.producto">
+        <MappingFragment StoreEntitySet="productos">
+          <ScalarProperty Name="TipodeVenta" ColumnName="TipodeVenta" />
+          <ScalarProperty Name="actualizar" ColumnName="actualizar" />
+          <ScalarProperty Name="Sincronizado" ColumnName="Sincronizado" />
+          <ScalarProperty Name="Precio" ColumnName="Precio" />
+          <ScalarProperty Name="OuM" ColumnName="OuM" />
+          <ScalarProperty Name="Nombre" ColumnName="Nombre" />
+          <ScalarProperty Name="IsDelete" ColumnName="IsDelete" />
+          <ScalarProperty Name="Id" ColumnName="Id" />
+          <ScalarProperty Name="Compagnia" ColumnName="Compagnia" />
+          <ScalarProperty Name="Codigo" ColumnName="Codigo" />
+          <ScalarProperty Name="Cantidad" ColumnName="Cantidad" />
         </MappingFragment>
       </EntityTypeMapping>
     </EntitySetMapping>

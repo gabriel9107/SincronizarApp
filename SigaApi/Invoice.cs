@@ -12,11 +12,11 @@ namespace SigaApi
     using System;
     using System.Collections.Generic;
     
-    public partial class Invoices
+    public partial class Invoice
     {
-        public Invoices()
+        public Invoice()
         {
-            this.InvoiceLines = new HashSet<InvoiceLines>();
+            this.InvoiceLines = new HashSet<InvoiceLine>();
         }
     
         public int ID { get; set; }
@@ -36,7 +36,7 @@ namespace SigaApi
         public string ifFire { get; set; }
         public Nullable<int> Updatefire { get; set; }
     
-        public virtual Customers Customers { get; set; }
-        public virtual ICollection<InvoiceLines> InvoiceLines { get; set; }
+        public virtual Customer Customer { get; set; }
+        public virtual ICollection<InvoiceLine> InvoiceLines { get; set; }
     }
 }

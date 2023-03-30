@@ -74,39 +74,96 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Clientes.cs" />
-    <Compile Include="Customers.cs">
-      <DependentUpon>Siga.tt</DependentUpon>
+    <Compile Include="CustInvoiceJour.cs">
+      <DependentUpon>GRUPOSIGAX.tt</DependentUpon>
+    </Compile>
+    <Compile Include="CUSTINVOICETRAN.cs">
+      <DependentUpon>GRUPOSIGAX.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Customer.cs">
+      <DependentUpon>Model1.tt</DependentUpon>
     </Compile>
     <Compile Include="CUSTTABLE.cs">
-      <DependentUpon>Siga.tt</DependentUpon>
+      <DependentUpon>GRUPOSIGAX.tt</DependentUpon>
+    </Compile>
+    <Compile Include="CUSTTRAN.cs">
+      <DependentUpon>GRUPOSIGAX.tt</DependentUpon>
+    </Compile>
+    <Compile Include="CUSTTRANSOPEN.cs">
+      <DependentUpon>GRUPOSIGAX.tt</DependentUpon>
+    </Compile>
+    <Compile Include="ECORESPRODUCT.cs">
+      <DependentUpon>GRUPOSIGAX.tt</DependentUpon>
+    </Compile>
+    <Compile Include="ECORESPRODUCTTRANSLATION.cs">
+      <DependentUpon>GRUPOSIGAX.tt</DependentUpon>
     </Compile>
     <Compile Include="Factura.cs">
-      <DependentUpon>Siga.tt</DependentUpon>
+      <DependentUpon>Model1.tt</DependentUpon>
     </Compile>
     <Compile Include="FacturaDetalle.cs">
-      <DependentUpon>Siga.tt</DependentUpon>
+      <DependentUpon>Model1.tt</DependentUpon>
     </Compile>
-    <Compile Include="InvoiceLines.cs">
-      <DependentUpon>Siga.tt</DependentUpon>
+    <Compile Include="GRUPOSIGAX.Context.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>GRUPOSIGAX.Context.tt</DependentUpon>
     </Compile>
-    <Compile Include="Invoices.cs">
-      <DependentUpon>Siga.tt</DependentUpon>
+    <Compile Include="GRUPOSIGAX.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>GRUPOSIGAX.tt</DependentUpon>
+    </Compile>
+    <Compile Include="GRUPOSIGAX.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>GRUPOSIGAX.edmx</DependentUpon>
+    </Compile>
+    <Compile Include="INVENTMODELGROUPITEM.cs">
+      <DependentUpon>GRUPOSIGAX.tt</DependentUpon>
+    </Compile>
+    <Compile Include="INVENTTABLEMODULE.cs">
+      <DependentUpon>GRUPOSIGAX.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Invoice.cs">
+      <DependentUpon>Model1.tt</DependentUpon>
+    </Compile>
+    <Compile Include="InvoiceLine.cs">
+      <DependentUpon>Model1.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Model1.Context.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Model1.Context.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Model1.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Model1.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Model1.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Model1.edmx</DependentUpon>
     </Compile>
     <Compile Include="Pago.cs" />
     <Compile Include="PagoDetalle.cs" />
     <Compile Include="PaymentItem.cs">
-      <DependentUpon>Siga.tt</DependentUpon>
+      <DependentUpon>Model1.tt</DependentUpon>
     </Compile>
     <Compile Include="PaymentOrder.cs">
-      <DependentUpon>Siga.tt</DependentUpon>
+      <DependentUpon>Model1.tt</DependentUpon>
     </Compile>
     <Compile Include="Pedido.cs" />
     <Compile Include="pedidoAx.cs">
-      <DependentUpon>Siga.tt</DependentUpon>
+      <DependentUpon>Model1.tt</DependentUpon>
     </Compile>
     <Compile Include="PedidoDetalle.cs" />
     <Compile Include="PedidoDetalleAx.cs">
-      <DependentUpon>Siga.tt</DependentUpon>
+      <DependentUpon>Model1.tt</DependentUpon>
+    </Compile>
+    <Compile Include="producto.cs">
+      <DependentUpon>Model1.tt</DependentUpon>
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
@@ -131,29 +188,24 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>Siga.edmx</DependentUpon>
     </Compile>
-    <Compile Include="Siga.Context.cs">
-      <AutoGen>True</AutoGen>
-      <DesignTime>True</DesignTime>
-      <DependentUpon>Siga.Context.tt</DependentUpon>
-    </Compile>
-    <Compile Include="Siga.cs">
-      <AutoGen>True</AutoGen>
-      <DesignTime>True</DesignTime>
-      <DependentUpon>Siga.tt</DependentUpon>
-    </Compile>
-    <Compile Include="Siga.Designer.cs">
-      <AutoGen>True</AutoGen>
-      <DesignTime>True</DesignTime>
-      <DependentUpon>Siga.edmx</DependentUpon>
-    </Compile>
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config" />
-    <None Include="packages.config" />
-    <EntityDeploy Include="Siga.edmx">
+    <EntityDeploy Include="Model1.edmx">
       <Generator>EntityModelCodeGenerator</Generator>
-      <LastGenOutput>Siga.Designer.cs</LastGenOutput>
+      <LastGenOutput>Model1.Designer.cs</LastGenOutput>
     </EntityDeploy>
+    <EntityDeploy Include="GRUPOSIGAX.edmx">
+      <Generator>EntityModelCodeGenerator</Generator>
+      <LastGenOutput>GRUPOSIGAX.Designer.cs</LastGenOutput>
+    </EntityDeploy>
+    <None Include="GRUPOSIGAX.edmx.diagram">
+      <DependentUpon>GRUPOSIGAX.edmx</DependentUpon>
+    </None>
+    <None Include="Model1.edmx.diagram">
+      <DependentUpon>Model1.edmx</DependentUpon>
+    </None>
+    <None Include="packages.config" />
     <EntityDeploy Include="Properties\Siga.edmx">
       <Generator>EntityModelCodeGenerator</Generator>
       <LastGenOutput>Siga.Designer.cs</LastGenOutput>
@@ -161,30 +213,37 @@
     <None Include="Properties\Siga.edmx.diagram">
       <DependentUpon>Siga.edmx</DependentUpon>
     </None>
-    <None Include="Siga.edmx.diagram">
-      <DependentUpon>Siga.edmx</DependentUpon>
-    </None>
   </ItemGroup>
   <ItemGroup>
     <Service Include="{508349B6-6B84-4DF5-91F0-309BEEBAD82D}" />
   </ItemGroup>
   <ItemGroup>
+    <Content Include="GRUPOSIGAX.Context.tt">
+      <Generator>TextTemplatingFileGenerator</Generator>
+      <DependentUpon>GRUPOSIGAX.edmx</DependentUpon>
+      <LastGenOutput>GRUPOSIGAX.Context.cs</LastGenOutput>
+    </Content>
+    <Content Include="GRUPOSIGAX.tt">
+      <Generator>TextTemplatingFileGenerator</Generator>
+      <DependentUpon>GRUPOSIGAX.edmx</DependentUpon>
+      <LastGenOutput>GRUPOSIGAX.cs</LastGenOutput>
+    </Content>
+    <Content Include="Model1.Context.tt">
+      <Generator>TextTemplatingFileGenerator</Generator>
+      <DependentUpon>Model1.edmx</DependentUpon>
+      <LastGenOutput>Model1.Context.cs</LastGenOutput>
+    </Content>
+    <Content Include="Model1.tt">
+      <Generator>TextTemplatingFileGenerator</Generator>
+      <DependentUpon>Model1.edmx</DependentUpon>
+      <LastGenOutput>Model1.cs</LastGenOutput>
+    </Content>
     <Content Include="Properties\Siga.Context.tt">
       <Generator>TextTemplatingFileGenerator</Generator>
       <DependentUpon>Siga.edmx</DependentUpon>
       <LastGenOutput>Siga.Context.cs</LastGenOutput>
     </Content>
     <Content Include="Properties\Siga.tt">
-      <Generator>TextTemplatingFileGenerator</Generator>
-      <DependentUpon>Siga.edmx</DependentUpon>
-      <LastGenOutput>Siga.cs</LastGenOutput>
-    </Content>
-    <Content Include="Siga.Context.tt">
-      <Generator>TextTemplatingFileGenerator</Generator>
-      <DependentUpon>Siga.edmx</DependentUpon>
-      <LastGenOutput>Siga.Context.cs</LastGenOutput>
-    </Content>
-    <Content Include="Siga.tt">
       <Generator>TextTemplatingFileGenerator</Generator>
       <DependentUpon>Siga.edmx</DependentUpon>
       <LastGenOutput>Siga.cs</LastGenOutput>

@@ -1,0 +1,1071 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Schema Namespace="GRUPOSIGAXModel" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
+  <EntityType Name="CustInvoiceJour">
+    <Key>
+      <PropertyRef Name="CUSTGROUP" />
+      <PropertyRef Name="REFNUM" />
+      <PropertyRef Name="SALESID" />
+      <PropertyRef Name="ORDERACCOUNT" />
+      <PropertyRef Name="INVOICEACCOUNT" />
+      <PropertyRef Name="INVOICEDATE" />
+      <PropertyRef Name="DUEDATE" />
+      <PropertyRef Name="CASHDISC" />
+      <PropertyRef Name="CASHDISCDATE" />
+      <PropertyRef Name="QTY" />
+      <PropertyRef Name="VOLUME" />
+      <PropertyRef Name="WEIGHT" />
+      <PropertyRef Name="SUMLINEDISC" />
+      <PropertyRef Name="SALESBALANCE" />
+      <PropertyRef Name="ENDDISC" />
+      <PropertyRef Name="INVOICEAMOUNT" />
+      <PropertyRef Name="CURRENCYCODE" />
+      <PropertyRef Name="EXCHRATE" />
+      <PropertyRef Name="INVOICEID" />
+      <PropertyRef Name="LEDGERVOUCHER" />
+      <PropertyRef Name="UPDATED" />
+      <PropertyRef Name="ONACCOUNTAMOUNT" />
+      <PropertyRef Name="TAXPRINTONINVOICE" />
+      <PropertyRef Name="LISTCODE" />
+      <PropertyRef Name="DOCUMENTNUM" />
+      <PropertyRef Name="DOCUMENTDATE" />
+      <PropertyRef Name="CASHDISCPERCENT" />
+      <PropertyRef Name="INTRASTATDISPATCH" />
+      <PropertyRef Name="DELIVERYNAME" />
+      <PropertyRef Name="ENTERPRISENUMBER" />
+      <PropertyRef Name="PURCHASEORDER" />
+      <PropertyRef Name="DLVTERM" />
+      <PropertyRef Name="DLVMODE" />
+      <PropertyRef Name="PAYMENT" />
+      <PropertyRef Name="CASHDISCCODE" />
+      <PropertyRef Name="INVOICEROUNDOFF" />
+      <PropertyRef Name="SUMMARKUP" />
+      <PropertyRef Name="COVSTATUS" />
+      <PropertyRef Name="RETURNITEMNUM" />
+      <PropertyRef Name="POSTINGPROFILE" />
+      <PropertyRef Name="BACKORDER" />
+      <PropertyRef Name="PREPAYMENT" />
+      <PropertyRef Name="TAXGROUP" />
+      <PropertyRef Name="TAXITEMGROUP" />
+      <PropertyRef Name="TAXSPECIFYBYLINE" />
+      <PropertyRef Name="EINVOICELINESPECIFIC" />
+      <PropertyRef Name="ONETIMECUSTOMER" />
+      <PropertyRef Name="PAYMENTSCHED" />
+      <PropertyRef Name="SUMTAX" />
+      <PropertyRef Name="SALESTYPE" />
+      <PropertyRef Name="EINVOICEACCOUNTCODE" />
+      <PropertyRef Name="INTERCOMPANYPOSTED" />
+      <PropertyRef Name="PARMID" />
+      <PropertyRef Name="RETURNREASONCODEID" />
+      <PropertyRef Name="EUSALESLIST" />
+      <PropertyRef Name="EXCHRATESECONDARY" />
+      <PropertyRef Name="TRIANGULATION" />
+      <PropertyRef Name="CUSTOMERREF" />
+      <PropertyRef Name="VATNUM" />
+      <PropertyRef Name="NUMBERSEQUENCEGROUP" />
+      <PropertyRef Name="LANGUAGEID" />
+      <PropertyRef Name="INCLTAX" />
+      <PropertyRef Name="LOG" />
+      <PropertyRef Name="PAYMDAYID" />
+      <PropertyRef Name="INVOICINGNAME" />
+      <PropertyRef Name="GIROTYPE" />
+      <PropertyRef Name="CONTACTPERSONID" />
+      <PropertyRef Name="SALESORIGINID" />
+      <PropertyRef Name="BILLOFLADINGID" />
+      <PropertyRef Name="INVENTLOCATIONID" />
+      <PropertyRef Name="FIXEDDUEDATE" />
+      <PropertyRef Name="INVOICEAMOUNTMST" />
+      <PropertyRef Name="INVOICEROUNDOFFMST" />
+      <PropertyRef Name="SUMMARKUPMST" />
+      <PropertyRef Name="SUMLINEDISCMST" />
+      <PropertyRef Name="ENDDISCMST" />
+      <PropertyRef Name="SALESBALANCEMST" />
+      <PropertyRef Name="SUMTAXMST" />
+      <PropertyRef Name="PRINTMGMTSITEID" />
+      <PropertyRef Name="RETURNSTATUS" />
+      <PropertyRef Name="INTERCOMPANYCOMPANYID" />
+      <PropertyRef Name="INTERCOMPANYPURCHID" />
+      <PropertyRef Name="PRINTEDORIGINALS" />
+      <PropertyRef Name="PROFORMA" />
+      <PropertyRef Name="RCSALESLIST_UK" />
+      <PropertyRef Name="REVERSECHARGE_UK" />
+      <PropertyRef Name="DELIVERYPOSTALADDRESS" />
+      <PropertyRef Name="INVOICEPOSTALADDRESS" />
+      <PropertyRef Name="SOURCEDOCUMENTHEADER" />
+      <PropertyRef Name="DEFAULTDIMENSION" />
+      <PropertyRef Name="BANKLCEXPORTLINE" />
+      <PropertyRef Name="WORKERSALESTAKER" />
+      <PropertyRef Name="REVERSEDRECID" />
+      <PropertyRef Name="RECEIPTDATECONFIRMED_ES" />
+      <PropertyRef Name="PAYMID" />
+      <PropertyRef Name="TAXINVOICESALESID" />
+      <PropertyRef Name="INTRASTATFULFILLMENTDATE_HU" />
+      <PropertyRef Name="MCREMAIL" />
+      <PropertyRef Name="MCRPAYMAMOUNT" />
+      <PropertyRef Name="MCRDUEAMOUNT" />
+      <PropertyRef Name="CASHDISCBASEDATE" />
+      <PropertyRef Name="DIRECTDEBITMANDATE" />
+      <PropertyRef Name="ISCORRECTION" />
+      <PropertyRef Name="REASONTABLEREF" />
+      <PropertyRef Name="SOURCEDOCUMENTLINE" />
+      <PropertyRef Name="TRANSPORTATIONDOCUMENT" />
+      <PropertyRef Name="MODIFIEDDATETIME" />
+      <PropertyRef Name="CREATEDDATETIME" />
+      <PropertyRef Name="DEL_CREATEDTIME" />
+      <PropertyRef Name="CREATEDBY" />
+      <PropertyRef Name="DATAAREAID" />
+      <PropertyRef Name="RECVERSION" />
+      <PropertyRef Name="PARTITION" />
+      <PropertyRef Name="RECID" />
+      <PropertyRef Name="NCF" />
+      <PropertyRef Name="TIPO" />
+      <PropertyRef Name="RNC_CEDULA" />
+      <PropertyRef Name="CLIENTEDIRECCION" />
+      <PropertyRef Name="VENDEDORNOMBRE" />
+      <PropertyRef Name="VENDEDORTELEFONO" />
+      <PropertyRef Name="TELEFONO" />
+      <PropertyRef Name="CALLE" />
+      <PropertyRef Name="CITY" />
+      <PropertyRef Name="STATE" />
+      <PropertyRef Name="COUNTRY" />
+    </Key>
+    <Property Name="CUSTGROUP" Type="String" MaxLength="10" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="REFNUM" Type="Int32" Nullable="false" />
+    <Property Name="SALESID" Type="String" MaxLength="20" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="ORDERACCOUNT" Type="String" MaxLength="20" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="INVOICEACCOUNT" Type="String" MaxLength="20" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="INVOICEDATE" Type="DateTime" Nullable="false" Precision="3" />
+    <Property Name="DUEDATE" Type="DateTime" Nullable="false" Precision="3" />
+    <Property Name="CASHDISC" Type="Decimal" Precision="32" Scale="16" Nullable="false" />
+    <Property Name="CASHDISCDATE" Type="DateTime" Nullable="false" Precision="3" />
+    <Property Name="QTY" Type="Decimal" Precision="32" Scale="16" Nullable="false" />
+    <Property Name="VOLUME" Type="Decimal" Precision="32" Scale="16" Nullable="false" />
+    <Property Name="WEIGHT" Type="Decimal" Precision="32" Scale="16" Nullable="false" />
+    <Property Name="SUMLINEDISC" Type="Decimal" Precision="32" Scale="16" Nullable="false" />
+    <Property Name="SALESBALANCE" Type="Decimal" Precision="32" Scale="16" Nullable="false" />
+    <Property Name="ENDDISC" Type="Decimal" Precision="32" Scale="16" Nullable="false" />
+    <Property Name="INVOICEAMOUNT" Type="Decimal" Precision="32" Scale="16" Nullable="false" />
+    <Property Name="CURRENCYCODE" Type="String" MaxLength="3" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="EXCHRATE" Type="Decimal" Precision="32" Scale="16" Nullable="false" />
+    <Property Name="INVOICEID" Type="String" MaxLength="20" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="LEDGERVOUCHER" Type="String" MaxLength="20" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="UPDATED" Type="Int32" Nullable="false" />
+    <Property Name="ONACCOUNTAMOUNT" Type="Decimal" Precision="32" Scale="16" Nullable="false" />
+    <Property Name="TAXPRINTONINVOICE" Type="Int32" Nullable="false" />
+    <Property Name="LISTCODE" Type="Int32" Nullable="false" />
+    <Property Name="DOCUMENTNUM" Type="String" MaxLength="20" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="DOCUMENTDATE" Type="DateTime" Nullable="false" Precision="3" />
+    <Property Name="CASHDISCPERCENT" Type="Decimal" Precision="32" Scale="16" Nullable="false" />
+    <Property Name="INTRASTATDISPATCH" Type="String" MaxLength="20" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="DELIVERYNAME" Type="String" MaxLength="100" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="ENTERPRISENUMBER" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="PURCHASEORDER" Type="String" MaxLength="20" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="DLVTERM" Type="String" MaxLength="10" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="DLVMODE" Type="String" MaxLength="10" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="PAYMENT" Type="String" MaxLength="10" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="CASHDISCCODE" Type="String" MaxLength="10" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="INVOICEROUNDOFF" Type="Decimal" Precision="32" Scale="16" Nullable="false" />
+    <Property Name="SUMMARKUP" Type="Decimal" Precision="32" Scale="16" Nullable="false" />
+    <Property Name="COVSTATUS" Type="Int32" Nullable="false" />
+    <Property Name="RETURNITEMNUM" Type="String" MaxLength="10" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="POSTINGPROFILE" Type="String" MaxLength="10" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="BACKORDER" Type="Int32" Nullable="false" />
+    <Property Name="PREPAYMENT" Type="Int32" Nullable="false" />
+    <Property Name="TAXGROUP" Type="String" MaxLength="10" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="TAXITEMGROUP" Type="String" MaxLength="10" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="TAXSPECIFYBYLINE" Type="Int32" Nullable="false" />
+    <Property Name="EINVOICELINESPECIFIC" Type="Int32" Nullable="false" />
+    <Property Name="ONETIMECUSTOMER" Type="Int32" Nullable="false" />
+    <Property Name="PAYMENTSCHED" Type="String" MaxLength="30" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="SUMTAX" Type="Decimal" Precision="32" Scale="16" Nullable="false" />
+    <Property Name="SALESTYPE" Type="Int32" Nullable="false" />
+    <Property Name="EINVOICEACCOUNTCODE" Type="String" MaxLength="35" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="INTERCOMPANYPOSTED" Type="Int32" Nullable="false" />
+    <Property Name="PARMID" Type="String" MaxLength="20" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="RETURNREASONCODEID" Type="String" MaxLength="10" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="EUSALESLIST" Type="String" MaxLength="20" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="EXCHRATESECONDARY" Type="Decimal" Precision="32" Scale="16" Nullable="false" />
+    <Property Name="TRIANGULATION" Type="Int32" Nullable="false" />
+    <Property Name="CUSTOMERREF" Type="String" MaxLength="60" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="VATNUM" Type="String" MaxLength="20" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="NUMBERSEQUENCEGROUP" Type="String" MaxLength="10" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="LANGUAGEID" Type="String" MaxLength="7" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="INCLTAX" Type="Int32" Nullable="false" />
+    <Property Name="LOG" Type="String" MaxLength="255" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="PAYMDAYID" Type="String" MaxLength="10" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="INVOICINGNAME" Type="String" MaxLength="100" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="GIROTYPE" Type="Int32" Nullable="false" />
+    <Property Name="CONTACTPERSONID" Type="String" MaxLength="20" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="SALESORIGINID" Type="String" MaxLength="10" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="BILLOFLADINGID" Type="String" MaxLength="17" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="INVENTLOCATIONID" Type="String" MaxLength="10" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="FIXEDDUEDATE" Type="DateTime" Nullable="false" Precision="3" />
+    <Property Name="INVOICEAMOUNTMST" Type="Decimal" Precision="32" Scale="16" Nullable="false" />
+    <Property Name="INVOICEROUNDOFFMST" Type="Decimal" Precision="32" Scale="16" Nullable="false" />
+    <Property Name="SUMMARKUPMST" Type="Decimal" Precision="32" Scale="16" Nullable="false" />
+    <Property Name="SUMLINEDISCMST" Type="Decimal" Precision="32" Scale="16" Nullable="false" />
+    <Property Name="ENDDISCMST" Type="Decimal" Precision="32" Scale="16" Nullable="false" />
+    <Property Name="SALESBALANCEMST" Type="Decimal" Precision="32" Scale="16" Nullable="false" />
+    <Property Name="SUMTAXMST" Type="Decimal" Precision="32" Scale="16" Nullable="false" />
+    <Property Name="PRINTMGMTSITEID" Type="String" MaxLength="10" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="RETURNSTATUS" Type="Int32" Nullable="false" />
+    <Property Name="INTERCOMPANYCOMPANYID" Type="String" MaxLength="4" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="INTERCOMPANYPURCHID" Type="String" MaxLength="20" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="PRINTEDORIGINALS" Type="Int32" Nullable="false" />
+    <Property Name="PROFORMA" Type="Int32" Nullable="false" />
+    <Property Name="RCSALESLIST_UK" Type="String" MaxLength="20" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="REVERSECHARGE_UK" Type="Decimal" Precision="32" Scale="16" Nullable="false" />
+    <Property Name="DELIVERYPOSTALADDRESS" Type="Int64" Nullable="false" />
+    <Property Name="INVOICEPOSTALADDRESS" Type="Int64" Nullable="false" />
+    <Property Name="SOURCEDOCUMENTHEADER" Type="Int64" Nullable="false" />
+    <Property Name="DEFAULTDIMENSION" Type="Int64" Nullable="false" />
+    <Property Name="BANKLCEXPORTLINE" Type="Int64" Nullable="false" />
+    <Property Name="WORKERSALESTAKER" Type="Int64" Nullable="false" />
+    <Property Name="REVERSEDRECID" Type="Int64" Nullable="false" />
+    <Property Name="RECEIPTDATECONFIRMED_ES" Type="DateTime" Nullable="false" Precision="3" />
+    <Property Name="PAYMID" Type="String" MaxLength="200" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="TAXINVOICESALESID" Type="String" MaxLength="20" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="INTRASTATFULFILLMENTDATE_HU" Type="DateTime" Nullable="false" Precision="3" />
+    <Property Name="MCREMAIL" Type="String" MaxLength="80" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="MCRPAYMAMOUNT" Type="Decimal" Precision="32" Scale="16" Nullable="false" />
+    <Property Name="MCRDUEAMOUNT" Type="Decimal" Precision="32" Scale="16" Nullable="false" />
+    <Property Name="CASHDISCBASEDATE" Type="DateTime" Nullable="false" Precision="3" />
+    <Property Name="DIRECTDEBITMANDATE" Type="Int64" Nullable="false" />
+    <Property Name="ISCORRECTION" Type="Int32" Nullable="false" />
+    <Property Name="REASONTABLEREF" Type="Int64" Nullable="false" />
+    <Property Name="SOURCEDOCUMENTLINE" Type="Int64" Nullable="false" />
+    <Property Name="TRANSPORTATIONDOCUMENT" Type="Int64" Nullable="false" />
+    <Property Name="MODIFIEDDATETIME" Type="DateTime" Nullable="false" Precision="3" />
+    <Property Name="CREATEDDATETIME" Type="DateTime" Nullable="false" Precision="3" />
+    <Property Name="DEL_CREATEDTIME" Type="Int32" Nullable="false" />
+    <Property Name="CREATEDBY" Type="String" MaxLength="8" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="DATAAREAID" Type="String" MaxLength="4" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="RECVERSION" Type="Int32" Nullable="false" />
+    <Property Name="PARTITION" Type="Int64" Nullable="false" />
+    <Property Name="RECID" Type="Int64" Nullable="false" />
+    <Property Name="NCF" Type="String" MaxLength="15" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="TIPO" Type="String" MaxLength="80" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="RNC_CEDULA" Type="String" MaxLength="25" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="CLIENTEDIRECCION" Type="String" MaxLength="100" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="VENDEDORNOMBRE" Type="String" MaxLength="40" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="VENDEDORTELEFONO" Type="String" MaxLength="15" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="TELEFONO" Type="String" MaxLength="25" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="CALLE" Type="String" MaxLength="110" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="CITY" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="STATE" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="COUNTRY" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="NCF_ANTERIOR" Type="String" MaxLength="30" FixedLength="false" Unicode="true" />
+    <Property Name="NO_FACTURA_ANTERIOR" Type="String" MaxLength="30" FixedLength="false" Unicode="true" />
+  </EntityType>
+  <EntityType Name="CUSTINVOICETRAN">
+    <Key>
+      <PropertyRef Name="INVOICEID" />
+      <PropertyRef Name="INVOICEDATE" />
+      <PropertyRef Name="LINENUM" />
+      <PropertyRef Name="INVENTTRANSID" />
+      <PropertyRef Name="INVENTREFID" />
+      <PropertyRef Name="ITEMID" />
+      <PropertyRef Name="EXTERNALITEMID" />
+      <PropertyRef Name="NAME" />
+      <PropertyRef Name="TAXGROUP" />
+      <PropertyRef Name="CURRENCYCODE" />
+      <PropertyRef Name="PRICEUNIT" />
+      <PropertyRef Name="QTY" />
+      <PropertyRef Name="SALESPRICE" />
+      <PropertyRef Name="DISCPERCENT" />
+      <PropertyRef Name="DISCAMOUNT" />
+      <PropertyRef Name="LINEAMOUNT" />
+      <PropertyRef Name="SALESGROUP" />
+      <PropertyRef Name="QTYPHYSICAL" />
+      <PropertyRef Name="PARTDELIVERY" />
+      <PropertyRef Name="REMAIN" />
+      <PropertyRef Name="SALESID" />
+      <PropertyRef Name="SALESUNIT" />
+      <PropertyRef Name="SALESMARKUP" />
+      <PropertyRef Name="COMMISSCALC" />
+      <PropertyRef Name="COMMISSAMOUNTCUR" />
+      <PropertyRef Name="TRANSACTIONCODE" />
+      <PropertyRef Name="DELIVERYTYPE" />
+      <PropertyRef Name="COUNTRYREGIONOFSHIPMENT" />
+      <PropertyRef Name="ITEMCODEID" />
+      <PropertyRef Name="TAXAUTOGENERATED" />
+      <PropertyRef Name="TAXITEMGROUP" />
+      <PropertyRef Name="TAXAMOUNT" />
+      <PropertyRef Name="TAXWRITECODE" />
+      <PropertyRef Name="MULTILNDISC" />
+      <PropertyRef Name="MULTILNPERCENT" />
+      <PropertyRef Name="LINEDISC" />
+      <PropertyRef Name="LINEPERCENT" />
+      <PropertyRef Name="ORIGSALESID" />
+      <PropertyRef Name="LINEHEADER" />
+      <PropertyRef Name="TRANSPORT" />
+      <PropertyRef Name="INVENTDIMID" />
+      <PropertyRef Name="ORIGCOUNTRYREGIONID" />
+      <PropertyRef Name="NUMBERSEQUENCEGROUP" />
+      <PropertyRef Name="STATPROCID" />
+      <PropertyRef Name="DLVDATE" />
+      <PropertyRef Name="LINEAMOUNTTAX" />
+      <PropertyRef Name="PORT" />
+      <PropertyRef Name="ASSETID" />
+      <PropertyRef Name="CUSTOMERLINENUM" />
+      <PropertyRef Name="ASSETBOOKID" />
+      <PropertyRef Name="LINEAMOUNTMST" />
+      <PropertyRef Name="TAXAMOUNTMST" />
+      <PropertyRef Name="LINEAMOUNTTAXMST" />
+      <PropertyRef Name="COMMISSAMOUNTMST" />
+      <PropertyRef Name="SUMLINEDISC" />
+      <PropertyRef Name="SUMLINEDISCMST" />
+      <PropertyRef Name="INTERCOMPANYINVENTTRANSID" />
+      <PropertyRef Name="OLAPCOSTVALUE" />
+      <PropertyRef Name="EINVOICEACCOUNTCODE" />
+      <PropertyRef Name="RETURNDISPOSITIONCODEID" />
+      <PropertyRef Name="STATLINEAMOUNTMST" />
+      <PropertyRef Name="INTRASTATDISPATCHID" />
+      <PropertyRef Name="INVENTQTY" />
+      <PropertyRef Name="ORIGSTATE" />
+      <PropertyRef Name="INVENTREFTYPE" />
+      <PropertyRef Name="INVENTREFTRANSID" />
+      <PropertyRef Name="WEIGHT" />
+      <PropertyRef Name="RETURNARRIVALDATE" />
+      <PropertyRef Name="RETURNCLOSEDDATE" />
+      <PropertyRef Name="REVERSECHARGEAPPLIES_UK" />
+      <PropertyRef Name="REASONREFRECID" />
+      <PropertyRef Name="REMAINBEFORE" />
+      <PropertyRef Name="SALESCATEGORY" />
+      <PropertyRef Name="CUSTINVOICELINEIDREF" />
+      <PropertyRef Name="SOURCEDOCUMENTLINE" />
+      <PropertyRef Name="DELIVERYPOSTALADDRESS" />
+      <PropertyRef Name="LEDGERDIMENSION" />
+      <PropertyRef Name="DEFAULTDIMENSION" />
+      <PropertyRef Name="TAXWITHHOLDITEMGROUPHEADING_TH" />
+      <PropertyRef Name="STOCKEDPRODUCT" />
+      <PropertyRef Name="REVERSEDRECID" />
+      <PropertyRef Name="NGPCODESTABLE_FR" />
+      <PropertyRef Name="PARENTRECID" />
+      <PropertyRef Name="TAXWITHHOLDGROUP_TH" />
+      <PropertyRef Name="INTRASTATFULFILLMENTDATE_HU" />
+      <PropertyRef Name="BILLINGCODE" />
+      <PropertyRef Name="MCRDELIVERYNAME" />
+      <PropertyRef Name="MCRDLVMODE" />
+      <PropertyRef Name="PDSCWQTY" />
+      <PropertyRef Name="PDSCWQTYPHYSICAL" />
+      <PropertyRef Name="PDSCWREMAIN" />
+      <PropertyRef Name="RETAILCATEGORY" />
+      <PropertyRef Name="MODIFIEDDATETIME" />
+      <PropertyRef Name="CREATEDDATETIME" />
+      <PropertyRef Name="DEL_CREATEDTIME" />
+      <PropertyRef Name="CREATEDBY" />
+      <PropertyRef Name="DATAAREAID" />
+      <PropertyRef Name="RECVERSION" />
+      <PropertyRef Name="PARTITION" />
+      <PropertyRef Name="RECID" />
+    </Key>
+    <Property Name="INVOICEID" Type="String" MaxLength="20" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="INVOICEDATE" Type="DateTime" Nullable="false" Precision="3" />
+    <Property Name="LINENUM" Type="Decimal" Precision="32" Scale="16" Nullable="false" />
+    <Property Name="INVENTTRANSID" Type="String" MaxLength="20" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="INVENTREFID" Type="String" MaxLength="20" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="ITEMID" Type="String" MaxLength="20" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="EXTERNALITEMID" Type="String" MaxLength="20" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="NAME" Type="String" MaxLength="1000" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="TAXGROUP" Type="String" MaxLength="10" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="CURRENCYCODE" Type="String" MaxLength="3" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="PRICEUNIT" Type="Decimal" Precision="32" Scale="16" Nullable="false" />
+    <Property Name="QTY" Type="Decimal" Precision="32" Scale="16" Nullable="false" />
+    <Property Name="SALESPRICE" Type="Decimal" Precision="32" Scale="16" Nullable="false" />
+    <Property Name="DISCPERCENT" Type="Decimal" Precision="32" Scale="16" Nullable="false" />
+    <Property Name="DISCAMOUNT" Type="Decimal" Precision="32" Scale="16" Nullable="false" />
+    <Property Name="LINEAMOUNT" Type="Decimal" Precision="32" Scale="16" Nullable="false" />
+    <Property Name="SALESGROUP" Type="String" MaxLength="10" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="QTYPHYSICAL" Type="Decimal" Precision="32" Scale="16" Nullable="false" />
+    <Property Name="PARTDELIVERY" Type="Int32" Nullable="false" />
+    <Property Name="REMAIN" Type="Decimal" Precision="32" Scale="16" Nullable="false" />
+    <Property Name="SALESID" Type="String" MaxLength="20" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="SALESUNIT" Type="String" MaxLength="10" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="SALESMARKUP" Type="Decimal" Precision="32" Scale="16" Nullable="false" />
+    <Property Name="COMMISSCALC" Type="Int32" Nullable="false" />
+    <Property Name="COMMISSAMOUNTCUR" Type="Decimal" Precision="32" Scale="16" Nullable="false" />
+    <Property Name="TRANSACTIONCODE" Type="String" MaxLength="10" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="DELIVERYTYPE" Type="Int32" Nullable="false" />
+    <Property Name="COUNTRYREGIONOFSHIPMENT" Type="String" MaxLength="10" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="ITEMCODEID" Type="String" MaxLength="10" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="TAXAUTOGENERATED" Type="Int32" Nullable="false" />
+    <Property Name="TAXITEMGROUP" Type="String" MaxLength="10" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="TAXAMOUNT" Type="Decimal" Precision="32" Scale="16" Nullable="false" />
+    <Property Name="TAXWRITECODE" Type="String" MaxLength="10" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="MULTILNDISC" Type="Decimal" Precision="32" Scale="16" Nullable="false" />
+    <Property Name="MULTILNPERCENT" Type="Decimal" Precision="32" Scale="16" Nullable="false" />
+    <Property Name="LINEDISC" Type="Decimal" Precision="32" Scale="16" Nullable="false" />
+    <Property Name="LINEPERCENT" Type="Decimal" Precision="32" Scale="16" Nullable="false" />
+    <Property Name="ORIGSALESID" Type="String" MaxLength="20" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="LINEHEADER" Type="String" MaxLength="80" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="TRANSPORT" Type="String" MaxLength="10" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="INVENTDIMID" Type="String" MaxLength="20" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="ORIGCOUNTRYREGIONID" Type="String" MaxLength="10" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="NUMBERSEQUENCEGROUP" Type="String" MaxLength="10" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="STATPROCID" Type="String" MaxLength="10" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="DLVDATE" Type="DateTime" Nullable="false" Precision="3" />
+    <Property Name="LINEAMOUNTTAX" Type="Decimal" Precision="32" Scale="16" Nullable="false" />
+    <Property Name="PORT" Type="String" MaxLength="10" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="ASSETID" Type="String" MaxLength="20" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="CUSTOMERLINENUM" Type="Int32" Nullable="false" />
+    <Property Name="ASSETBOOKID" Type="String" MaxLength="10" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="LINEAMOUNTMST" Type="Decimal" Precision="32" Scale="16" Nullable="false" />
+    <Property Name="TAXAMOUNTMST" Type="Decimal" Precision="32" Scale="16" Nullable="false" />
+    <Property Name="LINEAMOUNTTAXMST" Type="Decimal" Precision="32" Scale="16" Nullable="false" />
+    <Property Name="COMMISSAMOUNTMST" Type="Decimal" Precision="32" Scale="16" Nullable="false" />
+    <Property Name="SUMLINEDISC" Type="Decimal" Precision="32" Scale="16" Nullable="false" />
+    <Property Name="SUMLINEDISCMST" Type="Decimal" Precision="32" Scale="16" Nullable="false" />
+    <Property Name="INTERCOMPANYINVENTTRANSID" Type="String" MaxLength="20" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="OLAPCOSTVALUE" Type="Decimal" Precision="32" Scale="16" Nullable="false" />
+    <Property Name="EINVOICEACCOUNTCODE" Type="String" MaxLength="35" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="RETURNDISPOSITIONCODEID" Type="String" MaxLength="10" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="STATLINEAMOUNTMST" Type="Decimal" Precision="32" Scale="16" Nullable="false" />
+    <Property Name="INTRASTATDISPATCHID" Type="String" MaxLength="20" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="INVENTQTY" Type="Decimal" Precision="32" Scale="16" Nullable="false" />
+    <Property Name="ORIGSTATE" Type="String" MaxLength="10" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="INVENTREFTYPE" Type="Int32" Nullable="false" />
+    <Property Name="INVENTREFTRANSID" Type="String" MaxLength="20" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="WEIGHT" Type="Decimal" Precision="32" Scale="16" Nullable="false" />
+    <Property Name="RETURNARRIVALDATE" Type="DateTime" Nullable="false" Precision="3" />
+    <Property Name="RETURNCLOSEDDATE" Type="DateTime" Nullable="false" Precision="3" />
+    <Property Name="REVERSECHARGEAPPLIES_UK" Type="Int32" Nullable="false" />
+    <Property Name="REASONREFRECID" Type="Int64" Nullable="false" />
+    <Property Name="REMAINBEFORE" Type="Decimal" Precision="32" Scale="16" Nullable="false" />
+    <Property Name="SALESCATEGORY" Type="Int64" Nullable="false" />
+    <Property Name="CUSTINVOICELINEIDREF" Type="Int64" Nullable="false" />
+    <Property Name="SOURCEDOCUMENTLINE" Type="Int64" Nullable="false" />
+    <Property Name="DELIVERYPOSTALADDRESS" Type="Int64" Nullable="false" />
+    <Property Name="LEDGERDIMENSION" Type="Int64" Nullable="false" />
+    <Property Name="DEFAULTDIMENSION" Type="Int64" Nullable="false" />
+    <Property Name="TAXWITHHOLDITEMGROUPHEADING_TH" Type="Int64" Nullable="false" />
+    <Property Name="STOCKEDPRODUCT" Type="Int32" Nullable="false" />
+    <Property Name="REVERSEDRECID" Type="Int64" Nullable="false" />
+    <Property Name="NGPCODESTABLE_FR" Type="Int64" Nullable="false" />
+    <Property Name="PARENTRECID" Type="Int64" Nullable="false" />
+    <Property Name="TAXWITHHOLDGROUP_TH" Type="String" MaxLength="10" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="INTRASTATFULFILLMENTDATE_HU" Type="DateTime" Nullable="false" Precision="3" />
+    <Property Name="BILLINGCODE" Type="String" MaxLength="10" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="MCRDELIVERYNAME" Type="String" MaxLength="100" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="MCRDLVMODE" Type="String" MaxLength="10" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="PDSCWQTY" Type="Decimal" Precision="32" Scale="16" Nullable="false" />
+    <Property Name="PDSCWQTYPHYSICAL" Type="Decimal" Precision="32" Scale="16" Nullable="false" />
+    <Property Name="PDSCWREMAIN" Type="Decimal" Precision="32" Scale="16" Nullable="false" />
+    <Property Name="RETAILCATEGORY" Type="Int64" Nullable="false" />
+    <Property Name="MODIFIEDDATETIME" Type="DateTime" Nullable="false" Precision="3" />
+    <Property Name="CREATEDDATETIME" Type="DateTime" Nullable="false" Precision="3" />
+    <Property Name="DEL_CREATEDTIME" Type="Int32" Nullable="false" />
+    <Property Name="CREATEDBY" Type="String" MaxLength="8" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="DATAAREAID" Type="String" MaxLength="4" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="RECVERSION" Type="Int32" Nullable="false" />
+    <Property Name="PARTITION" Type="Int64" Nullable="false" />
+    <Property Name="RECID" Type="Int64" Nullable="false" />
+  </EntityType>
+  <EntityType Name="CUSTTRAN">
+    <Key>
+      <PropertyRef Name="ACCOUNTNUM" />
+      <PropertyRef Name="TRANSDATE" />
+      <PropertyRef Name="VOUCHER" />
+      <PropertyRef Name="INVOICE" />
+      <PropertyRef Name="TXT" />
+      <PropertyRef Name="AMOUNTCUR" />
+      <PropertyRef Name="SETTLEAMOUNTCUR" />
+      <PropertyRef Name="AMOUNTMST" />
+      <PropertyRef Name="SETTLEAMOUNTMST" />
+      <PropertyRef Name="CURRENCYCODE" />
+      <PropertyRef Name="DUEDATE" />
+      <PropertyRef Name="LASTSETTLEVOUCHER" />
+      <PropertyRef Name="LASTSETTLEDATE" />
+      <PropertyRef Name="LASTEXCHADJVOUCHER" />
+      <PropertyRef Name="CLOSED" />
+      <PropertyRef Name="TRANSTYPE" />
+      <PropertyRef Name="APPROVED" />
+      <PropertyRef Name="EXCHADJUSTMENT" />
+      <PropertyRef Name="DOCUMENTNUM" />
+      <PropertyRef Name="DOCUMENTDATE" />
+      <PropertyRef Name="LASTEXCHADJRATE" />
+      <PropertyRef Name="FIXEDEXCHRATE" />
+      <PropertyRef Name="LASTEXCHADJ" />
+      <PropertyRef Name="CORRECT" />
+      <PropertyRef Name="BANKCENTRALBANKPURPOSECODE" />
+      <PropertyRef Name="BANKCENTRALBANKPURPOSETEXT" />
+      <PropertyRef Name="SETTLEMENT" />
+      <PropertyRef Name="INTEREST" />
+      <PropertyRef Name="COLLECTIONLETTER" />
+      <PropertyRef Name="DEFAULTDIMENSION" />
+      <PropertyRef Name="POSTINGPROFILECLOSE" />
+      <PropertyRef Name="EXCHRATESECOND" />
+      <PropertyRef Name="BANKLCEXPORTLINE" />
+      <PropertyRef Name="ACCOUNTINGEVENT" />
+      <PropertyRef Name="EXCHRATE" />
+      <PropertyRef Name="LASTSETTLEACCOUNTNUM" />
+      <PropertyRef Name="COMPANYBANKACCOUNTID" />
+      <PropertyRef Name="THIRDPARTYBANKACCOUNTID" />
+      <PropertyRef Name="PAYMMODE" />
+      <PropertyRef Name="PAYMREFERENCE" />
+      <PropertyRef Name="PAYMMETHOD" />
+      <PropertyRef Name="CASHPAYMENT" />
+      <PropertyRef Name="CONTROLNUM" />
+      <PropertyRef Name="DELIVERYMODE" />
+      <PropertyRef Name="POSTINGPROFILE" />
+      <PropertyRef Name="OFFSETRECID" />
+      <PropertyRef Name="EUROTRIANGULATION" />
+      <PropertyRef Name="ORDERACCOUNT" />
+      <PropertyRef Name="CASHDISCCODE" />
+      <PropertyRef Name="PREPAYMENT" />
+      <PropertyRef Name="PAYMSPEC" />
+      <PropertyRef Name="CUSTEXCHADJUSTMENTREALIZED" />
+      <PropertyRef Name="CUSTEXCHADJUSTMENTUNREALIZED" />
+      <PropertyRef Name="PAYMMANLACKDATE" />
+      <PropertyRef Name="PAYMMANBATCH" />
+      <PropertyRef Name="PAYMID" />
+      <PropertyRef Name="BILLOFEXCHANGEID" />
+      <PropertyRef Name="BILLOFEXCHANGESTATUS" />
+      <PropertyRef Name="BILLOFEXCHANGESEQNUM" />
+      <PropertyRef Name="BANKREMITTANCEFILEID" />
+      <PropertyRef Name="COLLECTIONLETTERCODE" />
+      <PropertyRef Name="INVOICEPROJECT" />
+      <PropertyRef Name="LASTSETTLECOMPANY" />
+      <PropertyRef Name="CANCELLEDPAYMENT" />
+      <PropertyRef Name="REASONREFRECID" />
+      <PropertyRef Name="REPORTINGCURRENCYAMOUNT" />
+      <PropertyRef Name="REPORTINGEXCHADJUSTMENTREALIZED" />
+      <PropertyRef Name="REPORTINGEXCHADJUSTMENTUNREALIZED" />
+      <PropertyRef Name="LASTEXCHADJRATEREPORTING" />
+      <PropertyRef Name="REPORTINGCURRENCYCROSSRATE" />
+      <PropertyRef Name="EXCHADJUSTMENTREPORTING" />
+      <PropertyRef Name="SETTLEAMOUNTREPORTING" />
+      <PropertyRef Name="APPROVER" />
+      <PropertyRef Name="TAXINVOICESALESID" />
+      <PropertyRef Name="CONCESSIONCONTRACTID" />
+      <PropertyRef Name="CONCESSIONSETTLEMENTID" />
+      <PropertyRef Name="RETAILCUSTTRANS" />
+      <PropertyRef Name="RETAILSTOREID" />
+      <PropertyRef Name="RETAILTERMINALID" />
+      <PropertyRef Name="RETAILTRANSACTIONID" />
+      <PropertyRef Name="CUSTBILLINGCLASSIFICATION" />
+      <PropertyRef Name="MCRPAYMORDERID" />
+      <PropertyRef Name="DIRECTDEBITMANDATE" />
+      <PropertyRef Name="MODIFIEDDATETIME" />
+      <PropertyRef Name="DEL_MODIFIEDTIME" />
+      <PropertyRef Name="MODIFIEDBY" />
+      <PropertyRef Name="MODIFIEDTRANSACTIONID" />
+      <PropertyRef Name="CREATEDDATETIME" />
+      <PropertyRef Name="DEL_CREATEDTIME" />
+      <PropertyRef Name="CREATEDBY" />
+      <PropertyRef Name="CREATEDTRANSACTIONID" />
+      <PropertyRef Name="DATAAREAID" />
+      <PropertyRef Name="RECVERSION" />
+      <PropertyRef Name="PARTITION" />
+      <PropertyRef Name="RECID" />
+      <PropertyRef Name="NCF" />
+      <PropertyRef Name="NFC_ANTERIOR" />
+      <PropertyRef Name="NO_FACTURA_ANTERIOR" />
+    </Key>
+    <Property Name="ACCOUNTNUM" Type="String" MaxLength="20" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="TRANSDATE" Type="DateTime" Nullable="false" Precision="3" />
+    <Property Name="VOUCHER" Type="String" MaxLength="20" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="INVOICE" Type="String" MaxLength="20" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="TXT" Type="String" MaxLength="60" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="AMOUNTCUR" Type="Decimal" Precision="32" Scale="16" Nullable="false" />
+    <Property Name="SETTLEAMOUNTCUR" Type="Decimal" Precision="32" Scale="16" Nullable="false" />
+    <Property Name="AMOUNTMST" Type="Decimal" Precision="32" Scale="16" Nullable="false" />
+    <Property Name="SETTLEAMOUNTMST" Type="Decimal" Precision="32" Scale="16" Nullable="false" />
+    <Property Name="CURRENCYCODE" Type="String" MaxLength="3" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="DUEDATE" Type="DateTime" Nullable="false" Precision="3" />
+    <Property Name="LASTSETTLEVOUCHER" Type="String" MaxLength="20" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="LASTSETTLEDATE" Type="DateTime" Nullable="false" Precision="3" />
+    <Property Name="LASTEXCHADJVOUCHER" Type="String" MaxLength="20" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="CLOSED" Type="DateTime" Nullable="false" Precision="3" />
+    <Property Name="TRANSTYPE" Type="Int32" Nullable="false" />
+    <Property Name="APPROVED" Type="Int32" Nullable="false" />
+    <Property Name="EXCHADJUSTMENT" Type="Decimal" Precision="32" Scale="16" Nullable="false" />
+    <Property Name="DOCUMENTNUM" Type="String" MaxLength="20" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="DOCUMENTDATE" Type="DateTime" Nullable="false" Precision="3" />
+    <Property Name="LASTEXCHADJRATE" Type="Decimal" Precision="32" Scale="16" Nullable="false" />
+    <Property Name="FIXEDEXCHRATE" Type="Int32" Nullable="false" />
+    <Property Name="LASTEXCHADJ" Type="DateTime" Nullable="false" Precision="3" />
+    <Property Name="CORRECT" Type="Int32" Nullable="false" />
+    <Property Name="BANKCENTRALBANKPURPOSECODE" Type="String" MaxLength="10" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="BANKCENTRALBANKPURPOSETEXT" Type="String" MaxLength="140" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="SETTLEMENT" Type="Int32" Nullable="false" />
+    <Property Name="INTEREST" Type="Int32" Nullable="false" />
+    <Property Name="COLLECTIONLETTER" Type="Int32" Nullable="false" />
+    <Property Name="DEFAULTDIMENSION" Type="Int64" Nullable="false" />
+    <Property Name="POSTINGPROFILECLOSE" Type="String" MaxLength="10" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="EXCHRATESECOND" Type="Decimal" Precision="32" Scale="16" Nullable="false" />
+    <Property Name="BANKLCEXPORTLINE" Type="Int64" Nullable="false" />
+    <Property Name="ACCOUNTINGEVENT" Type="Int64" Nullable="false" />
+    <Property Name="EXCHRATE" Type="Decimal" Precision="32" Scale="16" Nullable="false" />
+    <Property Name="LASTSETTLEACCOUNTNUM" Type="String" MaxLength="20" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="COMPANYBANKACCOUNTID" Type="String" MaxLength="10" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="THIRDPARTYBANKACCOUNTID" Type="String" MaxLength="10" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="PAYMMODE" Type="String" MaxLength="10" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="PAYMREFERENCE" Type="String" MaxLength="20" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="PAYMMETHOD" Type="Int32" Nullable="false" />
+    <Property Name="CASHPAYMENT" Type="Int32" Nullable="false" />
+    <Property Name="CONTROLNUM" Type="String" MaxLength="20" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="DELIVERYMODE" Type="String" MaxLength="10" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="POSTINGPROFILE" Type="String" MaxLength="10" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="OFFSETRECID" Type="Int64" Nullable="false" />
+    <Property Name="EUROTRIANGULATION" Type="Int32" Nullable="false" />
+    <Property Name="ORDERACCOUNT" Type="String" MaxLength="20" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="CASHDISCCODE" Type="String" MaxLength="10" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="PREPAYMENT" Type="Int32" Nullable="false" />
+    <Property Name="PAYMSPEC" Type="String" MaxLength="10" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="CUSTEXCHADJUSTMENTREALIZED" Type="Decimal" Precision="32" Scale="16" Nullable="false" />
+    <Property Name="CUSTEXCHADJUSTMENTUNREALIZED" Type="Decimal" Precision="32" Scale="16" Nullable="false" />
+    <Property Name="PAYMMANLACKDATE" Type="DateTime" Nullable="false" Precision="3" />
+    <Property Name="PAYMMANBATCH" Type="String" MaxLength="20" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="PAYMID" Type="String" MaxLength="200" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="BILLOFEXCHANGEID" Type="String" MaxLength="20" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="BILLOFEXCHANGESTATUS" Type="Int32" Nullable="false" />
+    <Property Name="BILLOFEXCHANGESEQNUM" Type="Int32" Nullable="false" />
+    <Property Name="BANKREMITTANCEFILEID" Type="String" MaxLength="10" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="COLLECTIONLETTERCODE" Type="Int32" Nullable="false" />
+    <Property Name="INVOICEPROJECT" Type="Int32" Nullable="false" />
+    <Property Name="LASTSETTLECOMPANY" Type="String" MaxLength="4" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="CANCELLEDPAYMENT" Type="Int32" Nullable="false" />
+    <Property Name="REASONREFRECID" Type="Int64" Nullable="false" />
+    <Property Name="REPORTINGCURRENCYAMOUNT" Type="Decimal" Precision="32" Scale="16" Nullable="false" />
+    <Property Name="REPORTINGEXCHADJUSTMENTREALIZED" Type="Decimal" Precision="32" Scale="16" Nullable="false" />
+    <Property Name="REPORTINGEXCHADJUSTMENTUNREALIZED" Type="Decimal" Precision="32" Scale="16" Nullable="false" />
+    <Property Name="LASTEXCHADJRATEREPORTING" Type="Decimal" Precision="32" Scale="16" Nullable="false" />
+    <Property Name="REPORTINGCURRENCYCROSSRATE" Type="Decimal" Precision="32" Scale="16" Nullable="false" />
+    <Property Name="EXCHADJUSTMENTREPORTING" Type="Decimal" Precision="32" Scale="16" Nullable="false" />
+    <Property Name="SETTLEAMOUNTREPORTING" Type="Decimal" Precision="32" Scale="16" Nullable="false" />
+    <Property Name="APPROVER" Type="Int64" Nullable="false" />
+    <Property Name="TAXINVOICESALESID" Type="String" MaxLength="20" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="CONCESSIONCONTRACTID" Type="String" MaxLength="10" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="CONCESSIONSETTLEMENTID" Type="String" MaxLength="10" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="RETAILCUSTTRANS" Type="Int32" Nullable="false" />
+    <Property Name="RETAILSTOREID" Type="String" MaxLength="10" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="RETAILTERMINALID" Type="String" MaxLength="10" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="RETAILTRANSACTIONID" Type="String" MaxLength="44" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="CUSTBILLINGCLASSIFICATION" Type="Int64" Nullable="false" />
+    <Property Name="MCRPAYMORDERID" Type="String" MaxLength="20" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="DIRECTDEBITMANDATE" Type="Int64" Nullable="false" />
+    <Property Name="MODIFIEDDATETIME" Type="DateTime" Nullable="false" Precision="3" />
+    <Property Name="DEL_MODIFIEDTIME" Type="Int32" Nullable="false" />
+    <Property Name="MODIFIEDBY" Type="String" MaxLength="8" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="MODIFIEDTRANSACTIONID" Type="Int64" Nullable="false" />
+    <Property Name="CREATEDDATETIME" Type="DateTime" Nullable="false" Precision="3" />
+    <Property Name="DEL_CREATEDTIME" Type="Int32" Nullable="false" />
+    <Property Name="CREATEDBY" Type="String" MaxLength="8" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="CREATEDTRANSACTIONID" Type="Int64" Nullable="false" />
+    <Property Name="DATAAREAID" Type="String" MaxLength="4" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="RECVERSION" Type="Int32" Nullable="false" />
+    <Property Name="PARTITION" Type="Int64" Nullable="false" />
+    <Property Name="RECID" Type="Int64" Nullable="false" />
+    <Property Name="NCF" Type="String" MaxLength="25" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="NFC_ANTERIOR" Type="String" MaxLength="13" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="NO_FACTURA_ANTERIOR" Type="String" MaxLength="13" FixedLength="false" Unicode="true" Nullable="false" />
+  </EntityType>
+  <EntityType Name="CUSTTRANSOPEN">
+    <Key>
+      <PropertyRef Name="EXCHADJUNREALIZED" />
+      <PropertyRef Name="AMOUNTCUR" />
+      <PropertyRef Name="AMOUNTMST" />
+      <PropertyRef Name="DUEDATE" />
+      <PropertyRef Name="REFRECID" />
+      <PropertyRef Name="CASHDISCOUNTLEDGERDIMENSION" />
+      <PropertyRef Name="CASHDISCDATE" />
+      <PropertyRef Name="TRANSDATE" />
+      <PropertyRef Name="POSSIBLECASHDISC" />
+      <PropertyRef Name="ACCOUNTNUM" />
+      <PropertyRef Name="USECASHDISC" />
+      <PropertyRef Name="LASTINTERESTDATE" />
+      <PropertyRef Name="BANKDISCNOTICEDEADLINE" />
+      <PropertyRef Name="SETTLEMENTPRIORITYCASHDISCDATE" />
+      <PropertyRef Name="BANKLCEXPORTLINE" />
+      <PropertyRef Name="REPORTINGCURRENCYAMOUNT" />
+      <PropertyRef Name="EXCHADJUNREALIZEDREPORTING" />
+      <PropertyRef Name="TDSAMOUNT_IN" />
+      <PropertyRef Name="TCSAMOUNT_IN" />
+      <PropertyRef Name="INTERESTAMOUNT_BR" />
+      <PropertyRef Name="FINEAMOUNT_BR" />
+      <PropertyRef Name="INTERESTCODE_BR" />
+      <PropertyRef Name="FINECODE_BR" />
+      <PropertyRef Name="INTERESTAMOUNTPAYMCUR_BR" />
+      <PropertyRef Name="FINEAMOUNTPAYMCUR_BR" />
+      <PropertyRef Name="TAXWITHHOLDAMOUNTORIGIN_IN" />
+      <PropertyRef Name="SETTLEDLINEPERCENT_IN" />
+      <PropertyRef Name="SETTLEDTOTALAMOUNT_IN" />
+      <PropertyRef Name="DATAAREAID" />
+      <PropertyRef Name="RECVERSION" />
+      <PropertyRef Name="PARTITION" />
+      <PropertyRef Name="RECID" />
+    </Key>
+    <Property Name="EXCHADJUNREALIZED" Type="Decimal" Precision="32" Scale="16" Nullable="false" />
+    <Property Name="AMOUNTCUR" Type="Decimal" Precision="32" Scale="16" Nullable="false" />
+    <Property Name="AMOUNTMST" Type="Decimal" Precision="32" Scale="16" Nullable="false" />
+    <Property Name="DUEDATE" Type="DateTime" Nullable="false" Precision="3" />
+    <Property Name="REFRECID" Type="Int64" Nullable="false" />
+    <Property Name="CASHDISCOUNTLEDGERDIMENSION" Type="Int64" Nullable="false" />
+    <Property Name="CASHDISCDATE" Type="DateTime" Nullable="false" Precision="3" />
+    <Property Name="TRANSDATE" Type="DateTime" Nullable="false" Precision="3" />
+    <Property Name="POSSIBLECASHDISC" Type="Decimal" Precision="32" Scale="16" Nullable="false" />
+    <Property Name="ACCOUNTNUM" Type="String" MaxLength="20" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="USECASHDISC" Type="Int32" Nullable="false" />
+    <Property Name="LASTINTERESTDATE" Type="DateTime" Nullable="false" Precision="3" />
+    <Property Name="BANKDISCNOTICEDEADLINE" Type="DateTime" Nullable="false" Precision="3" />
+    <Property Name="SETTLEMENTPRIORITYCASHDISCDATE" Type="DateTime" Nullable="false" Precision="3" />
+    <Property Name="BANKLCEXPORTLINE" Type="Int64" Nullable="false" />
+    <Property Name="REPORTINGCURRENCYAMOUNT" Type="Decimal" Precision="32" Scale="16" Nullable="false" />
+    <Property Name="EXCHADJUNREALIZEDREPORTING" Type="Decimal" Precision="32" Scale="16" Nullable="false" />
+    <Property Name="TDSAMOUNT_IN" Type="Decimal" Precision="32" Scale="16" Nullable="false" />
+    <Property Name="TCSAMOUNT_IN" Type="Decimal" Precision="32" Scale="16" Nullable="false" />
+    <Property Name="INTERESTAMOUNT_BR" Type="Decimal" Precision="32" Scale="16" Nullable="false" />
+    <Property Name="FINEAMOUNT_BR" Type="Decimal" Precision="32" Scale="16" Nullable="false" />
+    <Property Name="INTERESTCODE_BR" Type="String" MaxLength="10" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="FINECODE_BR" Type="String" MaxLength="10" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="INTERESTAMOUNTPAYMCUR_BR" Type="Decimal" Precision="32" Scale="16" Nullable="false" />
+    <Property Name="FINEAMOUNTPAYMCUR_BR" Type="Decimal" Precision="32" Scale="16" Nullable="false" />
+    <Property Name="TAXWITHHOLDAMOUNTORIGIN_IN" Type="Decimal" Precision="32" Scale="16" Nullable="false" />
+    <Property Name="SETTLEDLINEPERCENT_IN" Type="Decimal" Precision="32" Scale="16" Nullable="false" />
+    <Property Name="SETTLEDTOTALAMOUNT_IN" Type="Decimal" Precision="32" Scale="16" Nullable="false" />
+    <Property Name="DATAAREAID" Type="String" MaxLength="4" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="RECVERSION" Type="Int32" Nullable="false" />
+    <Property Name="PARTITION" Type="Int64" Nullable="false" />
+    <Property Name="RECID" Type="Int64" Nullable="false" />
+  </EntityType>
+  <EntityType Name="ECORESPRODUCT">
+    <Key>
+      <PropertyRef Name="INSTANCERELATIONTYPE" />
+      <PropertyRef Name="DISPLAYPRODUCTNUMBER" />
+      <PropertyRef Name="SEARCHNAME" />
+      <PropertyRef Name="PRODUCTTYPE" />
+      <PropertyRef Name="PDSCWPRODUCT" />
+      <PropertyRef Name="MODIFIEDBY" />
+      <PropertyRef Name="RECVERSION" />
+      <PropertyRef Name="RELATIONTYPE" />
+      <PropertyRef Name="PARTITION" />
+      <PropertyRef Name="RECID" />
+    </Key>
+    <Property Name="PRODUCTMASTER" Type="Int64" />
+    <Property Name="RETAITOTALWEIGHT" Type="Int32" />
+    <Property Name="VARIANTCONFIGURATIONTECHNOLOGY" Type="Int32" />
+    <Property Name="RETAILCOLORGROUPID" Type="String" MaxLength="10" FixedLength="false" Unicode="true" />
+    <Property Name="RETAILSIZEGROUPID" Type="String" MaxLength="10" FixedLength="false" Unicode="true" />
+    <Property Name="RETAILSTYLEGROUPID" Type="String" MaxLength="10" FixedLength="false" Unicode="true" />
+    <Property Name="INSTANCERELATIONTYPE" Type="Int64" Nullable="false" />
+    <Property Name="DISPLAYPRODUCTNUMBER" Type="String" MaxLength="70" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="SEARCHNAME" Type="String" MaxLength="20" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="PRODUCTTYPE" Type="Int32" Nullable="false" />
+    <Property Name="PDSCWPRODUCT" Type="Int32" Nullable="false" />
+    <Property Name="MODIFIEDBY" Type="String" MaxLength="8" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="RECVERSION" Type="Int32" Nullable="false" />
+    <Property Name="RELATIONTYPE" Type="Int64" Nullable="false" />
+    <Property Name="PARTITION" Type="Int64" Nullable="false" />
+    <Property Name="RECID" Type="Int64" Nullable="false" />
+  </EntityType>
+  <EntityType Name="ECORESPRODUCTTRANSLATION">
+    <Key>
+      <PropertyRef Name="DESCRIPTION" />
+      <PropertyRef Name="NAME" />
+      <PropertyRef Name="PRODUCT" />
+      <PropertyRef Name="LANGUAGEID" />
+      <PropertyRef Name="MODIFIEDBY" />
+      <PropertyRef Name="RECVERSION" />
+      <PropertyRef Name="PARTITION" />
+      <PropertyRef Name="RECID" />
+    </Key>
+    <Property Name="DESCRIPTION" Type="String" MaxLength="1000" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="NAME" Type="String" MaxLength="60" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="PRODUCT" Type="Int64" Nullable="false" />
+    <Property Name="LANGUAGEID" Type="String" MaxLength="7" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="MODIFIEDBY" Type="String" MaxLength="8" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="RECVERSION" Type="Int32" Nullable="false" />
+    <Property Name="PARTITION" Type="Int64" Nullable="false" />
+    <Property Name="RECID" Type="Int64" Nullable="false" />
+  </EntityType>
+  <EntityType Name="INVENTMODELGROUPITEM">
+    <Key>
+      <PropertyRef Name="ITEMDATAAREAID" />
+      <PropertyRef Name="MODELGROUPID" />
+      <PropertyRef Name="ITEMID" />
+      <PropertyRef Name="MODELGROUPDATAAREAID" />
+      <PropertyRef Name="RECVERSION" />
+      <PropertyRef Name="PARTITION" />
+      <PropertyRef Name="RECID" />
+    </Key>
+    <Property Name="ITEMDATAAREAID" Type="String" MaxLength="4" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="MODELGROUPID" Type="String" MaxLength="10" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="ITEMID" Type="String" MaxLength="20" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="MODELGROUPDATAAREAID" Type="String" MaxLength="4" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="RECVERSION" Type="Int32" Nullable="false" />
+    <Property Name="PARTITION" Type="Int64" Nullable="false" />
+    <Property Name="RECID" Type="Int64" Nullable="false" />
+  </EntityType>
+  <EntityType Name="INVENTTABLEMODULE">
+    <Key>
+      <PropertyRef Name="ITEMID" />
+      <PropertyRef Name="MODULETYPE" />
+      <PropertyRef Name="UNITID" />
+      <PropertyRef Name="PRICE" />
+      <PropertyRef Name="PRICEUNIT" />
+      <PropertyRef Name="MARKUP" />
+      <PropertyRef Name="LINEDISC" />
+      <PropertyRef Name="MULTILINEDISC" />
+      <PropertyRef Name="ENDDISC" />
+      <PropertyRef Name="TAXITEMGROUPID" />
+      <PropertyRef Name="MARKUPGROUPID" />
+      <PropertyRef Name="PRICEDATE" />
+      <PropertyRef Name="PRICEQTY" />
+      <PropertyRef Name="ALLOCATEMARKUP" />
+      <PropertyRef Name="OVERDELIVERYPCT" />
+      <PropertyRef Name="UNDERDELIVERYPCT" />
+      <PropertyRef Name="SUPPITEMGROUPID" />
+      <PropertyRef Name="INTERCOMPANYBLOCKED" />
+      <PropertyRef Name="TAXWITHHOLDITEMGROUPHEADING_TH" />
+      <PropertyRef Name="TAXWITHHOLDCALCULATE_TH" />
+      <PropertyRef Name="MAXIMUMRETAILPRICE_IN" />
+      <PropertyRef Name="PRICESECCUR_RU" />
+      <PropertyRef Name="MARKUPSECCUR_RU" />
+      <PropertyRef Name="PDSPRICINGPRECISION" />
+      <PropertyRef Name="MODIFIEDDATETIME" />
+      <PropertyRef Name="DEL_MODIFIEDTIME" />
+      <PropertyRef Name="MODIFIEDBY" />
+      <PropertyRef Name="CREATEDDATETIME" />
+      <PropertyRef Name="DEL_CREATEDTIME" />
+      <PropertyRef Name="CREATEDBY" />
+      <PropertyRef Name="DATAAREAID" />
+      <PropertyRef Name="RECVERSION" />
+      <PropertyRef Name="PARTITION" />
+      <PropertyRef Name="RECID" />
+    </Key>
+    <Property Name="ITEMID" Type="String" MaxLength="20" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="MODULETYPE" Type="Int32" Nullable="false" />
+    <Property Name="UNITID" Type="String" MaxLength="10" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="PRICE" Type="Decimal" Precision="32" Scale="16" Nullable="false" />
+    <Property Name="PRICEUNIT" Type="Decimal" Precision="32" Scale="16" Nullable="false" />
+    <Property Name="MARKUP" Type="Decimal" Precision="32" Scale="16" Nullable="false" />
+    <Property Name="LINEDISC" Type="String" MaxLength="10" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="MULTILINEDISC" Type="String" MaxLength="10" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="ENDDISC" Type="Int32" Nullable="false" />
+    <Property Name="TAXITEMGROUPID" Type="String" MaxLength="10" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="MARKUPGROUPID" Type="String" MaxLength="10" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="PRICEDATE" Type="DateTime" Nullable="false" Precision="3" />
+    <Property Name="PRICEQTY" Type="Decimal" Precision="32" Scale="16" Nullable="false" />
+    <Property Name="ALLOCATEMARKUP" Type="Int32" Nullable="false" />
+    <Property Name="OVERDELIVERYPCT" Type="Decimal" Precision="32" Scale="16" Nullable="false" />
+    <Property Name="UNDERDELIVERYPCT" Type="Decimal" Precision="32" Scale="16" Nullable="false" />
+    <Property Name="SUPPITEMGROUPID" Type="String" MaxLength="10" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="INTERCOMPANYBLOCKED" Type="Int32" Nullable="false" />
+    <Property Name="TAXWITHHOLDITEMGROUPHEADING_TH" Type="Int64" Nullable="false" />
+    <Property Name="TAXWITHHOLDCALCULATE_TH" Type="Int32" Nullable="false" />
+    <Property Name="MAXIMUMRETAILPRICE_IN" Type="Decimal" Precision="32" Scale="16" Nullable="false" />
+    <Property Name="PRICESECCUR_RU" Type="Decimal" Precision="32" Scale="16" Nullable="false" />
+    <Property Name="MARKUPSECCUR_RU" Type="Decimal" Precision="32" Scale="16" Nullable="false" />
+    <Property Name="PDSPRICINGPRECISION" Type="Int32" Nullable="false" />
+    <Property Name="MODIFIEDDATETIME" Type="DateTime" Nullable="false" Precision="3" />
+    <Property Name="DEL_MODIFIEDTIME" Type="Int32" Nullable="false" />
+    <Property Name="MODIFIEDBY" Type="String" MaxLength="8" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="CREATEDDATETIME" Type="DateTime" Nullable="false" Precision="3" />
+    <Property Name="DEL_CREATEDTIME" Type="Int32" Nullable="false" />
+    <Property Name="CREATEDBY" Type="String" MaxLength="8" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="DATAAREAID" Type="String" MaxLength="4" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="RECVERSION" Type="Int32" Nullable="false" />
+    <Property Name="PARTITION" Type="Int64" Nullable="false" />
+    <Property Name="RECID" Type="Int64" Nullable="false" />
+  </EntityType>
+  <EntityContainer Name="GRUPOSIGAXEntities" annotation:LazyLoadingEnabled="true">
+    <EntitySet Name="CustInvoiceJours" EntityType="Self.CustInvoiceJour" />
+    <EntitySet Name="CUSTINVOICETRANS" EntityType="Self.CUSTINVOICETRAN" />
+    <EntitySet Name="CUSTTRANS" EntityType="Self.CUSTTRAN" />
+    <EntitySet Name="CUSTTRANSOPENs" EntityType="Self.CUSTTRANSOPEN" />
+    <EntitySet Name="ECORESPRODUCTs" EntityType="Self.ECORESPRODUCT" />
+    <EntitySet Name="ECORESPRODUCTTRANSLATIONs" EntityType="Self.ECORESPRODUCTTRANSLATION" />
+    <EntitySet Name="INVENTMODELGROUPITEMs" EntityType="Self.INVENTMODELGROUPITEM" />
+    <EntitySet Name="INVENTTABLEMODULEs" EntityType="Self.INVENTTABLEMODULE" />
+    <EntitySet Name="CUSTTABLEs" EntityType="GRUPOSIGAXModel.CUSTTABLE" />
+  </EntityContainer>
+  <EntityType Name="CUSTTABLE">
+    <Key>
+      <PropertyRef Name="ACCOUNTNUM" />
+      <PropertyRef Name="DATAAREAID" />
+      <PropertyRef Name="PARTITION" />
+    </Key>
+    <Property Name="ACCOUNTNUM" Type="String" Nullable="false" MaxLength="20" FixedLength="false" Unicode="true" />
+    <Property Name="INVOICEACCOUNT" Type="String" Nullable="false" MaxLength="20" FixedLength="false" Unicode="true" />
+    <Property Name="CUSTGROUP" Type="String" Nullable="false" MaxLength="10" FixedLength="false" Unicode="true" />
+    <Property Name="LINEDISC" Type="String" Nullable="false" MaxLength="10" FixedLength="false" Unicode="true" />
+    <Property Name="PAYMTERMID" Type="String" Nullable="false" MaxLength="10" FixedLength="false" Unicode="true" />
+    <Property Name="CASHDISC" Type="String" Nullable="false" MaxLength="10" FixedLength="false" Unicode="true" />
+    <Property Name="CURRENCY" Type="String" Nullable="false" MaxLength="3" FixedLength="false" Unicode="true" />
+    <Property Name="INTERCOMPANYAUTOCREATEORDERS" Type="Int32" Nullable="false" />
+    <Property Name="SALESGROUP" Type="String" Nullable="false" MaxLength="10" FixedLength="false" Unicode="true" />
+    <Property Name="BLOCKED" Type="Int32" Nullable="false" />
+    <Property Name="ONETIMECUSTOMER" Type="Int32" Nullable="false" />
+    <Property Name="ACCOUNTSTATEMENT" Type="Int32" Nullable="false" />
+    <Property Name="CREDITMAX" Type="Decimal" Nullable="false" Precision="32" Scale="16" />
+    <Property Name="MANDATORYCREDITLIMIT" Type="Int32" Nullable="false" />
+    <Property Name="VENDACCOUNT" Type="String" Nullable="false" MaxLength="20" FixedLength="false" Unicode="true" />
+    <Property Name="PRICEGROUP" Type="String" Nullable="false" MaxLength="10" FixedLength="false" Unicode="true" />
+    <Property Name="MULTILINEDISC" Type="String" Nullable="false" MaxLength="10" FixedLength="false" Unicode="true" />
+    <Property Name="ENDDISC" Type="String" Nullable="false" MaxLength="10" FixedLength="false" Unicode="true" />
+    <Property Name="VATNUM" Type="String" Nullable="false" MaxLength="20" FixedLength="false" Unicode="true" />
+    <Property Name="INVENTLOCATION" Type="String" Nullable="false" MaxLength="10" FixedLength="false" Unicode="true" />
+    <Property Name="DLVTERM" Type="String" Nullable="false" MaxLength="10" FixedLength="false" Unicode="true" />
+    <Property Name="DLVMODE" Type="String" Nullable="false" MaxLength="10" FixedLength="false" Unicode="true" />
+    <Property Name="MARKUPGROUP" Type="String" Nullable="false" MaxLength="10" FixedLength="false" Unicode="true" />
+    <Property Name="CLEARINGPERIOD" Type="String" Nullable="false" MaxLength="10" FixedLength="false" Unicode="true" />
+    <Property Name="FREIGHTZONE" Type="String" Nullable="false" MaxLength="10" FixedLength="false" Unicode="true" />
+    <Property Name="CREDITRATING" Type="String" Nullable="false" MaxLength="10" FixedLength="false" Unicode="true" />
+    <Property Name="TAXGROUP" Type="String" Nullable="false" MaxLength="10" FixedLength="false" Unicode="true" />
+    <Property Name="STATISTICSGROUP" Type="String" Nullable="false" MaxLength="10" FixedLength="false" Unicode="true" />
+    <Property Name="PAYMMODE" Type="String" Nullable="false" MaxLength="10" FixedLength="false" Unicode="true" />
+    <Property Name="COMMISSIONGROUP" Type="String" Nullable="false" MaxLength="10" FixedLength="false" Unicode="true" />
+    <Property Name="BANKACCOUNT" Type="String" Nullable="false" MaxLength="10" FixedLength="false" Unicode="true" />
+    <Property Name="PAYMSCHED" Type="String" Nullable="false" MaxLength="30" FixedLength="false" Unicode="true" />
+    <Property Name="CONTACTPERSONID" Type="String" Nullable="false" MaxLength="20" FixedLength="false" Unicode="true" />
+    <Property Name="INVOICEADDRESS" Type="Int32" Nullable="false" />
+    <Property Name="OURACCOUNTNUM" Type="String" Nullable="false" MaxLength="20" FixedLength="false" Unicode="true" />
+    <Property Name="SALESPOOLID" Type="String" Nullable="false" MaxLength="10" FixedLength="false" Unicode="true" />
+    <Property Name="INCLTAX" Type="Int32" Nullable="false" />
+    <Property Name="CUSTITEMGROUPID" Type="String" Nullable="false" MaxLength="10" FixedLength="false" Unicode="true" />
+    <Property Name="NUMBERSEQUENCEGROUP" Type="String" Nullable="false" MaxLength="10" FixedLength="false" Unicode="true" />
+    <Property Name="PAYMDAYID" Type="String" Nullable="false" MaxLength="10" FixedLength="false" Unicode="true" />
+    <Property Name="LINEOFBUSINESSID" Type="String" Nullable="false" MaxLength="10" FixedLength="false" Unicode="true" />
+    <Property Name="DESTINATIONCODEID" Type="String" Nullable="false" MaxLength="10" FixedLength="false" Unicode="true" />
+    <Property Name="GIROTYPE" Type="Int32" Nullable="false" />
+    <Property Name="SUPPITEMGROUPID" Type="String" Nullable="false" MaxLength="10" FixedLength="false" Unicode="true" />
+    <Property Name="GIROTYPEINTERESTNOTE" Type="Int32" Nullable="false" />
+    <Property Name="TAXLICENSENUM" Type="String" Nullable="false" MaxLength="20" FixedLength="false" Unicode="true" />
+    <Property Name="WEBSALESORDERDISPLAY" Type="Int32" Nullable="false" />
+    <Property Name="PAYMSPEC" Type="String" Nullable="false" MaxLength="10" FixedLength="false" Unicode="true" />
+    <Property Name="BANKCENTRALBANKPURPOSETEXT" Type="String" Nullable="false" MaxLength="140" FixedLength="false" Unicode="true" />
+    <Property Name="BANKCENTRALBANKPURPOSECODE" Type="String" Nullable="false" MaxLength="10" FixedLength="false" Unicode="true" />
+    <Property Name="INTERCOMPANYALLOWINDIRECTCREATION" Type="Int32" Nullable="false" />
+    <Property Name="PACKMATERIALFEELICENSENUM" Type="String" Nullable="false" MaxLength="20" FixedLength="false" Unicode="true" />
+    <Property Name="TAXBORDERNUMBER_FI" Type="String" Nullable="false" MaxLength="10" FixedLength="false" Unicode="true" />
+    <Property Name="EINVOICEEANNUM" Type="String" Nullable="false" MaxLength="13" FixedLength="false" Unicode="true" />
+    <Property Name="FISCALCODE" Type="String" Nullable="false" MaxLength="16" FixedLength="false" Unicode="true" />
+    <Property Name="DLVREASON" Type="String" Nullable="false" MaxLength="10" FixedLength="false" Unicode="true" />
+    <Property Name="FORECASTDMPINCLUDE" Type="Int32" Nullable="false" />
+    <Property Name="GIROTYPECOLLECTIONLETTER" Type="Int32" Nullable="false" />
+    <Property Name="SALESCALENDARID" Type="String" Nullable="false" MaxLength="10" FixedLength="false" Unicode="true" />
+    <Property Name="CUSTCLASSIFICATIONID" Type="String" Nullable="false" MaxLength="10" FixedLength="false" Unicode="true" />
+    <Property Name="INTERCOMPANYDIRECTDELIVERY" Type="Int32" Nullable="false" />
+    <Property Name="ENTERPRISENUMBER" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="SHIPCARRIERACCOUNT" Type="String" Nullable="false" MaxLength="25" FixedLength="false" Unicode="true" />
+    <Property Name="GIROTYPEPROJINVOICE" Type="Int32" Nullable="false" />
+    <Property Name="INVENTSITEID" Type="String" Nullable="false" MaxLength="10" FixedLength="false" Unicode="true" />
+    <Property Name="ORDERENTRYDEADLINEGROUPID" Type="String" Nullable="false" MaxLength="10" FixedLength="false" Unicode="true" />
+    <Property Name="SHIPCARRIERID" Type="String" Nullable="false" MaxLength="10" FixedLength="false" Unicode="true" />
+    <Property Name="SHIPCARRIERFUELSURCHARGE" Type="Int32" Nullable="false" />
+    <Property Name="SHIPCARRIERBLINDSHIPMENT" Type="Int32" Nullable="false" />
+    <Property Name="SHIPCARRIERACCOUNTCODE" Type="String" Nullable="false" MaxLength="20" FixedLength="false" Unicode="true" />
+    <Property Name="GIROTYPEFREETEXTINVOICE" Type="Int32" Nullable="false" />
+    <Property Name="SYNCENTITYID" Type="Guid" Nullable="false" />
+    <Property Name="SYNCVERSION" Type="Int64" Nullable="false" />
+    <Property Name="MEMO" Type="String" MaxLength="Max" FixedLength="false" Unicode="true" />
+    <Property Name="SALESDISTRICTID" Type="String" Nullable="false" MaxLength="20" FixedLength="false" Unicode="true" />
+    <Property Name="SEGMENTID" Type="String" Nullable="false" MaxLength="20" FixedLength="false" Unicode="true" />
+    <Property Name="SUBSEGMENTID" Type="String" Nullable="false" MaxLength="20" FixedLength="false" Unicode="true" />
+    <Property Name="RFIDITEMTAGGING" Type="Int32" Nullable="false" />
+    <Property Name="RFIDCASETAGGING" Type="Int32" Nullable="false" />
+    <Property Name="RFIDPALLETTAGGING" Type="Int32" Nullable="false" />
+    <Property Name="COMPANYCHAINID" Type="String" Nullable="false" MaxLength="20" FixedLength="false" Unicode="true" />
+    <Property Name="COMPANYIDSIRET" Type="String" Nullable="false" MaxLength="14" FixedLength="false" Unicode="true" />
+    <Property Name="PARTY" Type="Int64" Nullable="false" />
+    <Property Name="IDENTIFICATIONNUMBER" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="PARTYCOUNTRY" Type="String" Nullable="false" MaxLength="10" FixedLength="false" Unicode="true" />
+    <Property Name="PARTYSTATE" Type="String" Nullable="false" MaxLength="10" FixedLength="false" Unicode="true" />
+    <Property Name="ORGID" Type="String" Nullable="false" MaxLength="10" FixedLength="false" Unicode="true" />
+    <Property Name="PAYMIDTYPE" Type="String" Nullable="false" MaxLength="10" FixedLength="false" Unicode="true" />
+    <Property Name="FACTORINGACCOUNT" Type="String" Nullable="false" MaxLength="20" FixedLength="false" Unicode="true" />
+    <Property Name="DEFAULTDIMENSION" Type="Int64" Nullable="false" />
+    <Property Name="CUSTEXCLUDECOLLECTIONFEE" Type="Int32" Nullable="false" />
+    <Property Name="CUSTEXCLUDEINTERESTCHARGES" Type="Int32" Nullable="false" />
+    <Property Name="COMPANYNAFCODE" Type="Int64" Nullable="false" />
+    <Property Name="BANKCUSTPAYMIDTABLE" Type="Int64" Nullable="false" />
+    <Property Name="GIROTYPEACCOUNTSTATEMENT" Type="Int32" Nullable="false" />
+    <Property Name="MAINCONTACTWORKER" Type="Int64" Nullable="false" />
+    <Property Name="CREDITCARDADDRESSVERIFICATION" Type="Int32" Nullable="false" />
+    <Property Name="CREDITCARDCVC" Type="Int32" Nullable="false" />
+    <Property Name="CREDITCARDADDRESSVERIFICATIONVOID" Type="Int32" Nullable="false" />
+    <Property Name="CREDITCARDADDRESSVERIFICATIONLEVEL" Type="Int32" Nullable="false" />
+    <Property Name="COMPANYTYPE_MX" Type="Int32" Nullable="false" />
+    <Property Name="RFC_MX" Type="String" Nullable="false" MaxLength="13" FixedLength="false" Unicode="true" />
+    <Property Name="CURP_MX" Type="String" Nullable="false" MaxLength="18" FixedLength="false" Unicode="true" />
+    <Property Name="STATEINSCRIPTION_MX" Type="String" Nullable="false" MaxLength="30" FixedLength="false" Unicode="true" />
+    <Property Name="RESIDENCEFOREIGNCOUNTRYREGIONID_IT" Type="String" Nullable="false" MaxLength="10" FixedLength="false" Unicode="true" />
+    <Property Name="BIRTHCOUNTYCODE_IT" Type="String" Nullable="false" MaxLength="2" FixedLength="false" Unicode="true" />
+    <Property Name="BIRTHDATE_IT" Type="DateTime" Nullable="false" Precision="3" />
+    <Property Name="BIRTHPLACE_IT" Type="String" Nullable="false" MaxLength="60" FixedLength="false" Unicode="true" />
+    <Property Name="EINVOICE" Type="Int32" Nullable="false" />
+    <Property Name="CCMNUM_BR" Type="String" Nullable="false" MaxLength="20" FixedLength="false" Unicode="true" />
+    <Property Name="CNPJCPFNUM_BR" Type="String" Nullable="false" MaxLength="20" FixedLength="false" Unicode="true" />
+    <Property Name="PBACUSTGROUPID" Type="String" Nullable="false" MaxLength="10" FixedLength="false" Unicode="true" />
+    <Property Name="IENUM_BR" Type="String" Nullable="false" MaxLength="20" FixedLength="false" Unicode="true" />
+    <Property Name="SUFRAMANUMBER_BR" Type="String" Nullable="false" MaxLength="10" FixedLength="false" Unicode="true" />
+    <Property Name="SUFRAMA_BR" Type="Int32" Nullable="false" />
+    <Property Name="CUSTFINALUSER_BR" Type="Int32" Nullable="false" />
+    <Property Name="INTERESTCODE_BR" Type="String" Nullable="false" MaxLength="10" FixedLength="false" Unicode="true" />
+    <Property Name="FINECODE_BR" Type="String" Nullable="false" MaxLength="10" FixedLength="false" Unicode="true" />
+    <Property Name="SUFRAMAPISCOFINS_BR" Type="Int32" Nullable="false" />
+    <Property Name="TAXWITHHOLDCALCULATE_TH" Type="Int32" Nullable="false" />
+    <Property Name="TAXWITHHOLDGROUP_TH" Type="String" Nullable="false" MaxLength="10" FixedLength="false" Unicode="true" />
+    <Property Name="CONSDAY_JP" Type="Int32" Nullable="false" />
+    <Property Name="NIT_BR" Type="String" Nullable="false" MaxLength="14" FixedLength="false" Unicode="true" />
+    <Property Name="INSSCEI_BR" Type="String" Nullable="false" MaxLength="15" FixedLength="false" Unicode="true" />
+    <Property Name="CNAE_BR" Type="String" Nullable="false" MaxLength="10" FixedLength="false" Unicode="true" />
+    <Property Name="ICMSCONTRIBUTOR_BR" Type="Int32" Nullable="false" />
+    <Property Name="SERVICECODEONDLVADDRESS_BR" Type="Int32" Nullable="false" />
+    <Property Name="INVENTPROFILETYPE_RU" Type="Int32" Nullable="false" />
+    <Property Name="INVENTPROFILEID_RU" Type="String" Nullable="false" MaxLength="10" FixedLength="false" Unicode="true" />
+    <Property Name="TAXWITHHOLDCALCULATE_IN" Type="Int32" Nullable="false" />
+    <Property Name="UNITEDVATINVOICE_LT" Type="Int32" Nullable="false" />
+    <Property Name="ENTERPRISECODE" Type="String" Nullable="false" MaxLength="50" FixedLength="false" Unicode="true" />
+    <Property Name="COMMERCIALREGISTERSECTION" Type="String" Nullable="false" MaxLength="10" FixedLength="false" Unicode="true" />
+    <Property Name="COMMERCIALREGISTERINSETNUMBER" Type="String" Nullable="false" MaxLength="10" FixedLength="false" Unicode="true" />
+    <Property Name="COMMERCIALREGISTER" Type="String" Nullable="false" MaxLength="40" FixedLength="false" Unicode="true" />
+    <Property Name="REGNUM_W" Type="String" Nullable="false" MaxLength="15" FixedLength="false" Unicode="true" />
+    <Property Name="ISRESIDENT_LV" Type="Int32" Nullable="false" />
+    <Property Name="INTBANK_LV" Type="String" Nullable="false" MaxLength="10" FixedLength="false" Unicode="true" />
+    <Property Name="PAYMENTREFERENCE_EE" Type="String" Nullable="false" MaxLength="20" FixedLength="false" Unicode="true" />
+    <Property Name="PACKAGEDEPOSITEXCEMPT_PL" Type="Int32" Nullable="false" />
+    <Property Name="FEDNONFEDINDICATOR" Type="Int32" Nullable="false" />
+    <Property Name="IRS1099CINDICATOR" Type="Int32" Nullable="false" />
+    <Property Name="AGENCYLOCATIONCODE" Type="String" Nullable="false" MaxLength="12" FixedLength="false" Unicode="true" />
+    <Property Name="FEDERALCOMMENTS" Type="String" Nullable="false" MaxLength="60" FixedLength="false" Unicode="true" />
+    <Property Name="USEPURCHREQUEST" Type="Int32" Nullable="false" />
+    <Property Name="MCRMERGEDPARENT" Type="String" Nullable="false" MaxLength="20" FixedLength="false" Unicode="true" />
+    <Property Name="MCRMERGEDROOT" Type="String" Nullable="false" MaxLength="20" FixedLength="false" Unicode="true" />
+    <Property Name="AFFILIATED_RU" Type="Int32" Nullable="false" />
+    <Property Name="CASHDISCBASEDAYS" Type="Int32" Nullable="false" />
+    <Property Name="CUSTTRADINGPARTNERCODE" Type="Int64" Nullable="false" />
+    <Property Name="CUSTWHTCONTRIBUTIONTYPE_BR" Type="Int32" Nullable="false" />
+    <Property Name="DAXINTEGRATIONID" Type="Guid" Nullable="false" />
+    <Property Name="DEFAULTDIRECTDEBITMANDATE" Type="Int64" Nullable="false" />
+    <Property Name="DEFAULTINVENTSTATUSID" Type="String" Nullable="false" MaxLength="10" FixedLength="false" Unicode="true" />
+    <Property Name="ENTRYCERTIFICATEREQUIRED_W" Type="Int32" Nullable="false" />
+    <Property Name="EXPORTSALES_PL" Type="Int32" Nullable="false" />
+    <Property Name="EXPRESSBILLOFLADING" Type="Int32" Nullable="false" />
+    <Property Name="FISCALDOCTYPE_PL" Type="Int32" Nullable="false" />
+    <Property Name="FOREIGNRESIDENT_RU" Type="Int32" Nullable="false" />
+    <Property Name="GENERATEINCOMINGFISCALDOCUMENT_BR" Type="Int32" Nullable="false" />
+    <Property Name="INVOICEPOSTINGTYPE_RU" Type="Int32" Nullable="false" />
+    <Property Name="ISSUEOWNENTRYCERTIFICATE_W" Type="Int32" Nullable="false" />
+    <Property Name="ISSUERCOUNTRY_HU" Type="String" Nullable="false" MaxLength="10" FixedLength="false" Unicode="true" />
+    <Property Name="LVPAYMTRANSCODES" Type="Int64" Nullable="false" />
+    <Property Name="MANDATORYVATDATE_PL" Type="Int32" Nullable="false" />
+    <Property Name="PASSPORTNO_HU" Type="String" Nullable="false" MaxLength="13" FixedLength="false" Unicode="true" />
+    <Property Name="PDSCUSTREBATEGROUPID" Type="String" Nullable="false" MaxLength="20" FixedLength="false" Unicode="true" />
+    <Property Name="PDSFREIGHTACCRUED" Type="Int32" Nullable="false" />
+    <Property Name="PDSREBATETMAGROUP" Type="String" Nullable="false" MaxLength="10" FixedLength="false" Unicode="true" />
+    <Property Name="TAXPERIODPAYMENTCODE_PL" Type="String" Nullable="false" MaxLength="10" FixedLength="false" Unicode="true" />
+    <Property Name="USECASHDISC" Type="Int32" Nullable="false" />
+    <Property Name="MODIFIEDDATETIME" Type="DateTime" Nullable="false" Precision="3" />
+    <Property Name="DEL_MODIFIEDTIME" Type="Int32" Nullable="false" />
+    <Property Name="MODIFIEDBY" Type="String" Nullable="false" MaxLength="8" FixedLength="false" Unicode="true" />
+    <Property Name="CREATEDDATETIME" Type="DateTime" Nullable="false" Precision="3" />
+    <Property Name="DEL_CREATEDTIME" Type="Int32" Nullable="false" />
+    <Property Name="DATAAREAID" Type="String" Nullable="false" MaxLength="4" FixedLength="false" Unicode="true" />
+    <Property Name="RECVERSION" Type="Int32" Nullable="false" />
+    <Property Name="PARTITION" Type="Int64" Nullable="false" />
+    <Property Name="RECID" Type="Int64" Nullable="false" />
+    <Property Name="TIPO" Type="Int32" Nullable="false" />
+    <Property Name="RNC_CEDULA" Type="String" Nullable="false" MaxLength="25" FixedLength="false" Unicode="true" />
+  </EntityType>
+</Schema>

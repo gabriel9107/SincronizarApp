@@ -28,8 +28,8 @@ namespace SigaApi
 
             IFirebaseConfig ifc = new FirebaseConfig()
             {
-                AuthSecret = "ryja3YG6bf0hAcJNXVpvUDdY66j0LiBFtfvRKMKK",
-                BasePath = "https://sigaapp-127c4-default-rtdb.firebaseio.com/"
+                AuthSecret = "Qt94hB3EaVCBgvbQsTJ7c1UohQ9owGK05uyZALbF",
+                BasePath = "https://siga-d5296-default-rtdb.firebaseio.com/"
             };
 
 
@@ -46,17 +46,23 @@ namespace SigaApi
              * se debe de actualizar el monto pendiente de la factura */
 
             //1-) Obtener Pedido (Se sincronizaran los pedidos, en caso de que el cliente sea nuevo, se  van a sincronizar los clientes nuevo y sus pedidos )
-             obtenerPedido(ifc);
+            obtenerPedido(ifc);
 
-             //2 - )
-             //Obtiene la lista de clientes que fueron modificados en Siga y se deben de actualizar en los clientes
-              ObtenerClientesModificados(ifc);
+            //2 - )
+            //Obtiene la lista de clientes que fueron modificados en Siga y se deben de actualizar en los clientes
+            ObtenerClientesModificados(ifc);
             //3-)
             // Obtener Listado de facturas pendiente de sincronizar 
             SincronizarFacturas(ifc);
 
             //Buscando los pagos pendiente de sincronizar 
             obtenerPago(ifc);
+
+            //Buscando los productos pendientes
+            sincronizarProdutos( );
+
+
+
 
             //Agregar los pagos pendiente a ax 
 
@@ -73,6 +79,139 @@ namespace SigaApi
 
 
         }
+
+        private static void sincronizarProdutos(   )
+        {
+
+            IFirebaseConfig ifc = new FirebaseConfig()
+            {
+                AuthSecret = "Qt94hB3EaVCBgvbQsTJ7c1UohQ9owGK05uyZALbF",
+                BasePath = "https://siga-d5296-default-rtdb.firebaseio.com/"
+            };
+
+            SigaAdminEntities context2 = new SigaAdminEntities();
+            IFirebaseClient client = new FireSharp.FirebaseClient(ifc);
+            if (client == null)
+            {
+                return;
+            }
+
+            var productos = from a in context2.productos
+                            where a.Sincronizado == 1
+                            select a;
+
+            foreach (producto product in productos)
+            {
+                client.Set("Productos/" + product.Id, product);
+
+                updateProducts(product.Codigo);
+            }
+
+
+        }
+
+        private static void ActualizarProductosPendienteDeCambios(IFirebaseConfig ifc)
+        {
+            SigaAdminEntities context2 = new SigaAdminEntities();
+            IFirebaseClient client = new FireSharp.FirebaseClient(ifc);
+            if (client == null)
+            {
+                return;
+            }
+
+            var productos = from a in context2.productos
+                            where a.actualizar == 1
+                            select a;
+
+            foreach (producto product in productos)
+            {
+                //var setter = client.Update("Pedidos/" + pedido.idFire, toUpdate);
+                client.Update("Productos/" + product.Codigo, product);
+
+                updateproductosModificados(product.Codigo);
+            }
+
+        }
+
+        private static void updateproductosModificados(string codigoId)
+        {
+            using (var context = new SigaAdminEntities())
+            {
+                var resultado = context.productos.SingleOrDefault(b => b.Codigo == codigoId);
+                if (resultado != null)
+                {
+                    resultado.actualizar = 0;
+                    context.SaveChanges();
+                }
+            }
+
+        }
+
+        private static void updateProducts(string codigoId)
+        {
+            using (var context = new SigaAdminEntities())
+            {
+                var resultado = context.productos.SingleOrDefault(b => b.Codigo == codigoId);
+                if (resultado != null)
+                {
+                    resultado.actualizar = 0;
+                    context.SaveChanges();
+                }
+            }
+
+        }
+
+        //Productos 
+
+
+
+
+        //List<producto> productos = new List<producto>();
+
+
+        //IFirebaseClient client = new FireSharp.FirebaseClient(ifc);
+        //if (client == null)
+        //{
+        //    return;
+
+        //}
+
+        //var pedidoLista = new List<Pedido>();
+        //var respuesta = client.Get(@"Prod/");
+
+        //Dictionary<string, producto> obtenerProductos = respuesta.ResultAs<Dictionary<string, producto>>();
+
+        //foreach (var get in obtenerProductos)
+        //{
+
+        //    pedidoLista.Add(new Pedido
+        //    {
+        //        Id = get.Value.Id,
+        //        ClienteId = get.Value.ClienteId,
+        //        Compagnia = get.Value.Compagnia,
+        //        CreadoPor = get.Value.CreadoPor,
+        //        FechaOrden = get.Value.FechaOrden,
+        //        Impuestos = get.Value.Impuestos,
+        //        IsDelete = get.Value.IsDelete,
+        //        idFire = get.Key,
+        //        Sincronizado = get.Value.Sincronizado,
+        //        totalAPagar = get.Value.totalAPagar,
+        //    });
+
+
+
+        //};
+
+        //var pedidosAsincronizar = pedidoLista.Where(x => x.Sincronizado == 1);
+
+        //foreach (var pedido in pedidosAsincronizar)
+        //{
+
+        //    AgregarPedidosSigaAdmin(pedido);
+
+        //    Console.WriteLine(pedido.Id);
+        //}
+
 
         private static void obtenerPedido(IFirebaseConfig confi)
         {
@@ -128,16 +267,18 @@ namespace SigaApi
         private static void AgregarPedidosSigaAdmin(Pedido pedido)
         {
             bool clienteNuevo = false;
-            Customers clienteId;
+            
             SigaAdminEntities context1 = new SigaAdminEntities();
 
 
-            SigaAdminEntities context2 = new SigaAdminEntities();
+            GRUPOSIGAXEntities contexto = new GRUPOSIGAXEntities();
 
             //var id = context2.Customers
             //       .Where(s => s.CustomerCode == pedido.ClienteId)
             //        .FirstOrDefault<Customer>();
-            var cliente = context2.CUSTTABLEs.Where(s => s.Codigo == pedido.ClienteId).FirstOrDefault();
+
+
+            var cliente = contexto.CUSTTABLEs.Where(c => c.ACCOUNTNUM == pedido.ClienteId).FirstOrDefault<CUSTTABLE>();
 
 
 
@@ -146,13 +287,10 @@ namespace SigaApi
             {
                 obtenerClientes();
 
-                var existeCliente = context1
-                    .Customers
-                       .Where(s => s.CustomerCode == pedido.ClienteId)
-                        .FirstOrDefault<Customers>();
+                var existeCliente = context1.Customers.Where(c => c.CustomerCode == pedido.ClienteId).FirstOrDefault<Customer>();
                 if (existeCliente != null)
                 {
-                    var t = new Invoices //Make sure you have a table called test in DB
+                    var t = new Invoice 
                     {
                         Date = (DateTime)pedido.FechaOrden,
                         CustomerID = existeCliente.ID,
@@ -168,8 +306,8 @@ namespace SigaApi
 
                     };
 
-                    context2.Invoices.Add(t);
-                    context2.SaveChanges();
+                    context1.Invoices.Add(t);
+                    context1.SaveChanges();
 
                     pedido.Id = t.ID;
                     ActualizarPedidoFire(pedido);
@@ -204,8 +342,8 @@ namespace SigaApi
         {
             IFirebaseConfig ifc = new FirebaseConfig()
             {
-                AuthSecret = "ryja3YG6bf0hAcJNXVpvUDdY66j0LiBFtfvRKMKK",
-                BasePath = "https://sigaapp-127c4-default-rtdb.firebaseio.com/"
+                AuthSecret = "Qt94hB3EaVCBgvbQsTJ7c1UohQ9owGK05uyZALbF",
+                BasePath = "https://siga-d5296-default-rtdb.firebaseio.com/"
 
             };
             IFirebaseClient client = new FireSharp.FirebaseClient(ifc);
@@ -271,8 +409,8 @@ namespace SigaApi
             List<PedidoDetalle> pedidos = new List<PedidoDetalle>();
             IFirebaseConfig confi = new FirebaseConfig()
             {
-                AuthSecret = "ryja3YG6bf0hAcJNXVpvUDdY66j0LiBFtfvRKMKK",
-                BasePath = "https://sigaapp-127c4-default-rtdb.firebaseio.com/"
+                AuthSecret = "Qt94hB3EaVCBgvbQsTJ7c1UohQ9owGK05uyZALbF",
+                BasePath = "https://siga-d5296-default-rtdb.firebaseio.com/"
             };
 
 
@@ -337,8 +475,8 @@ namespace SigaApi
             List<PedidoDetalle> pedidos = new List<PedidoDetalle>();
             IFirebaseConfig confi = new FirebaseConfig()
             {
-                AuthSecret = "ryja3YG6bf0hAcJNXVpvUDdY66j0LiBFtfvRKMKK",
-                BasePath = "https://sigaapp-127c4-default-rtdb.firebaseio.com/"
+                AuthSecret = "Qt94hB3EaVCBgvbQsTJ7c1UohQ9owGK05uyZALbF",
+                BasePath = "https://siga-d5296-default-rtdb.firebaseio.com/"
             };
 
 
@@ -390,7 +528,7 @@ namespace SigaApi
 
 
 
-            var t = new InvoiceLines 
+            var t = new InvoiceLine
             {
                 Qty = pedido.Cantidad,
                 InvoiceID = pedido.PedidoId, 
@@ -423,8 +561,8 @@ namespace SigaApi
         {
             IFirebaseConfig ifc = new FirebaseConfig()
             {
-                AuthSecret = "ryja3YG6bf0hAcJNXVpvUDdY66j0LiBFtfvRKMKK",
-                BasePath = "https://sigaapp-127c4-default-rtdb.firebaseio.com/"
+                AuthSecret = "Qt94hB3EaVCBgvbQsTJ7c1UohQ9owGK05uyZALbF",
+                BasePath = "https://siga-d5296-default-rtdb.firebaseio.com/"
 
             };
             IFirebaseClient client = new FireSharp.FirebaseClient(ifc);
@@ -465,8 +603,8 @@ namespace SigaApi
 
             IFirebaseConfig ifc = new FirebaseConfig()
             {
-                AuthSecret = "ryja3YG6bf0hAcJNXVpvUDdY66j0LiBFtfvRKMKK",
-                BasePath = "https://sigaapp-127c4-default-rtdb.firebaseio.com/"
+                AuthSecret = "Qt94hB3EaVCBgvbQsTJ7c1UohQ9owGK05uyZALbF",
+                BasePath = "https://siga-d5296-default-rtdb.firebaseio.com/"
             };
 
             //Lista de Clientes 
@@ -526,7 +664,7 @@ namespace SigaApi
             SigaAdminEntities context = new SigaAdminEntities();
             //SigaAppEntities context 
 
-            var t = new Customers //Make sure you have a table called test in DB
+            var t = new Customer //Make sure you have a table called test in DB
             {
                 CustomerName = cliente.nombre,
                 CustomerCode = cliente.codigo,
@@ -550,8 +688,8 @@ namespace SigaApi
         {
             IFirebaseConfig ifc = new FirebaseConfig()
             {
-                AuthSecret = "ryja3YG6bf0hAcJNXVpvUDdY66j0LiBFtfvRKMKK",
-                BasePath = "https://sigaapp-127c4-default-rtdb.firebaseio.com/"
+                AuthSecret = "Qt94hB3EaVCBgvbQsTJ7c1UohQ9owGK05uyZALbF",
+                BasePath = "https://siga-d5296-default-rtdb.firebaseio.com/"
 
             };
             IFirebaseClient client = new FireSharp.FirebaseClient(ifc);
@@ -586,14 +724,22 @@ namespace SigaApi
         /// </summary>
         private static void  ObtenerClientesModificados(IFirebaseConfig confi)
         {
-
-            IFirebaseClient client = new FireSharp.FirebaseClient(confi);
-            if (client == null)
+            IFirebaseConfig ifc = new FirebaseConfig()
             {
-                return; 
+                AuthSecret = "Qt94hB3EaVCBgvbQsTJ7c1UohQ9owGK05uyZALbF",
+                BasePath = "https://siga-d5296-default-rtdb.firebaseio.com/"
+
+            };
+            IFirebaseClient client = new FireSharp.FirebaseClient(ifc);
+            if (client != null)
+            {
+                Console.WriteLine("connection esta estabilizada");
             }
 
-            List<Customers> clientes; 
+
+           
+
+            List<Customer> clientes; 
 
             using(var context = new SigaAdminEntities())
             {
@@ -605,7 +751,7 @@ namespace SigaApi
                 return; 
 
             }
-            foreach(Customers cliente in clientes)
+            foreach(Customer cliente in clientes)
             {
                 Clientes toUpdate = new Clientes()
                 {
@@ -623,7 +769,8 @@ namespace SigaApi
                 };
 
 
-                client.Set("Clientes/" + toUpdate.codigo, cliente);
+                client.Set("Clientes/" + toUpdate.idFire, toUpdate);
+                marcarSincronizadoCliente(toUpdate.codigo);
             }
             
         }
@@ -831,8 +978,8 @@ namespace SigaApi
         {
             IFirebaseConfig ifc = new FirebaseConfig()
             {
-                AuthSecret = "ryja3YG6bf0hAcJNXVpvUDdY66j0LiBFtfvRKMKK",
-                BasePath = "https://sigaapp-127c4-default-rtdb.firebaseio.com/"
+                AuthSecret = "Qt94hB3EaVCBgvbQsTJ7c1UohQ9owGK05uyZALbF",
+                BasePath = "https://siga-d5296-default-rtdb.firebaseio.com/"
             };
 
             //Lista de Clientes 

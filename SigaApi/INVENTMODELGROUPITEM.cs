@@ -12,18 +12,14 @@ namespace SigaApi
     using System;
     using System.Collections.Generic;
     
-    public partial class InvoiceLines
+    public partial class INVENTMODELGROUPITEM
     {
-        public int ID { get; set; }
-        public Nullable<int> Qty { get; set; }
-        public Nullable<int> ProductID { get; set; }
-        public string ProductCode { get; set; }
-        public decimal Price { get; set; }
-        public Nullable<int> InvoiceID { get; set; }
-        public bool IsNew { get; set; }
-        public bool IsInAx { get; set; }
-        public Nullable<System.DateTime> IntegrationDate { get; set; }
-    
-        public virtual Invoices Invoices { get; set; }
+        public string ITEMDATAAREAID { get; set; }
+        public string MODELGROUPID { get; set; }
+        public string ITEMID { get; set; }
+        public string MODELGROUPDATAAREAID { get; set; }
+        public int RECVERSION { get; set; }
+        public long PARTITION { get; set; }
+        public long RECID { get; set; }
     }
 }
